@@ -49,16 +49,5 @@ void setup() {
     1);  /* Core where the task should run */
 }
 void loop() {
-  uint32_t tt = micros();
-  updateIMU();
-  Serial.print(micros() - tt);
-  Serial.print(": ");
-  Serial.print(AngleRoll);
-  Serial.print(", ");
-  Serial.print(AnglePitch);
-  Serial.print(", ");
-  Serial.print(xDotIMU);
-  Serial.print(", ");
-  Serial.println(yDotIMU);
-  delayMicroseconds(10000);
+  
 }
