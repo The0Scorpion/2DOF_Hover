@@ -1,6 +1,7 @@
 #include <esp_now.h>
 
 
+uint8_t HubAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 void GetMacAddress(){
   Serial.begin(115200);
@@ -26,7 +27,6 @@ void OnDataRecvCB(const uint8_t * mac, const uint8_t *incomingData, int len) {
   ixvelkp=inparamters.xvelkp;
   ixvelki=inparamters.xvelki;
   ixvelkd=inparamters.xvelkd;
-  ixvelSet = inparamters.xvelSet;
     
   iyposkp=inparamters.yposkp;
   iyposki=inparamters.yposki;
@@ -36,7 +36,6 @@ void OnDataRecvCB(const uint8_t * mac, const uint8_t *incomingData, int len) {
   iyvelkp=inparamters.yvelkp;
   iyvelki=inparamters.yvelki;
   iyvelkd=inparamters.yvelkd;
-  iyvelSet = inparamters.yvelSet;
 
   Sampling_time = inparamters.SamplingTime;
   
@@ -66,4 +65,25 @@ void RegisterPeer(uint8_t *LOC_broadcastAddress, esp_now_peer_info_t LOC_peer)
   }
   else
   Serial.println("peer added successfully");
+}
+void DataAQU(void * parameter) {
+  /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
+    constructs an OutMessage Struct to be sent over ESPNOW*/
+
+  States.xpos = CountsToAngle(xEncoderCount);
+  States.ypos = CountsToAngle(yEncoderCount);
+  States.xvel = getxSpeed();
+  States.yvel = getySpeed();
+  States.xposPID = xPOSPID->output;
+  States.yposPID = yPOSPID->output;
+  States.xvelPID = xVELPID->output;
+  States.yvelPID = yVELPID->output;
+
+  esp_err_t result = esp_now_send(HubAddress, (uint8_t *) &States, sizeof(States));
+  if (result == ESP_OK) {
+    Serial.println("Sent with success");
+  }
+  else {
+    Serial.println("Error sending the data");
+  }
 }

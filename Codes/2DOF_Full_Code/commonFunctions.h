@@ -1,6 +1,6 @@
 unsigned long PIDLastTime = 0;
-PIDController *xPOSPID, *XVELPID, *yPOSPID, *yVELPID;
-
+PIDController *xPOSPID, *xVELPID, *yPOSPID, *yVELPID;
+double xSpeed, ySpeed;
 void PIDLoop(void * parameter) {
   /*
     Main Control Loop, Runs each sampling time
@@ -8,8 +8,8 @@ void PIDLoop(void * parameter) {
   while (1) {
     resetPID(xPOSPID);
     initializePID(xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxDeltaMicros, maxDeltaMicros);
-    resetPID(XVELPID);
-    initializePID(XVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -maxDeltaMicros, maxDeltaMicros);
+    resetPID(xVELPID);
+    initializePID(xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -maxDeltaMicros, maxDeltaMicros);
     resetPID(yPOSPID);
     initializePID(yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -maxDeltaMicros, maxDeltaMicros);
     resetPID(yVELPID);
@@ -22,25 +22,21 @@ void PIDLoop(void * parameter) {
 
     while (PID_Running) {
       while (micros() - PIDLastTime < Sampling_time)continue;
-      getxSpeed();
-      getySpeed();
+      xSpeed = getxSpeed();
+      ySpeed = getySpeed();
       updateIMU();
       xSpeed = (1 - IMU_FusionPrio) * xSpeed + IMU_FusionPrio * AngleToCounts(xDotIMU);
       ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
-      xAction = calculatePID(xPOSPID, xEncoderCount) + calculatePID(XVELPID, xSpeed);
+      xVELPID->setpoint = calculatePID(xPOSPID, CountsToAngle(xEncoderCount));
+      xAction =  calculatePID(xVELPID, xSpeed);
       if (xAction > maxDeltaMicros)xAction = maxDeltaMicros;
       if (xAction < -maxDeltaMicros)xAction = -maxDeltaMicros;
-      xAction = calculatePID(yPOSPID, yEncoderCount) + calculatePID(yVELPID, ySpeed);
+      yVELPID->setpoint = calculatePID(yPOSPID, CountsToAngle(yEncoderCount));
+      yAction =   calculatePID(yVELPID, ySpeed);
       if (yAction > maxDeltaMicros)yAction = maxDeltaMicros;
       if (yAction < -maxDeltaMicros)yAction = -maxDeltaMicros;
       writeControlAction(xAction, yAction); //to check
       PIDLastTime = micros();
     }
   }
-}
-
-void DataAQU() {
-  /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
-    constructs an OutMessage Struct to be sent over ESPNOW*/
-  //TO DO
 }

@@ -6,9 +6,9 @@
 #include "PID.h"
 #include "motors.h"
 #include "commonFunctions.h"
-#include "ESP4NOW.h"
+#include "WindUp.h"
 #include "OTA.h"
-
+#include "ESP4NOW.h"
 TaskHandle_t TaskHandle_1;
 
 void setup() {
@@ -17,9 +17,9 @@ void setup() {
   updateIMU();
 
   initEncoder(AngleToCounts(xPosIMU), AngleToCounts(yPosIMU));
-  //ESPNowInit();
+  ESPNowInit();
 
-  /*xTaskCreatePinnedToCore(
+  xTaskCreatePinnedToCore(
     PIDLoop,   //Function to implement the task
     "Main Loop", // Name of the task
     10000,      // Stack size in words
@@ -27,17 +27,16 @@ void setup() {
     0,          // Priority of the task
     &TaskHandle_1,       // Task handle.
     0);  // Core where the task should run
-  */
-  /*
-    xTaskCreatePinnedToCore(
-                    DataAQU,   // Function to implement the task
-                    "Data AQU Loop", // Name of the task
-                    10000,      // Stack size in words
-                    NULL,       // Task input parameter
-                    0,          // Priority of the task
-                    NULL,       // Task handle.
-                    0);  // Core where the task should run
-  */
+
+  xTaskCreatePinnedToCore(
+    DataAQU,   // Function to implement the task
+    "Data AQU Loop", // Name of the task
+    10000,      // Stack size in words
+    NULL,       // Task input parameter
+    0,          // Priority of the task
+    NULL,       // Task handle.
+    0);  // Core where the task should run
+
 
   xTaskCreatePinnedToCore(
     OTATASK,   /* Function to implement the task */
@@ -49,5 +48,5 @@ void setup() {
     1);  /* Core where the task should run */
 }
 void loop() {
-  
+//TO DO: IMPLEMENT Switching between windup and Normal Control
 }

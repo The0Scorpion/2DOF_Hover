@@ -1,22 +1,13 @@
 #include <Wire.h>
 float xDotIMU, yDotIMU;
 float AccX, AccY, AccZ;
-float AngleRoll, AnglePitch;
-float xPosIMU = 0, KalmanUncertaintyAngleRoll; // put initial angles of our drone
-float yPosIMU = 0, KalmanUncertaintyAnglePitch; // put initial angles of our drone
-float Kalman1DOutput[] = {0, 0}; //need to change values
+float xPosIMU = 0; // put initial angles of our drone
+float yPosIMU = 0; // put initial angles of our drone
 
-void kalman_1d(float KalmanState, float KalmanUncertainty, float KalmanInput, float KalmanMeasurement) {
-  KalmanState = KalmanState + 0.004 * KalmanInput;
-  KalmanUncertainty = KalmanUncertainty + 0.004 * 0.004 * 4 * 4;
-  float KalmanGain = KalmanUncertainty * 1 / (1 * KalmanUncertainty + 3 * 3);
-  KalmanState = KalmanState + KalmanGain * (KalmanMeasurement - KalmanState);
-  KalmanUncertainty = (1 - KalmanGain) * KalmanUncertainty;
-  Kalman1DOutput[0] = KalmanState;
-  Kalman1DOutput[1] = KalmanUncertainty;
-}
 
-void gyro_signals(void) {
+
+void updateIMU(void) {
+  //too recheck
   Wire.beginTransmission(0x68);
   Wire.write(0x1A);
   Wire.write(0x05);
@@ -48,10 +39,10 @@ void gyro_signals(void) {
   AccX = (float)AccXLSB / 4096 - 0.02;
   AccY = (float)AccYLSB / 4096;
   AccZ = (float)AccZLSB / 4096 - 0.03;
-  AngleRoll = atan(AccY / sqrt(AccX * AccX + AccZ * AccZ)) * 1 / (3.142 / 180);
-  AnglePitch = -atan(AccX / sqrt(AccY * AccY + AccZ * AccZ)) * 1 / (3.142 / 180);
-  xDotIMU += 1.14;
-  yDotIMU -= 1.87;
+  xPosIMU = atan(AccY / sqrt(AccX * AccX + AccZ * AccZ));
+  yPosIMU = -atan(AccX / sqrt(AccY * AccY + AccZ * AccZ));
+  xDotIMU += 1.14 * PI / 180;
+  yDotIMU -= 1.87 * PI / 180;
 }
 
 void initIMU() {
@@ -62,23 +53,4 @@ void initIMU() {
   Wire.write(0x6B);
   Wire.write(0x00);
   Wire.endTransmission();
-  gyro_signals();
-  xPosIMU = AngleRoll;
-  yPosIMU = AnglePitch;
-  KalmanUncertaintyAngleRoll = 2;
-  KalmanUncertaintyAnglePitch = 2;
-}
-
-
-void updateIMU() {
-  /*
-    updates xIMU (roll),xdotIMU,yIMU (pitch),ydotIMU
-  */
-  gyro_signals();
-  kalman_1d(xPosIMU, KalmanUncertaintyAngleRoll, xDotIMU, AngleRoll);
-  xPosIMU = Kalman1DOutput[0];
-  KalmanUncertaintyAngleRoll = Kalman1DOutput[1];
-  kalman_1d(yPosIMU, KalmanUncertaintyAnglePitch, yDotIMU, AnglePitch);
-  yPosIMU = Kalman1DOutput[0];
-  KalmanUncertaintyAnglePitch = Kalman1DOutput[1];
 }

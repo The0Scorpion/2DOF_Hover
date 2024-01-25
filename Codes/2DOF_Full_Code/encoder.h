@@ -1,99 +1,107 @@
-#define pre 2
-int n = 8;
-volatile long xEncoderCount = 0, yEncoderCount = 0, xSpeedCount = 0, ySpeedCount = 0;
-volatile long xLastCount = 0, xCurrentP = 0;
-unsigned long xLastSpeedTime, yLastSpeedTime;
-volatile int xDir = 0;
-uint32_t Tmin = 15000, SpeedUpdateTime = 20000;
-volatile double xSpeed = 0, ySpeed = 0; //counts per second
-hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
-volatile int xNext = 0, yNext = 0;
-volatile long xDelta, yDelta; //[0,130,150,110]
-void IRAM_ATTR  UpdateSpeedISR() {
-  uint32_t temp = timerRead(SpeedUpdateTimer) ;
-  if (temp - xLastSpeedTime > SpeedUpdateTime) {
-    xDelta = temp - xLastSpeedTime;
-  }
 
+#define N  8
+volatile long xEncoderCount = 0, yEncoderCount = 0;
+unsigned long xLastSpeedTime, yLastSpeedTime;
+uint64_t SpeedUpdateTime = 20000;
+hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
+volatile int64_t xNext = 0, yNext = 0;
+volatile double xDelta[N], yDelta[N]; //[0,130,150,110]
+void IRAM_ATTR  UpdateSpeedISR() {
+  uint64_t temp = timerRead(SpeedUpdateTimer);
+  if ((temp - xLastSpeedTime) > (SpeedUpdateTime * 80 / pre)) {
+    double lastT = (double)1000000.0 / xDelta[(xNext) % N];
+    if (lastT > 0) {
+      lastT += N * temp;
+    } else {
+      lastT -= N * temp;
+    }
+    xDelta[(xNext) % N] = (double) 1000000.0 / lastT;
+  }
+  if ((temp - yLastSpeedTime) > (SpeedUpdateTime * 80 / pre)) {
+    double lastT = (double)1000000.0 / yDelta[(yNext) % N];
+    if (lastT > 0) {
+      lastT += N * (temp - yLastSpeedTime);
+    } else {
+      lastT -= N * (temp - yLastSpeedTime);
+    }
+    xDelta[(xNext) % N] = (double) 1000000.0 / lastT;
+  }
+  return ;
 }
 long AngleToCounts(double angle) {
-  return angle * PPR / 360;
+  return angle * PPR / (2 * PI);
+}
+double CountsToAngle(long count) {
+  return (double)count * 2 * PI / PPR;
 }
 double getxSpeed() {
-
-  if (xDelta == 0) {
-    return 0;
+  double dtX = 0;
+  byte dir = xDelta[(xNext) % N] > 0;
+  for (byte c = 0; c < N; c++) {
+    dtX  += (xDelta[c]);
+    if ((xDelta[c] > 0) != dir) {
+      dtX  += (xDelta[c]);
+    }
   }
-  else {
-    return (double)xCurrentP * 1000000 / pre * 80 / xDelta / 4;
-  }
+  return (double)(80 / pre * (double)dtX / PPR * (2 * PI) ) / N;
 }
 double getySpeed() {
-  if (yDelta == 0) {
-    return 0;
+  double dtY = 0;
+  byte dir = yDelta[(yNext) % N] > 0;
+  for (byte c = 0; c < N; c++) {
+    dtY  += (yDelta[c]);
+    if ((yDelta[c] > 0) != dir) {
+      dtY  += (yDelta[c]);
+    }
   }
-  else {
-    return (double)n * 1000000 / pre * 80 / yDelta;
-  }
+  return (double)(80 / pre * (double)dtY / PPR * (2 * PI) ) / N;
 }
 void IRAM_ATTR  x_cha_isr() {
-  uint32_t temp = timerRead(SpeedUpdateTimer);
+  int64_t temp = timerRead(SpeedUpdateTimer) - xLastSpeedTime;
+  xLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(X_ENCODER_PIN_A) == digitalRead(X_ENCODER_PIN_B)) {
     xEncoderCount++;
-    xDir = 1;
-    if (temp - xLastSpeedTime > Tmin  && !(abs(xEncoderCount - xLastCount) % 4) && ((xEncoderCount - xLastCount) > 0)) {
-      xCurrentP = xEncoderCount - xLastCount;
-      xDelta = temp - xLastSpeedTime;
-      xLastSpeedTime = temp;
-      xLastCount = xEncoderCount;
-    }
+    xDelta[xNext % N] = (double)1000000.0 / temp;
   } else {
     xEncoderCount--;
-    xDir = -1;
-    if (temp - xLastSpeedTime > Tmin  && !(abs(xEncoderCount - xLastCount) % 4)  && ((xEncoderCount - xLastCount) < 0)) {
-      xCurrentP = xEncoderCount - xLastCount;
-      uint32_t temp = timerRead(SpeedUpdateTimer);
-      xDelta = temp - xLastSpeedTime;
-      xLastSpeedTime = temp;
-      xLastCount = xEncoderCount;
-    }
+    xDelta[xNext % N] = (double) - 1000000.0 / temp;
   }
+  xNext++;
+  if (xNext == N)xNext = 0;
 }
 void IRAM_ATTR  x_chb_isr() {
-  uint32_t temp = timerRead(SpeedUpdateTimer);
+  int64_t temp = timerRead(SpeedUpdateTimer) - xLastSpeedTime;
+  xLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(X_ENCODER_PIN_A) == digitalRead(X_ENCODER_PIN_B)) {
     xEncoderCount--;
-    xDir = -1;
-    if (temp - xLastSpeedTime > Tmin && !(abs(xEncoderCount - xLastCount) % 4) && ((xEncoderCount - xLastCount) < 0) ) {
-      xCurrentP = xEncoderCount - xLastCount;
-      xDelta = temp - xLastSpeedTime;
-      xLastSpeedTime = temp;
-      xLastCount = xEncoderCount;
-    }
+    xDelta[xNext % N] = (double) - 1000000.0 / temp;
   } else {
     xEncoderCount++;
-    xDir = 1;
-    if (temp - xLastSpeedTime > Tmin  && !(abs(xEncoderCount - xLastCount) % 4) && ((xEncoderCount - xLastCount) > 0) ) {
-      xCurrentP = xEncoderCount - xLastCount;
-      uint32_t temp = timerRead(SpeedUpdateTimer);
-      xDelta = temp - xLastSpeedTime;
-      xLastSpeedTime = temp;
-      xLastCount = xEncoderCount;
-    }
+    xDelta[xNext % N] = (double)1000000.0 / temp;
   }
+  xNext++;
+  if (xNext == N)xNext = 0;
 }
 void IRAM_ATTR  y_cha_isr() {
+  int64_t temp = timerRead(SpeedUpdateTimer) - yLastSpeedTime;
+  yLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(Y_ENCODER_PIN_A) == digitalRead(Y_ENCODER_PIN_B)) {
     yEncoderCount++;
+    yDelta[yNext % N] = (double)  1000000.0 / temp;
   } else {
     yEncoderCount--;
+    yDelta[yNext % N] = (double) - 1000000.0 / temp;
   }
 }
 void IRAM_ATTR  y_chb_isr() {
+  int64_t temp = timerRead(SpeedUpdateTimer) - yLastSpeedTime;
+  yLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(Y_ENCODER_PIN_A) == digitalRead(Y_ENCODER_PIN_B)) {
     yEncoderCount--;
+    yDelta[yNext % N] = (double) - 1000000.0 / temp;
   } else {
     yEncoderCount++;
+    yDelta[yNext % N] = (double)  1000000.0 / temp;
   }
 }
 void initEncoder(double xStartAngle, double yStartAngle) {
@@ -102,8 +110,8 @@ void initEncoder(double xStartAngle, double yStartAngle) {
   pinMode(Y_ENCODER_PIN_A, INPUT);
   pinMode(Y_ENCODER_PIN_B, INPUT);
   IntTimer = timerBegin(0, pre, true); //1mhz
-  timerAttachInterrupt(IntTimer, &UpdateSpeedISR, true);
-  timerAlarmWrite(IntTimer, SpeedUpdateTime, true);
+  timerAttachInterrupt(IntTimer, &UpdateSpeedISR, true) ;
+  timerAlarmWrite(IntTimer, SpeedUpdateTime * 80 / pre, true);
   timerAlarmEnable(IntTimer); //Just Enable
   SpeedUpdateTimer = timerBegin(1, pre, true); //1mhz
   timerStart(SpeedUpdateTimer);
@@ -111,8 +119,8 @@ void initEncoder(double xStartAngle, double yStartAngle) {
   yEncoderCount = AngleToCounts(yStartAngle);
   attachInterrupt(digitalPinToInterrupt(X_ENCODER_PIN_A), x_cha_isr, CHANGE);
   attachInterrupt(digitalPinToInterrupt(X_ENCODER_PIN_B), x_chb_isr, CHANGE);
-  //attachInterrupt(digitalPinToInterrupt(Y_ENCODER_PIN_A), y_cha_isr, CHANGE);
-  //attachInterrupt(digitalPinToInterrupt(Y_ENCODER_PIN_B), y_chb_isr, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(Y_ENCODER_PIN_A), y_cha_isr, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(Y_ENCODER_PIN_B), y_chb_isr, CHANGE);
   xLastSpeedTime = timerRead(SpeedUpdateTimer);
   yLastSpeedTime = timerRead(SpeedUpdateTimer);
 }
