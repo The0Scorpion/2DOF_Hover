@@ -1,5 +1,8 @@
 void StartUP(double targetX, double targetY) {
+
   while (targetX < CountsToAngle(xEncoderCount) || targetY < CountsToAngle(yEncoderCount)) {
+    Serial.println(CountsToAngle(xEncoderCount));
+    Serial.println(CountsToAngle(yEncoderCount));
     int FPower = StartPower;
     int BPower = StartPower;
     int RPower = StartPower;

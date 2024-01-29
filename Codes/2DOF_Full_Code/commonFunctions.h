@@ -1,7 +1,7 @@
 unsigned long PIDLastTime = 0;
 PIDController *xPOSPID, *xVELPID, *yPOSPID, *yVELPID;
 double xSpeed, ySpeed;
-void PIDLoop(void * parameter) {
+void PIDLoop() {
   /*
     Main Control Loop, Runs each sampling time
   */
@@ -18,10 +18,9 @@ void PIDLoop(void * parameter) {
     PID_Running = 1;
 
     initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-    ESC_Running = 1;
 
     while (PID_Running) {
-      while (micros() - PIDLastTime < Sampling_time)continue;
+      while (micros() - PIDLastTime < Sampling_time)delay(1);
       xSpeed = getxSpeed();
       ySpeed = getySpeed();
       updateIMU();

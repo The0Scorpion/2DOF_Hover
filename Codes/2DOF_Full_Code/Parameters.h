@@ -12,7 +12,7 @@ int Opratingpoint= 1400;
 #define StartPower 1600
 unsigned int Sampling_time = 5000;
 int gl_windup_limit = 300;
-double IMU_FusionPrio = 0.1;
+double IMU_FusionPrio = 0;
 
 float ixposkp = 0.1;
 float ixposki = 0.001;

@@ -36,39 +36,39 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       iyvelkp = doc["yvelkp"];
       iyvelki = doc["yvelki"];
       iyvelkd = doc["yvelkd"];
-      /*
-            Serial.print("ixposkp: ");
-            Serial.println(ixposkp);
-            Serial.print("ixposki: ");
-            Serial.println(ixposki);
-            Serial.print("ixposkd: ");
-            Serial.println(ixposkd);
-            Serial.print("ixposSet: ");
-            Serial.println(ixposSet);
 
-            Serial.print("ixvelkp: ");
-            Serial.println(ixvelkp);
-            Serial.print("ixvelki: ");
-            Serial.println(ixvelki);
-            Serial.print("ixvelkd: ");
-            Serial.println(ixvelkd);
+      Serial.print("ixposkp: ");
+      Serial.println(ixposkp);
+      Serial.print("ixposki: ");
+      Serial.println(ixposki);
+      Serial.print("ixposkd: ");
+      Serial.println(ixposkd);
+      Serial.print("ixposSet: ");
+      Serial.println(ixposSet);
 
-            Serial.print("iyposkp: ");
-            Serial.println(iyposkp);
-            Serial.print("iyposki: ");
-            Serial.println(iyposki);
-            Serial.print("iyposkd: ");
-            Serial.println(iyposkd);
-            Serial.print("iyposSet: ");
-            Serial.println(iyposSet);
+      Serial.print("ixvelkp: ");
+      Serial.println(ixvelkp);
+      Serial.print("ixvelki: ");
+      Serial.println(ixvelki);
+      Serial.print("ixvelkd: ");
+      Serial.println(ixvelkd);
 
-            Serial.print("iyvelkp: ");
-            Serial.println(iyvelkp);
-            Serial.print("iyvelki: ");
-            Serial.println(iyvelki);
-            Serial.print("iyvelkd: ");
-            Serial.println(iyvelkd);
-      */
+      Serial.print("iyposkp: ");
+      Serial.println(iyposkp);
+      Serial.print("iyposki: ");
+      Serial.println(iyposki);
+      Serial.print("iyposkd: ");
+      Serial.println(iyposkd);
+      Serial.print("iyposSet: ");
+      Serial.println(iyposSet);
+
+      Serial.print("iyvelkp: ");
+      Serial.println(iyvelkp);
+      Serial.print("iyvelki: ");
+      Serial.println(iyvelki);
+      Serial.print("iyvelkd: ");
+      Serial.println(iyvelkd);
+
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -77,11 +77,11 @@ void DataIn(char* topic, byte* message, unsigned int length) {
 
 }
 
-void DataAQU(void * parameter) {
+void DataAQU() {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
   while (1) {
-    StaticJsonDocument<100> doc;
+    StaticJsonDocument<250> doc;
 
     // Populate the JSON document with values directly
     doc["xpos"] = CountsToAngle(xEncoderCount);

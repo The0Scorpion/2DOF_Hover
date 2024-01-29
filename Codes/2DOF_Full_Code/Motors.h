@@ -2,18 +2,18 @@
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
 
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
-  Fmotor.attach(FPin);
-  Rmotor.attach(RPin);
-  Bmotor.attach(BPin);
-  Lmotor.attach(LPin);
-  Fmotor.writeMicroseconds(1000);
-  Rmotor.writeMicroseconds(1000);
-  Bmotor.writeMicroseconds(1000);
-  Lmotor.writeMicroseconds(1000);
-  ESC_Running=1;
+  Fmotor.attach(FPin, 1000, 2000);
+  Rmotor.attach(RPin, 1000, 2000);
+  Bmotor.attach(BPin, 1000, 2000);
+  Lmotor.attach(LPin, 1000, 2000);
+  Fmotor.write(0);
+  Rmotor.write(0);
+  Bmotor.write(0);
+  Lmotor.write(0);
+  ESC_Running = 1;
 }
 void writeSpeed(int Fmicros, int Rmicros, int Bmicros, int Lmicros) {
-  if (ESC_Running) {
+  if (ESC_Running == 1) {
     Fmotor.writeMicroseconds(Fmicros);
     Rmotor.writeMicroseconds(Rmicros);
     Bmotor.writeMicroseconds(Bmicros);
