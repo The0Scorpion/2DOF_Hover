@@ -11,11 +11,11 @@ void initOTA() {
   WiFi.begin(ssid, password);
   WiFi.waitForConnectResult();
 
-  /*while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("Connection Failed! Rebooting...");
     delay(5000);
     ESP.restart();
-    }*/
+    }
   ArduinoOTA.setPassword(Pass);
   ArduinoOTA.setHostname(OTAName);
   ArduinoOTA

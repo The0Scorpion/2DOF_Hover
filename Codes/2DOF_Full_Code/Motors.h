@@ -6,6 +6,11 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Rmotor.attach(RPin);
   Bmotor.attach(BPin);
   Lmotor.attach(LPin);
+  Fmotor.writeMicroseconds(1000);
+  Rmotor.writeMicroseconds(1000);
+  Bmotor.writeMicroseconds(1000);
+  Lmotor.writeMicroseconds(1000);
+  ESC_Running=1;
 }
 void writeSpeed(int Fmicros, int Rmicros, int Bmicros, int Lmicros) {
   if (ESC_Running) {

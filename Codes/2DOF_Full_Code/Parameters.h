@@ -3,12 +3,12 @@
 
 #define PPR 8000
 #define pre 20
-
+#define NoP  8
 
 #define maxMicros 2000
 #define minMicros 1000
 #define maxDeltaMicros 200
-#define Opratingpoint 1400
+int Opratingpoint= 1400;
 #define StartPower 1600
 unsigned int Sampling_time = 5000;
 int gl_windup_limit = 300;
@@ -30,43 +30,5 @@ int ixposSet = 0;
 int iyposSet = 0;
 int ixvelSet = 0;
 int iyvelSet = 0;
-byte PID_Running = 0, ESC_Running = 0;
+byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
-
-struct inMessage {
-  float xposkp;
-  float xposki;
-  float xposkd;
-  int xposSet;
-
-  float xvelkp;
-  float xvelki;
-  float xvelkd;
-
-  float yposkp;
-  float yposki;
-  float yposkd;
-  int yposSet;
-
-  float yvelkp;
-  float yvelki;
-  float yvelkd;
-
-  int SamplingTime;
-  int opratingm;
-};
-
-struct outMessage {
-  //TO DO
-  float xpos;
-  float xvel;
-  float ypos;
-  float yvel;
-  float xvelPID;
-  float yvelPID;
-  float xposPID;
-  float yposPID;
-};
-
-inMessage inparamters;
-outMessage States;

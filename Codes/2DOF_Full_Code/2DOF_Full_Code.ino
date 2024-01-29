@@ -8,21 +8,23 @@
 #include "commonFunctions.h"
 #include "WindUp.h"
 #include "OTA.h"
-#include "ESP4NOW.h"
+#include "AWS_IOT.h"
 TaskHandle_t TaskHandle_1;
 
 void setup() {
   Serial.begin(115200);
+  
   initIMU();
   updateIMU();
 
   initEncoder(AngleToCounts(xPosIMU), AngleToCounts(yPosIMU));
-  ESPNowInit();
+  initMQTT();
+  initESCs(FrontMotorPIN,RightMotorPIN,BackMotorPIN,LeftMotorPIN);
 
   xTaskCreatePinnedToCore(
     PIDLoop,   //Function to implement the task
     "Main Loop", // Name of the task
-    10000,      // Stack size in words
+    1000,      // Stack size in words
     NULL,       // Task input parameter
     0,          // Priority of the task
     &TaskHandle_1,       // Task handle.

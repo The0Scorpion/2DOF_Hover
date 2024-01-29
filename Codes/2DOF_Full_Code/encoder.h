@@ -1,30 +1,29 @@
 
-#define N  8
 volatile long xEncoderCount = 0, yEncoderCount = 0;
 unsigned long xLastSpeedTime, yLastSpeedTime;
 uint64_t SpeedUpdateTime = 20000;
 hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
 volatile int64_t xNext = 0, yNext = 0;
-volatile double xDelta[N], yDelta[N]; //[0,130,150,110]
+volatile double xDelta[NoP], yDelta[NoP]; //[0,130,150,110]
 void IRAM_ATTR  UpdateSpeedISR() {
   uint64_t temp = timerRead(SpeedUpdateTimer);
   if ((temp - xLastSpeedTime) > (SpeedUpdateTime * 80 / pre)) {
-    double lastT = (double)1000000.0 / xDelta[(xNext) % N];
+    double lastT = (double)1000000.0 / xDelta[(xNext) % NoP];
     if (lastT > 0) {
-      lastT += N * temp;
+      lastT += NoP * temp;
     } else {
-      lastT -= N * temp;
+      lastT -= NoP * temp;
     }
-    xDelta[(xNext) % N] = (double) 1000000.0 / lastT;
+    xDelta[(xNext) % NoP] = (double) 1000000.0 / lastT;
   }
   if ((temp - yLastSpeedTime) > (SpeedUpdateTime * 80 / pre)) {
-    double lastT = (double)1000000.0 / yDelta[(yNext) % N];
+    double lastT = (double)1000000.0 / yDelta[(yNext) % NoP];
     if (lastT > 0) {
-      lastT += N * (temp - yLastSpeedTime);
+      lastT += NoP * (temp - yLastSpeedTime);
     } else {
-      lastT -= N * (temp - yLastSpeedTime);
+      lastT -= NoP * (temp - yLastSpeedTime);
     }
-    xDelta[(xNext) % N] = (double) 1000000.0 / lastT;
+    xDelta[(xNext) % NoP] = (double) 1000000.0 / lastT;
   }
   return ;
 }
@@ -36,61 +35,61 @@ double CountsToAngle(long count) {
 }
 double getxSpeed() {
   double dtX = 0;
-  byte dir = xDelta[(xNext) % N] > 0;
-  for (byte c = 0; c < N; c++) {
+  byte dir = xDelta[(xNext) % NoP] > 0;
+  for (byte c = 0; c < NoP; c++) {
     dtX  += (xDelta[c]);
     if ((xDelta[c] > 0) != dir) {
       dtX  += (xDelta[c]);
     }
   }
-  return (double)(80 / pre * (double)dtX / PPR * (2 * PI) ) / N;
+  return (double)(80 / pre * (double)dtX / PPR * (2 * PI) ) / NoP;
 }
 double getySpeed() {
   double dtY = 0;
-  byte dir = yDelta[(yNext) % N] > 0;
-  for (byte c = 0; c < N; c++) {
+  byte dir = yDelta[(yNext) % NoP] > 0;
+  for (byte c = 0; c < NoP; c++) {
     dtY  += (yDelta[c]);
     if ((yDelta[c] > 0) != dir) {
       dtY  += (yDelta[c]);
     }
   }
-  return (double)(80 / pre * (double)dtY / PPR * (2 * PI) ) / N;
+  return (double)(80 / pre * (double)dtY / PPR * (2 * PI) ) / NoP;
 }
 void IRAM_ATTR  x_cha_isr() {
   int64_t temp = timerRead(SpeedUpdateTimer) - xLastSpeedTime;
   xLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(X_ENCODER_PIN_A) == digitalRead(X_ENCODER_PIN_B)) {
     xEncoderCount++;
-    xDelta[xNext % N] = (double)1000000.0 / temp;
+    xDelta[xNext % NoP] = (double)1000000.0 / temp;
   } else {
     xEncoderCount--;
-    xDelta[xNext % N] = (double) - 1000000.0 / temp;
+    xDelta[xNext % NoP] = (double) - 1000000.0 / temp;
   }
   xNext++;
-  if (xNext == N)xNext = 0;
+  if (xNext == NoP)xNext = 0;
 }
 void IRAM_ATTR  x_chb_isr() {
   int64_t temp = timerRead(SpeedUpdateTimer) - xLastSpeedTime;
   xLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(X_ENCODER_PIN_A) == digitalRead(X_ENCODER_PIN_B)) {
     xEncoderCount--;
-    xDelta[xNext % N] = (double) - 1000000.0 / temp;
+    xDelta[xNext % NoP] = (double) - 1000000.0 / temp;
   } else {
     xEncoderCount++;
-    xDelta[xNext % N] = (double)1000000.0 / temp;
+    xDelta[xNext % NoP] = (double)1000000.0 / temp;
   }
   xNext++;
-  if (xNext == N)xNext = 0;
+  if (xNext == NoP)xNext = 0;
 }
 void IRAM_ATTR  y_cha_isr() {
   int64_t temp = timerRead(SpeedUpdateTimer) - yLastSpeedTime;
   yLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(Y_ENCODER_PIN_A) == digitalRead(Y_ENCODER_PIN_B)) {
     yEncoderCount++;
-    yDelta[yNext % N] = (double)  1000000.0 / temp;
+    yDelta[yNext % NoP] = (double)  1000000.0 / temp;
   } else {
     yEncoderCount--;
-    yDelta[yNext % N] = (double) - 1000000.0 / temp;
+    yDelta[yNext % NoP] = (double) - 1000000.0 / temp;
   }
 }
 void IRAM_ATTR  y_chb_isr() {
@@ -98,10 +97,10 @@ void IRAM_ATTR  y_chb_isr() {
   yLastSpeedTime = timerRead(SpeedUpdateTimer);
   if (digitalRead(Y_ENCODER_PIN_A) == digitalRead(Y_ENCODER_PIN_B)) {
     yEncoderCount--;
-    yDelta[yNext % N] = (double) - 1000000.0 / temp;
+    yDelta[yNext % NoP] = (double) - 1000000.0 / temp;
   } else {
     yEncoderCount++;
-    yDelta[yNext % N] = (double)  1000000.0 / temp;
+    yDelta[yNext % NoP] = (double)  1000000.0 / temp;
   }
 }
 void initEncoder(double xStartAngle, double yStartAngle) {
