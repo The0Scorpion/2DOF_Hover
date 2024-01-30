@@ -28,7 +28,7 @@ void IRAM_ATTR  UpdateSpeedISR() {
   return ;
 }
 long AngleToCounts(double angle) {
-  return angle * PPR / (2 * PI);
+  return (double)angle * PPR / 2 / PI;
 }
 double CountsToAngle(long count) {
   return (double)count * 2 * PI / PPR;

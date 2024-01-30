@@ -7,7 +7,7 @@ void StartUP(double targetX, double targetY) {
     int BPower = StartPower;
     int RPower = StartPower;
     int LPower = StartPower;
-    if (targetX < CountsToAngle(xEncoderCount)) {
+    if (targetX < abs(CountsToAngle(yEncoderCount))) {
       if (xEncoderCount > 0) {
         FPower -= maxDeltaMicros;
         BPower += maxDeltaMicros;
@@ -16,7 +16,7 @@ void StartUP(double targetX, double targetY) {
         BPower -= maxDeltaMicros;
       }
     }
-    if (targetY < CountsToAngle(yEncoderCount)) {
+    if (targetY < abs(CountsToAngle(xEncoderCount))) {
       if (yEncoderCount > 0) {
         RPower -= maxDeltaMicros;
         LPower += maxDeltaMicros;

@@ -1,4 +1,5 @@
 #include <WiFi.h>
+#include <EEPROM.h>
 #include "Parameters.h"
 #include "wiring.h"
 #include "IMU.h"
@@ -23,35 +24,47 @@ void setup() {
     1);
 
   Serial.begin(115200);
-  initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
+  //initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
   initIMU();
+  delay(500);
   updateIMU();
-
-  initEncoder(AngleToCounts(xPosIMU), AngleToCounts(yPosIMU));
+  
+  initEncoder(xPosIMU, yPosIMU);
+  //initEncoder(0, 0);
   initMQTT();
 
   ESC_Running = 1;
-  /*xTaskCreatePinnedToCore(
-      PIDLoop,   //Function to implement the task
-      "Main Loop", // Name of the task
-      10000,      // Stack size in words
-      NULL,       // Task input parameter
-      0,          // Priority of the task
-      &TaskHandle_1,       // Task handle.
-      0);  // Core where the task should run*/
-  StartUP(0,0);
- /* xTaskCreatePinnedToCore(
+  xTaskCreatePinnedToCore(
+    PIDLoop,   //Function to implement the task
+    "Main Loop", // Name of the task
+    5000,      // Stack size in words
+    NULL,       // Task input parameter
+    0,          // Priority of the task
+    &TaskHandle_1,       // Task handle.
+    0);  // Core where the task should run
+  //StartUP(0,0);
+  xTaskCreatePinnedToCore(
     DataAQU,   // Function to implement the task
     "Data AQU Loop", // Name of the task
-    1000,      // Stack size in words
+    5000,      // Stack size in words
     NULL,       // Task input parameter
     0,          // Priority of the task
     NULL,       // Task handle.
-    0);  // Core where the task should run*/
-  //DataAQU();
+    0);  // Core where the task should run
+
 
 }
 void loop() {
   //TO DO: IMPLEMENT Switching between windup and Normal Control
-  delay(1);
+  #ifdef DebugCF
+  updateIMU();
+    Serial.print(xEncoderCount);
+    Serial.print(", ");
+    Serial.print(yEncoderCount);
+    Serial.print(", ");
+    Serial.print(xPosIMU);
+    Serial.print(", ");
+    Serial.println(AngleToCounts(xPosIMU));
+    delay(1000);
+    #endif
 }

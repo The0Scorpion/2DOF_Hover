@@ -76,8 +76,8 @@ void DataIn(char* topic, byte* message, unsigned int length) {
   }
 
 }
-
-void DataAQU() {
+//#define DebugAQU
+void DataAQU(void * parameter) {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
   while (1) {
@@ -88,18 +88,18 @@ void DataAQU() {
     doc["ypos"] = CountsToAngle(yEncoderCount);
     doc["xvel"] = getxSpeed();
     doc["yvel"] = getySpeed();
-    doc["xposPID"] = xPOSPID->output;
-    doc["yposPID"] = yPOSPID->output;
-    doc["xvelPID"] = xVELPID->output;
-    doc["yvelPID"] = yVELPID->output;
+    doc["xposPID"] = xPOSPID.output;
+    doc["yposPID"] = yPOSPID.output;
+    doc["xvelPID"] = xVELPID.output;
+    doc["yvelPID"] = yVELPID.output;
 
     // Serialize the JSON document to a String
     String jsonString;
     serializeJson(doc, jsonString);
-
+#ifdef DebugAQU
     // Print the JSON string
     Serial.println(jsonString);
-
+#endif
     mqttClient.publish(PubAWSTopic, jsonString.c_str());
     mqttClient.loop();
     delay(5);
