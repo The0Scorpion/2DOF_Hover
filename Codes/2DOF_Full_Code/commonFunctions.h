@@ -1,8 +1,8 @@
 //#define DebugCF
 #define RUN
-unsigned long PIDLastTime = 0;
+
 PIDController xPOSPID, xVELPID, yPOSPID, yVELPID;
-double xSpeed, ySpeed;
+
 void PIDLoop(void * parameter) {
   /*
     Main Control Loop, Runs each sampling time
@@ -11,14 +11,17 @@ void PIDLoop(void * parameter) {
 #ifdef DebugCF
     Serial.println("init PID Loops");
 #endif
+
+    //Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
-    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxDeltaMicros, maxDeltaMicros);
+    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxDeltaMicros, maxDeltaMicros);    // to be rechecked the limits
     resetPID(&xVELPID);
-    initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -maxDeltaMicros, maxDeltaMicros);
+    initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -maxDeltaMicros / 10, maxDeltaMicros / 10);
     resetPID(&yPOSPID);
-    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -maxDeltaMicros, maxDeltaMicros);
+    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -maxDeltaMicros, maxDeltaMicros);    // to be rechecked the limits
     resetPID(&yVELPID);
-    initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -maxDeltaMicros, maxDeltaMicros);
+    initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -maxDeltaMicros / 10, maxDeltaMicros / 10);
+
 #ifdef DebugCF
     Serial.println("init PID Loops Success");
     int counta = 0;
@@ -34,26 +37,35 @@ void PIDLoop(void * parameter) {
       delay(2500);//wait for esc calib
     }
 #endif
+
     PIDLastTime = micros();
 
     while (PID_Running) {
 
+      //Update feedback values using sensor fusion
       xSpeed = getxSpeed();
       ySpeed = getySpeed();
       updateIMU();
       xSpeed = (1 - IMU_FusionPrio) * xSpeed + IMU_FusionPrio * AngleToCounts(xDotIMU);
       ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
+
+      //Calculate velocity SP from positionPID output
       xVELPID.setpoint = calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
-      xAction =  (double)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
-      if (xAction > maxDeltaMicros)xAction = maxDeltaMicros;
-      if (xAction < -maxDeltaMicros)xAction = -maxDeltaMicros;
       yVELPID.setpoint = calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
+
+      //Calculate action for motors from velocityPID output
+      xAction =  (double)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
       yAction =  (double)calculatePID(&yVELPID, ySpeed) * 10 ; //convert from Percnt to micros (Pulse width)
-      if (yAction > maxDeltaMicros)yAction = maxDeltaMicros;
-      if (yAction < -maxDeltaMicros)yAction = -maxDeltaMicros;
       writeControlAction(xAction, yAction); //to check
+      /*if (xAction > maxDeltaMicros)xAction = maxDeltaMicros;
+        if (xAction < -maxDeltaMicros)xAction = -maxDeltaMicros;
+        if (yAction > maxDeltaMicros)yAction = maxDeltaMicros;
+        if (yAction < -maxDeltaMicros)yAction = -maxDeltaMicros;*/
+
+
       PIDLastTime = micros();
       delayMicroseconds(Sampling_time);
+
 #ifdef DebugCF //just for debugging 
       Serial.print("Counter For PID: ");
       Serial.println(counta);

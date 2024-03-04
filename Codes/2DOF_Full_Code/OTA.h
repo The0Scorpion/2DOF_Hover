@@ -3,19 +3,23 @@
 #include <ArduinoOTA.h>
 #define OTAName "2DOFHover"
 #define Pass "admin"
-const char* ssid = "A30";
-const char* password = "123456789";
 
-void initOTA() {
+
+//OTA task as seen in Example (allows to upload the code wirelessly (Over the air)
+
+
+void OTATASK(void * parameter) {
+  //Connect to wifi
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   WiFi.waitForConnectResult();
-
+  
+  //init the OTA
   while (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("Connection Failed! Rebooting...");
     delay(5000);
     ESP.restart();
-    }
+  }
   ArduinoOTA.setPassword(Pass);
   ArduinoOTA.setHostname(OTAName);
   ArduinoOTA
@@ -46,11 +50,7 @@ void initOTA() {
 
   ArduinoOTA.begin();
 
-
-}
-
-void OTATASK(void * parameter) {
-  initOTA();
+  //wait for OTA connection
   while (1) {
     ArduinoOTA.handle();
   }

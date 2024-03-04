@@ -1,5 +1,6 @@
-//	has all the PID bare bones stuff
+//All the PID bare bones stuff
 
+//PID struct
 typedef struct {
   float kp;
   float ki;
@@ -14,20 +15,19 @@ typedef struct {
   float output;
   int minoutput;
   int maxoutput;
-
 } PIDController;
 
+//initialize the PID struct (constructor like)
 void initializePID(PIDController *pid, float kp, float ki, float kd, float setpoint, int minoutput, int maxoutput) {
   pid->kp = kp;
   pid->ki = ki;
   pid->kd = kd;
   pid->setpoint = setpoint;
+  pid->lastTime = 0.0;
   pid->prev_error = 0.0;
   pid->integral = 0.0;
-  pid->lastTime = 0.0;
   pid->minoutput = minoutput;
   pid->maxoutput = maxoutput;
-
 }
 
 double calculatePID(PIDController *pid, float current_state) {
@@ -39,13 +39,15 @@ double calculatePID(PIDController *pid, float current_state) {
   //proportional action
   float proportional = pid->kp * error;
 
-  //integral action
+  //integral action clamping method
   if (!((pid->output >= pid->maxoutput && error > 0) || (pid->output <= pid->minoutput && error < 0))) {
     pid->integral += pid->ki * error * dt ;
   }
+  
   //derivative action
   float derivative = pid->kd * (error - pid->prev_error) / dt ;
   float filter_der = (1 / (2 * pid->RC + dt)) * (dt * derivative + dt * pid->prevdrev - (dt - 2 * pid->RC) * pid->prev_filter_out);
+  
   pid->prev_filter_out = filter_der;
   pid->prevdrev = derivative;
   pid->lastTime = currentTime;

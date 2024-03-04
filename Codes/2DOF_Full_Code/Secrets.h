@@ -2,7 +2,8 @@
 
 #define SECRET_SSID "A30"
 #define SECRET_PASS "123456789"
-
+const char* ssid = "A30";
+const char* password = "123456789";
 #define AWS_ENDPOINT "a254fdogiti79r-ats.iot.eu-west-3.amazonaws.com"
 #define AWS_PORT 8883 // AWS IoT uses port 8883 for MQTT over TLS
 

@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <EEPROM.h>
+#include "Secrets.h"
 #include "Parameters.h"
-#include "wiring.h"
 #include "IMU.h"
 #include "encoder.h"
 #include "PID.h"
@@ -13,7 +13,9 @@
 TaskHandle_t TaskHandle_1;
 
 void setup() {
+  Serial.begin(115200);//init Serial For debugging
 
+  //Over the air task to allow wireless flash runs on core 1
   xTaskCreatePinnedToCore(
     OTATASK,
     "OTA Routine",
@@ -23,17 +25,10 @@ void setup() {
     NULL,
     1);
 
-  Serial.begin(115200);
-  //initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-  initIMU();
-  delay(500);
-  updateIMU();
-  
-  initEncoder(xPosIMU, yPosIMU);
-  //initEncoder(0, 0);
+  //init MQTT client
   initMQTT();
 
-  ESC_Running = 1;
+  //Main Loop task runs on core 0
   xTaskCreatePinnedToCore(
     PIDLoop,   //Function to implement the task
     "Main Loop", // Name of the task
@@ -42,7 +37,10 @@ void setup() {
     0,          // Priority of the task
     &TaskHandle_1,       // Task handle.
     0);  // Core where the task should run
-  //StartUP(0,0);
+
+  //StartUP(0,0); //Not used
+
+  //Data Acquisition  Task Run on core 0 for now
   xTaskCreatePinnedToCore(
     DataAQU,   // Function to implement the task
     "Data AQU Loop", // Name of the task
@@ -55,16 +53,17 @@ void setup() {
 
 }
 void loop() {
-  //TO DO: IMPLEMENT Switching between windup and Normal Control
-  #ifdef DebugCF
+
+  //if debug then print the values between IMU and Encoder
+#ifdef DebugCF
   updateIMU();
-    Serial.print(xEncoderCount);
-    Serial.print(", ");
-    Serial.print(yEncoderCount);
-    Serial.print(", ");
-    Serial.print(xPosIMU);
-    Serial.print(", ");
-    Serial.println(AngleToCounts(xPosIMU));
-    delay(1000);
-    #endif
+  Serial.print(xEncoderCount);
+  Serial.print(", ");
+  Serial.print(yEncoderCount);
+  Serial.print(", ");
+  Serial.print(AngleToCounts(xPosIMU));
+  Serial.print(", ");
+  Serial.println(AngleToCounts(yPosIMU));
+  delay(1000);
+#endif
 }
