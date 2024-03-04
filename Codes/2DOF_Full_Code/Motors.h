@@ -1,6 +1,9 @@
 #include <ESP32Servo.h>
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
+
 //#define DebugMotor
+
+//initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Fmotor.attach(FPin, 1000, 2000);
   Rmotor.attach(RPin, 1000, 2000);
@@ -12,6 +15,8 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Lmotor.write(0);
   ESC_Running = 1;
 }
+
+//Write Speed to ESCs if running flag is set, takes 4 values as micros (1000us=0% power,2000us=100%)
 void writeSpeed(int Fmicros, int Rmicros, int Bmicros, int Lmicros) {
   if (ESC_Running == 1) {
     Fmotor.writeMicroseconds(Fmicros);
@@ -25,7 +30,10 @@ void writeSpeed(int Fmicros, int Rmicros, int Bmicros, int Lmicros) {
     Lmotor.detach();
   }
 }
+
+//Write Xact as a delta between Right motor speed and left, yAct as delta between front and back (unit is us)
 void writeControlAction(int xAct, int yAct) { //delta micros
+  //Calculates each motor duty cycle as a distance from the operating point
   int FM = min(max(Opratingpoint + yAct, minMicros), maxMicros);
   int RM = min(max(Opratingpoint + xAct, minMicros), maxMicros);
   int BM = min(max(Opratingpoint - yAct, minMicros), maxMicros);

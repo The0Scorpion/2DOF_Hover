@@ -32,3 +32,16 @@ int ixvelSet = 0;
 int iyvelSet = 0;
 byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
+
+//IMU Parameters and Variables 
+#define IMU_XACC_Error  -0.02 
+#define IMU_YACC_Error   0.00
+#define IMU_ZACC_Error  -0.03
+
+#define IMU_XDOT_Error  1.14 * PI / 180
+#define IMU_YDOT_Error  -1.87 * PI / 180
+
+float xDotIMU, yDotIMU; 
+float AccX, AccY, AccZ;
+float xPosIMU = 0; 
+float yPosIMU = 0; 

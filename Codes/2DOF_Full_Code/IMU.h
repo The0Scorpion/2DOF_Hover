@@ -1,14 +1,12 @@
 #include <Wire.h>
-float xDotIMU, yDotIMU;
-float AccX, AccY, AccZ;
-float xPosIMU = 0; // put initial angles of our drone
-float yPosIMU = 0; // put initial angles of our drone
+
 
 
 
 void updateIMU(void) {
-  //too recheck
-  Wire.beginTransmission(0x68);
+  //to recheck
+  //request Acceleration
+  Wire.beginTransmission(0x68); 
   Wire.write(0x1A);
   Wire.write(0x05);
   Wire.endTransmission();
@@ -23,6 +21,8 @@ void updateIMU(void) {
   int16_t AccXLSB = Wire.read() << 8 | Wire.read();
   int16_t AccYLSB = Wire.read() << 8 | Wire.read();
   int16_t AccZLSB = Wire.read() << 8 | Wire.read();
+
+  //request Angle rates
   Wire.beginTransmission(0x68);
   Wire.write(0x1B);
   Wire.write(0x8);
@@ -34,23 +34,32 @@ void updateIMU(void) {
   int16_t GyroX = Wire.read() << 8 | Wire.read();
   int16_t GyroY = Wire.read() << 8 | Wire.read();
   int16_t GyroZ = Wire.read() << 8 | Wire.read();
-  xDotIMU = (float)GyroX / 65.5;
-  yDotIMU = (float)GyroY / 65.5;
-  AccX = (float)AccXLSB / 4096 - 0.02;
-  AccY = (float)AccYLSB / 4096;
-  AccZ = (float)AccZLSB / 4096 - 0.03;
+
+  //convert raw data into SI units
+  //Angle Rates
+  xDotIMU = (float)GyroX / 65.5 + IMU_XDOT_Error; //rad/s
+  yDotIMU = (float)GyroY / 65.5 + IMU_YDOT_Error;
+
+  //Acceleration
+  AccX = (float)AccXLSB / 4096 + IMU_XACC_Error; // m/s^2  //minus the calibration values
+  AccY = (float)AccYLSB / 4096 + IMU_YACC_Error;
+  AccZ = (float)AccZLSB / 4096 + IMU_ZACC_Error;
+
+  //Calculate The Position from trigonometry and current ACC
   xPosIMU = atan(AccY / sqrt(AccX * AccX + AccZ * AccZ));
   yPosIMU = -atan(AccX / sqrt(AccY * AccY + AccZ * AccZ));
-  xDotIMU += 1.14 * PI / 180;
-  yDotIMU -= 1.87 * PI / 180;
+  
+
 }
 
 void initIMU() {
+  //Sets the clock and begins the wire interface (clock Values are from datasheet)
   Wire.setClock(400000);
   Wire.begin();
-  delay(250);
-  Wire.beginTransmission(0x68);
-  Wire.write(0x6B);
+  delay(250); //waits for init
+  
+  Wire.beginTransmission(0x68); //begin talking to mpu6050 address
+  Wire.write(0x6B);  //init command
   Wire.write(0x00);
-  Wire.endTransmission();
+  Wire.endTransmission(); //send packet
 }

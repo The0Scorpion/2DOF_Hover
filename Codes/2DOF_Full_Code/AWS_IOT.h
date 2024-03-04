@@ -4,6 +4,9 @@
 #include <WiFiClientSecure.h>
 #include <SPIFFS.h>
 #include "Secrets.h"
+//#define DebugIOT
+//#define DebugAQU
+
 WiFiClientSecure wifiClient;
 PubSubClient mqttClient(wifiClient);
 
@@ -36,7 +39,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       iyvelkp = doc["yvelkp"];
       iyvelki = doc["yvelki"];
       iyvelkd = doc["yvelkd"];
-
+#ifdef DebugIOT
       Serial.print("ixposkp: ");
       Serial.println(ixposkp);
       Serial.print("ixposki: ");
@@ -68,7 +71,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       Serial.println(iyvelki);
       Serial.print("iyvelkd: ");
       Serial.println(iyvelkd);
-
+#endif
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -76,7 +79,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
   }
 
 }
-//#define DebugAQU
+
 void DataAQU(void * parameter) {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
@@ -100,12 +103,15 @@ void DataAQU(void * parameter) {
     // Print the JSON string
     Serial.println(jsonString);
 #endif
+    //Publish json string to AWS MQTTserver
     mqttClient.publish(PubAWSTopic, jsonString.c_str());
     mqttClient.loop();
     delay(5);
   }
 }
-void connectToAWS() {
+
+void initMQTT() {
+  //Connect to AWS
   Serial.println("Connecting to AWS");
 
   // Set AWS IoT endpoint and port
@@ -131,10 +137,6 @@ void connectToAWS() {
   }
   mqttClient.setCallback(DataIn);
   mqttClient.subscribe(SubAWSTopic);
-}
-void initMQTT() {
-  //Connect to AWS
-  connectToAWS();
   Serial.println("MQTT Ready");
   Serial.println(WiFi.macAddress());
 }
