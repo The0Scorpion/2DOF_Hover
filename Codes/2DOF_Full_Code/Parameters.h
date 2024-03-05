@@ -1,4 +1,9 @@
-//This File has all the contol paramters for the system
+/*
+ * header file with all the control paramters for the system
+ * Credit: Scorpion 
+ * Created: 12/10/2023
+ * Last update:5/3/2024
+*/
 
 //Defines the wiring for each major comp
 #define X_ENCODER_PIN_A 32

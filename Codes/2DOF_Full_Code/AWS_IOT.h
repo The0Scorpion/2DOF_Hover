@@ -1,3 +1,9 @@
+/*
+ * Submodule for connecting to AWS mqtt server 
+ * handles publishing and recived messages
+ * Credit:Scorpion
+ * Created:15/12/2023
+*/
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>

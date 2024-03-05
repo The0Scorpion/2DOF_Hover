@@ -1,3 +1,8 @@
+/*
+ * header file with all the Parameters to xonnect to wifi and aws
+ * Credit:Scorpion 
+ * Created: 20/12/2023
+*/
 // Arduino Secrets.h for AWS IoT with Certificate Authentication
 
 #define SECRET_SSID "A30"

@@ -1,4 +1,10 @@
-//Not used for now
+/*
+ * Submodule for the non linear region
+ * Credit:Scorpion 
+ * Created: 20/1/2024
+ * Not used for now
+*/
+
 void StartUP(double targetX, double targetY) {
 
   while (targetX < CountsToAngle(xEncoderCount) || targetY < CountsToAngle(yEncoderCount)) {

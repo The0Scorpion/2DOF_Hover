@@ -1,4 +1,9 @@
-//This File has all the contol paramters for the system
+/*
+ * header file with all the control paramters for the system
+ * Credit: Scorpion 
+ * Created: 12/10/2023
+ * Last update:5/3/2024
+*/
 
 //Defines the wiring for each major comp
 #define X_ENCODER_PIN_A 32
@@ -70,4 +75,8 @@ unsigned long xLastSpeedTime, yLastSpeedTime;
 uint64_t SpeedUpdateTime = 20000;
 hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
 volatile int64_t xNext = 0, yNext = 0;
-volatile double xDelta[NoP], yDelta[NoP]; //[0,130,150,110]
+volatile double xDelta[NoP], yDelta[NoP]; 
+
+// Variables to save date and time
+String formattedDate;
+String timeStamp;

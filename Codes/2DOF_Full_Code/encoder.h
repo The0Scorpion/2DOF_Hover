@@ -1,3 +1,9 @@
+/*
+ * Header file with the main loop and common functions
+ * Credit: Scorpion, Veronia
+ * Created: 20/10/2024
+ * Last update: 25/1/2024
+*/
 
 //timer Routine to update speed, runs on a timer with <SpeedUpdateTimer> Period
 void IRAM_ATTR  UpdateSpeedISR() {

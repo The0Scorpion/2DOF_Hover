@@ -1,3 +1,9 @@
+/*
+ * Submodule That contains all the brushless motor functions
+ * Credit:Scorpion 
+ * Created: 14/11/2023
+*/
+
 #include <ESP32Servo.h>
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
 

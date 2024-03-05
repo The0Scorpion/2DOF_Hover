@@ -1,11 +1,16 @@
+/*
+ * Main code to calculate the delay of the mqtt client package
+ * Credit: Scorpion
+ * Created: 4/3/2024
+*/
 #include <WiFi.h>
 #include <EEPROM.h>
 #include "Secrets.h"
 #include "Parameters.h"
-#include "IMU.h"
 #include "OTA.h"
+#include "cNTP.h"
 #include "AWS_IOT.h"
-TaskHandle_t TaskHandle_1;
+
 
 void setup() {
   Serial.begin(115200);//init Serial For debugging

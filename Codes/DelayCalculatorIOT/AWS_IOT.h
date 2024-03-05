@@ -1,3 +1,9 @@
+/*
+ * Submodule for connecting to AWS mqtt server 
+ * handles publishing and recived messages
+ * Credit: Scorpion
+ * Created: 4/3/2024
+*/
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
@@ -72,6 +78,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       Serial.print("iyvelkd: ");
       Serial.println(iyvelkd);
 #endif
+
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -88,15 +95,16 @@ void DataAQU(void * parameter) {
     StaticJsonDocument<250> doc;
 
     // Populate the JSON document with values directly
-    doc["xpos"] = CountsToAngle(xEncoderCount);
-    doc["ypos"] = CountsToAngle(yEncoderCount);
-    doc["xvel"] = getxSpeed();
-    doc["yvel"] = getySpeed();
-    doc["xposPID"] = xPOSPID.output;
-    doc["yposPID"] = yPOSPID.output;
-    doc["xvelPID"] = xVELPID.output;
-    doc["yvelPID"] = yVELPID.output;
-
+    UpdateTimeStamp();
+    doc["xpos"] = 1.00;
+    doc["ypos"] = 2.00;
+    doc["xvel"] = 4.00;
+    doc["yvel"] = 8.00;
+    doc["xposPID"] = 20;
+    doc["yposPID"] = 200;
+    doc["xvelPID"] = 40;
+    doc["yvelPID"] = 400;
+    doc["Time"] = timeStamp;
     // Serialize the JSON document to a String
     String jsonString;
     serializeJson(doc, jsonString);

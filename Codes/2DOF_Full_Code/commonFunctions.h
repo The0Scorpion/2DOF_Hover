@@ -1,3 +1,9 @@
+/*
+ * Header file with the main loop and common functions
+ * Credit:Scorpion 
+ * Created: 20/10/2024
+*/
+
 //#define DebugCF
 #define RUN
 

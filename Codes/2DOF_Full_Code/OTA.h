@@ -1,10 +1,14 @@
+/*
+ * Submodule that setups Over the air flash 
+ * Credit: Scorpion
+ * Created: 20/12/2023
+*/
+
 #include <ESPmDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 #define OTAName "2DOFHover"
 #define Pass "admin"
-
-
 //OTA task as seen in Example (allows to upload the code wirelessly (Over the air)
 
 
