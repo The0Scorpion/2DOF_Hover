@@ -9,10 +9,10 @@
 #include <NTPClient.h>
 //#include <WiFiUdp.h> //Already Included
 #define DebugcNTP
-int RTT = 80;
+int RTT = 244;
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "time.aws.com");
+NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 7200, 60000);
 
 //to document
 
@@ -23,9 +23,7 @@ long Offset = 7200;
 void initNTP() {
   // Initialize a NTPClient to get time
   timeClient.begin();
-  // Set offset time in seconds to adjust for your timezone, for example:
-  // GMT +2 = 7200
-  timeClient.setTimeOffset(Offset);
+
 
 
   while (!timeClient.update()) {
@@ -40,19 +38,15 @@ void initNTP() {
   MMdelta = millis() + RTT;
 }
 void UpdateTimeStamp() {
+  timeClient.update();
+  formattedDate = String(timeClient.getHours()) + ":";
+  formattedDate += String(timeClient.getMinutes()) + ":";
+  formattedDate += String(timeClient.getSeconds()) + ":";
+  formattedDate += String(((millis() - MMdelta))  % 1000);
 
-  timeClient.setTimeOffset(Offset + ((millis() - MMdelta) / 1000));
-  formattedDate = timeClient.getFormattedTime();
-
-  int splitT = formattedDate.indexOf("T");
-
-  // Extract time
-  timeStamp = formattedDate.substring(splitT + 1, formattedDate.length() - 1) + ":";
-  timeStamp += String((millis() - MMdelta) % 1000);
-  
 #ifdef DebugcNTP
+  //Serial.println(formattedDate);
   Serial.println(formattedDate);
-  Serial.println(timeStamp);
 #endif
 
 }

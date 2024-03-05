@@ -4,6 +4,7 @@
    Credit: Scorpion
    Created: 4/3/2024
 */
+
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
@@ -106,7 +107,7 @@ void DataAQU(void * parameter) {
     doc["yposPID"] = 200;
     doc["xvelPID"] = 40;
     doc["yvelPID"] = 400;
-    doc["Time"] = timeStamp;
+    doc["Time"] = formattedDate;
     PktCounter++;
     // Serialize the JSON document to a String
     String jsonString;
@@ -120,6 +121,7 @@ void DataAQU(void * parameter) {
 
     while (millis() - lastsent < Send_Period) {
       mqttClient.loop();
+      delay(1);
     }
     lastsent = millis();
   }

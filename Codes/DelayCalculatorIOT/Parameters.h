@@ -16,7 +16,7 @@
 #define LeftMotorPIN 26
 
 //IOT Parameters
-#define Send_Period 50 //unit is ms
+#define Send_Period 500 //unit is ms
 unsigned long lastsent=0;
 //Rest in Secrets.h
 

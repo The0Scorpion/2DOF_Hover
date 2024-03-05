@@ -24,19 +24,13 @@ void setup() {
     0,
     NULL,
     1);
-
+  delay(2000);
   //init MQTT client
   initMQTT();
+  initNTP();
 
   //Data Acquisition  Task Run on core 0 for now
-  xTaskCreatePinnedToCore(
-    DataAQU,   // Function to implement the task
-    "Data AQU Loop", // Name of the task
-    5000,      // Stack size in words
-    NULL,       // Task input parameter
-    0,          // Priority of the task
-    NULL,       // Task handle.
-    0);  // Core where the task should run
+  DataAQU(NULL);
 
 
 }
