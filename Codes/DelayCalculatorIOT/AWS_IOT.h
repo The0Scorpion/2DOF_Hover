@@ -1,8 +1,8 @@
 /*
- * Submodule for connecting to AWS mqtt server 
- * handles publishing and recived messages
- * Credit: Scorpion
- * Created: 4/3/2024
+   Submodule for connecting to AWS mqtt server
+   handles publishing and recived messages
+   Credit: Scorpion
+   Created: 4/3/2024
 */
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
@@ -91,11 +91,13 @@ void DataAQU(void * parameter) {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
   lastsent = millis();
+  unsigned long PktCounter = 1;
   while (1) {
     StaticJsonDocument<250> doc;
 
     // Populate the JSON document with values directly
     UpdateTimeStamp();
+    doc["ID"] = PktCounter;
     doc["xpos"] = 1.00;
     doc["ypos"] = 2.00;
     doc["xvel"] = 4.00;
@@ -105,6 +107,7 @@ void DataAQU(void * parameter) {
     doc["xvelPID"] = 40;
     doc["yvelPID"] = 400;
     doc["Time"] = timeStamp;
+    PktCounter++;
     // Serialize the JSON document to a String
     String jsonString;
     serializeJson(doc, jsonString);

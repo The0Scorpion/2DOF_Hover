@@ -90,10 +90,13 @@ void DataAQU(void * parameter) {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
   lastsent = millis();
+  unsigned long PktCounter= 0;
   while (1) {
     StaticJsonDocument<250> doc;
 
     // Populate the JSON document with values directly
+    //UpdateTimeStamp();
+    doc["ID"] = PktCounter;
     doc["xpos"] = CountsToAngle(xEncoderCount);
     doc["ypos"] = CountsToAngle(yEncoderCount);
     doc["xvel"] = getxSpeed();
@@ -102,7 +105,8 @@ void DataAQU(void * parameter) {
     doc["yposPID"] = yPOSPID.output;
     doc["xvelPID"] = xVELPID.output;
     doc["yvelPID"] = yVELPID.output;
-
+    //doc["Time"] = timeStamp;
+    PktCounter++;
     // Serialize the JSON document to a String
     String jsonString;
     serializeJson(doc, jsonString);

@@ -9,7 +9,7 @@
 #include <NTPClient.h>
 //#include <WiFiUdp.h> //Already Included
 #define DebugcNTP
-int RTT = 250;
+int RTT = 80;
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "time.aws.com");
