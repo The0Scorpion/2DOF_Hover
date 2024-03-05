@@ -2,7 +2,7 @@
    Submodule for Network time protocol
    syncs the esp time to the main server
    Credit:Scorpion
-   Created: 20/10/2024
+   Created: 5/3/2024
 */
 
 //#include <WiFi.h> //Already Included
