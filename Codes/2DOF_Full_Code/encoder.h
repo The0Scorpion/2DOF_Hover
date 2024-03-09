@@ -1,8 +1,8 @@
 /*
- * Header file with the main loop and common functions
- * Credit: Scorpion, Veronia
- * Created: 20/10/2024
- * Last update: 25/1/2024
+   Header file with the main loop and common functions
+   Credit: Scorpion, Veronia
+   Created: 20/10/2024
+   Last update: 25/1/2024
 */
 
 //timer Routine to update speed, runs on a timer with <SpeedUpdateTimer> Period
@@ -131,6 +131,8 @@ void initEncoder(double xStartAngle, double yStartAngle) {
 
   //Set the inital angles to Values from IMU
   initIMU();
+  updateIMU();
+  updateIMU();
   delay(500);
   updateIMU();
   xEncoderCount = AngleToCounts(xPosIMU);

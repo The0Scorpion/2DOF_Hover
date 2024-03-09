@@ -1,8 +1,8 @@
 /*
- * Submodule for connecting to AWS mqtt server 
- * handles publishing and recived messages
- * Credit:Scorpion
- * Created:15/12/2023
+   Submodule for connecting to AWS mqtt server
+   handles publishing and recived messages
+   Credit:Scorpion
+   Created:15/12/2023
 */
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
@@ -86,11 +86,42 @@ void DataIn(char* topic, byte* message, unsigned int length) {
 
 }
 
+void initMQTT() {
+  //Connect to AWS
+  Serial.println("Connecting to AWS");
+
+  // Set AWS IoT endpoint and port
+  mqttClient.setServer(AWS_ENDPOINT, AWS_PORT);
+
+  // Set certificate and private key
+  wifiClient.setCACert(AWS_CERT_CA);
+  wifiClient.setCertificate(AWS_CERT_CRT);
+  wifiClient.setPrivateKey(AWS_CERT_PRIVATE);
+
+  while (!mqttClient.connected()) {
+    Serial.println("Connecting to AWS IoT...");
+
+    // Set client ID and try to connect
+    if (mqttClient.connect(THING_NAME)) {
+      Serial.println("Connected to AWS IoT");
+    } else {
+      Serial.print("Failed, rc=");
+      Serial.print(mqttClient.state());
+      Serial.println(". Retrying in 5 seconds...");
+      delay(5000);
+    }
+  }
+  mqttClient.setCallback(DataIn);
+  mqttClient.subscribe(SubAWSTopic);
+  Serial.println("MQTT Ready");
+  Serial.println(WiFi.macAddress());
+}
 void DataAQU(void * parameter) {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
+  initMQTT();
   lastsent = millis();
-  unsigned long PktCounter= 0;
+  unsigned long PktCounter = 0;
   while (1) {
     StaticJsonDocument<250> doc;
 
@@ -122,35 +153,4 @@ void DataAQU(void * parameter) {
     }
     lastsent = millis();
   }
-}
-
-void initMQTT() {
-  //Connect to AWS
-  Serial.println("Connecting to AWS");
-
-  // Set AWS IoT endpoint and port
-  mqttClient.setServer(AWS_ENDPOINT, AWS_PORT);
-
-  // Set certificate and private key
-  wifiClient.setCACert(AWS_CERT_CA);
-  wifiClient.setCertificate(AWS_CERT_CRT);
-  wifiClient.setPrivateKey(AWS_CERT_PRIVATE);
-
-  while (!mqttClient.connected()) {
-    Serial.println("Connecting to AWS IoT...");
-
-    // Set client ID and try to connect
-    if (mqttClient.connect(THING_NAME)) {
-      Serial.println("Connected to AWS IoT");
-    } else {
-      Serial.print("Failed, rc=");
-      Serial.print(mqttClient.state());
-      Serial.println(". Retrying in 5 seconds...");
-      delay(5000);
-    }
-  }
-  mqttClient.setCallback(DataIn);
-  mqttClient.subscribe(SubAWSTopic);
-  Serial.println("MQTT Ready");
-  Serial.println(WiFi.macAddress());
 }

@@ -10,6 +10,7 @@
 PIDController xPOSPID, xVELPID, yPOSPID, yVELPID;
 
 void PIDLoop(void * parameter) {
+  initEncoder(0, 0);
   /*
     Main Control Loop, Runs each sampling time
   */
@@ -18,6 +19,16 @@ void PIDLoop(void * parameter) {
     Serial.println("init PID Loops");
 #endif
 
+#ifdef RUN
+    EEPROM.begin(1);
+    byte Work = EEPROM.read(0);
+    EEPROM.write(0, !Work); //toggles running on resets
+    EEPROM.commit();
+    if (Work) {
+      initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
+      delay(2500);//wait for esc calib
+    }
+#endif
     //Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
     initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxDeltaMicros, maxDeltaMicros);    // to be rechecked the limits
@@ -33,16 +44,7 @@ void PIDLoop(void * parameter) {
     int counta = 0;
 #endif
     PID_Running = 1;
-#ifdef RUN
-    EEPROM.begin(1);
-    byte Work = EEPROM.read(0);
-    EEPROM.write(0, !Work); //toggles running on resets
-    EEPROM.commit();
-    if (Work) {
-      initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-      delay(2500);//wait for esc calib
-    }
-#endif
+
 
     PIDLastTime = micros();
 

@@ -22,7 +22,7 @@ void OTATASK(void * parameter) {
   while (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("Connection Failed! Rebooting...");
     delay(5000);
-    ESP.restart();
+    //ESP.restart();
   }
   ArduinoOTA.setPassword(Pass);
   ArduinoOTA.setHostname(OTAName);
