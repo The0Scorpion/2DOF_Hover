@@ -1,24 +1,22 @@
 #include "Parameters.h"
 #include "PID.h"
 
-#define Kp 10
-#define Ki 1
-#define Kd 30
+#define Kp 50
+#define Ki 35
+#define Kd 22
 #define SP 5
 #define MinSat -9999
 #define MaxSat 9999
 
 float PID_out;
-float randNumber1 , randNumber2;
 PIDController TestPID;
-
+float Output = 0;
 
 void setup() {
 
   Serial.begin(250000);
-
   /*xTaskCreatePinnedToCore(
-      PID_TestTask,   // Function to implement the task
+      PID_TestTask,   // Functionto implement the task
       "PID_Test", // Name of the task
       5000,      // Stack size in words
       NULL,       // Task input parameter
@@ -27,26 +25,31 @@ void setup() {
       1);  // Core where the task should run*/
 
 }
+
 void loop() {
   uint64_t LastTime = micros();
+  initializePID(&TestPID, Kp, Ki, Kd, SP, MinSat, MaxSat);
+  resetPID(&TestPID); //Moved the reset PID from the loop, to be executed once.
+  
   while (1)
   {
+    Output = Output + 0.01;
     LastTime = micros();
-    randNumber2 = (float)random(-1000 , 1001) / 100 ;
+
     //Serial.print("PID_CurrentState = ");
-    Serial.print(randNumber2);
+    PID_out = calculatePID(&TestPID, Output);
+    //    Serial.print(Output);
+    //    Serial.print(",");
+    Serial.println(PID_out);
+    //    Serial.print(",");
+    //    Serial.println(micros() / 1000);
 
-    resetPID(&TestPID);
-    initializePID(&TestPID, Kp, Ki, Kd, SP, MinSat, MaxSat);
-    PID_out = calculatePID(&TestPID, randNumber2);
-
-    Serial.print(",");
-    Serial.print(PID_out);
-    Serial.print(",");
-    Serial.println(micros() / 1000);
     while (micros() - LastTime < Sampling_time) {
       delayMicroseconds(1);
     }
-
+    if (micros() > 5000000)
+    {
+      while (1);
+    }
   }
 }

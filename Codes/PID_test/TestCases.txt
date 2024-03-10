@@ -1,0 +1,43 @@
+Test1:
+#define Kp 1
+#define Ki 0
+#define Kd 0
+#define SP 5
+#define MinSat -9999
+#define MaxSat 9999
+
+Test2:
+#define Kp 1
+#define Ki 1
+#define Kd 0
+#define SP 5
+#define MinSat -9999
+#define MaxSat 9999
+
+*the resetPID function which was in the loop caused unexpected behaviour of resetting the prevTime PID parameter.
+
+Test3:
+#define Kp 1
+#define Ki 1
+#define Kd 0
+#define SP 5
+#define MinSat -9999
+#define MaxSat 9999
+
+*removed the resetPID function from the loop
+
+Test4:
+#define Kp 1
+#define Ki 1
+#define Kd 1
+#define SP 5
+#define MinSat -9999
+#define MaxSat 9999
+
+Test5:
+#define Kp 50
+#define Ki 35
+#define Kd 22
+#define SP 5
+#define MinSat -9999
+#define MaxSat 9999
