@@ -9,15 +9,15 @@
 #include <NTPClient.h>
 //#include <WiFiUdp.h> //Already Included
 #define DebugcNTP
-int RTT = 244;
+int RTT = -230;
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 7200, 60000);
+NTPClient timeClient(ntpUDP, "time.aws.com", 0, 60000);
 
 //to document
 
 unsigned long MMdelta = 0L;
-long Offset = 7200;
+
 
 
 void initNTP() {
@@ -30,19 +30,20 @@ void initNTP() {
     timeClient.forceUpdate();
   }
 
-  int startSec = timeClient.getSeconds();
-  while (startSec == timeClient.getSeconds()) {
-    timeClient.forceUpdate();
-  }
 
   MMdelta = millis() + RTT;
 }
 void UpdateTimeStamp() {
   timeClient.update();
-  formattedDate = String(timeClient.getHours()) + ":";
-  formattedDate += String(timeClient.getMinutes()) + ":";
-  formattedDate += String(timeClient.getSeconds()) + ":";
-  formattedDate += String(((millis() - MMdelta))  % 1000);
+  int ms = (millis() - MMdelta)  % 1000;
+  formattedDate = String(timeClient.getEpochTime());
+  formattedDate += ms > 100 ? String(ms) : ( ms > 10 ? ("0" + String(ms)) : ("00" + String(ms))); //counvert 15 into "015"
+  /*
+    formattedDate = String(timeClient.getHours()) + ":";
+    formattedDate += String(timeClient.getMinutes()) + ":";
+    formattedDate += String(timeClient.getSeconds()) + ":";
+
+    formattedDate += String((millis() - MMdelta)  % 1000);*/
 
 #ifdef DebugcNTP
   //Serial.println(formattedDate);

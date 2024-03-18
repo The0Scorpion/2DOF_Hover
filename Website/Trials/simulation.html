@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Control Chef - simulations</title>
+        <link rel="icon" type="image/x-icon" href="LOGO/control-chef-high-resolution-logo-transparent.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+        
+        <!-- Include Chart.js from a CDN (Content Delivery Network) -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="simulation.css">
+    </head>
+    <body>
+        <div>
+            <div class ="top">
+                <img class="logo" src="LOGO/control-chef-high-resolution-logo-transparent.png">
+                <p class="title">Simulations &amp Streaming</p>
+            </div>
+            <p class="enter">please enter your parameters in the table below:</p>
+            <div class="pos-vel">
+                <div></div>
+                <div class="pos"><P>Pos</P></div>
+                <div class="vel"><P>Vel</P></div>
+            </div>
+            <table class="table-content">
+                <tr>
+                  <td></td>
+                  <td>kp</td>
+                  <td>ki</td>
+                  <td>kd</td>
+                  <td>kp</td>
+                  <td>ki</td>
+                  <td>kd</td>
+                </tr>
+                <tr>
+                    <td>x</td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                </tr>
+                <tr>
+                    <td>y</td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                    <td><input type="number" style="width:100%; box-sizing: border-box;"></td>
+                </tr>
+            </table>  
+            <div class="xy-set-point">
+                <div>
+                    <p>XSetPoint :</p>
+                </div>
+                <div>
+                    <input type="number">
+                </div>
+                <div>
+                    <p>YSetPoint :</p>
+                </div>
+                <div>
+                    <input type="number">
+                </div>
+            </div> 
+            <div class="buttons">
+                <div><button>start</button></div>
+                <div><button>stop</button></div>
+                <div><button>set</button></div>
+                <div><button>reset</button></div>
+            </div> 
+            <div class="stream">
+                <video id="liveStream" controls=""></video>
+            </div>
+            <div class="graphs-container">
+                <div class="graph">
+                    <canvas id="XPos"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="YPos"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="XVel"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="YVel" ></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="XPosPID"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="YPosPID"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="XVelPID"></canvas>
+                </div>
+                <div class="graph">
+                    <canvas id="YVelPID"></canvas>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Replace 'YOUR_STREAM_URL' with the actual URL of your live stream
+            const streamUrl = 'https://www.youtube.com/watch?v=qTjALF9xqJw&list=RDqTjALF9xqJw&start_radio=1';
+            //const streamUrl = 'rtmp://live.mux.com/app';
+            const video = document.getElementById('liveStream');
+            video.src = streamUrl;
+            video.play().catch(error => {
+              console.error('Error auto-playing the video:', error);
+            });
+            // Your mathematical function
+            function mathFunction(x) {
+                return Math.pow(x,2); // Example: sine function
+            }
+
+            // Generate data points for the graph
+            function generateData() {
+                const data = [];
+                for (let x = -10; x <= 10; x += 0.1) {
+                    data.push({ x, y: mathFunction(x) });
+                }
+                return data;
+            }
+
+            // Create the graph
+            const xpos = document.getElementById('XPos').getContext('2d');
+            const ypos = document.getElementById('YPos').getContext('2d');
+            const xvel = document.getElementById('XVel').getContext('2d');
+            const yvel = document.getElementById('YVel').getContext('2d');
+            const xpospid = document.getElementById('XPosPID').getContext('2d');
+            const ypospid = document.getElementById('YPosPID').getContext('2d');
+            const xvelpid = document.getElementById('XVelPID').getContext('2d');
+            const yvelpid = document.getElementById('XVelPID').getContext('2d');
+
+
+            const xposgraph = new Chart(XPos, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'XPos',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const yposgraph = new Chart(YPos, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'YPos',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const xvelgraph = new Chart(XVel, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'XVel',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const yvelgraph = new Chart(YVel, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'YVel',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const xpospidgraph = new Chart(XPosPID, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'XPosPID',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const xyospidgraph = new Chart(YPosPID, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'YPosPID',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const xvelpidgraph = new Chart(XVelPID, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'XVelPID',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom'
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+            const yvelpidgraph = new Chart(YVelPID, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                    label: 'YVelPID',
+                    borderColor: 'black',
+                    data: generateData(),
+                    fill: false,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            scaleLabel: {
+                                display:true,
+                                label: 'YVelPID'
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left'
+                        }
+                    }
+                }
+            });   
+        </script>
+    </body>
+</html>
