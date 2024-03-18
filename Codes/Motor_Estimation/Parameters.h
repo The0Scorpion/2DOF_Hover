@@ -15,9 +15,8 @@
  */
 #define Ramp 1
 #define Step 2 
-byte Test_Mode = Ramp;
-unsigned char StepPercent = 20;
-unsigned int RampValue = 0;
+byte Test_Mode = Step;
+
 
 //Defines the wiring for each major comp
 #define X_ENCODER_PIN_A 32
@@ -56,7 +55,7 @@ int Opratingpoint = 1500;
 //Main loop Parameters
 double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
 unsigned long PIDLastTime = 0;
-unsigned int Sampling_time = 50000;
+unsigned int Sampling_time = 5000;
 double IMU_FusionPrio = 0;
 byte Test_Running = 1, ESC_Running = 1;
 float xAction, yAction;

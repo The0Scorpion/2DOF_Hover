@@ -9,23 +9,21 @@ TaskHandle_t TaskHandle_1;
 
 void setup() {
   /*
-   * give different signals to motors --> step, Ramp
-   * Read Position and velocity each 5ms
-   */
-   
-  Serial.begin(250000);
+     give different signals to motors --> step, Ramp
+     Read Position and velocity each 5ms
+  */
 
+  Serial.begin(115200);
 
-  xTaskCreatePinnedToCore(
+  /*xTaskCreatePinnedToCore(
      MotorEstimation,   //Function to implement the task
      "Main Loop", // Name of the task
      5000,      // Stack size in words
      NULL,       // Task input parameter
      0,          // Priority of the task
      &TaskHandle_1,       // Task handle.
-     0);  // Core where the task should run
-  
-
+     0);  // Core where the task should run*/
+  MotorEstimation(NULL);
 }
 
 void loop() {
