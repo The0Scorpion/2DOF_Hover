@@ -1,0 +1,32 @@
+:root {
+  --copyright-font-family: "Salsa", Helvetica;
+  --copyright-font-size: 12px;
+  --copyright-font-style: normal;
+  --copyright-font-weight: 400;
+  --copyright-letter-spacing: 0px;
+  --copyright-line-height: normal;
+  --header-font-family: "Salsa", Helvetica;
+  --header-font-size: 24px;
+  --header-font-style: normal;
+  --header-font-weight: 400;
+  --header-letter-spacing: 0px;
+  --header-line-height: normal;
+  --paragraph-font-family: "Salsa", Helvetica;
+  --paragraph-font-size: 15px;
+  --paragraph-font-style: normal;
+  --paragraph-font-weight: 400;
+  --paragraph-letter-spacing: 0px;
+  --paragraph-line-height: normal;
+  --subheader-font-family: "Salsa", Helvetica;
+  --subheader-font-size: 20px;
+  --subheader-font-style: normal;
+  --subheader-font-weight: 400;
+  --subheader-letter-spacing: 0px;
+  --subheader-line-height: normal;
+  --title-font-family: "Salsa", Helvetica;
+  --title-font-size: 40px;
+  --title-font-style: normal;
+  --title-font-weight: 400;
+  --title-letter-spacing: 0px;
+  --title-line-height: normal;
+}
