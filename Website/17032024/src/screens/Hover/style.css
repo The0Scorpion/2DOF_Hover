@@ -1,4 +1,4 @@
-.android-large {
+.hover {
   background-color: #050814;
   display: flex;
   flex-direction: row;
@@ -6,30 +6,30 @@
   width: 100%;
 }
 
-.android-large .overlap-wrapper-2 {
+.hover .overlap-wrapper-2 {
   background-color: #050814;
   overflow: hidden;
 }
 
-.android-large .overlap-6 {
+.hover .overlap-6 {
   position: relative;
 }
 
-.android-large .class {
+.hover .class {
   border-radius: 202.57px/662.27px !important;
   height: 1325px !important;
   top: 2737px !important;
   width: 405px !important;
 }
 
-.android-large .class-2 {
+.hover .class-2 {
   border-radius: 133.57px/640.23px !important;
   height: 1280px !important;
   top: 2646px !important;
   width: 267px !important;
 }
 
-.android-large .class-3 {
+.hover .class-3 {
   height: 4061px !important;
   left: 0 !important;
   position: absolute !important;
@@ -37,7 +37,7 @@
   width: 1098px !important;
 }
 
-.android-large .class-4 {
+.hover .class-4 {
   height: 3926px !important;
   left: 0 !important;
   position: absolute !important;
@@ -45,21 +45,21 @@
   width: 724px !important;
 }
 
-.android-large .class-5 {
+.hover .class-5 {
   border-radius: 180.67px/583.5px !important;
   height: 1167px !important;
   left: 308px !important;
   width: 361px !important;
 }
 
-.android-large .class-6 {
+.hover .class-6 {
   border-radius: 119.13px/564.08px !important;
   height: 1128px !important;
   left: 203px !important;
   width: 238px !important;
 }
 
-.android-large .class-7 {
+.hover .class-7 {
   border-radius: 180.67px/583.5px !important;
   height: 1167px !important;
   left: 737px !important;
@@ -67,7 +67,7 @@
   width: 361px !important;
 }
 
-.android-large .class-8 {
+.hover .class-8 {
   border-radius: 119.13px/564.08px !important;
   height: 1128px !important;
   left: 486px !important;
@@ -75,111 +75,111 @@
   width: 238px !important;
 }
 
-.android-large .footer-2 {
+.hover .footer-2 {
   background-color: transparent;
   position: absolute;
 }
 
-.android-large .group-30 {
+.hover .group-30 {
   background: linear-gradient(180deg, rgba(13.17, 74.83, 131.75, 0.35) 7.28%, rgba(104.88, 40.83, 168.94, 0.24) 96.28%);
   border-radius: 20px;
   position: absolute;
   top: 0;
 }
 
-.android-large .group-31 {
+.hover .group-31 {
   position: relative;
 }
 
-.android-large .control-chef-high-2 {
+.hover .control-chef-high-2 {
   left: 0;
   overflow: hidden;
   position: absolute;
 }
 
-.android-large .frame-5 {
+.hover .frame-5 {
   overflow: hidden;
 }
 
-.android-large .overlap-7 {
+.hover .overlap-7 {
   position: relative;
 }
 
-.android-large .frame-wrapper {
+.hover .frame-wrapper {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .frame-6 {
+.hover .frame-6 {
   overflow: hidden;
 }
 
-.android-large .overlap-group-4 {
+.hover .overlap-group-4 {
   position: relative;
 }
 
-.android-large .group-32 {
+.hover .group-32 {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .group-33 {
+.hover .group-33 {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .text-15 {
+.hover .text-15 {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .frame-7 {
+.hover .frame-7 {
   overflow: hidden;
   position: relative;
 }
 
-.android-large .group-34 {
+.hover .group-34 {
   left: 0;
   position: absolute;
 }
 
-.android-large .group-35 {
+.hover .group-35 {
   position: absolute;
   top: 0;
 }
 
-.android-large .group-36 {
+.hover .group-36 {
   position: absolute;
 }
 
-.android-large .mask-group-4 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.android-large .mask-group-5 {
+.hover .mask-group-4 {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .mask-group-6 {
+.hover .mask-group-5 {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .group-37 {
+.hover .mask-group-6 {
+  left: 0;
   position: absolute;
   top: 0;
 }
 
-.android-large .text-wrapper-15 {
+.hover .group-37 {
+  position: absolute;
+  top: 0;
+}
+
+.hover .text-wrapper-15 {
   color: #ffffff;
   font-family: "Salsa", Helvetica;
   font-weight: 400;
@@ -191,15 +191,15 @@
   top: 0;
 }
 
-.android-large .group-38 {
+.hover .group-38 {
   position: absolute;
 }
 
-.android-large .overlap-group-5 {
+.hover .overlap-group-5 {
   position: relative;
 }
 
-.android-large .text-wrapper-16 {
+.hover .text-wrapper-16 {
   color: #ffffff;
   position: absolute;
   text-align: center;
@@ -207,7 +207,7 @@
   transition: all 0.2s ease;
 }
 
-.android-large .text-wrapper-17 {
+.hover .text-wrapper-17 {
   color: #ffffff;
   left: 1px;
   position: absolute;
@@ -215,7 +215,7 @@
   transition: all 0.2s ease;
 }
 
-.android-large .text-wrapper-18 {
+.hover .text-wrapper-18 {
   color: #ffffff;
   left: 0;
   position: absolute;
@@ -223,7 +223,7 @@
   transition: all 0.2s ease;
 }
 
-.android-large .text-wrapper-19 {
+.hover .text-wrapper-19 {
   color: #ffffff;
   left: 0;
   position: absolute;
@@ -231,12 +231,12 @@
   transition: all 0.2s ease;
 }
 
-.android-large .group-39 {
+.hover .group-39 {
   position: absolute;
   top: 0;
 }
 
-.android-large .control-chef {
+.hover .control-chef {
   color: #ffffff;
   font-family: "Salsa", Helvetica;
   font-weight: 400;
@@ -248,15 +248,15 @@
   top: 0;
 }
 
-.android-large .group-40 {
+.hover .group-40 {
   position: absolute;
 }
 
-.android-large .overlap-group-6 {
+.hover .overlap-group-6 {
   position: relative;
 }
 
-.android-large .home {
+.hover .home {
   color: #ffffff;
   position: absolute;
   text-align: center;
@@ -264,7 +264,7 @@
   transition: all 0.2s ease;
 }
 
-.android-large .about-us {
+.hover .about-us {
   color: #ffffff;
   left: 0;
   position: absolute;
@@ -272,16 +272,16 @@
   transition: all 0.2s ease;
 }
 
-.android-large .group-41 {
+.hover .group-41 {
   left: 0;
   position: absolute;
 }
 
-.android-large .overlap-8 {
+.hover .overlap-8 {
   position: relative;
 }
 
-.android-large .rectangle-7 {
+.hover .rectangle-7 {
   background: linear-gradient(180deg, rgba(13.17, 74.83, 131.75, 0.35) 7.28%, rgba(104.88, 40.83, 168.94, 0.24) 96.28%);
   border-radius: 20px;
   left: 0;
@@ -289,7 +289,7 @@
   top: 1px;
 }
 
-.android-large .p {
+.hover .p {
   color: #ffffff;
   position: absolute;
   text-align: center;
@@ -298,7 +298,7 @@
   width: 377px;
 }
 
-.android-large .graphs-instance {
+.hover .graphs-instance {
   height: 1323px !important;
   left: 216px !important;
   position: absolute !important;
@@ -306,103 +306,103 @@
   width: 765px !important;
 }
 
-.android-large .instance-node {
+.hover .instance-node {
   height: 307px !important;
   top: 70px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-2 {
+.hover .graphs-2 {
   height: 266px !important;
   top: 41px !important;
   width: 377px !important;
 }
 
-.android-large .graphs-3 {
+.hover .graphs-3 {
   height: 22px !important;
   left: 154px !important;
   white-space: nowrap !important;
   width: 70px !important;
 }
 
-.android-large .graphs-4 {
+.hover .graphs-4 {
   height: 307px !important;
   top: 385px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-5 {
+.hover .graphs-5 {
   height: 310px !important;
   top: 698px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-6 {
+.hover .graphs-6 {
   height: 266px !important;
   top: 44px !important;
   width: 377px !important;
 }
 
-.android-large .graphs-7 {
+.hover .graphs-7 {
   left: 158px !important;
 }
 
-.android-large .graphs-8 {
+.hover .graphs-8 {
   height: 307px !important;
   top: 1016px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-9 {
+.hover .graphs-9 {
   height: 310px !important;
   left: 388px !important;
   top: 67px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-10 {
+.hover .graphs-10 {
   left: 139px !important;
 }
 
-.android-large .graphs-11 {
+.hover .graphs-11 {
   height: 310px !important;
   left: 388px !important;
   top: 382px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-12 {
+.hover .graphs-12 {
   height: 310px !important;
   left: 388px !important;
   top: 698px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-13 {
+.hover .graphs-13 {
   left: 140px !important;
 }
 
-.android-large .graphs-14 {
+.hover .graphs-14 {
   height: 310px !important;
   left: 388px !important;
   top: 1013px !important;
   width: 379px !important;
 }
 
-.android-large .graphs-15 {
+.hover .graphs-15 {
   height: 29px !important;
   left: 140px !important;
   width: unset !important;
 }
 
-.android-large .graphs-16 {
+.hover .graphs-16 {
   height: 49px !important;
   left: 318px !important;
   top: -7px !important;
   width: unset !important;
 }
 
-.android-large .class-9 {
+.hover .class-9 {
   height: 293px !important;
   left: 272px !important;
   position: absolute !important;
@@ -410,7 +410,7 @@
   width: 327px !important;
 }
 
-.android-large .class-10 {
+.hover .class-10 {
   height: 564px !important;
   left: 216px !important;
   position: absolute !important;
@@ -418,7 +418,7 @@
   width: 765px !important;
 }
 
-.android-large .class-11 {
+.hover .class-11 {
   font-family: "Salsa", Helvetica !important;
   font-size: 24px !important;
   font-style: unset !important;
@@ -430,50 +430,42 @@
   top: -2px !important;
 }
 
-.android-large .class-12 {
+.hover .class-12 {
   left: 261px !important;
   top: 0 !important;
 }
 
-.android-large .class-13 {
+.hover .class-13 {
   height: 235px !important;
   top: 58px !important;
   width: 327px !important;
 }
 
-.android-large .class-14 {
+.hover .class-14 {
   height: 453px !important;
   top: 111px !important;
   width: 765px !important;
 }
 
-.android-large .parameters-instance {
+.hover .parameters-instance {
   left: 312px !important;
   position: absolute !important;
   top: 988px !important;
 }
 
-.android-large .simulation-streaming-instance {
+.hover .simulation-streaming-instance {
   left: 379px !important;
   position: absolute !important;
   top: 887px !important;
 }
 
-.android-large .buttons-instance {
+.hover .buttons-instance {
   left: 386px !important;
   position: absolute !important;
   top: 1407px !important;
 }
 
-.android-large .nav-bar-2 {
-  height: 36px;
-  left: 217px;
-  position: absolute;
-  top: 828px;
-  width: 764px;
-}
-
-.android-large .group-42 {
+.hover .group-42 {
   height: 14px;
   left: 730px;
   position: absolute;
@@ -481,7 +473,7 @@
   width: 33px;
 }
 
-.android-large .rectangle-8 {
+.hover .rectangle-8 {
   background-color: #d9d9d9;
   height: 2px;
   left: 0;
@@ -490,7 +482,7 @@
   width: 33px;
 }
 
-.android-large .rectangle-9 {
+.hover .rectangle-9 {
   background-color: #d9d9d9;
   height: 2px;
   left: 0;
@@ -499,7 +491,7 @@
   width: 33px;
 }
 
-.android-large .rectangle-10 {
+.hover .rectangle-10 {
   background-color: #d9d9d9;
   height: 2px;
   left: 0;
@@ -508,7 +500,7 @@
   width: 33px;
 }
 
-.android-large .control-chef-high-3 {
+.hover .control-chef-high-3 {
   height: 35px;
   left: 0;
   overflow: hidden;
@@ -518,27 +510,27 @@
   width: 199px;
 }
 
-.android-large .div-4 {
+.hover .div-4 {
   height: 35px;
 }
 
-.android-large .frame-8 {
+.hover .frame-8 {
   height: 35px;
   overflow: hidden;
   width: 199px;
 }
 
-.android-large .div-wrapper-3 {
+.hover .div-wrapper-3 {
   height: 35px;
   width: 199px;
 }
 
-.android-large .overlap-9 {
+.hover .overlap-9 {
   height: 35px;
   position: relative;
 }
 
-.android-large .mask-group-7 {
+.hover .mask-group-7 {
   height: 35px;
   left: 0;
   position: absolute;
@@ -546,18 +538,18 @@
   width: 199px;
 }
 
-.android-large .frame-9 {
+.hover .frame-9 {
   height: 35px;
   overflow: hidden;
 }
 
-.android-large .overlap-group-7 {
+.hover .overlap-group-7 {
   height: 59px;
   position: relative;
   width: 199px;
 }
 
-.android-large .group-43 {
+.hover .group-43 {
   height: 59px;
   left: 0;
   position: absolute;
@@ -565,13 +557,13 @@
   width: 59px;
 }
 
-.android-large .frame-10 {
+.hover .frame-10 {
   height: 35px;
   overflow: hidden;
   position: relative;
 }
 
-.android-large .group-44 {
+.hover .group-44 {
   height: 21px;
   left: 0;
   position: absolute;
@@ -579,7 +571,7 @@
   width: 95px;
 }
 
-.android-large .group-45 {
+.hover .group-45 {
   height: 35px;
   left: 103px;
   position: absolute;
@@ -587,7 +579,7 @@
   width: 30px;
 }
 
-.android-large .group-46 {
+.hover .group-46 {
   height: 21px;
   left: 141px;
   position: absolute;
@@ -595,56 +587,62 @@
   width: 58px;
 }
 
-.android-large .blur-instance {
+.hover .blur-instance {
   left: 0 !important;
   position: absolute !important;
   top: 0 !important;
 }
 
-.android-large .footer-instance {
+.hover .footer-instance {
   background-color: transparent !important;
   left: 705px !important;
   position: absolute !important;
   top: 3420px !important;
 }
 
-.android-large .graphs-17 {
+.hover .graphs-17 {
   left: 893px !important;
   position: absolute !important;
   top: 1547px !important;
 }
 
-.android-large .video-stream-instance {
+.hover .video-stream-instance {
   left: 913px !important;
   position: absolute !important;
   top: 925px !important;
 }
 
-.android-large .parameters-2 {
+.hover .parameters-2 {
   left: 895px !important;
   position: absolute !important;
   top: 526px !important;
 }
 
-.android-large .simulation-streaming-2 {
+.hover .simulation-streaming-2 {
   left: 1208px !important;
   position: absolute !important;
   top: 401px !important;
 }
 
-.android-large .buttons-2 {
+.hover .buttons-2 {
   left: 1523px !important;
   position: absolute !important;
   top: 647px !important;
 }
 
-.android-large .nav-bar-instance {
+.hover .nav-bar-instance {
   left: 895px !important;
   position: absolute !important;
   top: 319px !important;
 }
 
-.android-large .parameters-3 {
+.hover .nav-bar-tab {
+  height: 14px !important;
+  left: 273px !important;
+  position: absolute !important;
+  top: 488px !important;
+}
+.hover .parameters-3 {
   height: 422px !important;
   left: 273px !important;
   position: absolute !important;
@@ -652,14 +650,14 @@
   width: 326px !important;
 }
 
-.android-large .parameters-4 {
+.hover .parameters-4 {
   height: 25px !important;
   left: 7px !important;
   top: 95px !important;
   width: 141px !important;
 }
 
-.android-large .parameters-5 {
+.hover .parameters-5 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -667,22 +665,23 @@
   height: 15px !important;
   letter-spacing: 0 !important;
   line-height: normal !important;
-  top: 5px !important;
-  width: unset !important;
+  top: 0px !important;
+  width: 57px !important;
+  padding-right: 10px !important;
 }
 
-.android-large .parameters-6 {
+.hover .parameters-6 {
   height: 25px !important;
   left: 48px !important;
   width: 93px !important;
 }
 
-.android-large .parameters-7 {
+.hover .parameters-7 {
   height: 25px !important;
   width: 91px !important;
 }
 
-.android-large .parameters-8 {
+.hover .parameters-8 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -692,30 +691,31 @@
   letter-spacing: 0 !important;
   line-height: normal !important;
   top: 5px !important;
-  width: 47px !important;
+  width: 95px !important;
+  padding: 5px !important;
 }
 
-.android-large .parameters-9 {
+.hover .parameters-9 {
   height: 25px !important;
   left: 173px !important;
   top: 95px !important;
   width: 141px !important;
 }
 
-.android-large .parameters-10 {
+.hover .parameters-10 {
   height: 25px !important;
   left: 9px !important;
   top: 135px !important;
   width: 139px !important;
 }
 
-.android-large .parameters-11 {
+.hover .parameters-11 {
   height: 25px !important;
   left: 46px !important;
   width: 93px !important;
 }
 
-.android-large .parameters-12 {
+.hover .parameters-12 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -728,41 +728,41 @@
   width: 43px !important;
 }
 
-.android-large .parameters-13 {
+.hover .parameters-13 {
   height: 25px !important;
   left: 175px !important;
   top: 135px !important;
-  width: 139px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-14 {
+.hover .parameters-14 {
   height: 25px !important;
   left: 7px !important;
   top: 174px !important;
   width: 141px !important;
 }
 
-.android-large .parameters-15 {
+.hover .parameters-15 {
   height: 25px !important;
   left: 173px !important;
   top: 174px !important;
   width: 141px !important;
 }
 
-.android-large .parameters-16 {
+.hover .parameters-16 {
   height: 25px !important;
   left: 8px !important;
   top: 213px !important;
-  width: 140px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-17 {
+.hover .parameters-17 {
   height: 25px !important;
   left: 47px !important;
   width: 93px !important;
 }
 
-.android-large .parameters-18 {
+.hover .parameters-18 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -775,27 +775,27 @@
   width: 45px !important;
 }
 
-.android-large .parameters-19 {
+.hover .parameters-19 {
   height: 25px !important;
   left: 174px !important;
   top: 213px !important;
-  width: 140px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-20 {
+.hover .parameters-20 {
   height: 25px !important;
   left: 10px !important;
   top: 252px !important;
-  width: 138px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-21 {
+.hover .parameters-21 {
   height: 25px !important;
   left: 45px !important;
   width: 93px !important;
 }
 
-.android-large .parameters-22 {
+.hover .parameters-22 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -808,35 +808,35 @@
   width: 41px !important;
 }
 
-.android-large .parameters-23 {
+.hover .parameters-23 {
   height: 25px !important;
   left: 176px !important;
   top: 252px !important;
-  width: 138px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-24 {
+.hover .parameters-24 {
   height: 25px !important;
   left: 8px !important;
   top: 291px !important;
-  width: 140px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-25 {
+.hover .parameters-25 {
   height: 25px !important;
   left: 174px !important;
   top: 291px !important;
-  width: 140px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-26 {
+.hover .parameters-26 {
   height: 30px !important;
   left: 10px !important;
   top: 327px !important;
-  width: 138px !important;
+  width: 141px !important;
 }
 
-.android-large .parameters-27 {
+.hover .parameters-27 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -848,14 +848,14 @@
   width: 41px !important;
 }
 
-.android-large .parameters-28 {
+.hover .parameters-28 {
   height: 25px !important;
   left: 45px !important;
   top: 3px !important;
   width: 93px !important;
 }
 
-.android-large .parameters-29 {
+.hover .parameters-29 {
   font-family: "Salsa", Helvetica !important;
   font-size: 12px !important;
   font-style: unset !important;
@@ -868,14 +868,14 @@
   width: 59px !important;
 }
 
-.android-large .parameters-30 {
+.hover .parameters-30 {
   height: 30px !important;
   left: 176px !important;
   top: 327px !important;
   width: 138px !important;
 }
 
-.android-large .parameters-31 {
+.hover .parameters-31 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -888,7 +888,7 @@
   white-space: nowrap !important;
 }
 
-.android-large .simulation-streaming-3 {
+.hover .simulation-streaming-3 {
   height: 23px !important;
   left: 337px !important;
   position: absolute !important;
@@ -896,7 +896,7 @@
   width: 200px !important;
 }
 
-.android-large .simulation-streaming-4 {
+.hover .simulation-streaming-4 {
   font-family: "Salsa", Helvetica !important;
   font-size: 20px !important;
   font-style: unset !important;
@@ -908,7 +908,7 @@
   top: -2px !important;
 }
 
-.android-large .buttons-3 {
+.hover .buttons-3 {
   height: 85px !important;
   left: 294px !important;
   position: absolute !important;
@@ -916,18 +916,18 @@
   width: 284px !important;
 }
 
-.android-large .buttons-4 {
+.hover .buttons-4 {
   height: 34px !important;
   top: 49px !important;
   width: 138px !important;
 }
 
-.android-large .buttons-5 {
+.hover .buttons-5 {
   height: 39px !important;
   width: 141px !important;
 }
 
-.android-large .buttons-6 {
+.hover .buttons-6 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -941,17 +941,17 @@
   width: unset !important;
 }
 
-.android-large .buttons-7 {
+.hover .buttons-7 {
   height: 34px !important;
   width: 138px !important;
 }
 
-.android-large .buttons-8 {
+.hover .buttons-8 {
   height: 34px !important;
   width: 136px !important;
 }
 
-.android-large .buttons-9 {
+.hover .buttons-9 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -965,13 +965,13 @@
   width: unset !important;
 }
 
-.android-large .buttons-10 {
+.hover .buttons-10 {
   height: 34px !important;
   left: 148px !important;
   width: 138px !important;
 }
 
-.android-large .buttons-11 {
+.hover .buttons-11 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -985,23 +985,15 @@
   width: unset !important;
 }
 
-.android-large .buttons-12 {
+.hover .buttons-12 {
   height: 34px !important;
   left: 148px !important;
   top: 51px !important;
   width: 138px !important;
 }
 
-.android-large .nav-bar-3 {
-  height: 16px;
-  left: 275px;
-  position: absolute;
-  top: 478px;
-  transform: translate(0, 25px);
-  width: 324px;
-}
 
-.android-large .group-47 {
+.hover .group-47 {
   height: 6px;
   left: 309px;
   position: absolute;
@@ -1009,7 +1001,7 @@
   width: 14px;
 }
 
-.android-large .rectangle-11 {
+.hover .rectangle-11 {
   background-color: #d9d9d9;
   height: 1px;
   left: 0;
@@ -1018,7 +1010,7 @@
   width: 14px;
 }
 
-.android-large .rectangle-12 {
+.hover .rectangle-12 {
   background-color: #d9d9d9;
   height: 1px;
   left: 0;
@@ -1027,7 +1019,7 @@
   width: 14px;
 }
 
-.android-large .rectangle-13 {
+.hover .rectangle-13 {
   background-color: #d9d9d9;
   height: 1px;
   left: 0;
@@ -1036,7 +1028,7 @@
   width: 14px;
 }
 
-.android-large .control-chef-high-4 {
+.hover .control-chef-high-4 {
   height: 15px;
   left: 0;
   overflow: hidden;
@@ -1046,28 +1038,28 @@
   width: 85px;
 }
 
-.android-large .div-wrapper-4 {
+.hover .div-wrapper-4 {
   height: 15px;
 }
 
-.android-large .frame-11 {
+.hover .frame-11 {
   height: 15px;
   overflow: hidden;
   width: 85px;
 }
 
-.android-large .div-5 {
+.hover .div-5 {
   height: 15px;
   width: 84px;
 }
 
-.android-large .overlap-10 {
+.hover .overlap-10 {
   height: 15px;
   position: relative;
   width: 84px;
 }
 
-.android-large .mask-group-8 {
+.hover .mask-group-8 {
   height: 15px;
   left: 0;
   position: absolute;
@@ -1075,18 +1067,18 @@
   width: 84px;
 }
 
-.android-large .frame-12 {
+.hover .frame-12 {
   height: 15px;
   overflow: hidden;
 }
 
-.android-large .overlap-group-8 {
+.hover .overlap-group-8 {
   height: 26px;
   position: relative;
   width: 84px;
 }
 
-.android-large .group-48 {
+.hover .group-48 {
   height: 26px;
   left: 0;
   position: absolute;
@@ -1094,13 +1086,13 @@
   width: 25px;
 }
 
-.android-large .frame-13 {
+.hover .frame-13 {
   height: 15px;
   overflow: hidden;
   position: relative;
 }
 
-.android-large .group-49 {
+.hover .group-49 {
   height: 9px;
   left: 0;
   position: absolute;
@@ -1108,7 +1100,7 @@
   width: 40px;
 }
 
-.android-large .group-50 {
+.hover .group-50 {
   height: 15px;
   left: 44px;
   position: absolute;
@@ -1116,7 +1108,7 @@
   width: 13px;
 }
 
-.android-large .group-51 {
+.hover .group-51 {
   height: 9px;
   left: 60px;
   position: absolute;
@@ -1124,7 +1116,7 @@
   width: 24px;
 }
 
-.android-large .graphs-18 {
+.hover .graphs-18 {
   height: 1565px !important;
   left: 273px !important;
   position: absolute !important;
@@ -1132,19 +1124,19 @@
   width: 326px !important;
 }
 
-.android-large .graphs-19 {
+.hover .graphs-19 {
   height: 359px !important;
   top: 87px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-20 {
+.hover .graphs-20 {
   height: 315px !important;
   top: 44px !important;
   width: 161px !important;
 }
 
-.android-large .graphs-21 {
+.hover .graphs-21 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1157,13 +1149,13 @@
   width: unset !important;
 }
 
-.android-large .graphs-22 {
+.hover .graphs-22 {
   height: 359px !important;
   top: 460px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-23 {
+.hover .graphs-23 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1176,13 +1168,13 @@
   width: unset !important;
 }
 
-.android-large .graphs-24 {
+.hover .graphs-24 {
   height: 359px !important;
   top: 833px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-25 {
+.hover .graphs-25 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1194,13 +1186,13 @@
   white-space: nowrap !important;
 }
 
-.android-large .graphs-26 {
+.hover .graphs-26 {
   height: 359px !important;
   top: 1206px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-27 {
+.hover .graphs-27 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1213,14 +1205,14 @@
   width: unset !important;
 }
 
-.android-large .graphs-28 {
+.hover .graphs-28 {
   height: 359px !important;
   left: 165px !important;
   top: 87px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-29 {
+.hover .graphs-29 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1232,21 +1224,21 @@
   white-space: nowrap !important;
 }
 
-.android-large .graphs-30 {
+.hover .graphs-30 {
   height: 359px !important;
   left: 165px !important;
   top: 460px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-31 {
+.hover .graphs-31 {
   height: 359px !important;
   left: 165px !important;
   top: 833px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-32 {
+.hover .graphs-32 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1258,14 +1250,14 @@
   white-space: nowrap !important;
 }
 
-.android-large .graphs-33 {
+.hover .graphs-33 {
   height: 359px !important;
   left: 165px !important;
   top: 1206px !important;
   width: 163px !important;
 }
 
-.android-large .graphs-34 {
+.hover .graphs-34 {
   font-family: "Salsa", Helvetica !important;
   font-size: 15px !important;
   font-style: unset !important;
@@ -1278,7 +1270,7 @@
   width: unset !important;
 }
 
-.android-large .graphs-35 {
+.hover .graphs-35 {
   font-family: "Salsa", Helvetica !important;
   font-size: 20px !important;
   font-style: unset !important;
@@ -1290,3 +1282,11 @@
   top: 9px !important;
   width: unset !important;
 }
+
+.hover .nav-bar-tab-instance {
+  left: 216px !important;
+  position: absolute !important;
+  top: 826px !important;
+}
+
+

@@ -5,16 +5,18 @@ import { Buttons } from "../../components/Buttons";
 import { Footer } from "../../components/Footer";
 import { Graphs } from "../../components/Graphs";
 import { NavBar } from "../../components/NavBar";
+import { NavBar_2 } from "../../components/NavBar_2";
+import { NavBar_3 } from "../../components/NavBar_3";
 import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
 import "./style.css";
 
-export const AndroidLarge = () => {
+export const Hover = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <div className="android-large">
+    <div className="hover">
       <div
         className="overlap-wrapper-2"
         style={{
@@ -75,6 +77,15 @@ export const AndroidLarge = () => {
         >
           {((screenWidth >= 834 && screenWidth < 1440) || screenWidth < 834) && (
             <>
+              <nav
+                className="nav-bar-2"
+                style={{
+                  height: screenWidth < 834 ? "7px" : screenWidth >= 834 && screenWidth < 1440 ? "141px" : undefined,
+                  left: screenWidth < 834 ? "200px" : screenWidth >= 834 && screenWidth < 1440 ? "181px" : undefined,
+                  top: screenWidth < 834 ? "300px" : screenWidth >= 834 && screenWidth < 1440 ? "3584px" : undefined,
+                  width: screenWidth < 834 ? "300px" : screenWidth >= 834 && screenWidth < 1440 ? "834px" : undefined,
+                }}
+               /> 
               <Blur
                 className={`${screenWidth >= 834 && screenWidth < 1440 && "class-3"} ${screenWidth < 834 && "class-4"}`}
                 divClassName={`${screenWidth >= 834 && screenWidth < 1440 && "class-7"} ${
@@ -1097,40 +1108,7 @@ export const AndroidLarge = () => {
               <Parameters className="parameters-instance" />
               <SimulationStreaming className="simulation-streaming-instance" />
               <Buttons className="buttons-instance" />
-              <div className="nav-bar-2">
-                <div className="group-42">
-                  <div className="rectangle-8" />
-                  <div className="rectangle-9" />
-                  <div className="rectangle-10" />
-                </div>
-                <div className="control-chef-high-3">
-                  <div className="div-4">
-                    <div className="frame-8">
-                      <div className="div-4">
-                        <div className="div-wrapper-3">
-                          <div className="overlap-9">
-                            <img
-                              className="mask-group-7"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-16@2x.png"
-                            />
-                            <img
-                              className="mask-group-7"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-17@2x.png"
-                            />
-                            <img
-                              className="mask-group-7"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-18@2x.png"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <NavBar_2 className="nav-bar-tab-instance" />
             </>
           )}
 
@@ -1152,21 +1130,22 @@ export const AndroidLarge = () => {
 
           {screenWidth < 834 && (
             <>
+              <NavBar_3 className="nav-bar-tab"/>
               <Parameters
                 className="parameters-3"
                 divClassName="parameters-10"
                 divClassNameOverride="parameters-13"
                 groupClassName="parameters-6"
                 groupClassName1="parameters-6"
-                groupClassName10="parameters-28"
+                groupClassName10="parameters-6"
                 groupClassName2="parameters-6"
-                groupClassName3="parameters-17"
-                groupClassName4="parameters-17"
-                groupClassName5="parameters-21"
-                groupClassName6="parameters-21"
-                groupClassName7="parameters-17"
-                groupClassName8="parameters-17"
-                groupClassName9="parameters-28"
+                groupClassName3="parameters-6"
+                groupClassName4="parameters-6"
+                groupClassName5="parameters-6"
+                groupClassName6="parameters-6"
+                groupClassName7="parameters-6"
+                groupClassName8="parameters-6"
+                groupClassName9="parameters-6"
                 groupClassNameOverride="parameters-6"
                 overlapGroupClassName="parameters-7"
                 overlapGroupClassNameOverride="parameters-7"
@@ -1189,41 +1168,41 @@ export const AndroidLarge = () => {
                 xPosKdClassNameOverride="parameters-8"
                 xPosKdWrapperClassName="parameters-7"
                 xPosKiClassName="parameters-5"
-                xPosKiClassNameOverride="parameters-12"
+                xPosKiClassNameOverride="parameters-8"
                 xPosKiWrapperClassName="parameters-7"
                 xPosKpClassName="parameters-5"
                 xPosKpClassNameOverride="parameters-8"
-                xSetPointClassName="parameters-27"
-                xSetPointClassNameOverride="parameters-29"
+                xSetPointClassName="parameters-5"
+                xSetPointClassNameOverride="parameters-8"
                 xSetPointWrapperClassName="parameters-7"
                 xVelKdClassName="parameters-5"
-                xVelKdClassNameOverride="parameters-18"
+                xVelKdClassNameOverride="parameters-8"
                 xVelKdWrapperClassName="parameters-7"
                 xVelKiClassName="parameters-5"
-                xVelKiClassNameOverride="parameters-22"
+                xVelKiClassNameOverride="parameters-8"
                 xVelKiWrapperClassName="parameters-7"
                 xVelKpClassName="parameters-5"
-                xVelKpClassNameOverride="parameters-18"
+                xVelKpClassNameOverride="parameters-8"
                 xVelKpWrapperClassName="parameters-7"
                 yPosKdClassName="parameters-5"
                 yPosKdClassNameOverride="parameters-8"
                 yPosKdWrapperClassName="parameters-7"
                 yPosKiClassName="parameters-5"
-                yPosKiClassNameOverride="parameters-12"
+                yPosKiClassNameOverride="parameters-8"
                 yPosKiWrapperClassName="parameters-7"
                 yPosKpClassName="parameters-5"
                 yPosKpClassNameOverride="parameters-8"
-                ySetPointClassName="parameters-27"
-                ySetPointClassNameOverride="parameters-29"
+                ySetPointClassName="parameters-5"
+                ySetPointClassNameOverride="parameters-8"
                 ySetPointWrapperClassName="parameters-7"
                 yVelKdClassName="parameters-5"
-                yVelKdClassNameOverride="parameters-18"
+                yVelKdClassNameOverride="parameters-8"
                 yVelKdWrapperClassName="parameters-7"
                 yVelKiClassName="parameters-5"
-                yVelKiClassNameOverride="parameters-22"
+                yVelKiClassNameOverride="parameters-8"
                 yVelKiWrapperClassName="parameters-7"
                 yVelKpClassName="parameters-5"
-                yVelKpClassNameOverride="parameters-18"
+                yVelKpClassNameOverride="parameters-8"
                 yVelKpWrapperClassName="parameters-7"
               />
               <SimulationStreaming
@@ -1245,67 +1224,6 @@ export const AndroidLarge = () => {
                 startClassName="buttons-9"
                 stopClassName="buttons-6"
               />
-              <div className="nav-bar-3">
-                <div className="group-47">
-                  <div className="rectangle-11" />
-                  <div className="rectangle-12" />
-                  <div className="rectangle-13" />
-                </div>
-                <div className="control-chef-high-4">
-                  <div className="div-wrapper-4">
-                    <div className="frame-11">
-                      <div className="div-5">
-                        <div className="div-wrapper-4">
-                          <div className="overlap-10">
-                            <div className="mask-group-8">
-                              <div className="div-wrapper-4">
-                                <div className="div-5">
-                                  <div className="div-wrapper-4">
-                                    <div className="div-5">
-                                      <div className="div-wrapper-4">
-                                        <div className="div-5">
-                                          <div className="frame-12">
-                                            <div className="overlap-group-8">
-                                              <div className="group-48" />
-                                              <div className="group-48" />
-                                              <div className="mask-group-8">
-                                                <div className="frame-13">
-                                                  <div className="group-49" />
-                                                  <div className="group-50" />
-                                                  <div className="group-51" />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <img
-                              className="mask-group-8"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-10@2x.png"
-                            />
-                            <img
-                              className="mask-group-8"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-11@2x.png"
-                            />
-                            <img
-                              className="mask-group-8"
-                              alt="Mask group"
-                              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-12@2x.png"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <Graphs
                 className="graphs-18"
                 divClassName="graphs-24"
