@@ -15,8 +15,8 @@ L_cg_l = 0.101389; %m
 
 % to be determined
 a = 0;  
-b = 0;
+b = 1;
 c = 1;
 k = 1;
-B_u = 0.05;
+B_u = 0;
 B_l = 0.05;
