@@ -28,7 +28,7 @@ void IRAM_ATTR  UpdateSpeedISR() {
     } else {
       lastT -= NoP * (temp - yLastSpeedTime);
     }
-    xDelta[(xNext) % NoP] = (double) 1000000.0 / lastT;
+    yDelta[(yNext) % NoP] = (double) 1000000.0 / lastT;
   }
   return ;
 }
@@ -102,6 +102,8 @@ void IRAM_ATTR  y_cha_isr() {
     yEncoderCount--;
     yDelta[yNext % NoP] = (double) - 1000000.0 / temp;
   }
+  yNext++;
+  if (yNext == NoP)yNext = 0;
 }
 void IRAM_ATTR  y_chb_isr() {
   int64_t temp = timerRead(SpeedUpdateTimer) - yLastSpeedTime;
@@ -113,6 +115,8 @@ void IRAM_ATTR  y_chb_isr() {
     yEncoderCount++;
     yDelta[yNext % NoP] = (double)  1000000.0 / temp;
   }
+  yNext++;
+  if (yNext == NoP)yNext = 0;
 }
 
 //init the encoders
