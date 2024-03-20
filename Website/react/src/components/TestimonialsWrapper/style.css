@@ -1,0 +1,134 @@
+.testimonials-wrapper {
+  height: 628px;
+  position: relative;
+  width: 1065px;
+}
+
+.testimonials-wrapper .testimonial-item-4 {
+  height: 403px;
+  left: 0;
+  position: absolute;
+  top: 225px;
+  width: 349px;
+}
+
+.testimonials-wrapper .overlap-group-4 {
+  height: 403px;
+  position: relative;
+  width: 345px;
+}
+
+.testimonials-wrapper .rectangle-3 {
+  background-color: #0d4a831a;
+  border-radius: 20px;
+  height: 340px;
+  left: 0;
+  position: absolute;
+  top: 63px;
+  width: 345px;
+}
+
+.testimonials-wrapper .mask-group-2 {
+  height: 111px;
+  left: 117px;
+  mix-blend-mode: luminosity;
+  position: absolute;
+  top: 7px;
+  width: 111px;
+}
+
+.testimonials-wrapper .ellipse-4 {
+  background-color: #acacacc9;
+  border-radius: 15px;
+  height: 30px;
+  left: 195px;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+
+.testimonials-wrapper .text-wrapper-10 {
+  color: #ffffff;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-style: var(--body-font-style);
+  font-weight: var(--body-font-weight);
+  height: 32px;
+  left: 68px;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  position: absolute;
+  text-align: center;
+  top: 137px;
+  width: 210px;
+}
+
+.testimonials-wrapper .text-wrapper-11 {
+  color: #ffffff;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-style: var(--body-font-style);
+  font-weight: var(--body-font-weight);
+  height: 174px;
+  left: 31px;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  position: absolute;
+  text-align: center;
+  top: 179px;
+  width: 283px;
+}
+
+.testimonials-wrapper .testimonial-item-5 {
+  height: 403px;
+  left: 360px;
+  position: absolute;
+  top: 225px;
+  width: 349px;
+}
+
+.testimonials-wrapper .testimonial-item-6 {
+  height: 403px;
+  left: 720px;
+  position: absolute;
+  top: 225px;
+  width: 349px;
+}
+
+.testimonials-wrapper .overlap-5 {
+  height: 220px;
+  left: 230px;
+  position: absolute;
+  top: -1px;
+  width: 604px;
+}
+
+.testimonials-wrapper .read-what-others-2 {
+  color: #ffffff;
+  font-family: "Otomanopee One", Helvetica;
+  font-size: 60px;
+  font-weight: 400;
+  height: 174px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 46px;
+  width: 604px;
+}
+
+.testimonials-wrapper .testimonials-2 {
+  color: #ffffff;
+  font-family: "Otomanopee One", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  height: 60px;
+  left: 132px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 341px;
+}

@@ -1,0 +1,28 @@
+.intro-wrapper {
+  height: 444px;
+  position: relative;
+  width: 1052px;
+}
+
+.intro-wrapper .text-wrapper-9 {
+  color: #ffffff;
+  font-family: "Otomanopee One", Helvetica;
+  font-size: 64px;
+  font-weight: 400;
+  height: 279px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 80px;
+  width: 409px;
+}
+
+.intro-wrapper .home-banner-2 {
+  height: 444px;
+  left: 615px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 437px;
+}

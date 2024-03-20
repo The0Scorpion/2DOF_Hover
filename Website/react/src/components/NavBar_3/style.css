@@ -1,0 +1,143 @@
+.nav-bar-3 {
+  height: 14px;
+  left: 312px;
+  position: absolute;
+  top: 4px;
+  width: 326px;
+}
+
+button{
+  background: none;
+  border: none;
+  transition: all 0.5ms ease;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.group-42:hover{
+  opacity: 50%;
+}
+
+.nav-bar-dropdown{
+  position: absolute;
+  display: inline;
+}
+
+.nav-bar-3 .dropdown-content-nav {
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 210;
+  background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
+  border-radius: 15px;
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.nav-bar-3 .text1{
+  font-family: var(--copyright-font-family);
+  font-size: var(--copyright-font-size);
+  font-style: var(--copyright-font-style);
+  font-weight: var(--copyright-font-weight);
+  letter-spacing: var(--copyright-letter-spacing);
+  line-height: var(--copyright-line-height);
+  color: white;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-nav a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-nav a:hover {
+  background-color: #ffffff1f;
+  cursor: pointer;
+}
+
+/* Show the dropdown menu on hover */
+.nav-bar-dropdown:hover .dropdown-content-nav {
+  display: block;
+  cursor: pointer;
+}
+
+.nav-bar-3 .group-42 {
+  height: 14px;
+  left: 312px;
+  position: absolute;
+  top: 4px;
+  width: 14px;
+  transition: all 0.5ms ease;
+}
+
+.nav-bar-3 .rectangle-8 {
+  background-color: #d9d9d9;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+}
+
+.nav-bar-3 .rectangle-9 {
+  background-color: #d9d9d9;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+
+.nav-bar-3 .rectangle-10 {
+  background-color: #d9d9d9;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 14px;
+}
+
+.nav-bar-3 .control-chef-high-3 {
+  height: 14px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  transition: all 0.5s ease;
+  width: 90px;
+}
+
+.nav-bar-3 .div-4 {
+  height: 14px;
+}
+
+.nav-bar-3 .frame-8 {
+  height: 14px;
+  overflow: hidden;
+  width: 85px;
+}
+
+.nav-bar-3 .div-wrapper-3 {
+  height: 14px;
+  width: 85px;
+}
+
+.nav-bar-3 .overlap-9 {
+  height: 14px;
+  position: relative;
+}
+
+.nav-bar-3 .mask-group-7 {
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 85px;
+}
