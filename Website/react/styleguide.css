@@ -41,6 +41,13 @@
   --f22-letter-spacing: 0px;
   --f22-line-height: normal;
 
+  --f30-font-family: "Salsa", Helvetica;
+  --f30-font-size: 30px;
+  --f30-font-style: normal;
+  --f30-font-weight: 400;
+  --f30-letter-spacing: 0px;
+  --f30-line-height: normal;
+
   --f50-font-family: "Salsa", Helvetica;
   --f50-font-size: 50px;
   --f50-font-style: normal;
@@ -54,6 +61,13 @@
   --f55-font-weight: 400;
   --f55-letter-spacing: 0px;
   --f55-line-height: normal;
+
+  --f60-font-family: "Salsa", Helvetica;
+  --f60-font-size: 60px;
+  --f60-font-style: normal;
+  --f60-font-weight: 400;
+  --f60-letter-spacing: 0px;
+  --f60-line-height: normal;
 
   --title-font-family: "Salsa", Helvetica;
   --title-font-size: 40px;

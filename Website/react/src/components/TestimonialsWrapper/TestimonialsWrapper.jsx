@@ -44,10 +44,10 @@ export const TestimonialsWrapper = ({
           <div className={`rectangle-3 ${rectangleClassName}`} />
           <img className={`mask-group-2 ${maskGroupClassName}`} alt="Mask group" src={maskGroup} />
           <div className={`ellipse-4 ${ellipseClassName}`} />
-          <div className={`text-wrapper-10 ${divClassName}`}>Abdelrahman Magdy</div>
-          <div className={`text-wrapper-11 ${divClassNameOverride}`}>
-            bbddbsbowbruberubvierbfeurbfuebvebrvuaerbvueanjrvnleanvelvnaejbveayvrvaek.jbvcebvwbvbuwrwbvjkbaysrevve
-          </div>
+          <p className={`text-wrapper-10 ${divClassName}`}>Abdelrahman Magdy</p>
+          <p className={`text-wrapper-11 ${divClassNameOverride}`}>
+            i think this work is testimonialItem ClassName Override i love it
+          </p>
         </div>
       </div>
       <div className={`testimonial-item-5 ${testimonialItemClassNameOverride}`}>
@@ -55,10 +55,10 @@ export const TestimonialsWrapper = ({
           <div className={`rectangle-3 ${rectangleClassNameOverride}`} />
           <img className={`mask-group-2 ${maskGroupClassNameOverride}`} alt="Mask group" src={img} />
           <div className={`ellipse-4 ${ellipseClassNameOverride}`} />
-          <div className={`text-wrapper-10 ${divClassName1}`}>Abdelrahman Magdy</div>
-          <div className={`text-wrapper-11 ${divClassName2}`}>
-            bbddbsbowbruberubvierbfeurbfuebvebrvuaerbvueanjrvnleanvelvnaejbveayvrvaek.jbvcebvwbvbuwrwbvjkbaysrevve
-          </div>
+          <p className={`text-wrapper-10 ${divClassName1}`}>Abdelrahman Magdy</p>
+          <p className={`text-wrapper-11 ${divClassName2}`}>
+          i think this work is testimonialItem ClassName Override i love it
+          </p>
         </div>
       </div>
       <div className={`testimonial-item-6 ${overlapWrapperClassName}`}>
@@ -66,15 +66,15 @@ export const TestimonialsWrapper = ({
           <div className={`rectangle-3 ${rectangleClassName1}`} />
           <img className={`mask-group-2 ${imgClassName}`} alt="Mask group" src={maskGroup1} />
           <div className={`ellipse-4 ${ellipseClassName1}`} />
-          <div className={`text-wrapper-10 ${divClassName3}`}>Abdelrahman Magdy</div>
-          <div className={`text-wrapper-11 ${divClassName4}`}>
-            bbddbsbowbruberubvierbfeurbfuebvebrvuaerbvueanjrvnleanvelvnaejbveayvrvaek.jbvcebvwbvbuwrwbvjkbaysrevve
-          </div>
+          <p className={`text-wrapper-10 ${divClassName3}`}>Abdelrahman Magdy</p>
+          <p className={`text-wrapper-11 ${divClassName4}`}>
+          i think this work is testimonialItem ClassName Override i love it
+          </p>
         </div>
       </div>
       <div className={`overlap-5 ${overlapGroupClassNameOverride}`}>
         <p className={`read-what-others-2 ${readWhatOthersClassName}`}>Read What Others Have To Say</p>
-        <div className={`testimonials-2 ${testimonialsClassName}`}>Testimonials</div>
+        <p className={`testimonials-2 ${testimonialsClassName}`}>Testimonials</p>
       </div>
     </div>
   );
