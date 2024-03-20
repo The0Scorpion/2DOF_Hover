@@ -11,12 +11,12 @@
   position: absolute;
   top: 330px;
   width: 1048px;
-  font-family: var(--f18-font-family);
-  font-size: var(--f18-font-size);
-  font-style: var(--f18-font-style);
-  font-weight: var(--f18-font-weight);
-  letter-spacing: var(--f18-letter-spacing);
-  line-height: var(--f18-line-height);
+  font-family: var(--f22-font-family);
+  font-size: var(--f22-font-size);
+  font-style: var(--f22-font-style);
+  font-weight: var(--f22-font-weight);
+  letter-spacing: var(--f22-letter-spacing);
+  line-height: var(--f22-line-height);
 }
 
 .welcome .abstract {
@@ -26,12 +26,12 @@
   position: absolute;
   text-align: center;
   top: 292px;
-  font-family: var(--f18-font-family);
-  font-size: var(--f18-font-size);
-  font-style: var(--f18-font-style);
-  font-weight: var(--f18-font-weight);
-  letter-spacing: var(--f18-letter-spacing);
-  line-height: var(--f18-line-height);
+  font-family: var(--f30-font-family);
+  font-size: var(--f30-font-size);
+  font-style: var(--f30-font-style);
+  font-weight: var(--f30-font-weight);
+  letter-spacing: var(--f30-letter-spacing);
+  line-height: var(--f30-line-height);
 }
 
 .welcome .creating-an-IOT-lab {
@@ -41,12 +41,12 @@
   position: absolute;
   top: 162px;
   width: 1052px;
-  font-family: var(--f18-font-family);
-  font-size: var(--f18-font-size);
-  font-style: var(--f18-font-style);
-  font-weight: var(--f18-font-weight);
-  letter-spacing: var(--f18-letter-spacing);
-  line-height: var(--f18-line-height);
+  font-family: var(--f22-font-family);
+  font-size: var(--f22-font-size);
+  font-style: var(--f22-font-style);
+  font-weight: var(--f22-font-weight);
+  letter-spacing: var(--f22-letter-spacing);
+  line-height: var(--f22-line-height);
 }
 
 .welcome .our-vision {
@@ -56,24 +56,24 @@
   position: absolute;
   text-align: center;
   top: 113px;
-  font-family: var(--f18-font-family);
-  font-size: var(--f18-font-size);
-  font-style: var(--f18-font-style);
-  font-weight: var(--f18-font-weight);
-  letter-spacing: var(--f18-letter-spacing);
-  line-height: var(--f18-line-height);
+  font-family: var(--f30-font-family);
+  font-size: var(--f30-font-size);
+  font-style: var(--f30-font-style);
+  font-weight: var(--f30-font-weight);
+  letter-spacing: var(--f30-letter-spacing);
+  line-height: var(--f30-line-height);
 }
 
 .welcome .welcome-to-control {
   color: #ffffff;
-  font-family: var(--header-font-family);
-  font-size: var(--header-font-size);
-  font-style: var(--header-font-style);
-  font-weight: var(--header-font-weight);
+  font-family: var(--f50-font-family);
+  font-size: var(--f50-font-size);
+  font-style: var(--f50-font-style);
+  font-weight: var(--f50-font-weight);
   height: 81px;
-  left: 161px;
-  letter-spacing: var(--header-letter-spacing);
-  line-height: var(--header-line-height);
+  left: 250px;
+  letter-spacing: var(--f50-letter-spacing);
+  line-height: var(--f50-line-height);
   position: absolute;
   text-align: center;
   top: -1px;
