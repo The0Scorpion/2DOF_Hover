@@ -1,5 +1,7 @@
 Current_Thrust = 50;
 Input_Power = 1;
+
+
 %upper joint parameters
 mass_u = 1.821; %kg
 g = 9.81; %m/s^2
@@ -17,6 +19,6 @@ L_cg_l = 0.101389; %m
 a = 0;  
 b = 1;
 c = 1;
-k = 1;
+k = 0.3;
 B_u = 0;
 B_l = 0.05;
