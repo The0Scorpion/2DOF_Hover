@@ -8,6 +8,7 @@ import { Homepage } from "./screens/Homepage";
 import { BallBalance } from "./screens/BallBalance";
 import { Pendulum } from "./screens/Pendulum";
 import { Servo } from "./screens/Servo"
+import {LoginAnd} from "./screens/LoginAnd"
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
         path:"/simulation-pendulum",
         element:<Pendulum/>
+    },
+    {
+        path:"/log-in",
+        element:<LoginAnd/>
     },
 ]);
 

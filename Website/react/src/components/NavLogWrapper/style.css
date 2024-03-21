@@ -1,0 +1,84 @@
+.nav-log-wrapper {
+  height: 65px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  width: 370px;
+}
+
+.nav-log-wrapper .div-wrapper {
+  height: 65px;
+}
+
+.nav-log-wrapper .frame {
+  height: 65px;
+  overflow: hidden;
+  width: 370px;
+}
+
+.nav-log-wrapper .div {
+  height: 65px;
+  width: 369px;
+}
+
+.nav-log-wrapper .overlap-2 {
+  height: 65px;
+  position: relative;
+  width: 369px;
+}
+
+.nav-log-wrapper .mask-group {
+  height: 65px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 369px;
+}
+
+.nav-log-wrapper .overlap-group-wrapper {
+  height: 65px;
+  overflow: hidden;
+}
+
+.nav-log-wrapper .overlap-group-2 {
+  height: 110px;
+  position: relative;
+  width: 369px;
+}
+
+.nav-log-wrapper .group {
+  height: 110px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 110px;
+}
+
+.nav-log-wrapper .frame-2 {
+  height: 65px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav-log-wrapper .group-2 {
+  height: 39px;
+  left: 0;
+  position: absolute;
+  top: 13px;
+  width: 176px;
+}
+
+.nav-log-wrapper .group-3 {
+  height: 65px;
+  left: 191px;
+  position: absolute;
+  top: 0;
+  width: 55px;
+}
+
+.nav-log-wrapper .group-4 {
+  height: 40px;
+  left: 262px;
+  position: absolute;
+  top: 11px;
+  width: 107px;
+}

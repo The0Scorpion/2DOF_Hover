@@ -21,7 +21,7 @@ export const NavBar_3 = ({ className, maskGroup = "https://c.animaapp.com/jrXwmM
           <Link className="a" to="/#"><button className="text1">About us</button></Link>
           <Link className="a" to="/#"><button className="text1">Contact us</button></Link>
           <Link className="a" to="/#"><button className="text1">Register</button></Link>
-          <Link className="a" to="/#"><button className="text1">Log In</button></Link>
+          <Link className="a" to="/log-in"><button className="text1">Log In</button></Link>
         </div>
       </div>
       <div className="control-chef-high-3">

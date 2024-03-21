@@ -85,85 +85,85 @@ export const Parameters = ({
       <div className={`text ${textClassName}`}>
         <div className={`text-wrapper-7 ${xPosKpClassName}`}>X Pos Kp</div>
         <div className={`group-11 ${groupClassName}`}>
-          <input className={`input ${xPosKpClassNameOverride}`} />
+          <input type="number" className={`input ${xPosKpClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-2 ${textClassNameOverride}`}>
         <div className={`text-wrapper-7 ${yPosKpClassName}`}>Y Pos Kp</div>
         <div className={`group-11 ${groupClassNameOverride}`}>
-          <input className={`input ${yPosKpClassNameOverride}`} />
+          <input type="number" className={`input ${yPosKpClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-3 ${divClassName}`}>
         <div className={`text-wrapper-7 ${xPosKiClassName}`}>X Pos Ki</div>
         <div className={`group-11 ${overlapGroupWrapperClassName}`}>
-          <input className={`input ${xPosKiClassNameOverride}`} />
+          <input type="number" className={`input ${xPosKiClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-4 ${divClassNameOverride}`}>
         <div className={`text-wrapper-7 ${yPosKiClassName}`}>Y Pos Ki</div>
         <div className={`group-11 ${overlapGroupWrapperClassNameOverride}`}>
-          <input className={`input ${yPosKiClassNameOverride}`} />
+          <input type="number" className={`input ${yPosKiClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-5 ${textClassName1}`}>
         <div className={`text-wrapper-7 ${xPosKdClassName}`}>X Pos Kd</div>
         <div className={`group-11 ${groupClassName1}`}>
-          <input className={`input ${xPosKdClassNameOverride}`} />
+          <input type="number" className={`input ${xPosKdClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-6 ${textClassName2}`}>
         <div className={`text-wrapper-7 ${yPosKdClassName}`}>Y Pos Kd</div>
         <div className={`group-11 ${groupClassName2}`}>
-          <input className={`input ${yPosKdClassNameOverride}`} />
+          <input type="number" className={`input ${yPosKdClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-7 ${textClassName3}`}>
         <div className={`text-wrapper-7 ${xVelKpClassName}`}>X Vel Kp</div>
         <div className={`group-11 ${groupClassName3}`}>
-          <input className={`input ${xVelKpClassNameOverride}`} />
+          <input type="number" className={`input ${xVelKpClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-8 ${textClassName4}`}>
         <div className={`text-wrapper-7 ${yVelKpClassName}`}>Y Vel Kp</div>
         <div className={`group-11 ${groupClassName4}`}>
-          <input className={`input ${yVelKpClassNameOverride}`} />
+          <input type="number" className={`input ${yVelKpClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-9 ${textClassName5}`}>
         <div className={`text-wrapper-7 ${xVelKiClassName}`}>X Vel Ki</div>
         <div className={`group-11 ${groupClassName5}`}>
-          <input className={`input ${xVelKiClassNameOverride}`} />
+          <input type="number" className={`input ${xVelKiClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-10 ${textClassName6}`}>
         <div className={`text-wrapper-7 ${yVelKiClassName}`}>Y Vel Ki</div>
         <div className={`group-11 ${groupClassName6}`}>
-          <input className={`input ${yVelKiClassNameOverride}`} />
+          <input type="number" className={`input ${yVelKiClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-11 ${textClassName7}`}>
         <div className={`text-wrapper-7 ${xVelKdClassName}`}>X Vel Kd</div>
         <div className={`group-11 ${groupClassName7}`}>
-          <input className={`input ${xVelKdClassNameOverride}`} />
+          <input type="number" className={`input ${xVelKdClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-12 ${textClassName8}`}>
         <div className={`text-wrapper-7 ${yVelKdClassName}`}>Y Vel Kd</div>
         <div className={`group-11 ${groupClassName8}`}>
-          <input className={`input ${yVelKdClassNameOverride}`} />
+          <input type="number" className={`input ${yVelKdClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-13 ${textClassName9}`}>
         <div className={`text-wrapper-7 ${xSetPointClassName}`}>X Set Point</div>
         <div className={`group-11 ${groupClassName9}`}>
-          <input className={`input ${xSetPointClassNameOverride}`} />
+          <input type="number" className={`input ${xSetPointClassNameOverride}`} />
         </div>
       </div>
       <div className={`text-14 ${textClassName10}`}>
         <div className={`text-wrapper-7 ${ySetPointClassName}`}>Y Set Point</div>
         <div className={`group-11 ${groupClassName10}`}>
-          <input className={`input ${ySetPointClassNameOverride}`} />
+          <input type="number" className={`input ${ySetPointClassNameOverride}`} />
         </div>
       </div>
       <p className={`please-enter-your ${pleaseEnterYourClassName}`}>Please Enter Your Parameters Below:</p>

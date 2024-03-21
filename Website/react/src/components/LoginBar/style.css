@@ -1,0 +1,121 @@
+.login-bar {
+  background-color: #ffffff08;
+  border: 2px solid;
+  border-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px 10px #ffffff1a;
+  height: 840px;
+  position: relative;
+  width: 720px;
+}
+
+.login-bar .log-in {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 50px;
+  font-weight: 400;
+  height: 61px;
+  left: 290px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 61px;
+}
+
+.login-bar .username-email-com {
+  color: #050518;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  font-family: "Salsa", Helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  height: 90px;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 223px;
+  width: 590px;
+}
+
+.login-bar .password {
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  color: #05051880;
+  font-family: "Salsa", Helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  height: 90px;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 348px;
+  width: 590px;
+}
+
+.login-bar .login-button {
+  height: 90px;
+  left: 168px;
+  position: absolute;
+  top: 560px;
+  width: 382px;
+}
+
+.login-bar .log-in-wrapper {
+  background-color: #d9d9d92b;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px #ffffff80;
+  height: 90px;
+  position: relative;
+  width: 380px;
+}
+
+.login-bar .text-wrapper {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  height: 49px;
+  left: 135px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+}
+
+.login-bar .create-button {
+  height: 90px;
+  left: 130px;
+  position: absolute;
+  top: 690px;
+  width: 450px;
+}
+
+.login-bar .create-wrapper{
+  background-color: #d9d9d92b;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px #ffffff80;
+  height: 90px;
+  position: relative;
+  width: 450px;
+}
+
+.login-bar .text-create-wrapper {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 40px;
+  font-weight: 400;
+  height: 49px;
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+}

@@ -34,10 +34,10 @@ export const NavBar = ({ className }) => {
 
       </div>
       <div className="group-21">
-        <button className="log-in">Log In</button>
-        <button className="text-wrapper-9">Register</button>
-        <button className="text-wrapper-10">Contact</button>
-        <button className="text-wrapper-11"><Link to="/">About</Link></button>
+        <button className="log-in"><Link to="/log-in"><p className="p">Log In</p></Link></button>
+        <button className="text-wrapper-9"><Link to="/"><p className="p">Register</p></Link></button>
+        <button className="text-wrapper-10"><Link to="/"><p className="p">Contact us</p></Link></button>
+        <button className="text-wrapper-11"><Link to="/"><p className="p">About us</p></Link></button>
       </div>
     </div>
   );

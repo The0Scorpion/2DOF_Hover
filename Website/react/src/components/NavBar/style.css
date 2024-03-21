@@ -6,7 +6,7 @@
 
 .nav-bar .overlap-4 {
   height: 50px;
-  left: 996px;
+  left: 1000px;
   position: absolute;
   top: 0;
   width: 50px;
@@ -177,6 +177,10 @@
   font-weight: var(--copyright-font-weight);
   letter-spacing: var(--copyright-letter-spacing);
   line-height: var(--copyright-line-height);
+}
+
+.p{
+  color: #ffffff;
 }
 
 .nav-bar .text-wrapper-9:hover{
