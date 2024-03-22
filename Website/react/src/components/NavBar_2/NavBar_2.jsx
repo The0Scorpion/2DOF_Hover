@@ -22,6 +22,8 @@ export const NavBar_2 = ({ className, maskGroup = "https://c.animaapp.com/jrXwmM
           <Link className="a" to="/#"><button className="text1">Contact us</button></Link>
           <Link className="a" to="/#"><button className="text1">Register</button></Link>
           <Link className="a" to="/log-in"><button className="text1">Log In</button></Link>
+          <div className="a" to="/#"><button className="text1">Theories Explanation</button></div>
+          <div className="a" to="/#"><button className="text1">Experiments</button></div>
         </div>
       </div>
 

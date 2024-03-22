@@ -1,29 +1,29 @@
 .intro-wrapper {
   height: 444px;
   position: relative;
-  width: 1052px;
+  width: 1440px;
 }
 
 .intro-wrapper .text-wrapper-9 {
   color: #ffffff;
   height: 279px;
-  left: 0;
+  left: 90px;
   position: absolute;
-  top: 80px;
-  width: 409px;
-  font-family: var(--f60-font-family);
-  font-size: var(--f60-font-size);
-  font-style: var(--f60-font-style);
-  font-weight: var(--f60-font-weight);
-  letter-spacing: var(--f60-letter-spacing);
-  line-height: var(--f60-line-height);
+  top: 20px;
+  width: 500px;
+  font-family: var(--f70-font-family);
+  font-size: var(--f70-font-size);
+  font-style: var(--f70-font-style);
+  font-weight: var(--f70-font-weight);
+  letter-spacing: var(--f70-letter-spacing);
+  line-height: var(--f70-line-height);
 }
 
 .intro-wrapper .home-banner-2 {
-  height: 444px;
-  left: 615px;
+  height: auto;
+  left: 770px;
   object-fit: cover;
   position: absolute;
-  top: 0;
-  width: 437px;
+  top: -30px;
+  width: 20%;
 }

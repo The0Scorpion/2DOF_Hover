@@ -69,6 +69,13 @@
   --f60-letter-spacing: 0px;
   --f60-line-height: normal;
 
+  --f70-font-family: "Salsa", Helvetica;
+  --f70-font-size: 70px;
+  --f70-font-style: normal;
+  --f70-font-weight: 400;
+  --f70-letter-spacing: 0px;
+  --f70-line-height: normal;
+
   --title-font-family: "Salsa", Helvetica;
   --title-font-size: 40px;
   --title-font-style: normal;
