@@ -169,81 +169,57 @@
 }
 
 .login-and .login-bar-instance {
-  height: 710px !important;
+  height: 410px !important;
   left: 75px !important;
   position: absolute !important;
   top: 0 !important;
-  width: 633px !important;
+  width: 530px !important;
 }
 
 .login-and .instance-node {
-  left: 247px !important;
-  top: 49px !important;
-}
-
-.login-and .login-bar-3 {
-  height: 79px !important;
-  left: 31px !important;
-  top: 196px !important;
-  width: 571px !important;
+  left: 200px !important;
+  top: 40px !important;
+  
 }
 
 .login-and .login-bar-4 {
-  height: 77px !important;
-  left: 55px !important;
-  width: 519px !important;
+  height: 40px !important;
+  left: 65px !important;
+  width: 400px !important;
+  top:100px !important;
+  border-radius: 35px !important;
 }
+
+.login-and .login-bar-7 {
+  height: 40px !important;
+  left: 65px !important;
+  width: 400px !important;
+  top: 150px !important;
+  border-radius: 35px !important;
+}
+
+.login-and .login-bar-9 {
+  height: 50px !important;
+  width: 250px !important;
+  top:220px !important;
+  left: 130px !important;
+  border-radius: 40px !important;
+}
+
+.login-and .createclassname {
+  left: 85px !important;
+  top: 300px !important;
+  height: 50px !important;
+  width: 350px !important;
+  border-radius: 40px !important;
+}
+
 
 .login-and .login-bar-5 {
   height: 80px !important;
   left: 31px !important;
   top: 306px !important;
   width: 571px !important;
-}
-
-.login-and .login-bar-6 {
-  height: 79px !important;
-  width: 571px !important;
-}
-
-.login-and .login-bar-7 {
-  height: 77px !important;
-  left: 55px !important;
-  width: 519px !important;
-}
-
-.login-and .login-bar-8 {
-  height: 79px !important;
-  left: 147px !important;
-  top: 492px !important;
-  width: 336px !important;
-}
-
-.login-and .login-bar-9 {
-  height: 79px !important;
-  width: 334px !important;
-}
-
-.login-and .login-bar-10 {
-  left: 112px !important;
-  top: 15px !important;
-}
-
-.login-and .createbutton {
-  height: 79px !important;
-  left: 115px !important;
-  top: 600px !important;
-  width: 400px !important;
-}
-
-.login-and .createlap {
-  height: 79px !important;
-  width: 400px !important;
-}
-
-.login-and .createclassname {
-  left: 30px !important;
-  top: 15px !important;
 }
 
 .login-and .watermark-2 {
@@ -268,78 +244,40 @@
 
 .login-and .instance-node-1 {
   left: 115px !important;
-  top: 20px !important;
-  font-size: 24px !important;
-}
-
-.login-and .login-bar-10-1 {
-  left: 110px !important;
-  top: 15px !important;
-  font-size: var(--subheader-font-size) !important;
-}
-
-.login-and .login-bar-8-1 {
-  height: 35px !important;
-  left: 15px !important;
-  top: 200px !important;
-  width: 200px !important;
-}
-
-.login-and .login-bar-3-1 {
-  height: 40px !important;
-  left: 0px !important;
-  top: 100px !important;
-  width: 200px !important;
-}
-
-.login-and .login-bar-5-1 {
-  height: 80px !important;
-  left: 31px !important;
-  top: 306px !important;
-  width: 571px !important;
+  top: 30px !important;
+  font-size: var(--header-font-family) !important;
 }
 
 .login-and .login-bar-9-1 {
   height: 50px !important;
   width: 270px !important;
+  top:190px !important;
+  left: 75px !important;
+  width: 150px !important;
+  font-size: var(--subheader-font-size);
 }
 
 .login-and .login-bar-7-1 {
   height: 35px !important;
-  left: 7px !important;
+  left: 10px !important;
   width: 280px !important;
-  top: 140px;
+  top: 120px;
   font-size: var(--subheader-font-size);
-}
-
-.login-and .login-bar-6-1 {
-  height: 35px !important;
-  width: 270px !important;
 }
 
 .login-and .login-bar-4-1 {
   height: 35px !important;
-  left: 7px !important;
+  left: 10px !important;
   width: 280px !important;
-  top: 100px;
+  top: 80px;
   font-size: var(--subheader-font-size);
 }
 
-.login-and .createbutton-1 {
-  height: 35px !important;
-  left: 15px !important;
-  top: 275px !important;
-  width: 400px !important;
-  
-}
 
-.login-and .createlap-1 {
-  height: 50px !important;
-  width: 270px !important;
-}
 
 .login-and .createclassname-1 {
-  left: 50px !important;
-  top: 15px !important;
+  left: 20px !important;
+  top: 260px !important;
+  width: 260px !important;
   font-size: var(--subheader-font-size) !important;
 }

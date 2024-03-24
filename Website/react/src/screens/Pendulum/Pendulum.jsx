@@ -11,7 +11,6 @@ import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
 import { Hover } from "../Hover";
-import { ButtonWel } from "../../components/ButtonWel";
 import {Link} from "react-router-dom"
 import "./style.css";
 

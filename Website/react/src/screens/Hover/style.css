@@ -9,6 +9,7 @@
 .hover .overlap-wrapper-2 {
   background-color: #050814;
   overflow: hidden;
+  left:0px
 }
 
 .hover .overlap-6 {
@@ -634,14 +635,6 @@
   left: 895px !important;
   position: absolute !important;
   top: 319px !important;
-}
-
-.hover .nav-bar-tab {
-  height: 14px !important;
-  left: 273px !important;
-  position: absolute !important;
-  top: 480px !important;
-  width: 326px !important;
 }
 
 .hover .parameters-3 {
@@ -1286,9 +1279,230 @@
 }
 
 .hover .nav-bar-tab-instance {
-  left: 216px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 826px !important;
+  top: 450px !important;
 }
 
+.hover .nav-bar1{
+  left: 300px !important;
+  top: 0px !important;
+}
 
+.hover .nav-bar2{
+  width:60%;
+  height:auto;
+}
+
+.hover .nav-bar3{
+  width:60%;
+  height:auto;
+}
+
+.hover .nav-bar4{
+  width:60%;
+  height:auto;
+}
+
+.hover .nav-bar5{
+  left: 180px !important;
+  min-width: 50px !important;
+  top:0px !important;
+}
+
+.hover .nav-bar6{
+  font-size: var(--copyright-font-size) !important;
+}
+
+.hover .footer5{
+  left:256px !important;
+  top:3050px !important;
+}
+
+.hover .groupfooter{
+  left:0px !important;
+  top:0px !important;
+  height: 100px !important;
+  width: 358px !important;
+}
+
+.hover .group2{
+  left:0px !important;
+  top:0px !important;
+}
+
+.hover .controlcheifhighfooter{
+  left:-20px;
+  top:20px;
+}
+
+.hover .maskgroupfooter{
+  width: 30% !important;
+  height: auto !important;
+  left:0px !important;
+  top:0px !important;
+}
+
+.hover .group7footer{
+  left:260px !important;
+  top:-30px !important;
+}
+
+.hover .group9footer{
+  left:170px !important;
+  top:-30px !important;
+}
+
+.hover .textwrapperfooter{
+  font-size: var(--copyright-font-size) !important;
+  top: 20px !important;
+}
+
+.hover .textwrapper2footer{
+  font-size: var(--f10-font-size) !important;
+  top: -5px !important;
+}
+
+.hover .textwrapper3footer{
+  font-size: var(--f10-font-size) !important;
+  top: 10px !important;
+}
+
+.hover .textwrapper4footer{
+  font-size: var(--f10-font-size) !important;
+  top: 25px !important;
+}
+
+.hover .textwrapper5footer{
+  font-size: var(--f10-font-size) !important;
+  top: 40px !important;
+}
+
+.hover .buttonfooter{
+  font-size: var(--f10-font-size) !important;
+}
+
+.hover .group8footer{
+  left:0px !important; 
+}
+
+.hover .group10footer{
+  left:0px !important;
+}
+
+.hover .overlab2footer{
+  left:0px !important;
+  top:-120px !important;
+}
+
+.hover .rectanglefooter{
+  left: 0px !important;
+  width: 358px !important;
+  height: 10px !important;
+}
+
+.hover .copyrightfooter{
+  left:0px !important;
+  font-size: 7px !important;
+}
+
+.hover .nav-bar-tab {
+  height: 34px !important;
+  left: 216px !important;
+  position: absolute !important;
+  top: 830px !important;
+  width: 765px !important;
+}
+
+.hover .footer1{
+  left:180px !important;
+  top:3540px !important;
+}
+
+.hover .groupfooter1{
+  left:0px !important;
+  top:0px !important;
+  height: 150px !important;
+  width: 835px !important;
+}
+
+.hover .group2footer1{
+  left:0px !important;
+  top:0px !important;
+}
+
+.hover .controlcheifhighfooter1{
+  left:10px;
+  top:65px;
+}
+
+.hover .maskgroupfooter1{
+  width: 50% !important;
+  height: auto !important;
+  left:0px !important;
+  top:0px !important;
+}
+
+.hover .group7footer1{
+  left:720px !important;
+  top:-10px !important;
+}
+
+.hover .group9footer1{
+  left:550px !important;
+  top:-10px !important;
+}
+
+.hover .textwrapperfooter1{
+  font-size: var(--subheader-font-size) !important;
+  top: 20px !important;
+}
+
+.hover .textwrapper2footer1{
+  font-size: var(--paragraph-font-size) !important;
+  top: 5px !important;
+}
+
+.hover .textwrapper3footer1{
+  font-size: var(--paragraph-font-size) !important;
+  top: 30px !important;
+}
+
+.hover .textwrapper4footer1{
+  font-size: var(--paragraph-font-size) !important;
+  top: 55px !important;
+}
+
+.hover .textwrapper5footer1{
+  font-size: var(--paragraph-font-size) !important;
+  top: 80px !important;
+}
+
+.hover .buttonfooter1{
+  font-size: var(--paragraph-font-size) !important;
+}
+
+.hover .group8footer1{
+  left:0px !important; 
+}
+
+.hover .group10footer1{
+  left:0px !important;
+}
+
+.hover .overlab2footer1{
+  left:0px !important;
+}
+
+.hover .rectanglefooter1{
+  left: 0px !important;
+  width: 835px !important;
+  height: 20px !important;
+  top:60px !important;
+}
+
+.hover .copyrightfooter1{
+  left:210px !important;
+  top: 65px !important;
+  font-size: var(--f10-font-size) !important;
+}

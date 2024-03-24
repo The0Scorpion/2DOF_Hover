@@ -4,7 +4,6 @@ import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
 import { NavBar_3 } from "../../components/NavBar_3";
-import { Testimonials } from "../../components/Testimonials";
 import { TestimonialsWrapper } from "../../components/TestimonialsWrapper";
 import { Welcome } from "../../components/Welcome";
 import { IntroWrapper } from "../../components/IntroWrapper";
@@ -24,9 +23,9 @@ export const Homepage = () => {
         style={{
           height:
             screenWidth < 834
-              ? "2924px"
+              ? "2465px"
               : screenWidth >= 834 && screenWidth < 1300
-                ? "2069px"
+                ? "1920px"
                 : screenWidth >= 1300
                   ? "2100px"
                   : undefined,
@@ -122,7 +121,36 @@ export const Homepage = () => {
                 divClassName="introwrap834"
                 homeBannerClassName="homebanner834"
              />
-              <NavBar_3 className="nav-bar-tab-instance" />
+              <NavBar_2
+               className="nav-bar-tab-instance"
+               navbarclassName="nav-bar1"
+               controlchef1="nav-bar2"
+               controlchef2="nav-bar3"
+               controlchef3="nav-bar4"
+               navbardrop="nav-bar5"
+               navbartext="nav-bar6" 
+              />
+              <Footer
+                className="footer5"
+                group="groupfooter"
+                group2="group2footer"
+                controlchefhigh="controlcheifhighfooter"
+                maskgroup="maskgroupfooter"
+                group7="group7footer"
+                buttonf="buttonfooter"
+                textwrapper="textwrapperfooter"
+                textwrapper2="textwrapper2footer"
+                textwrapper3="textwrapper3footer"
+                textwrapper4="textwrapper4footer"
+                textwrapper5="textwrapper5footer"
+                group8="group8footer"
+                group9="group9footer"
+                group10="group10footer"
+                overlab2="overlab2footer"
+                overlapwrapper="overlapwrapperfooter"
+                rectangle="rectanglefooter"
+                copyright="copyrightfooter"
+              />
             </>
           )}
 
@@ -174,6 +202,26 @@ export const Homepage = () => {
                 divClassName="instance-node"
                 homeBanner="https://c.animaapp.com/8gKnAxyl/img/home-banner-1-1-3@2x.png"
                 homeBannerClassName="intro-2"
+              />
+              <Footer
+                className="footer1"
+                group="groupfooter1"
+                group2="group2footer1"
+                controlchefhigh="controlcheifhighfooter1"
+                maskgroup="maskgroupfooter1"
+                group7="group7footer1"
+                textwrapper="textwrapperfooter1"
+                textwrapper2="textwrapper2footer1"
+                textwrapper3="textwrapper3footer1"
+                textwrapper4="textwrapper4footer1"
+                textwrapper5="textwrapper5footer1"
+                group8="group8footer1"
+                group9="group9footer1"
+                group10="group10footer1"
+                overlab2="overlab2footer"
+                overlapwrapper="overlapwrapperfooter1"
+                rectangle="rectanglefooter1"
+                copyright="copyrightfooter1"
               />
             </>
           )}

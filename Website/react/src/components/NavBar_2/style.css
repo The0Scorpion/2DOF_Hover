@@ -29,8 +29,8 @@ button:hover{
   display: none;
   position: absolute;
   text-align: center;
-  left: 580px;
-  top: 27px;
+  left: 520px;
+  top: 25px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
   border-radius: 20px;
   min-width: 200px;
@@ -38,17 +38,122 @@ button:hover{
   z-index: 1;
 }
 
+.nav-bar-2 .theories-explanation {
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-style: var(--subheader-font-style);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+}
+
+.nav-bar-2 .theories-explanation:hover{
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-bar-2 .dropdown-content-theories {
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 400px;
+  top:0;
+  padding: 10px;
+  background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
+  border-radius: 5px;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-theory:hover .dropdown-content-theories {
+  display: block;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-theories .text1:hover {
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-theories .text1 {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
 .nav-bar-2 .dropdown-content-experiments {
   display: none;
   position: absolute;
   text-align: center;
-  left: 500px;
-  top: 27px;
+  align-items: center;
+  padding: 10px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
-  border-radius: 20px;
-  min-width: 200px;
+  border-radius: 5px;
+  width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-exp:hover .dropdown-content-experiments {
+  display: block;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-experiments .text1:hover {
+  background-color: #ffffff1f;
+  cursor: pointer;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-experiments .text1 {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+.nav-bar-2 .experiments {
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-style: var(--subheader-font-style);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+}
+
+.nav-bar-2 .experiments:hover{
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.p2{
+  color: #ffffff;
+  border-radius: 5px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
+  padding: 5px; 
 }
 
 

@@ -5,88 +5,73 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React from "react";
 import "./style.css";
+import {Link} from "react-router-dom";
+import { number } from "prop-types";
 
-export const Footer = ({ className }) => {
+export const Footer = ({ 
+  className,
+  group,
+  group2,
+  controlchefhigh,
+  maskgroup,
+  group7,
+  textwrapper,
+  textwrapper2,
+  textwrapper3,
+  textwrapper4,
+  textwrapper5,
+  group8,
+  group9,
+  group10,
+  overlapwrapper,
+  overlab2,
+  rectangle,
+  copyright,
+  buttonf,
+ }) => {
   return (
     <div className={`footer ${className}`}>
-      <div className="group">
-        <div className="group-2">
-          <div className="control-chef-high">
-            <div className="div-wrapper">
-              <div className="frame">
-                <div className="div-2">
-                  <div className="div-wrapper">
-                    <div className="overlap">
-                      <div className="mask-group">
-                        <div className="div-wrapper">
-                          <div className="div-2">
-                            <div className="div-wrapper">
-                              <div className="div-2">
-                                <div className="div-wrapper">
-                                  <div className="div-2">
-                                    <div className="overlap-group-wrapper">
-                                      <div className="overlap-group">
-                                        <div className="group-3" />
-                                        <div className="group-3" />
-                                        <div className="mask-group">
-                                          <div className="frame-2">
-                                            <div className="group-4" />
-                                            <div className="group-5" />
-                                            <div className="group-6" />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <img
-                        className="mask-group"
-                        alt="Mask group"
-                        src="https://c.animaapp.com/zqIJEW6i/img/mask-group-19@2x.png"
-                      />
-                      <img
-                        className="mask-group"
-                        alt="Mask group"
-                        src="https://c.animaapp.com/zqIJEW6i/img/mask-group-20@2x.png"
-                      />
-                      <img
-                        className="mask-group"
-                        alt="Mask group"
-                        src="https://c.animaapp.com/zqIJEW6i/img/mask-group-21@2x.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div className={`group ${group}`}>
+        <div className={`group-2 ${group2}`}>
+          <div className={`control-chef-high ${controlchefhigh}`}>
+            <img
+              className={`mask-group ${maskgroup}`}
+              alt="Mask group"
+              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-19@2x.png"
+            />
+            <img
+              className={`mask-group ${maskgroup}`}
+              alt="Mask group"
+              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-20@2x.png"
+            />
+            <img
+              className={`mask-group ${maskgroup}`}
+              alt="Mask group"
+              src="https://c.animaapp.com/zqIJEW6i/img/mask-group-21@2x.png"
+            />
+          </div>
+          <div className={`group-7 ${group7}`}>
+            <div className={`text-wrapper ${textwrapper}`}>Contact</div>
+            <div className={`group-8 ${group8}`}>
+              <div className={`text-wrapper-2 ${textwrapper2}`}><button className={`buttonf ${buttonf}`}><a href="https://mail.google.com/">Email</a></button></div>
+              <div className={`text-wrapper-3 ${textwrapper3}`}><button className={`buttonf ${buttonf}`}><a href="https://www.linkedin.com/">Linkedin</a></button></div>
+              <div className={`text-wrapper-4 ${textwrapper4}`}><button className={`buttonf ${buttonf}`}><a href="https://www.instagram.com/">Instgram</a></button></div>
+              <div className={`text-wrapper-5 ${textwrapper5}`}><button className={`buttonf ${buttonf}`}><a href="https://www.facebook.com/">Facebook</a></button></div>
             </div>
           </div>
-          <div className="group-7">
-            <div className="text-wrapper">Contact</div>
-            <div className="group-8">
-              <div className="text-wrapper-2">Email</div>
-              <div className="text-wrapper-3">Linkedin</div>
-              <div className="text-wrapper-4">Instgram</div>
-              <div className="text-wrapper-5">Facebook</div>
-            </div>
-          </div>
-          <div className="group-9">
-            <div className="text-wrapper">Control Chef</div>
-            <div className="group-10">
-              <div className="text-wrapper-2">Home</div>
-              <div className="text-wrapper-3">About Us</div>
+          <div className={`group-9 ${group9}`}>
+            <div className={`text-wrapper ${textwrapper}`}>Control Chef</div>
+            <div className={`group-10 ${group10}`}>
+              <div className={`text-wrapper-2 ${textwrapper2}`}><Link to="/"><button className={`buttonf ${buttonf}`}>Home</button></Link></div>
+              <div className={`text-wrapper-3 ${textwrapper3}`}><Link to="/#"><button className={`buttonf ${buttonf}`}>About Us</button></Link></div>
             </div>
           </div>
         </div>
       </div>
-      <div className="overlap-wrapper">
-        <div className="overlap-2">
-          <div className="rectangle" />
-          <p className="copyright">Copyright @ 2024 Control Chef - All Rights Reserved</p>
+      <div className={`overlap-wrapper ${overlapwrapper}`}>
+        <div className={`overlap-2 ${overlab2}`}>
+          <div className={`rectangle ${rectangle}`} />
+          <p className={`copyright ${copyright}`}>Copyright @ { new Date().getFullYear() } Control Chef - All Rights Reserved</p>
         </div>
       </div>
     </div>

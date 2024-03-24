@@ -1,12 +1,10 @@
 import React from "react";
 import { useWindowWidth } from "../../breakpoints";
-import { Blur } from "../../components/Blur";
 import { Buttons } from "../../components/Buttons";
 import { Footer } from "../../components/Footer";
 import { Graphs } from "../../components/Graphs";
 import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
-import { NavBar_3 } from "../../components/NavBar_3";
 import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
@@ -22,20 +20,20 @@ export const Hover = () => {
         style={{
           height:
             screenWidth < 834
-              ? "2650px"
-              : screenWidth >= 834 && screenWidth < 1440
-              ? "2937px"
-              : screenWidth >= 1440
-              ? "3459px"
-              : undefined,
+              ? "2700px"
+              : screenWidth >= 834 && screenWidth < 1300
+                ? "2937px"
+                : screenWidth >= 1300
+                  ? "3459px"
+                  : undefined,
           width:
             screenWidth < 834
               ? "360px"
-              : screenWidth >= 834 && screenWidth < 1440
-              ? "834px"
-              : screenWidth >= 1440
-              ? "1440px"
-              : undefined,
+              : screenWidth >= 834 && screenWidth < 1300
+                ? "834px"
+                : screenWidth >= 1300
+                  ? "1300px"
+                  : undefined,
         }}
       >
         <div
@@ -44,1008 +42,50 @@ export const Hover = () => {
             height:
               screenWidth < 834
                 ? "3926px"
-                : screenWidth >= 834 && screenWidth < 1440
-                ? "4061px"
-                : screenWidth >= 1440
-                ? "3663px"
-                : undefined,
+                : screenWidth >= 834 && screenWidth < 1300
+                  ? "4061px"
+                  : screenWidth >= 1300
+                    ? "3663px"
+                    : undefined,
             left:
               screenWidth < 834
                 ? "-256px"
-                : screenWidth >= 834 && screenWidth < 1440
-                ? "-181px"
-                : screenWidth >= 1440
-                ? "-705px"
-                : undefined,
+                : screenWidth >= 834 && screenWidth < 1300
+                  ? "-181px"
+                  : screenWidth >= 1300
+                    ? "-705px"
+                    : undefined,
             top:
               screenWidth < 834
                 ? "-467px"
-                : screenWidth >= 834 && screenWidth < 1440
-                ? "-790px"
-                : screenWidth >= 1440
-                ? "-204px"
-                : undefined,
+                : screenWidth >= 834 && screenWidth < 1300
+                  ? "-790px"
+                  : screenWidth >= 1300
+                    ? "-204px"
+                    : undefined,
             width:
               screenWidth < 834
                 ? "724px"
-                : screenWidth >= 834 && screenWidth < 1440
-                ? "1098px"
-                : screenWidth >= 1440
-                ? "2431px"
-                : undefined,
+                : screenWidth >= 834 && screenWidth < 1300
+                  ? "1098px"
+                  : screenWidth >= 1300
+                    ? "2431px"
+                    : undefined,
           }}
         >
-          {((screenWidth >= 834 && screenWidth < 1440) || screenWidth < 834) && (
+          {screenWidth >= 834 && screenWidth < 1300 && (
             <>
-              <Blur
-                className={`${screenWidth >= 834 && screenWidth < 1440 && "class-3"} ${screenWidth < 834 && "class-4"}`}
-                divClassName={`${screenWidth >= 834 && screenWidth < 1440 && "class-7"} ${
-                  screenWidth < 834 && "class-8"
-                }`}
-                ellipseClassName={`${screenWidth >= 834 && screenWidth < 1440 && "class-5"} ${
-                  screenWidth < 834 && "class-6"
-                }`}
-                ellipseClassNameOverride={`${screenWidth >= 834 && screenWidth < 1440 && "class"} ${
-                  screenWidth < 834 && "class-2"
-                }`}
+              <Parameters className="parameters-instance" />
+              <videoStream
+                className="class-10"
+                videoStream="https://c.animaapp.com/zqIJEW6i/img/video-stream-2.svg"
+                videoStreamClassName="class-14"
+                videoStreamClassNameOverride="class12"
               />
-              <footer
-                className="footer-2"
-                style={{
-                  height: screenWidth < 834 ? "77px" : screenWidth >= 834 && screenWidth < 1440 ? "141px" : undefined,
-                  left: screenWidth < 834 ? "202px" : screenWidth >= 834 && screenWidth < 1440 ? "181px" : undefined,
-                  top: screenWidth < 834 ? "3037px" : screenWidth >= 834 && screenWidth < 1440 ? "3584px" : undefined,
-                  width: screenWidth < 834 ? "468px" : screenWidth >= 834 && screenWidth < 1440 ? "834px" : undefined,
-                }}
-              >
-                <div
-                  className="group-30"
-                  style={{
-                    height: screenWidth < 834 ? "64px" : screenWidth >= 834 && screenWidth < 1440 ? "117px" : undefined,
-                    left: screenWidth < 834 ? "61px" : screenWidth >= 834 && screenWidth < 1440 ? "108px" : undefined,
-                    width: screenWidth < 834 ? "346px" : screenWidth >= 834 && screenWidth < 1440 ? "617px" : undefined,
-                  }}
-                >
-                  <div
-                    className="group-31"
-                    style={{
-                      height:
-                        screenWidth < 834 ? "53px" : screenWidth >= 834 && screenWidth < 1440 ? "96px" : undefined,
-                      left: screenWidth < 834 ? "10px" : screenWidth >= 834 && screenWidth < 1440 ? "19px" : undefined,
-                      top: screenWidth < 834 ? "4px" : screenWidth >= 834 && screenWidth < 1440 ? "9px" : undefined,
-                      width:
-                        screenWidth < 834 ? "326px" : screenWidth >= 834 && screenWidth < 1440 ? "582px" : undefined,
-                    }}
-                  >
-                    <div
-                      className="control-chef-high-2"
-                      style={{
-                        height:
-                          screenWidth < 834 ? "17px" : screenWidth >= 834 && screenWidth < 1440 ? "32px" : undefined,
-                        top: screenWidth < 834 ? "19px" : screenWidth >= 834 && screenWidth < 1440 ? "34px" : undefined,
-                        width:
-                          screenWidth < 834 ? "103px" : screenWidth >= 834 && screenWidth < 1440 ? "184px" : undefined,
-                      }}
-                    >
-                      <div
-                        className="group-52"
-                        style={{
-                          height:
-                            screenWidth < 834 ? "17px" : screenWidth >= 834 && screenWidth < 1440 ? "32px" : undefined,
-                        }}
-                      >
-                        <div
-                          className="frame-5"
-                          style={{
-                            height:
-                              screenWidth < 834
-                                ? "17px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "32px"
-                                : undefined,
-                            width:
-                              screenWidth < 834
-                                ? "103px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "184px"
-                                : undefined,
-                          }}
-                        >
-                          <div
-                            className="tight-bounds"
-                            style={{
-                              height:
-                                screenWidth < 834
-                                  ? "17px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "32px"
-                                  : undefined,
-                              width: screenWidth >= 834 && screenWidth < 1440 ? "183px" : undefined,
-                            }}
-                          >
-                            <div
-                              className="frame-14"
-                              style={{
-                                height:
-                                  screenWidth < 834
-                                    ? "17px"
-                                    : screenWidth >= 834 && screenWidth < 1440
-                                    ? "32px"
-                                    : undefined,
-                                width: screenWidth < 834 ? "103px" : undefined,
-                              }}
-                            >
-                              <div
-                                className="overlap-7"
-                                style={{
-                                  height:
-                                    screenWidth < 834
-                                      ? "17px"
-                                      : screenWidth >= 834 && screenWidth < 1440
-                                      ? "32px"
-                                      : undefined,
-                                  width: screenWidth >= 834 && screenWidth < 1440 ? "183px" : undefined,
-                                }}
-                              >
-                                <div
-                                  className="frame-wrapper"
-                                  style={{
-                                    height:
-                                      screenWidth < 834
-                                        ? "17px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "32px"
-                                        : undefined,
-                                    width:
-                                      screenWidth < 834
-                                        ? "103px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "183px"
-                                        : undefined,
-                                  }}
-                                >
-                                  <div
-                                    className="frame-14"
-                                    style={{
-                                      height:
-                                        screenWidth < 834
-                                          ? "17px"
-                                          : screenWidth >= 834 && screenWidth < 1440
-                                          ? "32px"
-                                          : undefined,
-                                    }}
-                                  >
-                                    <div
-                                      className="group-52"
-                                      style={{
-                                        height:
-                                          screenWidth < 834
-                                            ? "17px"
-                                            : screenWidth >= 834 && screenWidth < 1440
-                                            ? "32px"
-                                            : undefined,
-                                        width:
-                                          screenWidth < 834
-                                            ? "103px"
-                                            : screenWidth >= 834 && screenWidth < 1440
-                                            ? "183px"
-                                            : undefined,
-                                      }}
-                                    >
-                                      <div
-                                        className="textblocktransform-wrapper"
-                                        style={{
-                                          height:
-                                            screenWidth < 834
-                                              ? "17px"
-                                              : screenWidth >= 834 && screenWidth < 1440
-                                              ? "32px"
-                                              : undefined,
-                                        }}
-                                      >
-                                        <div
-                                          className="textblocktransform"
-                                          style={{
-                                            height:
-                                              screenWidth < 834
-                                                ? "17px"
-                                                : screenWidth >= 834 && screenWidth < 1440
-                                                ? "32px"
-                                                : undefined,
-                                            width:
-                                              screenWidth < 834
-                                                ? "103px"
-                                                : screenWidth >= 834 && screenWidth < 1440
-                                                ? "183px"
-                                                : undefined,
-                                          }}
-                                        >
-                                          <div
-                                            className="textblock"
-                                            style={{
-                                              height:
-                                                screenWidth < 834
-                                                  ? "17px"
-                                                  : screenWidth >= 834 && screenWidth < 1440
-                                                  ? "32px"
-                                                  : undefined,
-                                            }}
-                                          >
-                                            <div
-                                              className="group-52"
-                                              style={{
-                                                height:
-                                                  screenWidth < 834
-                                                    ? "17px"
-                                                    : screenWidth >= 834 && screenWidth < 1440
-                                                    ? "32px"
-                                                    : undefined,
-                                                width:
-                                                  screenWidth < 834
-                                                    ? "103px"
-                                                    : screenWidth >= 834 && screenWidth < 1440
-                                                    ? "183px"
-                                                    : undefined,
-                                              }}
-                                            >
-                                              <div
-                                                className="frame-6"
-                                                style={{
-                                                  height:
-                                                    screenWidth < 834
-                                                      ? "17px"
-                                                      : screenWidth >= 834 && screenWidth < 1440
-                                                      ? "32px"
-                                                      : undefined,
-                                                }}
-                                              >
-                                                <div
-                                                  className="overlap-group-4"
-                                                  style={{
-                                                    height:
-                                                      screenWidth < 834
-                                                        ? "30px"
-                                                        : screenWidth >= 834 && screenWidth < 1440
-                                                        ? "54px"
-                                                        : undefined,
-                                                    width:
-                                                      screenWidth < 834
-                                                        ? "103px"
-                                                        : screenWidth >= 834 && screenWidth < 1440
-                                                        ? "183px"
-                                                        : undefined,
-                                                  }}
-                                                >
-                                                  <div
-                                                    className="group-32"
-                                                    style={{
-                                                      height:
-                                                        screenWidth < 834
-                                                          ? "30px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "54px"
-                                                          : undefined,
-                                                      width:
-                                                        screenWidth < 834
-                                                          ? "31px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "55px"
-                                                          : undefined,
-                                                    }}
-                                                  />
-                                                  <div
-                                                    className="group-33"
-                                                    style={{
-                                                      height:
-                                                        screenWidth < 834
-                                                          ? "30px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "54px"
-                                                          : undefined,
-                                                      width:
-                                                        screenWidth < 834
-                                                          ? "31px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "55px"
-                                                          : undefined,
-                                                    }}
-                                                  />
-                                                  <div
-                                                    className="text-15"
-                                                    style={{
-                                                      height:
-                                                        screenWidth < 834
-                                                          ? "17px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "32px"
-                                                          : undefined,
-                                                      width:
-                                                        screenWidth < 834
-                                                          ? "103px"
-                                                          : screenWidth >= 834 && screenWidth < 1440
-                                                          ? "183px"
-                                                          : undefined,
-                                                    }}
-                                                  >
-                                                    <div
-                                                      className="frame-7"
-                                                      style={{
-                                                        height:
-                                                          screenWidth < 834
-                                                            ? "17px"
-                                                            : screenWidth >= 834 && screenWidth < 1440
-                                                            ? "32px"
-                                                            : undefined,
-                                                      }}
-                                                    >
-                                                      <div
-                                                        className="group-34"
-                                                        style={{
-                                                          height:
-                                                            screenWidth < 834
-                                                              ? "11px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "19px"
-                                                              : undefined,
-                                                          top:
-                                                            screenWidth < 834
-                                                              ? "3px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "6px"
-                                                              : undefined,
-                                                          width:
-                                                            screenWidth < 834
-                                                              ? "49px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "87px"
-                                                              : undefined,
-                                                        }}
-                                                      />
-                                                      <div
-                                                        className="group-35"
-                                                        style={{
-                                                          height:
-                                                            screenWidth < 834
-                                                              ? "17px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "32px"
-                                                              : undefined,
-                                                          left:
-                                                            screenWidth < 834
-                                                              ? "53px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "95px"
-                                                              : undefined,
-                                                          width:
-                                                            screenWidth < 834
-                                                              ? "15px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "27px"
-                                                              : undefined,
-                                                        }}
-                                                      />
-                                                      <div
-                                                        className="group-36"
-                                                        style={{
-                                                          height:
-                                                            screenWidth < 834
-                                                              ? "11px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "20px"
-                                                              : undefined,
-                                                          left:
-                                                            screenWidth < 834
-                                                              ? "73px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "130px"
-                                                              : undefined,
-                                                          top:
-                                                            screenWidth < 834
-                                                              ? "3px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "6px"
-                                                              : undefined,
-                                                          width:
-                                                            screenWidth < 834
-                                                              ? "30px"
-                                                              : screenWidth >= 834 && screenWidth < 1440
-                                                              ? "53px"
-                                                              : undefined,
-                                                        }}
-                                                      />
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <img
-                                  className="mask-group-4"
-                                  style={{
-                                    height:
-                                      screenWidth < 834
-                                        ? "17px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "32px"
-                                        : undefined,
-                                    width:
-                                      screenWidth < 834
-                                        ? "103px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "183px"
-                                        : undefined,
-                                  }}
-                                  alt="Mask group"
-                                  src={
-                                    screenWidth < 834
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-7@2x.png"
-                                      : screenWidth >= 834 && screenWidth < 1440
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-13@2x.png"
-                                      : undefined
-                                  }
-                                />
-                                <img
-                                  className="mask-group-5"
-                                  style={{
-                                    height:
-                                      screenWidth < 834
-                                        ? "17px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "32px"
-                                        : undefined,
-                                    width:
-                                      screenWidth < 834
-                                        ? "103px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "183px"
-                                        : undefined,
-                                  }}
-                                  alt="Mask group"
-                                  src={
-                                    screenWidth < 834
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-8@2x.png"
-                                      : screenWidth >= 834 && screenWidth < 1440
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-14@2x.png"
-                                      : undefined
-                                  }
-                                />
-                                <img
-                                  className="mask-group-6"
-                                  style={{
-                                    height:
-                                      screenWidth < 834
-                                        ? "17px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "32px"
-                                        : undefined,
-                                    width:
-                                      screenWidth < 834
-                                        ? "103px"
-                                        : screenWidth >= 834 && screenWidth < 1440
-                                        ? "183px"
-                                        : undefined,
-                                  }}
-                                  alt="Mask group"
-                                  src={
-                                    screenWidth < 834
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-9@2x.png"
-                                      : screenWidth >= 834 && screenWidth < 1440
-                                      ? "https://c.animaapp.com/zqIJEW6i/img/mask-group-15@2x.png"
-                                      : undefined
-                                  }
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="group-37"
-                      style={{
-                        height:
-                          screenWidth < 834 ? "53px" : screenWidth >= 834 && screenWidth < 1440 ? "96px" : undefined,
-                        left:
-                          screenWidth < 834 ? "287px" : screenWidth >= 834 && screenWidth < 1440 ? "512px" : undefined,
-                        width:
-                          screenWidth < 834 ? "41px" : screenWidth >= 834 && screenWidth < 1440 ? "72px" : undefined,
-                      }}
-                    >
-                      <div
-                        className="text-wrapper-15"
-                        style={{
-                          fontSize:
-                            screenWidth < 834 ? "10px" : screenWidth >= 834 && screenWidth < 1440 ? "18px" : undefined,
-                          height:
-                            screenWidth < 834 ? "12px" : screenWidth >= 834 && screenWidth < 1440 ? "22px" : undefined,
-                          whiteSpace: screenWidth < 834 ? "nowrap" : undefined,
-                        }}
-                      >
-                        Contact
-                      </div>
-                      <div
-                        className="group-38"
-                        style={{
-                          height:
-                            screenWidth < 834 ? "39px" : screenWidth >= 834 && screenWidth < 1440 ? "70px" : undefined,
-                          left:
-                            screenWidth < 834 ? "5px" : screenWidth >= 834 && screenWidth < 1440 ? "7px" : undefined,
-                          top:
-                            screenWidth < 834 ? "14px" : screenWidth >= 834 && screenWidth < 1440 ? "26px" : undefined,
-                          width:
-                            screenWidth < 834 ? "42px" : screenWidth >= 834 && screenWidth < 1440 ? "71px" : undefined,
-                        }}
-                      >
-                        <div
-                          className="overlap-group-5"
-                          style={{
-                            height:
-                              screenWidth < 834
-                                ? "39px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "70px"
-                                : undefined,
-                            width:
-                              screenWidth < 834
-                                ? "34px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "63px"
-                                : undefined,
-                          }}
-                        >
-                          <div
-                            className="text-wrapper-16"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              left:
-                                screenWidth < 834
-                                  ? "3px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "5px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            Email
-                          </div>
-                          <div
-                            className="text-wrapper-17"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              top:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "17px"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            Linkedin
-                          </div>
-                          <div
-                            className="text-wrapper-18"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              top:
-                                screenWidth < 834
-                                  ? "19px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "35px"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            Instgram
-                          </div>
-                          <div
-                            className="text-wrapper-19"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              top:
-                                screenWidth < 834
-                                  ? "29px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "52px"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            Facebook
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="group-39"
-                      style={{
-                        height:
-                          screenWidth < 834 ? "34px" : screenWidth >= 834 && screenWidth < 1440 ? "62px" : undefined,
-                        left:
-                          screenWidth < 834 ? "222px" : screenWidth >= 834 && screenWidth < 1440 ? "396px" : undefined,
-                        width:
-                          screenWidth < 834 ? "59px" : screenWidth >= 834 && screenWidth < 1440 ? "105px" : undefined,
-                      }}
-                    >
-                      <div
-                        className="control-chef"
-                        style={{
-                          fontSize:
-                            screenWidth < 834 ? "10px" : screenWidth >= 834 && screenWidth < 1440 ? "18px" : undefined,
-                          height:
-                            screenWidth < 834 ? "12px" : screenWidth >= 834 && screenWidth < 1440 ? "22px" : undefined,
-                          whiteSpace: screenWidth < 834 ? "nowrap" : undefined,
-                        }}
-                      >
-                        Control Chef
-                      </div>
-                      <div
-                        className="group-40"
-                        style={{
-                          height:
-                            screenWidth < 834 ? "20px" : screenWidth >= 834 && screenWidth < 1440 ? "35px" : undefined,
-                          left:
-                            screenWidth < 834 ? "15px" : screenWidth >= 834 && screenWidth < 1440 ? "26px" : undefined,
-                          top:
-                            screenWidth < 834 ? "14px" : screenWidth >= 834 && screenWidth < 1440 ? "26px" : undefined,
-                          width:
-                            screenWidth < 834 ? "37px" : screenWidth >= 834 && screenWidth < 1440 ? "65px" : undefined,
-                        }}
-                      >
-                        <div
-                          className="overlap-group-6"
-                          style={{
-                            height:
-                              screenWidth < 834
-                                ? "20px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "35px"
-                                : undefined,
-                            width:
-                              screenWidth < 834
-                                ? "33px"
-                                : screenWidth >= 834 && screenWidth < 1440
-                                ? "61px"
-                                : undefined,
-                          }}
-                        >
-                          <div
-                            className="home"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              left:
-                                screenWidth < 834
-                                  ? "3px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "5px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            Home
-                          </div>
-                          <div
-                            className="about-us"
-                            style={{
-                              fontFamily:
-                                screenWidth < 834
-                                  ? "'Salsa', Helvetica"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-family)"
-                                  : undefined,
-                              fontSize:
-                                screenWidth < 834
-                                  ? "8px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-size)"
-                                  : undefined,
-                              fontStyle:
-                                screenWidth >= 834 && screenWidth < 1440 ? "var(--paragraph-font-style)" : undefined,
-                              fontWeight:
-                                screenWidth < 834
-                                  ? "400"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-font-weight)"
-                                  : undefined,
-                              height:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "18px"
-                                  : undefined,
-                              letterSpacing:
-                                screenWidth < 834
-                                  ? "0"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-letter-spacing)"
-                                  : undefined,
-                              lineHeight:
-                                screenWidth < 834
-                                  ? "normal"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "var(--paragraph-line-height)"
-                                  : undefined,
-                              top:
-                                screenWidth < 834
-                                  ? "10px"
-                                  : screenWidth >= 834 && screenWidth < 1440
-                                  ? "17px"
-                                  : undefined,
-                              whiteSpace: screenWidth >= 834 && screenWidth < 1440 ? "nowrap" : undefined,
-                            }}
-                          >
-                            About Us
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="group-41"
-                  style={{
-                    height: screenWidth < 834 ? "7px" : screenWidth >= 834 && screenWidth < 1440 ? "12px" : undefined,
-                    top: screenWidth < 834 ? "71px" : screenWidth >= 834 && screenWidth < 1440 ? "129px" : undefined,
-                    width: screenWidth < 834 ? "470px" : screenWidth >= 834 && screenWidth < 1440 ? "836px" : undefined,
-                  }}
-                >
-                  <div
-                    className="overlap-8"
-                    style={{
-                      height: screenWidth < 834 ? "7px" : screenWidth >= 834 && screenWidth < 1440 ? "12px" : undefined,
-                      width:
-                        screenWidth < 834 ? "468px" : screenWidth >= 834 && screenWidth < 1440 ? "834px" : undefined,
-                    }}
-                  >
-                    <div
-                      className="rectangle-7"
-                      style={{
-                        height:
-                          screenWidth < 834 ? "6px" : screenWidth >= 834 && screenWidth < 1440 ? "10px" : undefined,
-                        width:
-                          screenWidth < 834 ? "468px" : screenWidth >= 834 && screenWidth < 1440 ? "834px" : undefined,
-                      }}
-                    />
-                    <p
-                      className="p"
-                      style={{
-                        fontFamily:
-                          screenWidth < 834
-                            ? "'Salsa', Helvetica"
-                            : screenWidth >= 834 && screenWidth < 1440
-                            ? "var(--copyright-font-family)"
-                            : undefined,
-                        fontSize:
-                          screenWidth < 834
-                            ? "6px"
-                            : screenWidth >= 834 && screenWidth < 1440
-                            ? "var(--copyright-font-size)"
-                            : undefined,
-                        fontStyle: screenWidth >= 834 && screenWidth < 1440 ? "var(--copyright-font-style)" : undefined,
-                        fontWeight:
-                          screenWidth < 834
-                            ? "400"
-                            : screenWidth >= 834 && screenWidth < 1440
-                            ? "var(--copyright-font-weight)"
-                            : undefined,
-                        height:
-                          screenWidth < 834 ? "7px" : screenWidth >= 834 && screenWidth < 1440 ? "12px" : undefined,
-                        left:
-                          screenWidth < 834 ? "46px" : screenWidth >= 834 && screenWidth < 1440 ? "229px" : undefined,
-                        letterSpacing:
-                          screenWidth < 834
-                            ? "0"
-                            : screenWidth >= 834 && screenWidth < 1440
-                            ? "var(--copyright-letter-spacing)"
-                            : undefined,
-                        lineHeight:
-                          screenWidth < 834
-                            ? "normal"
-                            : screenWidth >= 834 && screenWidth < 1440
-                            ? "var(--copyright-line-height)"
-                            : undefined,
-                      }}
-                    >
-                      Copyright @ 2024 Control Chef - All Rights Reserved
-                    </p>
-                  </div>
-                </div>
-              </footer>
-            </>
-          )}
-
-          {screenWidth >= 834 && screenWidth < 1440 && (
-            <Graphs
+              <SimulationStreaming className="simulation-streaming-instance" />
+              <Buttons className="buttons-instance" />
+              
+              <Graphs
               className="graphs-instance"
               divClassName="graphs-5"
               divClassName1="graphs-16"
@@ -1072,40 +112,33 @@ export const Hover = () => {
               yPosPidClassName="graphs-10"
               yVelClassName="graphs-3"
               yVelPidClassName="graphs-15"
-            />
-          )}
-
-          {((screenWidth >= 834 && screenWidth < 1440) || screenWidth < 834) && (
-            <VideoStream
-              className={`${screenWidth < 834 && "class-9"} ${screenWidth >= 834 && screenWidth < 1440 && "class-10"}`}
-              videoStream={
-                screenWidth < 834
-                  ? "https://c.animaapp.com/zqIJEW6i/img/video-stream-1.svg"
-                  : screenWidth >= 834 && screenWidth < 1440
-                  ? "https://c.animaapp.com/zqIJEW6i/img/video-stream-2.svg"
-                  : undefined
-              }
-              videoStreamClassName={`${screenWidth < 834 && "class-13"} ${
-                screenWidth >= 834 && screenWidth < 1440 && "class-14"
-              }`}
-              videoStreamClassNameOverride={`${screenWidth < 834 && "class-11"} ${
-                screenWidth >= 834 && screenWidth < 1440 && "class-12"
-              }`}
-            />
-          )}
-
-          {screenWidth >= 834 && screenWidth < 1440 && (
-            <>
-              <Parameters className="parameters-instance" />
-              <SimulationStreaming className="simulation-streaming-instance" />
-              <Buttons className="buttons-instance" />
-              <NavBar_2 className="nav-bar-tab-instance" />
+              />
+              <NavBar_2 className="nav-bar-tab" />
+              <Footer
+                className="footer1"
+                group="groupfooter1"
+                group2="group2footer1"
+                controlchefhigh="controlcheifhighfooter1"
+                maskgroup="maskgroupfooter1"
+                group7="group7footer1"
+                textwrapper="textwrapperfooter1"
+                textwrapper2="textwrapper2footer1"
+                textwrapper3="textwrapper3footer1"
+                textwrapper4="textwrapper4footer1"
+                textwrapper5="textwrapper5footer1"
+                group8="group8footer1"
+                group9="group9footer1"
+                group10="group10footer1"
+                overlab2="overlab2footer"
+                overlapwrapper="overlapwrapperfooter1"
+                rectangle="rectanglefooter1"
+                copyright="copyrightfooter1"
+              />
             </>
           )}
 
-          {screenWidth >= 1440 && (
+          {screenWidth >= 1300 && (
             <>
-              <Blur className="blur-instance" />
               <Footer className="footer-instance" />
               <Graphs className="graphs-17" />
               <VideoStream
@@ -1121,6 +154,12 @@ export const Hover = () => {
 
           {screenWidth < 834 && (
             <>
+              <videoStream
+                className="class-9"
+                videoStream="https://c.animaapp.com/zqIJEW6i/img/video-stream-1.svg"
+                videoStreamClassName="class-13"
+                videoStreamClassNameOverride="class-11"
+              />
               <Parameters
                 className="parameters-3"
                 divClassName="parameters-10"
@@ -1242,11 +281,36 @@ export const Hover = () => {
                 yVelClassName="graphs-27"
                 yVelPidClassName="graphs-34"
               />
-            </>
-          )}
-          {screenWidth <834 && (
-            <>
-            <NavBar_3 className="nav-bar-tab"/>
+              <NavBar_2
+                className="nav-bar-tab-instance"
+                navbarclassName="nav-bar1"
+                controlchef1="nav-bar2"
+                controlchef2="nav-bar3"
+                controlchef3="nav-bar4"
+                navbardrop="nav-bar5"
+                navbartext="nav-bar6"
+              />
+              <Footer
+                className="footer5"
+                group="groupfooter"
+                group2="group2footer"
+                controlchefhigh="controlcheifhighfooter"
+                maskgroup="maskgroupfooter"
+                group7="group7footer"
+                buttonf="buttonfooter"
+                textwrapper="textwrapperfooter"
+                textwrapper2="textwrapper2footer"
+                textwrapper3="textwrapper3footer"
+                textwrapper4="textwrapper4footer"
+                textwrapper5="textwrapper5footer"
+                group8="group8footer"
+                group9="group9footer"
+                group10="group10footer"
+                overlab2="overlab2footer"
+                overlapwrapper="overlapwrapperfooter"
+                rectangle="rectanglefooter"
+                copyright="copyrightfooter"
+              />
             </>
           )}
         </div>
