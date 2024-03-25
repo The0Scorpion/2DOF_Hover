@@ -9,6 +9,7 @@ import { BallBalance } from "./screens/BallBalance";
 import { Pendulum } from "./screens/Pendulum";
 import { Servo } from "./screens/Servo"
 import {LoginAnd} from "./screens/LoginAnd"
+import {Registration} from "./screens/Registration"
 
 const app = document.getElementById("app");
 const root = ReactDOMClient.createRoot(app);
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     {
         path:"/log-in",
         element:<LoginAnd/>
+    },
+    {
+        path:"/registration",
+        element:<Registration/>
     },
 ]);
 

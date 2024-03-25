@@ -24,7 +24,7 @@ export const Hover = () => {
               : screenWidth >= 834 && screenWidth < 1300
                 ? "2937px"
                 : screenWidth >= 1300
-                  ? "3459px"
+                  ? "3300px"
                   : undefined,
           width:
             screenWidth < 834
@@ -53,23 +53,23 @@ export const Hover = () => {
                 : screenWidth >= 834 && screenWidth < 1300
                   ? "-181px"
                   : screenWidth >= 1300
-                    ? "-705px"
+                    ? "-900px"
                     : undefined,
             top:
               screenWidth < 834
-                ? "-467px"
+                ? "-159px"
                 : screenWidth >= 834 && screenWidth < 1300
-                  ? "-790px"
+                  ? "-515px"
                   : screenWidth >= 1300
-                    ? "-204px"
+                    ? "-550px"
                     : undefined,
             width:
               screenWidth < 834
-                ? "724px"
+                ? "834px"
                 : screenWidth >= 834 && screenWidth < 1300
                   ? "1098px"
                   : screenWidth >= 1300
-                    ? "2431px"
+                    ? "1300px"
                     : undefined,
           }}
         >

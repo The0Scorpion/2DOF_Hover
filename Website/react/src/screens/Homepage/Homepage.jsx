@@ -3,7 +3,6 @@ import { useWindowWidth } from "../../breakpoints";
 import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 import { NavBar_2 } from "../../components/NavBar_2";
-import { NavBar_3 } from "../../components/NavBar_3";
 import { TestimonialsWrapper } from "../../components/TestimonialsWrapper";
 import { Welcome } from "../../components/Welcome";
 import { IntroWrapper } from "../../components/IntroWrapper";

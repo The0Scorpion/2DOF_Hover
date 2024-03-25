@@ -22,7 +22,7 @@ export const LoginBar = ({
       <input type="email" placeholder="username@email.com" className={`username-email-com ${usernameEmailComClassName}`} />
       <input type="password" placeholder="Password" className={`password ${passwordClassName}`} />
       <input type="button" value="Log In" className={`log-in-wrapper ${overlapGroupClassName}`} />
-      <Link to="/#"><button className={`text-create-wrapper ${createClassNameOverride}`}>Create New Accout</button></Link>
+      <Link to="/registration"><button className={`text-create-wrapper ${createClassNameOverride}`}>Create New Accout</button></Link>
     </div>
   );
 };

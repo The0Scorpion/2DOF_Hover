@@ -1,0 +1,377 @@
+.registerationbar {
+  height: 800px;
+  width: 1300px;
+}
+
+.registerationbar .overlap {
+  background-color: #ffffff08;
+  border: 2px solid;
+  border-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px 10px #ffffff1a;
+  height: 900px;
+  left: 108px;
+  position: relative;
+  width: 1051px;
+}
+
+.registerationbar .registration {
+  color: #ffffff;
+  background: none;
+  font-family: var(--f50-font-family);
+  font-size: var(--f50-font-size);
+  font-weight: var(--f50-font-weight);
+  height: 61px;
+  left: 289px;
+  letter-spacing: var(--f50-letter-spacing);
+  line-height: var(--f50-line-height);
+  position: absolute;
+  text-align: center;
+  top: 21px;
+  width: 500px;
+}
+
+.registerationbar .overlap-group {
+  height: 62px;
+  left: 43px;
+  position: absolute;
+  top: 134px;
+  width: 468px;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+}
+
+.registerationbar .div {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  width: 468px;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 43px;
+  position: absolute;
+  top: 580px;
+}
+
+.registerationbar .overlap-2 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 43px;
+  position: absolute;
+  top: 250px;
+  width: 468px;
+}
+
+.registerationbar .overlap-3 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 541px;
+  position: absolute;
+  top: 250px;
+  width: 468px;
+}
+
+.registerationbar .overlap-4 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 541px;
+  position: absolute;
+  top: 360px;
+  width: 468px;
+}
+
+.registerationbar .overlap-5 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 43px;
+  position: absolute;
+  top: 360px;
+  width: 468px;
+}
+
+.registerationbar .overlap-6 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 541px;
+  position: absolute;
+  top: 134px;
+  width: 468px;
+}
+
+.registerationbar .overlap-7 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 541px;
+  position: absolute;
+  top: 580px;
+  width: 468px;
+}
+
+.registerationbar .overlap-8 {
+  border: 0;
+  color: #05051880;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  height: 61px;
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  padding: 0;
+  text-align: center;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  height: 62px;
+  left: 43px;
+  position: absolute;
+  top: 470px;
+  width: 966px;
+}
+
+.registerationbar .login-button {
+  box-sizing: border-box;
+  height: 62px;
+  left: 638px;
+  position: absolute;
+  top: 670px;
+  width: 303px;
+  background-color: #d9d9d92b;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px #ffffff80;
+  color: #ffffff;
+  font-family: var(--f30-font-family);
+  font-size: var(--f30-font-size);
+  font-weight: var(--f30-font-weight);
+  letter-spacing: var(--f30-letter-spacing);
+  line-height: var(--f30-line-height);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.registerationbar .overlap-wrapper {
+  background-color: #d9d9d92b;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px #ffffff80;
+  color: #ffffff;
+  font-family: var(--header-font-family);
+  font-size: var(--header-font-size);
+  font-weight: var(--header-font-weight);
+  letter-spacing: var(--header-letter-spacing);
+  line-height: var(--header-line-height);
+  text-align: center;
+  white-space: nowrap;
+  height: 62px;
+  left: 638px;
+  position: absolute;
+  top: 800px;
+  width: 303px;
+}
+
+.registerationbar .already-have-an {
+  color: #ffffff;
+  font-family: "Salsa", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  height: 25px;
+  left: 670px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 760px;
+}
+
+.registerationbar .firstname{
+  position: absolute;
+  left:80px;
+  top:100px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .lastname1{
+  position: absolute;
+  left:570px;
+  top:100px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .college1{
+  position: absolute;
+  left:570px;
+  top:220px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .university1{
+  position: absolute;
+  left:80px;
+  top: 220px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .username{
+  position: absolute;
+  left: 80px;;
+  top: 440px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .confirmpassword1{
+  position: absolute;
+  left:570px;
+  top:550;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .password1{
+  position: absolute;
+  left:80px;
+  top:550;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .birthdayclass{
+  position: absolute;
+  background: none;
+  left:80px;
+  top:330px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+.registerationbar .countryclass{
+  position: absolute;
+  left:570px;
+  top:330px;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height);
+  color:white;
+}
+
+
+
+

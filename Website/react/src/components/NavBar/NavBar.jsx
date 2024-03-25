@@ -1,6 +1,7 @@
 /*
 We're constantly improving the code you see. 
 Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
+navbar.jsx
 */
 
 import React from "react";
@@ -34,7 +35,7 @@ export const NavBar = ({ className }) => {
       </div>
       <div className="group-21">
         <button className="log-in"><Link to="/log-in"><p className="p">Log In</p></Link></button>
-        <button className="text-wrapper-9"><Link to="/"><p className="p">Register</p></Link></button>
+        <button className="text-wrapper-9"><Link to="/registration"><p className="p">Register</p></Link></button>
         <button className="text-wrapper-10"><Link to="/"><p className="p">Contact us</p></Link></button>
         <button className="text-wrapper-11"><Link to="/"><p className="p">About us</p></Link></button>
         <button className="reservation"><Link to="/"><p className="p">Reservation</p></Link></button>
