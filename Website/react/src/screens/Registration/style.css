@@ -8,7 +8,7 @@
 
 .registration .div-3 {
   background-color: rgba(255, 255, 255, 1);
-  position: relative;
+  position: absolute;
 }
 
 .registration .registerationbar-2 {
@@ -27,7 +27,7 @@
   box-shadow: 0px 0px 10px 10px #ffffff1a;
   height: 292px;
   left: 23px;
-  position: relative;
+  position: absolute;
   width: 219px;
 }
 
@@ -240,7 +240,7 @@
   border-radius: 50px;
   box-shadow: 0px 0px 10px 5px #ffffff80;
   height: 24px;
-  position: relative;
+  position: absolute;
   width: 63px;
 }
 
@@ -297,7 +297,7 @@
 }
 
 .registration .navlog834 {
-  left: 0px !important;
+  left: 80px !important;
   position: absolute !important;
   top: 22px !important;
   transition: all 0.5s ease !important;
@@ -473,142 +473,157 @@
 }
 
 .registration .register11{
-  left: 0px !important;
+  left: 50px !important;
   position: absolute;
   top: 80px !important;
 }
 
 .registration .registration31{
-  width: 700px !important;
-  height: 800px !important;
+  width: 350px !important;
+  height: 970px !important;
+  left: 50px !important;
 }
 
 .registration .registration32{
-  left:100px !important;
-  font-size: var(--f30-font-size);
+  left:-70px !important;
+  font-size: var(--header-font-size);
 }
 
 .registration .registration33{
-  left: 40px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
+  top: 100px !important;
 }
 
 .registration .passwordinput2{
-  left: 40px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 500px !important;
+  top: 625px !important;
 }
 
 .registration .universityinput2{
-  left: 40px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 225px !important;
+  top: 250px !important;
 }
 
 .registration .collegeinput2{
-  left: 370px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 225px !important;
+  top: 325px !important;
 }
 
 .registration .birthdayinput2{
-  left: 40px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 320px !important;
+  top: 475px !important;
 }
 
 .registration .lastnameinput2{
-  left: 370px !important;
+  left: 20px !important;
+  top: 175px !important;
   height: 40px !important;
   width: 300px !important;
 }
 
 .registration .confirmpasswordinput2{
-  left: 370px !important;
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 500px !important;
-}
-
-.registration .usernameinput2{
-  left: 40px !important;
-  height: 40px !important;
-  width: 630px !important;
-  top: 410px !important;
-}
-
-.registration .countryinput2{
-  left: 370px !important;
-  height: 40px !important;
-  width: 300px !important;
-  top: 320px !important;
-}
-
-.registration .logininput2{
-  left: 450px !important;
-  height: 50px !important;
-  width: 200px !important;
-  top: 600px !important;
-}
-
-.registration .signinput2{
-  left: 450px !important;
-  height: 50px !important;
-  width: 200px !important;
   top: 700px !important;
 }
 
-.registration .alreadyinput2{
-  left: 400px !important;
+.registration .usernameinput2{
+  left: 20px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 660px !important;
+  top: 550px !important;
+}
+
+.registration .countryinput2{
+  left: 20px !important;
+  height: 40px !important;
+  width: 300px !important;
+  top: 400px !important;
+}
+
+.registration .logininput2{
+  left: 60px !important;
+  height: 50px !important;
+  width: 200px !important;
+  top: 800px !important;
+}
+
+.registration .signinput2{
+  left: 60px !important;
+  height: 50px !important;
+  width: 200px !important;
+  top: 900px !important;
+}
+
+.registration .alreadyinput2{
+  left: 10px !important;
+  height: 40px !important;
+  width: 300px !important;
+  top: 860px !important;
+  font-size: var(--paragraph-font-size) !important;
 }
 
 .registration .firstname3{
-  left: 60px !important;
+  left: 40px !important;
+  top: 70px !important;
+  font-size: var(--paragraph-font-size) !important;
 }
 
 .registration .lastname3{
-  left: 400px !important;
+  left: 40px !important;
+  top: 150px !important;
+  font-size: var(--paragraph-font-size) !important;
 }
 
 .registration .university3{
-  left: 60px !important;
-  top: 190px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 230px !important;
 }
 
 .registration .college3{
-  left: 400px !important;
-  top: 190px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 305px !important;
 }
 
 .registration .birthday3{
-  left: 60px !important;
-  top: 280px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 380px !important;
 }
 
 .registration .country3{
-  left: 400px !important;
-  top:280 !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 455px !important;
 }
 
 .registration .username3{
-  left: 60px !important;
-  top: 370px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 530px !important;
 }
 
 .registration .password3{
-  left: 60px !important;
-  top: 460px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 605px !important;
 }
 
 .registration .confirmpassword3{
-  left: 400px !important;
-  top: 460px !important;
+  left: 40px !important;
+  font-size: var(--paragraph-font-size) !important;
+  top: 680px !important;
 }

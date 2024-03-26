@@ -10,7 +10,7 @@
 }
 
 .hover .overlap-6 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .class {
@@ -86,7 +86,7 @@
 }
 
 .hover .group-31 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .control-chef-high-2 {
@@ -100,7 +100,7 @@
 }
 
 .hover .overlap-7 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .frame-wrapper {
@@ -114,7 +114,7 @@
 }
 
 .hover .overlap-group-4 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .group-32 {
@@ -137,7 +137,7 @@
 
 .hover .frame-7 {
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 .hover .group-34 {
@@ -194,7 +194,7 @@
 }
 
 .hover .overlap-group-5 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .text-wrapper-16 {
@@ -251,7 +251,7 @@
 }
 
 .hover .overlap-group-6 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .home {
@@ -276,7 +276,7 @@
 }
 
 .hover .overlap-8 {
-  position: relative;
+  position: absolute;
 }
 
 .hover .rectangle-7 {
@@ -298,9 +298,9 @@
 
 .hover .graphs-instance {
   height: 1323px !important;
-  left: 216px !important;
+  left: 100px !important;
   position: absolute !important;
-  top: 1900px !important;
+  top: 1050px !important;
   width: 765px !important;
 }
 
@@ -410,9 +410,9 @@
 
 .hover .class-10 {
   height: 564px !important;
-  left: 290px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 1500px !important;
+  top: 0px !important;
   width: 765px !important;
 }
 
@@ -446,21 +446,21 @@
 }
 
 .hover .parameters-instance {
-  left: 290px !important;
+  left: 170px !important;
   position: absolute !important;
-  top: 700px !important;
+  top: 170px !important;
 }
 
 .hover .simulation-streaming-instance {
-  left: 385px !important;
+  left: 260px !important;
   position: absolute !important;
-  top: 620px !important;
+  top: 100px !important;
 }
 
 .hover .buttons-instance {
-  left: 370px !important;
+  left: 260px !important;
   position: absolute !important;
-  top: 1120px !important;
+  top: 580px !important;
 }
 
 .hover .group-42 {
@@ -525,7 +525,7 @@
 
 .hover .overlap-9 {
   height: 35px;
-  position: relative;
+  position: absolute;
 }
 
 .hover .mask-group-7 {
@@ -543,7 +543,7 @@
 
 .hover .overlap-group-7 {
   height: 59px;
-  position: relative;
+  position: absolute;
   width: 199px;
 }
 
@@ -558,7 +558,7 @@
 .hover .frame-10 {
   height: 35px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 .hover .group-44 {
@@ -593,46 +593,48 @@
 
 .hover .footer-instance {
   background-color: transparent !important;
-  left: 800px !important;
+  left: -102px !important;
   position: absolute !important;
-  top: 3600px !important;
+  top: 3000px !important;
 }
 
 .hover .graphs-17 {
-  left: 990px !important;
+  left: 85px !important;
   position: absolute !important;
-  top: 1750px !important;
+  top: 1200px !important;
 }
 
 .hover .video-stream-instance {
-  left: 1010px !important;
-  position: absolute !important;
-  top: 1150px !important;
-}
-
-.hover .parameters-2 {
-  left: 980px !important;
-  position: absolute !important;
-  top: 730px !important;
-}
-
-.hover .simulation-streaming-2 {
-  left: 1300px !important;
-  position: absolute !important;
-  top: 680px !important;
-}
-
-.hover .buttons-2 {
-  left: 1650px !important;
-  position: absolute !important;
-  top: 870px !important;
-}
-
-.hover .nav-bar-instance {
-  left: 953px !important;
+  left: 100px !important;
   position: absolute !important;
   top: 600px !important;
 }
+
+.hover .parameters-2 {
+  left: 60px !important;
+  position: absolute !important;
+  top: 200px !important;
+}
+
+.hover .simulation-streaming-2 {
+  left: 410px !important;
+  position: absolute !important;
+  top: 120px !important;
+}
+
+.hover .buttons-2 {
+  left: 750px !important;
+  position: absolute !important;
+  top: 350px !important;
+}
+
+.hover .nav-bar-instance2 {
+  left: 50px !important;
+  position: absolute !important;
+  top: 50px !important;
+}
+
+
 
 .hover .parameters-3 {
   height: 422px !important;
@@ -1047,7 +1049,7 @@
 
 .hover .overlap-10 {
   height: 15px;
-  position: relative;
+  position: absolute;
   width: 84px;
 }
 
@@ -1066,7 +1068,7 @@
 
 .hover .overlap-group-8 {
   height: 26px;
-  position: relative;
+  position: absolute;
   width: 84px;
 }
 
@@ -1081,7 +1083,7 @@
 .hover .frame-13 {
   height: 15px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 .hover .group-49 {
@@ -1313,6 +1315,22 @@
   font-size: var(--copyright-font-size) !important;
 }
 
+.welcome-and .nav-bar7{
+  left: -55px !important;
+  top: 250px !important;
+  width: 50px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.welcome-and .nav-bar8{
+  left: -55px !important;
+  top: 200px !important;
+  width: 50px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .hover .footer5{
   left:256px !important;
   top:2750px !important;
@@ -1407,15 +1425,15 @@
 
 .hover .nav-bar-tab {
   height: 34px !important;
-  left: 216px !important;
+  left: 80px !important;
   position: absolute !important;
-  top: 551px !important;
+  top: 50px !important;
   width: 765px !important;
 }
 
 .hover .footer1{
-  left:180px !important;
-  top:3300px !important;
+  left:0px !important;
+  top:2450px !important;
 }
 
 .hover .groupfooter1{

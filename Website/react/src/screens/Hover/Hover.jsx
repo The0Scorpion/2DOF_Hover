@@ -36,43 +36,6 @@ export const Hover = () => {
                   : undefined,
         }}
       >
-        <div
-          className="overlap-6"
-          style={{
-            height:
-              screenWidth < 834
-                ? "3926px"
-                : screenWidth >= 834 && screenWidth < 1300
-                  ? "4061px"
-                  : screenWidth >= 1300
-                    ? "3663px"
-                    : undefined,
-            left:
-              screenWidth < 834
-                ? "-256px"
-                : screenWidth >= 834 && screenWidth < 1300
-                  ? "-181px"
-                  : screenWidth >= 1300
-                    ? "-900px"
-                    : undefined,
-            top:
-              screenWidth < 834
-                ? "-159px"
-                : screenWidth >= 834 && screenWidth < 1300
-                  ? "-515px"
-                  : screenWidth >= 1300
-                    ? "-550px"
-                    : undefined,
-            width:
-              screenWidth < 834
-                ? "834px"
-                : screenWidth >= 834 && screenWidth < 1300
-                  ? "1098px"
-                  : screenWidth >= 1300
-                    ? "1300px"
-                    : undefined,
-          }}
-        >
           {screenWidth >= 834 && screenWidth < 1300 && (
             <>
               <Parameters className="parameters-instance" />
@@ -84,7 +47,6 @@ export const Hover = () => {
               />
               <SimulationStreaming className="simulation-streaming-instance" />
               <Buttons className="buttons-instance" />
-              
               <Graphs
               className="graphs-instance"
               divClassName="graphs-5"
@@ -148,7 +110,8 @@ export const Hover = () => {
               <Parameters className="parameters-2" />
               <SimulationStreaming className="simulation-streaming-2" />
               <Buttons className="buttons-2" />
-              <NavBar className="nav-bar-instance" />
+              <NavBar className="nav-bar-instance2"
+                maskGroup="https://c.animaapp.com/8gKnAxyl/img/mask-group-35@2x.png"/>
             </>
           )}
 
@@ -289,6 +252,8 @@ export const Hover = () => {
                 controlchef3="nav-bar4"
                 navbardrop="nav-bar5"
                 navbartext="nav-bar6"
+                dropdowncontentexperiments="nav-bar7"
+                dropdowncontenttheories="nav-bar8"
               />
               <Footer
                 className="footer5"
@@ -315,6 +280,5 @@ export const Hover = () => {
           )}
         </div>
       </div>
-    </div>
   );
 };

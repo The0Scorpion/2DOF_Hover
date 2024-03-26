@@ -15,7 +15,7 @@ export const Registration = () => {
           background: "linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%)",
           height:
             screenWidth < 834
-              ? "386px"
+              ? "1100px"
               : screenWidth >= 834 && screenWidth < 1300
                 ? "1000px"
                 : screenWidth >= 1300

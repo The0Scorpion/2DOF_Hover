@@ -128,6 +128,8 @@ export const Homepage = () => {
                controlchef3="nav-bar4"
                navbardrop="nav-bar5"
                navbartext="nav-bar6" 
+               dropdowncontentexperiments="nav-bar7"
+               dropdowncontenttheories="nav-bar8"
               />
               <Footer
                 className="footer5"

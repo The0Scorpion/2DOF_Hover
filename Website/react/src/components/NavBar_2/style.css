@@ -34,6 +34,7 @@ button:hover{
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
   border-radius: 20px;
   min-width: 200px;
+  padding-bottom: 20px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -41,10 +42,12 @@ button:hover{
 .nav-bar-2 .theories-explanation {
   color: #ffffff;
   background: none;
-  border: none;
-  text-align: center;
   transition: all 0.2s ease;
-  white-space: nowrap;
+  white-space: nowrap; 
+  border-radius: 20px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
   font-family: var(--subheader-font-family);
   font-size: var(--subheader-font-size);
   font-style: var(--subheader-font-style);
@@ -55,19 +58,19 @@ button:hover{
 
 .nav-bar-2 .theories-explanation:hover{
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .nav-bar-2 .dropdown-content-theories {
   display: none;
   position: absolute;
   text-align: center;
-  left: 400px;
-  top:0;
+  align-items: center;
+  left: -200px;
+  top: 310px;
   padding: 10px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
-  border-radius: 5px;
-  min-width: 130px;
+  border-radius: 20px;
+  width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -90,7 +93,7 @@ button:hover{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .nav-bar-2 .dropdown-content-experiments {
@@ -98,23 +101,24 @@ button:hover{
   position: absolute;
   text-align: center;
   align-items: center;
+  left: -200px;
+  top: 350px;
   padding: 10px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
-  border-radius: 5px;
+  border-radius: 20px;
   width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown-exp:hover .dropdown-content-experiments {
+.dropdown-experiment:hover .dropdown-content-experiments {
   display: block;
   cursor: pointer;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content-experiments .text1:hover {
-  background-color: #ffffff1f;
   cursor: pointer;
 }
 
@@ -124,16 +128,18 @@ button:hover{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .nav-bar-2 .experiments {
   color: #ffffff;
   background: none;
-  border: none;
-  text-align: center;
   transition: all 0.2s ease;
-  white-space: nowrap;
+  white-space: nowrap; 
+  border-radius: 20px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
   font-family: var(--subheader-font-family);
   font-size: var(--subheader-font-size);
   font-style: var(--subheader-font-style);
@@ -147,17 +153,27 @@ button:hover{
   border-radius: 5px;
 }
 
-.p2{
+.nav-bar-2 .p2{
   color: #ffffff;
   border-radius: 5px;
   margin: 5px;
   align-items: center;
   text-align: center;
-  padding: 5px; 
+  background:none;
+  font-family: var(--subheader-font-family);
+  font-size: var(--subheader-font-size);
+  font-style: var(--subheader-font-style);
+  font-weight: var(--subheader-font-weight);
+  letter-spacing: var(--subheader-letter-spacing);
+  line-height: var(--subheader-line-height); 
 }
 
 
 .nav-bar-2 .text1{
+  border-radius: 5px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
   font-family: var(--subheader-font-family);
   font-size: var(--subheader-font-size);
   font-style: var(--subheader-font-style);
@@ -178,7 +194,6 @@ button:hover{
 
 /* Change color of dropdown links on hover */
 .dropdown-content-nav .a:hover {
-  background-color: #ffffff1f;
   cursor: pointer;
 }
 

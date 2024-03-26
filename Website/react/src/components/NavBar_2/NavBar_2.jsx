@@ -16,6 +16,8 @@ export const NavBar_2 = ({
   controlchef1,
   controlchef2,
   controlchef3,
+  dropdowncontenttheories,
+  dropdowncontentexperiments,
   maskGroup = "https://c.animaapp.com/jrXwmMSX/img/mask-group-13@2x.png" }) => {
   return (
     <div className={`nav-bar-2 ${className}`}>
@@ -31,25 +33,25 @@ export const NavBar_2 = ({
           <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>Register</button></Link>
           <Link className="a" to="/log-in"><button className={`text1 ${navbartext}`}>Log In</button></Link>
           <Link className="a" to="/#"><button className={`text1 ${navbartext}`}>Reservation</button></Link>
-          <div className="dropdown-theory"><div className="a"><button className={`theories-explanation ${navbartext}`}>Theories Explanation</button>
-            <div className="dropdown-content-theories">
-              <Link className="a" to="/#"><button className="p2">Cascaded PID</button></Link>
-              <Link className="a" to="/#"><button className="p2">LQR</button></Link>
+          <div className="dropdown-theory">
+            <div className="a">
+              <button className={`theories-explanation ${navbartext}`}>Theories Explanation</button>
+              <div className={`dropdown-content-theories ${dropdowncontenttheories}`}>
+                <Link className="a" to="/#"><button className={`p2 ${navbartext}`}>Cascaded PID</button></Link>
+                <Link className="a" to="/#"><button className={`p2 ${navbartext}`}>LQR</button></Link>
+              </div>
             </div>
           </div>
-          </div>
-          <div className="a"><button className={`experiments ${navbartext}`}>Experiments</button>
-            <div className="dropdown-content-experiments">
-              <Link className="a" to="/simulation-hover"><button className="p2">2 DOF Hover</button></Link>
-              <Link className="a" to="/simulation-ballbalance"><button className="p2">2 DOF Ball Balance</button></Link>
-              <Link className="a" to="/simulation-servo"><button className="p2">Servo Base Unit</button></Link>
-              <Link className="a" to="/simulation-pendulum"><button className="p2">Linear Inverted Pendulum</button></Link>
+          <div className="dropdown-experiment"><button className={`experiments ${navbartext}`}>Experiments</button>
+            <div className={`dropdown-content-experiments ${dropdowncontentexperiments}`}>
+              <Link className="a" to="/simulation-hover"><button className={`p2 ${navbartext}`}>2 DOF Hover</button></Link>
+              <Link className="a" to="/simulation-ballbalance"><button className={`p2 ${navbartext}`}>2 DOF Ball Balance</button></Link>
+              <Link className="a" to="/simulation-servo"><button className={`p2 ${navbartext}`}>Servo Base Unit</button></Link>
+              <Link className="a" to="/simulation-pendulum"><button className={`p2 ${navbartext}`}>Linear Inverted Pendulum</button></Link>
             </div>
           </div>
-
         </div>
       </div>
-
       <div className="control-chef-high-3">
         <div className="div-4">
           <div className="frame-8">

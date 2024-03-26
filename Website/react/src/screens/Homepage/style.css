@@ -10,7 +10,7 @@
 }
 
 .welcome-and .overlap-7 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .class {
@@ -116,7 +116,7 @@
 }
 
 .welcome-and .group-17 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .control-chef-high-2 {
@@ -130,7 +130,7 @@
 }
 
 .welcome-and .overlap-8 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .frame-wrapper {
@@ -144,7 +144,7 @@
 }
 
 .welcome-and .overlap-group-6 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .group-18 {
@@ -167,7 +167,7 @@
 
 .welcome-and .frame-7 {
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .group-20 {
@@ -224,7 +224,7 @@
 }
 
 .welcome-and .overlap-group-7 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .text-wrapper-16 {
@@ -281,7 +281,7 @@
 }
 
 .welcome-and .overlap-group-8 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .home {
@@ -306,7 +306,7 @@
 }
 
 .welcome-and .overlap-9 {
-  position: relative;
+  position: absolute;
 }
 
 .welcome-and .rectangle-4 {
@@ -811,7 +811,7 @@
 }
 
 .welcome-and .nav-bar-instance {
-  left: 953px !important;
+  left: 950px !important;
   position: absolute !important;
   top: 600px !important;
 }
@@ -850,28 +850,47 @@
 }
 
 .welcome-and .nav-bar2{
-  width:60%;
-  height:auto;
+  width: 60% !important;
+  height: auto !important;
+  left: -10px !important;
 }
 
 .welcome-and .nav-bar3{
-  width:60%;
-  height:auto;
+  width: 60% !important;
+  height: auto !important;
+  left: -10px !important;
 }
 
 .welcome-and .nav-bar4{
-  width:60%;
-  height:auto;
+  width: 60% !important;
+  height: auto !important;
+  left: -10px !important;
 }
 
 .welcome-and .nav-bar5{
   left: 180px !important;
-  min-width: 50px !important;
+  width: 50px !important;
   top:0px !important;
 }
 
 .welcome-and .nav-bar6{
   font-size: var(--copyright-font-size) !important;
+}
+
+.welcome-and .nav-bar7{
+  left: -85px !important;
+  top: 300px !important;
+  width: 120px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.welcome-and .nav-bar8{
+  left: -85px !important;
+  top: 250px !important;
+  width: 120px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .welcome-and .footer5{
