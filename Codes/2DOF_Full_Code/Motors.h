@@ -11,10 +11,10 @@ Servo Fmotor, Rmotor, Bmotor, Lmotor;
 
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
-  Fmotor.attach(FPin, 1000, 2000);
-  Rmotor.attach(RPin, 1000, 2000);
-  Bmotor.attach(BPin, 1000, 2000);
-  Lmotor.attach(LPin, 1000, 2000);
+  Fmotor.attach(FPin);
+  Rmotor.attach(RPin);
+  Bmotor.attach(BPin);
+  Lmotor.attach(LPin);
   Fmotor.write(0);
   Rmotor.write(0);
   Bmotor.write(0);
@@ -40,12 +40,14 @@ void writeSpeed(int Fmicros, int Rmicros, int Bmicros, int Lmicros) {
 //Write Xact as a delta between Right motor speed and left, yAct as delta between front and back (unit is us)
 void writeControlAction(int xAct, int yAct) { //delta micros
   //Calculates each motor duty cycle as a distance from the operating point
-  int FM = min(max(Opratingpoint + yAct, minMicros), maxMicros);
-  int RM = min(max(Opratingpoint + xAct, minMicros), maxMicros);
-  int BM = min(max(Opratingpoint - yAct, minMicros), maxMicros);
-  int LM = min(max(Opratingpoint - xAct, minMicros), maxMicros);
+  int FM = min(max(yOpratingpoint + yAct, yminMicros), ymaxMicros);
+  int RM = min(max(xOpratingpoint + xAct, xminMicros), xmaxMicros);
+  int BM = min(max(yOpratingpoint - yAct, yminMicros), ymaxMicros);
+  int LM = min(max(xOpratingpoint - xAct, xminMicros), xmaxMicros);
+  
 #ifdef DebugMotor
   Serial.println((String)"POWERS: " + FM + ", " + RM + ", " + BM + ", " + LM);
 #endif
+
   writeSpeed(FM, RM, BM, LM);
 }

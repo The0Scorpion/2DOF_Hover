@@ -49,7 +49,7 @@ double calculatePID(PIDController *pid, float current_state) {
 
   //integral action clamping method
   if (!((pid->output >= pid->maxoutput && error > 0) || (pid->output <= pid->minoutput && error < 0))) {
-    pid->integral += pid->ki * error * dt ;
+    pid->integral += pid->ki * error * dt ;//I*Ts
   }
   
   //derivative action
@@ -60,7 +60,8 @@ double calculatePID(PIDController *pid, float current_state) {
   pid->prevdrev = derivative;
   pid->lastTime = currentTime;
   pid->prev_error = error;
-  pid->output = proportional + pid->integral + filter_der;
+  //pid->output = proportional + pid->integral + filter_der;
+  pid->output = proportional + pid->integral;
   pid->output = fmax(fmin(pid->output, pid->maxoutput), pid->minoutput);
   return pid->output;
 }

@@ -16,20 +16,20 @@ void StartUP(double targetX, double targetY) {
     int LPower = StartPower;
     if (targetX < abs(CountsToAngle(yEncoderCount))) {
       if (xEncoderCount > 0) {
-        FPower -= maxDeltaMicros;
-        BPower += maxDeltaMicros;
+        FPower -= ymaxDeltaMicros;
+        BPower += ymaxDeltaMicros;
       } else {
-        FPower += maxDeltaMicros;
-        BPower -= maxDeltaMicros;
+        FPower += ymaxDeltaMicros;
+        BPower -= ymaxDeltaMicros;
       }
     }
     if (targetY < abs(CountsToAngle(xEncoderCount))) {
       if (yEncoderCount > 0) {
-        RPower -= maxDeltaMicros;
-        LPower += maxDeltaMicros;
+        RPower -= xmaxDeltaMicros;
+        LPower += xmaxDeltaMicros;
       } else {
-        RPower += maxDeltaMicros;
-        LPower -= maxDeltaMicros;
+        RPower += xmaxDeltaMicros;
+        LPower -= xmaxDeltaMicros;
       }
     }
     writeSpeed(FPower, RPower, BPower, LPower);

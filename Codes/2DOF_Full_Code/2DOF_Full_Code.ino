@@ -14,43 +14,43 @@ TaskHandle_t TaskHandle_1;
 
 void setup() {
   Serial.begin(115200);//init Serial For debugging
-  initEncoder(0, 0);
+  //initEncoder(0, 0);
   //Over the air task to allow wireless flash runs on core 1
-  xTaskCreatePinnedToCore(
-     OTATASK,
-     "OTA Routine",
-     5000,
-     NULL,
-     0,
-     NULL,
-     1);
-
+/*  xTaskCreatePinnedToCore(
+    OTATASK,
+    "OTA Routine",
+    5000,
+    NULL,
+    0,
+    NULL,
+    1);
+*/
   //init MQTT client
 
 
   //Main Loop task runs on core 0
 
   xTaskCreatePinnedToCore(
-     PIDLoop,   //Function to implement the task
-     "Main Loop", // Name of the task
-     5000,      // Stack size in words
-     NULL,       // Task input parameter
-     0,          // Priority of the task
-     &TaskHandle_1,       // Task handle.
-     0);  // Core where the task should run
-  
+    PIDLoop,   //Function to implement the task
+    "Main Loop", // Name of the task
+    10000,      // Stack size in words
+    NULL,       // Task input parameter
+    9,          // Priority of the task
+    &TaskHandle_1,       // Task handle.
+    0);  // Core where the task should run
+
   //StartUP(0,0); //Not used
 
   //Data Acquisition  Task Run on core 0 for now
-  xTaskCreatePinnedToCore(
-    DataAQU,   // Function to implement the task
-    "Data AQU Loop", // Name of the task
-    5000,      // Stack size in words
-    NULL,       // Task input parameter
-    0,          // Priority of the task
-    NULL,       // Task handle.
-    0);  // Core where the task should run
-
+  /*  xTaskCreatePinnedToCore(
+      DataAQU,   // Function to implement the task
+      "Data AQU Loop", // Name of the task
+      5000,      // Stack size in words
+      NULL,       // Task input parameter
+      0,          // Priority of the task
+      NULL,       // Task handle.
+      0);  // Core where the task should run
+  */
 }
 #define DebugCF
 void loop() {
@@ -58,13 +58,13 @@ void loop() {
   //if debug then print the values between IMU and Encoder
 #ifdef DebugCF
   updateIMU();
-  Serial.print(xEncoderCount);
+  Serial.print(xPOSPID.integral);
   Serial.print(", ");
-  Serial.print(yEncoderCount);
+  Serial.print(xVELPID.integral);
   Serial.print(", ");
-  Serial.print(AngleToCounts(xPosIMU));
+  Serial.print(yPOSPID.integral);
   Serial.print(", ");
-  Serial.println(AngleToCounts(yPosIMU));
+  Serial.println(yVELPID.integral);
   delay(1000);
 #endif
 }

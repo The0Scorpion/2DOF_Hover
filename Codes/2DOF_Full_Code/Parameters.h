@@ -1,8 +1,8 @@
 /*
- * header file with all the control paramters for the system
- * Credit: Scorpion 
- * Created: 12/10/2023
- * Last update:5/3/2024
+   header file with all the control paramters for the system
+   Credit: Scorpion
+   Created: 12/10/2023
+   Last update:5/3/2024
 */
 
 //Defines the wiring for each major comp
@@ -17,29 +17,36 @@
 
 //IOT Parameters
 #define Send_Period 50 //unit is ms
-unsigned long lastsent=0;
+unsigned long lastsent = 0;
 //Rest in Secrets.h
 
-//IMU Parameters and Variables 
-#define IMU_XACC_Error  -0.02 
+//IMU Parameters and Variables
+#define IMU_XACC_Error  -0.02
 #define IMU_YACC_Error   0.00
 #define IMU_ZACC_Error  -0.03
 #define IMU_XDOT_Error  1.14 * PI / 180
 #define IMU_YDOT_Error  -1.87 * PI / 180
-float xDotIMU, yDotIMU; 
+float xDotIMU, yDotIMU;
 float AccX, AccY, AccZ;
-float xPosIMU = 0; 
-float yPosIMU = 0; 
+float xPosIMU = 0;
+float yPosIMU = 0;
 
 //Parameters for ESCs and motors
-#define maxMicros 2000
-#define minMicros 1000
-#define maxDeltaMicros 500
-#define StartPower 1500
-int Opratingpoint= 1500;
+#define xmaxMicros 2000
+#define xminMicros 1000
+#define xmaxDeltaMicros 1000
+int xOpratingpoint = 1500;
+
+#define ymaxMicros 1800
+#define yminMicros 1400
+#define ymaxDeltaMicros 400
+
+#define StartPower 1600
+int yOpratingpoint = 1600;
 
 
-//Main loop Parameters 
+
+//Main loop Parameters
 double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
 unsigned long PIDLastTime = 0;
 unsigned int Sampling_time = 5000;
@@ -48,22 +55,23 @@ byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
 
 //PID Parameters
-float ixposkp = 22;
-float ixposki = 0.1;
-float ixposkd = 0.1;
-float ixvelkp = 7;
-float ixvelki = 0.0001;
-float ixvelkd = 0.4;
-float iyposkp = 20;
-float iyposki = 0.1;
-float iyposkd = 1.1;
-float iyvelkp = 5;
-float iyvelki = 0.001;
-float iyvelkd = 1.4;
+float ixposkp = 2;
+float ixposki = 2;
+float ixposkd = 0;
+float ixvelkp = 500;
+float ixvelki = 100;
+float ixvelkd = 0;
+float iyposkp = 2;
+float iyposki = 2;
+float iyposkd = 0;
+float iyvelkp = 500;
+float iyvelki = 100;
+float iyvelkd = 0;
 int ixposSet = 0;
 int iyposSet = 0;
 int ixvelSet = 0;
 int iyvelSet = 0;
+#define maxSpeed 0.17
 
 
 //Encoder Parameters
