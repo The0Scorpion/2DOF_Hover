@@ -17,22 +17,18 @@
 #include "rtwtypes.h"
 
 /* Block states (default storage) */
-DW_RVG0_T RVG0_DW;
-
-/* External inputs (root inport signals with default storage) */
-ExtU_RVG0_T RVG0_U;
-
-/* External outputs (root outports fed by signals with default storage) */
-ExtY_RVG0_T RVG0_Y;
+DW_RVG0_T RVG0_DW;  //DW_RVG0_T has integrator and transfer function in it, each of type double
+ExtU_RVG0_T RVG0_U; //input has Y1target of type double
+ExtY_RVG0_T RVG0_Y; //output has Y1ref and Y2ref of types double
 
 /* Real-time model */
 static RT_MODEL_RVG0_T RVG0_M_;
-RT_MODEL_RVG0_T *const RVG0_M = &RVG0_M_;
+RT_MODEL_RVG0_T *const RVG0_M = &RVG0_M_; //pointer to Model object, note model object only has error status
 
 /* Model step function */
 void RVG0_step(void)
 {
-  real_T Sum;
+  double Sum;
 
   /* Outport: '<Root>/Y1ref' incorporates:
    *  DiscreteIntegrator: '<S1>/Discrete-Time Integrator'
@@ -54,24 +50,5 @@ void RVG0_step(void)
   RVG0_DW.DiscreteTimeIntegrator_DSTATE += 0.005 * RVG0_Y.Y2ref;
 
   /* Update for DiscreteTransferFcn: '<S1>/Discrete Transfer Fcn' */
-  RVG0_DW.DiscreteTransferFcn_states = Sum - -0.9835 *
-    RVG0_DW.DiscreteTransferFcn_states;
+  RVG0_DW.DiscreteTransferFcn_states = Sum - -0.9835 * RVG0_DW.DiscreteTransferFcn_states;
 }
-
-/* Model initialize function */
-void RVG0_initialize(void)
-{
-  /* (no initialization code required) */
-}
-
-/* Model terminate function */
-void RVG0_terminate(void)
-{
-  /* (no terminate code required) */
-}
-
-/*
- * File trailer for generated code.
- *
- * [EOF]
- */
