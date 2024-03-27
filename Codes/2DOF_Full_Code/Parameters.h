@@ -33,34 +33,35 @@ float xPosIMU = 0;
 float yPosIMU = 0;
 
 //Parameters for ESCs and motors
-#define xmaxMicros 2000
-#define xminMicros 1000
-#define xmaxDeltaMicros 500
-int xOpratingpoint = 1500;
+#define xmaxMicros 1850
+#define xminMicros 1350
+#define xmaxDeltaMicros 250
+int xOpratingpoint = 1600;
 
-#define ymaxMicros 1800
-#define yminMicros 1400
-#define ymaxDeltaMicros 400
+#define ymaxMicros 1850
+#define yminMicros 1350
+#define ymaxDeltaMicros 250
+int yOpratingpoint = 1600;
 
 #define StartPower 1600
-int yOpratingpoint = 1600;
+
 
 
 
 //Main loop Parameters
 double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
-unsigned long PIDLastTime = 0;
+//unsigned long PIDLastTime = 0;
 unsigned int Sampling_time = 5000;
 double IMU_FusionPrio = 0;
 byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
 
 //PID Parameters
-float ixposkp = 2;
+float ixposkp = 4;
 float ixposki = 1;
 float ixposkd = 0;
 float ixvelkp = 50;
-float ixvelki = 10;
+float ixvelki = 12;
 float ixvelkd = 0;
 float iyposkp = 2;
 float iyposki = 1;
@@ -72,7 +73,7 @@ float ixposSet = 0;
 float iyposSet = 0;
 float ixvelSet = 0;
 float iyvelSet = 0;
-double PositionLoopSat=0.17;
+float PositionLoopSat=1;
 
 
 //Encoder Parameters

@@ -14,7 +14,7 @@ void PIDLoop(void * parameter) {
   /*
     Main Control Loop, Runs each sampling time
   */
-  while (1) {
+//  while (1) {
 #ifdef DebugCF
     Serial.println("init PID Loops");
 #endif
@@ -46,25 +46,30 @@ void PIDLoop(void * parameter) {
     PID_Running = 1;
 
 
-    PIDLastTime = micros();
+    //PIDLastTime = micros();
+    TickType_t PIDLastTime;
+    const TickType_t xFrequency = 5/portTICK_PERIOD_MS;
+
+     // Initialise the xLastWakeTime variable with the current time.
+     PIDLastTime = xTaskGetTickCount();
 
     while (PID_Running) {
 
       //Update feedback values using sensor fusion
       xSpeed = getxSpeed();
       ySpeed = getySpeed();
-      updateIMU();
-      xSpeed = (1 - IMU_FusionPrio) * xSpeed + IMU_FusionPrio * AngleToCounts(xDotIMU);
-      ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
+      //updateIMU();
+      //xSpeed = (1 - IMU_FusionPrio) * xSpeed + IMU_FusionPrio * AngleToCounts(xDotIMU);
+      //ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
 
       //Calculate velocity SP from positionPID output
-      xVELPID.setpoint = (double)calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
-      yVELPID.setpoint = (double)calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
+      xVELPID.setpoint = (float)calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
+      yVELPID.setpoint = (float)calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
 
       //Calculate action for motors from velocityPID output
-      xAction =  (double)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
-      yAction =  (double)calculatePID(&yVELPID, ySpeed) * 10 ; //convert from Percnt to micros (Pulse width)
-      writeControlAction(xAction, yAction); //to check
+      xAction =  (float)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
+      yAction =  (float)calculatePID(&yVELPID, ySpeed) * 10 ; //convert from Percnt to micros (Pulse width)
+      writeControlAction((int)xAction, (int)yAction); //to check
       /*if (xAction > maxDeltaMicros)xAction = maxDeltaMicros;
         if (xAction < -maxDeltaMicros)xAction = -maxDeltaMicros;
         if (yAction > maxDeltaMicros)yAction = maxDeltaMicros;
@@ -73,14 +78,16 @@ void PIDLoop(void * parameter) {
 
 
       counta++;
-      while (micros() - PIDLastTime < Sampling_time) {
-        delayMicroseconds(1);
+      //while (micros() - PIDLastTime < Sampling_time) {
+      //  delayMicroseconds(100);
+      //      }
+      vTaskDelayUntil( &PIDLastTime, xFrequency );
 
-      }
+
 #ifdef debugTime
       Serial.print(micros() - PIDLastTime);
 #endif
-      PIDLastTime = micros();
+      //PIDLastTime = micros();
 
 #ifdef DebugCF1 //just for debugging 
       Serial.print("Counter For PID: ");
@@ -89,4 +96,4 @@ void PIDLoop(void * parameter) {
 #endif
     }
   }
-}
+//}

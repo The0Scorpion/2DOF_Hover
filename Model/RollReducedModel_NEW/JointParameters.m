@@ -14,8 +14,12 @@ L_cg_l = 0.102366; %m
 B_l = 0.5;
 
 CurrThrust = 60; %starting thrust in percent power
-MotorSaturation = 40; %saturation limits for motor
+MotorSaturation = 25; %saturation limits for motor
 
+PositionLoopSat = 1; %saturation limits for Position PID
+
+EncoderDelay = 0.020;
+ActuatorDelay = 0.005;
 %motor + propeller setting
 k = 0.13;
 b = 0.1;
