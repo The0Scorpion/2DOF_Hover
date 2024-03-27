@@ -1,10 +1,10 @@
 /*
- * Header file with the main loop and common functions
- * Credit:Scorpion 
- * Created: 20/10/2024
+   Header file with the main loop and common functions
+   Credit:Scorpion
+   Created: 20/10/2024
 */
 
-//#define DebugCF
+#define DebugCF
 #define RUN
 
 PIDController xPOSPID, xVELPID, yPOSPID, yVELPID;
@@ -31,17 +31,17 @@ void PIDLoop(void * parameter) {
 #endif
     //Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
-    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxDeltaMicros, maxDeltaMicros);    // to be rechecked the limits
+    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
     resetPID(&xVELPID);
-    initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -maxDeltaMicros / 10, maxDeltaMicros / 10);
+    initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -xmaxDeltaMicros / 10, xmaxDeltaMicros / 10);
     resetPID(&yPOSPID);
-    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -maxDeltaMicros, maxDeltaMicros);    // to be rechecked the limits
+    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
     resetPID(&yVELPID);
-    initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -maxDeltaMicros / 10, maxDeltaMicros / 10);
+    initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -ymaxDeltaMicros / 10, ymaxDeltaMicros / 10);
 
 #ifdef DebugCF
     Serial.println("init PID Loops Success");
-    int counta = 0;
+
 #endif
     PID_Running = 1;
 
@@ -58,8 +58,8 @@ void PIDLoop(void * parameter) {
       ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
 
       //Calculate velocity SP from positionPID output
-      xVELPID.setpoint = calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
-      yVELPID.setpoint = calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
+      xVELPID.setpoint = (double)calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
+      yVELPID.setpoint = (double)calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
 
       //Calculate action for motors from velocityPID output
       xAction =  (double)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
@@ -71,10 +71,18 @@ void PIDLoop(void * parameter) {
         if (yAction < -maxDeltaMicros)yAction = -maxDeltaMicros;*/
 
 
-      PIDLastTime = micros();
-      delayMicroseconds(Sampling_time);
 
-#ifdef DebugCF //just for debugging 
+      counta++;
+      while (micros() - PIDLastTime < Sampling_time) {
+        delayMicroseconds(1);
+
+      }
+#ifdef debugTime
+      Serial.print(micros() - PIDLastTime);
+#endif
+      PIDLastTime = micros();
+
+#ifdef DebugCF1 //just for debugging 
       Serial.print("Counter For PID: ");
       Serial.println(counta);
       counta++;

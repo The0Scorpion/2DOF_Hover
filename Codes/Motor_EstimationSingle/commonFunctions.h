@@ -15,7 +15,7 @@ enum Joint {
 } TestJoint;
 
 #define RUN
-#include <ArduinoJson.h>
+
 
 void MotorEstimation(void * parameter) {
   initEncoder(0, 0);
@@ -53,6 +53,23 @@ void MotorEstimation(void * parameter) {
   unsigned int RampValue = 1000;
   xAction = 0;
   yAction = 0;
+  for (int i = 0; i < 500;) {
+    xAction =  15 * 10 ; //convert from Percent to micros (Pulse width)
+    writeSpeed(1000 + xAction + yAction, 1000 + xAction + yAction, 1000 + xAction + yAction, 1000 + xAction + xAction);
+    xSpeed = getxSpeed();
+    ySpeed = getySpeed();
+    Serial.print(++i);
+    Serial.print(",");
+    Serial.print(15);
+    Serial.print(",");
+    Serial.print(CountsToAngle(xEncoderCount));
+    Serial.print(",");
+    Serial.println(getxSpeed());
+    while (micros() - lastSample < Sampling_time) {
+      delayMicroseconds(10);
+    }
+    lastSample = micros();
+  }
   for (int i = 0; i < StartPoints; i++) {
     if (TestJoint == RMOTOR || TestJoint == LMOTOR) {
       xAction =  startValue * 10 ; //convert from Percent to micros (Pulse width)
