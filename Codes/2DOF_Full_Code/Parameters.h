@@ -57,17 +57,17 @@ byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
 
 //PID Parameters
-float ixposkp = 4;
+float ixposkp = 12;
 float ixposki = 1;
 float ixposkd = 0;
-float ixvelkp = 50;
-float ixvelki = 12;
+float ixvelkp = 30;
+float ixvelki = 5;
 float ixvelkd = 0;
-float iyposkp = 2;
+float iyposkp = 10;
 float iyposki = 1;
 float iyposkd = 0;
-float iyvelkp = 50;
-float iyvelki = 10;
+float iyvelkp = 20;
+float iyvelki = 5;
 float iyvelkd = 0;
 float ixposSet = 0;
 float iyposSet = 0;

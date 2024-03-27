@@ -1,7 +1,9 @@
 #include <WiFi.h>
 #include <EEPROM.h>
+
 #include "Secrets.h"
 #include "Parameters.h"
+#include "RVG0.h"
 #include "IMU.h"
 #include "encoder.h"
 #include "PID.h"
