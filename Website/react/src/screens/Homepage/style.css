@@ -329,13 +329,13 @@
 .welcome-and .testimonials-instance {
   left: 315px !important;
   position: absolute !important;
-  top: 1440px !important;
+  top: 1350px !important;
 }
 
 .welcome-and .nav-bar-tab {
   height: 34px !important;
   left: 216px !important;
-  position: absolute !important;
+  position: fixed !important;
   top: 551px !important;
   width: 765px !important;
 }
@@ -781,21 +781,21 @@
 
 .welcome-and .footer-instance {
   background-color: transparent !important;
-  left: 800px !important;
+  left: -102px !important;
   position: absolute !important;
-  top: 2400px !important;
+  top: 1900px !important;
 }
 
 .welcome-and .testimonials-16 {
-  left: 990px !important;
+  left: 85px !important;
   position: absolute !important;
-  top: 1700px !important;
+  top: 1200px !important;
 }
 
 .welcome-and .welcome-instance {
-  left: 990px !important;
+  left: 80px !important;
   position: absolute !important;
-  top: 1000px !important;
+  top: 550px !important;
 }
 
 .welcome-and .button-intro-10 {
@@ -805,15 +805,15 @@
 }
 
 .welcome-and .intro-3 {
-  left: 951px !important;
+  left: 50px !important;
   position: absolute !important;
-  top: 700px !important;
+  top: 200px !important;
 }
 
 .welcome-and .nav-bar-instance {
-  left: 950px !important;
-  position: absolute !important;
-  top: 600px !important;
+  left: 0px !important;
+  position: fixed !important;
+  top: 0px !important;
 }
 
 .welcome-and .intro-4 {

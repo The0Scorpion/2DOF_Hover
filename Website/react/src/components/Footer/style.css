@@ -1,7 +1,7 @@
 .footer {
   height: 243px;
   position: relative;
-  width: 1440px;
+  width: 1250px;
 }
 
 button{
@@ -179,13 +179,13 @@ a:hover{
   left: 0;
   position: absolute;
   top: 223px;
-  width: 1442px;
+  width: 1250px;
 }
 
 .footer .overlap-2 {
   height: 21px;
   position: relative;
-  width: 1440px;
+  width: 1250px;
 }
 
 .footer .rectangle {
@@ -195,7 +195,7 @@ a:hover{
   left: 0;
   position: absolute;
   top: 2px;
-  width: 1440px;
+  width: 1250px;
 }
 
 .footer .copyright {

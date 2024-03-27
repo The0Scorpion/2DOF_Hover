@@ -1,16 +1,9 @@
 .video-stream {
   height: 548px;
-  position: relative;
-  transform: translate(0, 25px);
-  width: 1024px;
-}
-
-.video-stream .img {
-  height: 440px;
-  left: 0;
   position: absolute;
-  top: 108px;
   width: 1024px;
+  background-color: #ffffff22;
+  border-radius: 20px;
 }
 
 .video-stream .text-wrapper-6 {
@@ -25,5 +18,5 @@
   line-height: var(--title-line-height);
   position: absolute;
   text-align: center;
-  top: -1px;
+  top: 0px;
 }

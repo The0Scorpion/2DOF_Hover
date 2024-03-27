@@ -27,7 +27,7 @@ export const LoginAnd = () => {
               : screenWidth >= 834 && screenWidth < 1300
                 ? "834px"
                 : screenWidth >= 1300
-                  ? "1540px"
+                  ? "1350px"
                   : undefined,
         }}
       >

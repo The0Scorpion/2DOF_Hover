@@ -300,7 +300,7 @@
   height: 1323px !important;
   left: 100px !important;
   position: absolute !important;
-  top: 1050px !important;
+  top: 1150px !important;
   width: 765px !important;
 }
 
@@ -401,49 +401,40 @@
 }
 
 .hover .class-9 {
-  height: 293px !important;
-  left: 272px !important;
+  height: 250px !important;
+  left: 200px !important;
   position: absolute !important;
-  top: 500px !important;
+  top: 720px !important;
   width: 327px !important;
+  background-color: #d9d9d9;
 }
 
 .hover .class-10 {
-  height: 564px !important;
-  left: 0px !important;
+  height: 400px !important;
+  left: 130px !important;
+  background-color: #d9d9d9;
   position: absolute !important;
-  top: 0px !important;
-  width: 765px !important;
+  top: 750px !important;
+  width: 700px !important;
 }
 
 .hover .class-11 {
-  font-family: "Salsa", Helvetica !important;
-  font-size: 24px !important;
-  font-style: unset !important;
-  font-weight: 400 !important;
+  font-size: var(--subheader-font-size) !important;
   height: 29px !important;
-  left: 90px !important;
-  letter-spacing: 0 !important;
-  line-height: normal !important;
-  top: -2px !important;
+  left: 0px !important;
+  top: 0px !important;
+  color: yellow !important;
+  z-index: 1;
 }
 
 .hover .class-12 {
-  left: 261px !important;
-  top: 0 !important;
+  left: 120px !important;
+  top: 750 !important;
+  color:yellow;
+  background-color: aquamarine;
+  z-index: 1;
 }
 
-.hover .class-13 {
-  height: 235px !important;
-  top: 58px !important;
-  width: 327px !important;
-}
-
-.hover .class-14 {
-  height: 453px !important;
-  top: 111px !important;
-  width: 765px !important;
-}
 
 .hover .parameters-instance {
   left: 170px !important;
@@ -607,7 +598,7 @@
 .hover .video-stream-instance {
   left: 100px !important;
   position: absolute !important;
-  top: 600px !important;
+  top: 630px !important;
 }
 
 .hover .parameters-2 {
@@ -629,18 +620,45 @@
 }
 
 .hover .nav-bar-instance2 {
-  left: 50px !important;
-  position: absolute !important;
-  top: 50px !important;
+  left: 0px !important;
+  position: fixed !important;
+  top: 0px !important;
 }
 
+.hover .navalltext{
+  top: 0px !important;
+}
 
+.hover .login5{
+  left: 660px !important;
+  top: 45px !important;
+}
+
+.hover .reservation5{
+  left: 270px !important;
+  top: 45px !important;
+}
+
+.hover .about5{
+  left: 380px !important;
+  top: 45px !important;
+}
+
+.hover .contact5{
+  left: 485px !important;
+  top: 45px !important;
+}
+
+.hover .registration5{
+  left: 580px !important;
+  top: 45px !important;
+}
 
 .hover .parameters-3 {
   height: 422px !important;
-  left: 285px !important;
+  left: 200px !important;
   position: absolute !important;
-  top: 270px !important;
+  top: 150px !important;
   width: 326px !important;
 }
 
@@ -884,9 +902,9 @@
 
 .hover .simulation-streaming-3 {
   height: 23px !important;
-  left: 355px !important;
+  left: 250px !important;
   position: absolute !important;
-  top: 220px !important;
+  top: 100px !important;
   width: 200px !important;
 }
 
@@ -904,9 +922,9 @@
 
 .hover .buttons-3 {
   height: 85px !important;
-  left: 299px !important;
+  left: 210px !important;
   position: absolute !important;
-  top: 730px !important;
+  top: 610px !important;
   width: 284px !important;
 }
 
@@ -1112,9 +1130,9 @@
 
 .hover .graphs-18 {
   height: 1565px !important;
-  left: 285px !important;
+  left: 200px !important;
   position: absolute !important;
-  top: 1100px !important;
+  top: 900px !important;
   width: 326px !important;
 }
 
@@ -1279,10 +1297,15 @@
 
 .hover .nav-bar-tab-instance {
   height: 14px !important;
-  left: 273px !important;
+  left: 200px !important;
   position: absolute !important;
-  top: 180px !important;
+  top: 50px !important;
   width: 326px !important;
+}
+
+.hover .logo1{
+  left:0 !important;
+  top: 0 !important;
 }
 
 .hover .nav-bar1{
@@ -1316,9 +1339,9 @@
 }
 
 .welcome-and .nav-bar7{
-  left: -55px !important;
+  left: -50px !important;
   top: 250px !important;
-  width: 50px !important;
+  min-width: 50px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -1332,8 +1355,8 @@
 }
 
 .hover .footer5{
-  left:256px !important;
-  top:2750px !important;
+  left:0px !important;
+  top:2500px !important;
 }
 
 .hover .groupfooter{
@@ -1433,7 +1456,7 @@
 
 .hover .footer1{
   left:0px !important;
-  top:2450px !important;
+  top:2550px !important;
 }
 
 .hover .groupfooter1{

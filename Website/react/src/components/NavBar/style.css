@@ -1,7 +1,11 @@
 .nav-bar {
-  height: 50px;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(135deg, rgb(5, 5, 24) 7.28%, rgb(23, 3, 43) 96.28%);
+  border-radius: 0 0 20px 20px;
+  height: 120px;
   position: relative;
-  width: 1300px;
+  width: 1350px;
 }
 
 .nav-bar .overlap-4 {
@@ -14,18 +18,18 @@
 
 .nav-bar .mask-group-2 {
   height: 50px;
-  left: 0;
+  left: 100;
   position: absolute;
-  top: -10px;
+  top: 30px;
   width: 50px;
 }
 
 .nav-bar .group-wrapper {
   height: 48px;
-  left: 0;
+  left: 20;
   overflow: hidden;
   position: absolute;
-  top: -10px;
+  top: 30px;
   transition: all 0.5s ease;
   width: 273px;
 }
@@ -40,10 +44,10 @@
 
 .nav-bar .group-21 {
   height: 18px;
-  left: 820px;
+  left: 340px;
   position: absolute;
-  top: 13px;
-  width: 310px;
+  top: 50px;
+  width: 800px;
   background: none;
 }
 
@@ -55,19 +59,20 @@
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: 261px;
+  left: 840px;
+  padding: 10px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-bar .log-in:hover{
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -85,19 +90,20 @@
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: -140px;
+  left: 420px;
+  padding: 10px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-bar .reservation:hover{
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -111,23 +117,24 @@
   color: #ffffff;
   background: none;
   border: none;
+  padding: 10px;
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: -320px;
+  left: 240px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-bar .theories-explanation:hover{
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -142,8 +149,8 @@
   position: absolute;
   text-align: center;
   align-items: center;
-  left: -310px;
-  top: 18px;
+  left: 255px;
+  top: 70px;
   padding: 10px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
   border-radius: 5px;
@@ -161,8 +168,6 @@
 /* Change color of dropdown links on hover */
 .dropdown-content-theories .text1:hover {
   cursor: pointer;
-  padding: 5px;
-  background-color: #ffffff1f;
 }
 
 /* Links inside the dropdown */
@@ -171,7 +176,7 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .nav-bar .dropdown-content-experiments {
@@ -180,11 +185,11 @@
   text-align: center;
   align-items: center;
   padding: 10px;
-  left: -480px;
-  top:18px;
+  left: 90px;
+  top: 70px;
   background:linear-gradient(135deg, rgb(57.5, 48.3,138 )0%, rgb(13.17,74.83,131.75)100%);
-  border-radius: 5px;
-  width: 200px;
+  border-radius: 10px;
+  width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -197,7 +202,6 @@
 
 /* Change color of dropdown links on hover */
 .dropdown-content-experiments .text1:hover {
-  background-color: #ffffff1f;
   cursor: pointer;
 }
 
@@ -207,7 +211,7 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .nav-bar .experiments {
@@ -218,19 +222,20 @@
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: -435px;
+  left: 120px;
+  padding: 10px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-bar .experiments:hover{
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -258,7 +263,7 @@
 
 .nav-bar .text-wrapper-9:hover{
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -270,7 +275,7 @@
 
 .nav-bar .text-wrapper-10:hover{
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -282,7 +287,7 @@
 
 .nav-bar .text-wrapper-11:hover{
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ffffff22;
   font-family: var(--copyright-font-family);
   font-size: var(--copyright-font-size);
@@ -296,16 +301,17 @@
   color: #ffffff;
   background: none;
   border: none;
+  padding: 10px;
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: 170px;
+  left: 750px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -314,16 +320,17 @@
   color: #ffffff;
   background: none;
   border: none;
+  padding: 10px;
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: 60px;
+  left: 640px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -336,12 +343,13 @@
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  left: -30px;
+  left: 540px;
+  padding: 10px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 35px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }

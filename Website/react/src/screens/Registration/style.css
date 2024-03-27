@@ -319,7 +319,7 @@
 
 .registration .registerationbar-instance {
   height: 600px !important;
-  left: -30px !important;
+  left: 65px !important;
   position: absolute !important;
   top: 124px !important;
   width: 600px !important;
@@ -345,28 +345,28 @@
   left: 40px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 500px !important;
+  top: 400px !important;
 }
 
 .registration .universityinput1{
   left: 40px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 225px !important;
+  top: 130px !important;
 }
 
 .registration .collegeinput1{
   left: 370px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 225px !important;
+  top: 130px !important;
 }
 
 .registration .birthdayinput1{
   left: 40px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 320px !important;
+  top: 220px !important;
 }
 
 .registration .lastnameinput1{
@@ -379,42 +379,42 @@
   left: 370px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 500px !important;
+  top: 400px !important;
 }
 
 .registration .usernameinput1{
   left: 40px !important;
   height: 40px !important;
   width: 630px !important;
-  top: 410px !important;
+  top: 310px !important;
 }
 
 .registration .countryinput1{
   left: 370px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 320px !important;
+  top: 220px !important;
 }
 
 .registration .logininput1{
   left: 450px !important;
   height: 50px !important;
   width: 200px !important;
-  top: 600px !important;
+  top: 470px !important;
 }
 
 .registration .signinput1{
   left: 450px !important;
   height: 50px !important;
   width: 200px !important;
-  top: 700px !important;
+  top: 580px !important;
 }
 
 .registration .alreadyinput1{
   left: 400px !important;
   height: 40px !important;
   width: 300px !important;
-  top: 660px !important;
+  top: 540px !important;
 }
 
 .registration .firstname2{
@@ -427,55 +427,55 @@
 
 .registration .university2{
   left: 60px !important;
-  top: 190px !important;
+  top: 100px !important;
 }
 
 .registration .college2{
   left: 400px !important;
-  top: 190px !important;
+  top: 100px !important;
 }
 
 .registration .birthday2{
   left: 60px !important;
-  top: 280px !important;
+  top: 190px !important;
 }
 
 .registration .country2{
   left: 400px !important;
-  top:280 !important;
+  top:190 !important;
 }
 
 .registration .username2{
   left: 60px !important;
-  top: 370px !important;
+  top: 280px !important;
 }
 
 .registration .password2{
   left: 60px !important;
-  top: 460px !important;
+  top: 370px !important;
 }
 
 .registration .confirmpassword2{
   left: 400px !important;
-  top: 460px !important;
+  top: 370px !important;
 }
 
 .registration .nav-log-instance {
   left: 88px !important;
   position: absolute !important;
-  top: 54px !important;
+  top: 20px !important;
 }
 
 .registration .registerationbar-21 {
-  left: 0 !important;
+  left: 210 !important;
   position: absolute !important;
-  top: 150px !important;
+  top: 120px !important;
 }
 
 .registration .register11{
-  left: 50px !important;
+  left: 70px !important;
   position: absolute;
-  top: 80px !important;
+  top: 30px !important;
 }
 
 .registration .registration31{
@@ -486,6 +486,7 @@
 
 .registration .registration32{
   left:-70px !important;
+  top: 30px !important;
   font-size: var(--header-font-size);
 }
 

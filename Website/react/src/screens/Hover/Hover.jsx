@@ -18,13 +18,14 @@ export const Hover = () => {
       <div
         className="overlap-wrapper-2"
         style={{
+          background: "linear-gradient(180deg, rgb(5, 5, 24) 0%, rgb(28.9, 26.25, 126) 100%)",
           height:
             screenWidth < 834
               ? "2700px"
               : screenWidth >= 834 && screenWidth < 1300
                 ? "2937px"
                 : screenWidth >= 1300
-                  ? "3300px"
+                  ? "3248px"
                   : undefined,
           width:
             screenWidth < 834
@@ -32,7 +33,7 @@ export const Hover = () => {
               : screenWidth >= 834 && screenWidth < 1300
                 ? "834px"
                 : screenWidth >= 1300
-                  ? "1300px"
+                  ? "1350px"
                   : undefined,
         }}
       >
@@ -41,8 +42,6 @@ export const Hover = () => {
               <Parameters className="parameters-instance" />
               <videoStream
                 className="class-10"
-                videoStream="https://c.animaapp.com/zqIJEW6i/img/video-stream-2.svg"
-                videoStreamClassName="class-14"
                 videoStreamClassNameOverride="class12"
               />
               <SimulationStreaming className="simulation-streaming-instance" />
@@ -105,13 +104,25 @@ export const Hover = () => {
               <Graphs className="graphs-17" />
               <VideoStream
                 className="video-stream-instance"
-                videoStream="https://c.animaapp.com/zqIJEW6i/img/video-stream-3.svg"
               />
               <Parameters className="parameters-2" />
               <SimulationStreaming className="simulation-streaming-2" />
               <Buttons className="buttons-2" />
-              <NavBar className="nav-bar-instance2"
-                maskGroup="https://c.animaapp.com/8gKnAxyl/img/mask-group-35@2x.png"/>
+              <NavBar 
+                className="nav-bar-instance2"
+                navalltext="navalltext"
+                login="login5"
+                registration="registration5"
+                contact="contact5"
+                about="about5"
+                reservation="reservation5"
+                dropdownexp="dropdownexp5"
+                dropdowncontentexperiments="dropcontentexp5"
+                dropdowntheory="dropdowntheory5"
+                dropdowncontenttheory="dropdowncontenttheory5"
+                theoriesexp="theoriesexp5"
+                experiments="experiments"
+              />
             </>
           )}
 
@@ -119,8 +130,6 @@ export const Hover = () => {
             <>
               <videoStream
                 className="class-9"
-                videoStream="https://c.animaapp.com/zqIJEW6i/img/video-stream-1.svg"
-                videoStreamClassName="class-13"
                 videoStreamClassNameOverride="class-11"
               />
               <Parameters
@@ -246,6 +255,7 @@ export const Hover = () => {
               />
               <NavBar_2
                 className="nav-bar-tab-instance"
+                controltotal1="logo1"
                 navbarclassName="nav-bar1"
                 controlchef1="nav-bar2"
                 controlchef2="nav-bar3"

@@ -16,6 +16,7 @@ export const NavBar_2 = ({
   controlchef1,
   controlchef2,
   controlchef3,
+  controltotal1,
   dropdowncontenttheories,
   dropdowncontentexperiments,
   maskGroup = "https://c.animaapp.com/jrXwmMSX/img/mask-group-13@2x.png" }) => {
@@ -52,34 +53,24 @@ export const NavBar_2 = ({
           </div>
         </div>
       </div>
-      <div className="control-chef-high-3">
-        <div className="div-4">
-          <div className="frame-8">
-            <div className="div-4">
-              <div className="div-wrapper-3">
-                <div className="overlap-9">
-                  <Link to="/">
-                    <img
-                      className={`mask-group-7 ${controlchef1}`}
-                      alt="Mask group"
-                      src="https://c.animaapp.com/zqIJEW6i/img/mask-group-16@2x.png"
-                    />
-                    <img
-                      className={`mask-group-7 ${controlchef2}`}
-                      alt="Mask group"
-                      src="https://c.animaapp.com/zqIJEW6i/img/mask-group-17@2x.png"
-                    />
-                    <img
-                      className={`mask-group-7 ${controlchef3}`}
-                      alt="Mask group"
-                      src="https://c.animaapp.com/zqIJEW6i/img/mask-group-18@2x.png"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className={`control-chef-high-3 ${controltotal1}`}>
+        <Link to="/">
+          <img
+            className={`mask-group-7 ${controlchef1}`}
+            alt="Mask group"
+            src="https://c.animaapp.com/zqIJEW6i/img/mask-group-16@2x.png"
+          />
+          <img
+            className={`mask-group-7 ${controlchef2}`}
+            alt="Mask group"
+            src="https://c.animaapp.com/zqIJEW6i/img/mask-group-17@2x.png"
+          />
+          <img
+            className={`mask-group-7 ${controlchef3}`}
+            alt="Mask group"
+            src="https://c.animaapp.com/zqIJEW6i/img/mask-group-18@2x.png"
+          />
+        </Link>
       </div>
     </div>
   );

@@ -35,7 +35,6 @@ export const Registerationbar = ({
 }) => {
   return (
     <div className={`registerationbar ${className}`}>
-      <div className={`overlap ${overlapClassName}`}>
         <div className={`registration ${registrationClassName}`}>Registration</div>
         <p className={`firstname ${firstname}`}>First Name:</p>
         <input type="text" placeholder="First Name" className={`overlap-group ${overlapClassNameOverride}`} />
@@ -55,10 +54,9 @@ export const Registerationbar = ({
         <input type="text" placeholder="Confirm Password" className={`overlap-7 ${confirmPasswordClassName}`} />
         <p className={`username ${username}`}>Email:</p>
         <input type="email" placeholder="username@email.com" className={`overlap-8 ${usernameEmailComClassName}`} />
-        <input  type="button" value="Sign Up" onclick="alert('signed up successfully!')" className={`login-button ${loginButtonClassName}`}/>
+        <Link to="/log-in"><input  type="button" value="Sign Up" onclick="alert('signed up successfully!')" className={`login-button ${loginButtonClassName}`}/></Link>
         <p className={`already-have-an ${alreadyHaveAnClassName}`}>Already Have An Account ?</p>
         <Link to="/log-in"><input type="button" value="Sign In" className={`overlap-wrapper ${signInClassName}`}/></Link>
-      </div>
     </div>
   );
 };

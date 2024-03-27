@@ -19,7 +19,7 @@ export const Registration = () => {
               : screenWidth >= 834 && screenWidth < 1300
                 ? "1000px"
                 : screenWidth >= 1300
-                  ? "1124px"
+                  ? "650px"
                   : undefined,
           width:
             screenWidth < 834
@@ -27,7 +27,7 @@ export const Registration = () => {
               : screenWidth >= 834 && screenWidth < 1300
                 ? "834px"
                 : screenWidth >= 1300
-                  ? "2000px"
+                  ? "1350px"
                   : undefined,
         }}
       >
