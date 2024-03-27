@@ -19,7 +19,6 @@
 #define Send_Period 50 //unit is ms
 unsigned long lastsent = 0;
 //Rest in Secrets.h
-int counta = 0;
 
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02
@@ -35,7 +34,7 @@ float yPosIMU = 0;
 //Parameters for ESCs and motors
 #define xmaxMicros 2000
 #define xminMicros 1000
-#define xmaxDeltaMicros 500
+#define xmaxDeltaMicros 1000
 int xOpratingpoint = 1500;
 
 #define ymaxMicros 1800
@@ -57,22 +56,22 @@ float xAction, yAction;
 
 //PID Parameters
 float ixposkp = 2;
-float ixposki = 1;
+float ixposki = 2;
 float ixposkd = 0;
-float ixvelkp = 50;
-float ixvelki = 10;
+float ixvelkp = 500;
+float ixvelki = 100;
 float ixvelkd = 0;
 float iyposkp = 2;
-float iyposki = 1;
+float iyposki = 2;
 float iyposkd = 0;
-float iyvelkp = 50;
-float iyvelki = 10;
+float iyvelkp = 500;
+float iyvelki = 100;
 float iyvelkd = 0;
-float ixposSet = 0;
-float iyposSet = 0;
-float ixvelSet = 0;
-float iyvelSet = 0;
-double PositionLoopSat=0.17;
+int ixposSet = 0;
+int iyposSet = 0;
+int ixvelSet = 0;
+int iyvelSet = 0;
+#define maxSpeed 0.17
 
 
 //Encoder Parameters

@@ -31,17 +31,17 @@ void PIDLoop(void * parameter) {
 #endif
     //Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
-    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
+    initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -maxSpeed, maxSpeed);    // to be rechecked the limits
     resetPID(&xVELPID);
     initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -xmaxDeltaMicros / 10, xmaxDeltaMicros / 10);
     resetPID(&yPOSPID);
-    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
+    initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -maxSpeed, maxSpeed);    // to be rechecked the limits
     resetPID(&yVELPID);
     initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -ymaxDeltaMicros / 10, ymaxDeltaMicros / 10);
 
 #ifdef DebugCF
     Serial.println("init PID Loops Success");
-
+    int counta = 0;
 #endif
     PID_Running = 1;
 
@@ -58,8 +58,8 @@ void PIDLoop(void * parameter) {
       ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
 
       //Calculate velocity SP from positionPID output
-      xVELPID.setpoint = (double)calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
-      yVELPID.setpoint = (double)calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
+      xVELPID.setpoint = calculatePID(&xPOSPID, CountsToAngle(xEncoderCount));
+      yVELPID.setpoint = calculatePID(&yPOSPID, CountsToAngle(yEncoderCount));
 
       //Calculate action for motors from velocityPID output
       xAction =  (double)calculatePID(&xVELPID, xSpeed) * 10 ; //convert from Percnt to micros (Pulse width)
@@ -72,7 +72,7 @@ void PIDLoop(void * parameter) {
 
 
 
-      counta++;
+
       while (micros() - PIDLastTime < Sampling_time) {
         delayMicroseconds(1);
 
@@ -82,7 +82,7 @@ void PIDLoop(void * parameter) {
 #endif
       PIDLastTime = micros();
 
-#ifdef DebugCF1 //just for debugging 
+#ifdef DebugCF //just for debugging 
       Serial.print("Counter For PID: ");
       Serial.println(counta);
       counta++;
