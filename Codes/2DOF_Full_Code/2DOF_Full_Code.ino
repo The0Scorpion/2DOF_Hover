@@ -16,15 +16,15 @@ void setup() {
   Serial.begin(115200);//init Serial For debugging
   //initEncoder(0, 0);
   //Over the air task to allow wireless flash runs on core 1
-/*  xTaskCreatePinnedToCore(
-    OTATASK,
-    "OTA Routine",
-    5000,
-    NULL,
-    0,
-    NULL,
-    1);
-*/
+  /*  xTaskCreatePinnedToCore(
+      OTATASK,
+      "OTA Routine",
+      5000,
+      NULL,
+      0,
+      NULL,
+      1);
+  */
   //init MQTT client
 
 
@@ -58,13 +58,23 @@ void loop() {
   //if debug then print the values between IMU and Encoder
 #ifdef DebugCF
   updateIMU();
-  Serial.print(xPOSPID.integral);
+  Serial.print("XVEL:");
+  Serial.print(xVELPID.setpoint);
+  Serial.print(", ");
+  Serial.print(xSpeed);
   Serial.print(", ");
   Serial.print(xVELPID.integral);
   Serial.print(", ");
-  Serial.print(yPOSPID.integral);
+  Serial.println(xVELPID.output - xVELPID.integral);
+  Serial.print("XPOS:");
+  Serial.print(xPOSPID.setpoint);
   Serial.print(", ");
-  Serial.println(yVELPID.integral);
-  delay(1000);
+  Serial.print(CountsToAngle(xEncoderCount));
+  Serial.print(", ");
+  Serial.print(xPOSPID.integral);
+  Serial.print(", ");
+  Serial.println(xPOSPID.output);
+  counta = 0;
+  delay(500);
 #endif
 }
