@@ -12,15 +12,9 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
-
+ 
 #ifndef RTW_HEADER_RVG0_h_
 #define RTW_HEADER_RVG0_h_
-#ifndef RVG0_COMMON_INCLUDES_
-#define RVG0_COMMON_INCLUDES_
-#include "rtwtypes.h"
-#endif                                 /* RVG0_COMMON_INCLUDES_ */
-
-#include "RVG0_types.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -31,21 +25,23 @@
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
 
+
+
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real_T DiscreteTimeIntegrator_DSTATE;/* '<S1>/Discrete-Time Integrator' */
-  real_T DiscreteTransferFcn_states;   /* '<S1>/Discrete Transfer Fcn' */
+  double DiscreteTimeIntegrator_DSTATE;/* '<S1>/Discrete-Time Integrator' */
+  double DiscreteTransferFcn_states;   /* '<S1>/Discrete Transfer Fcn' */
 } DW_RVG0_T;
 
 /* External inputs (root inport signals with default storage) */
 typedef struct {
-  real_T Y1target;                     /* '<Root>/Y1target' */
+  double Y1target;                     /* '<Root>/Y1target' */
 } ExtU_RVG0_T;
 
 /* External outputs (root outports fed by signals with default storage) */
 typedef struct {
-  real_T Y1ref;                        /* '<Root>/Y1ref' */
-  real_T Y2ref;                        /* '<Root>/Y2ref' */
+  double Y1ref;                        /* '<Root>/Y1ref' */
+  double Y2ref;                        /* '<Root>/Y2ref' */
 } ExtY_RVG0_T;
 
 /* Real-time Model Data Structure */
@@ -53,19 +49,14 @@ struct tag_RTM_RVG0_T {
   const char_T * volatile errorStatus;
 };
 
-/* Block states (default storage) */
+typedef struct tag_RTM_RVG0_T RT_MODEL_RVG0_T;
+
 extern DW_RVG0_T RVG0_DW;
-
-/* External inputs (root inport signals with default storage) */
 extern ExtU_RVG0_T RVG0_U;
-
-/* External outputs (root outports fed by signals with default storage) */
 extern ExtY_RVG0_T RVG0_Y;
 
 /* Model entry point functions */
-extern void RVG0_initialize(void);
 extern void RVG0_step(void);
-extern void RVG0_terminate(void);
 
 /* Real-time Model object */
 extern RT_MODEL_RVG0_T *const RVG0_M;
