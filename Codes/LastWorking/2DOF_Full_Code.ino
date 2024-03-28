@@ -1,9 +1,7 @@
 #include <WiFi.h>
 #include <EEPROM.h>
-
 #include "Secrets.h"
 #include "Parameters.h"
-#include "RVG0.h"
 #include "IMU.h"
 #include "encoder.h"
 #include "PID.h"
@@ -54,28 +52,29 @@ void setup() {
       0);  // Core where the task should run
   */
 }
-//#define DebugCF
+#define DebugCF
 void loop() {
 
   //if debug then print the values between IMU and Encoder
 #ifdef DebugCF
   updateIMU();
-//  Serial.print(xVELPID.setpoint);
-//  Serial.print(", ");
-//  Serial.print(xSpeed);
-//  Serial.print(", ");
-//  Serial.print(xVELPID.integral);
-//  Serial.print(", ");
-//  Serial.println(xVELPID.output - xVELPID.integral);
-//  Serial.print("XPOS:");
-//  Serial.print(xPOSPID.setpoint);
-//  Serial.print(", ");
-//  Serial.print(CountsToAngle(xEncoderCount));
-//  Serial.print(", ");
-//  Serial.print(xPOSPID.integral);
-//  Serial.print(", ");
-//  Serial.println(xPOSPID.output);
+  Serial.print("XVEL:");
+  Serial.print(xVELPID.setpoint);
+  Serial.print(", ");
+  Serial.print(xSpeed);
+  Serial.print(", ");
+  Serial.print(xVELPID.integral);
+  Serial.print(", ");
+  Serial.println(xVELPID.output - xVELPID.integral);
+  Serial.print("XPOS:");
+  Serial.print(xPOSPID.setpoint);
+  Serial.print(", ");
+  Serial.print(CountsToAngle(xEncoderCount));
+  Serial.print(", ");
+  Serial.print(xPOSPID.integral);
+  Serial.print(", ");
+  Serial.println(xPOSPID.output);
   counta = 0;
-  vTaskDelay(500/portTICK_PERIOD_MS);
+  delay(500);
 #endif
 }

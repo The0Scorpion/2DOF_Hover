@@ -31,6 +31,7 @@ void initializePID(PIDController *pid, float kp, float ki, float kd, float setpo
   pid->ki = ki;
   pid->kd = kd;
   pid->setpoint = setpoint;
+  pid->lastTime = 0.0;
   pid->prev_error = 0.0;
   pid->integral = 0.0;
   pid->minoutput = minoutput;
@@ -48,10 +49,11 @@ double calculatePID(PIDController *pid, float current_state) {
   float proportional = pid->kp * error;
 
   //integral action clamping method 0.13>0.6
-  if (!((pid->output == pid->maxoutput && error > 0) || (pid->output == pid->minoutput && error < 0))) {
+  if (!((pid->output >= pid->maxoutput && error > 0) || (pid->output <= pid->minoutput && error < 0))) {
     pid->integral += pid->ki * error * dt ;//I*Ts //0.005*.34*100
+    
   }
-  //Serial.println(dt);
+  Serial.println(dt);
   //derivative action
   float derivative = pid->kd * (error - pid->prev_error) / dt ;
   float filter_der = (1 / (2 * pid->RC + dt)) * (dt * derivative + dt * pid->prevdrev - (dt - 2 * pid->RC) * pid->prev_filter_out);
