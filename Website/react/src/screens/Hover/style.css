@@ -289,11 +289,9 @@
 
 .hover .p {
   color: #ffffff;
-  position: absolute;
   text-align: center;
   top: 0;
   white-space: nowrap;
-  width: 377px;
 }
 
 .hover .graphs-instance {
@@ -584,7 +582,7 @@
 
 .hover .footer-instance {
   background-color: transparent !important;
-  left: -102px !important;
+  left: 80px !important;
   position: absolute !important;
   top: 3000px !important;
 }
@@ -623,35 +621,6 @@
   left: 0px !important;
   position: fixed !important;
   top: 0px !important;
-}
-
-.hover .navalltext{
-  top: 0px !important;
-}
-
-.hover .login5{
-  left: 660px !important;
-  top: 45px !important;
-}
-
-.hover .reservation5{
-  left: 270px !important;
-  top: 45px !important;
-}
-
-.hover .about5{
-  left: 380px !important;
-  top: 45px !important;
-}
-
-.hover .contact5{
-  left: 485px !important;
-  top: 45px !important;
-}
-
-.hover .registration5{
-  left: 580px !important;
-  top: 45px !important;
 }
 
 .hover .parameters-3 {
@@ -1448,9 +1417,9 @@
 
 .hover .nav-bar-tab {
   height: 34px !important;
-  left: 80px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 50px !important;
+  top: 0px !important;
   width: 765px !important;
 }
 

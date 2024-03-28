@@ -1,9 +1,11 @@
 .nav-bar-2 {
-  height: 36px;
-  left: 217px;
+  height: 60px;
+  background: linear-gradient(135deg, rgb(5, 5, 24) 7.28%, rgb(23, 3, 43) 96.28%);
+  border-radius: 0 0 20px 20px;
+  left: 0px;
   position: absolute;
-  top: 828px;
-  width: 764px;
+  top: 0px;
+  width: 835px;
 }
 
 button{
@@ -207,7 +209,7 @@ button:hover{
   height: 14px;
   left: 730px;
   position: absolute;
-  top: 12px;
+  top: 20px;
   width: 33px;
   transition: all 0.5ms ease;
 }
@@ -241,10 +243,10 @@ button:hover{
 
 .nav-bar-2 .control-chef-high-3 {
   height: 35px;
-  left: 0;
+  left: 50px ;
   overflow: hidden;
   position: absolute;
-  top: 1px;
+  top: 10px;
   transition: all 0.5s ease;
   width: 199px;
 }

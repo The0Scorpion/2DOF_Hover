@@ -5,7 +5,7 @@
   border-radius: 0 0 20px 20px;
   height: 120px;
   position: relative;
-  width: 1350px;
+  width: 1340;
 }
 
 .nav-bar .overlap-4 {
@@ -46,7 +46,7 @@
   height: 18px;
   left: 340px;
   position: absolute;
-  top: 50px;
+  top: 0px;
   width: 800px;
   background: none;
 }
@@ -312,6 +312,7 @@
   position: absolute;
   text-align: center;
   top: 35px;
+  width:fit-content;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -331,6 +332,7 @@
   position: absolute;
   text-align: center;
   top: 35px;
+  width:fit-content;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -350,6 +352,7 @@
   position: absolute;
   text-align: center;
   top: 35px;
+  width:fit-content;
   transition: all 0.2s ease;
   white-space: nowrap;
 }

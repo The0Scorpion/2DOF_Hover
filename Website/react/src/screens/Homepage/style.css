@@ -2,328 +2,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-}
-
-.welcome-and .overlap-wrapper-2 {
+  width: 1340;
   overflow: hidden;
-}
-
-.welcome-and .overlap-7 {
-  position: absolute;
-}
-
-.welcome-and .class {
-  border-radius: 180.67px/380.36px !important;
-  height: 761px !important;
-  left: 308px !important;
-  width: 361px !important;
-}
-
-.welcome-and .class-2 {
-  border-radius: 425.67px/417.67px !important;
-  height: 835px !important;
-  left: 726px !important;
-  width: 851px !important;
-}
-
-.welcome-and .class-3 {
-  border-radius: 119.13px/442.96px !important;
-  height: 886px !important;
-  left: 203px !important;
-  width: 238px !important;
-}
-
-.welcome-and .class-4 {
-  height: 2647px !important;
-  left: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  width: 1098px !important;
-}
-
-.welcome-and .class-5 {
-  height: 2907px !important;
-  left: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  width: 2587px !important;
-}
-
-.welcome-and .class-6 {
-  height: 3083px !important;
-  left: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  width: 724px !important;
-}
-
-.welcome-and .class-7 {
-  border-radius: 202.57px/431.7px !important;
-  height: 863px !important;
-  top: 1784px !important;
-  width: 405px !important;
-}
-
-.welcome-and .class-8 {
-  border-radius: 477.28px/474.06px !important;
-  height: 948px !important;
-  top: 1959px !important;
-  width: 955px !important;
-}
-
-.welcome-and .class-9 {
-  border-radius: 133.57px/502.76px !important;
-  height: 1006px !important;
-  top: 2077px !important;
-  width: 267px !important;
-}
-
-.welcome-and .class-10 {
-  border-radius: 180.67px/380.36px !important;
-  height: 761px !important;
-  left: 737px !important;
-  top: 1017px !important;
-  width: 361px !important;
-}
-
-.welcome-and .class-11 {
-  border-radius: 425.67px/417.67px !important;
-  height: 835px !important;
-  left: 1736px !important;
-  top: 1117px !important;
-  width: 851px !important;
-}
-
-.welcome-and .class-12 {
-  border-radius: 119.13px/442.96px !important;
-  height: 886px !important;
-  left: 486px !important;
-  top: 1185px !important;
-  width: 238px !important;
-}
-
-.welcome-and .footer-2 {
-  background-color: transparent;
-  position: absolute;
-}
-
-.welcome-and .group-16 {
-  background: linear-gradient(180deg, rgba(13.17, 74.83, 131.75, 0.35) 7.28%, rgba(104.88, 40.83, 168.94, 0.24) 96.28%);
-  border-radius: 20px;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .group-17 {
-  position: absolute;
-}
-
-.welcome-and .control-chef-high-2 {
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.welcome-and .frame-5 {
-  overflow: hidden;
-}
-
-.welcome-and .overlap-8 {
-  position: absolute;
-}
-
-.welcome-and .frame-wrapper {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .frame-6 {
-  overflow: hidden;
-}
-
-.welcome-and .overlap-group-6 {
-  position: absolute;
-}
-
-.welcome-and .group-18 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .group-19 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .text {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .frame-7 {
-  overflow: hidden;
-  position: absolute;
-}
-
-.welcome-and .group-20 {
-  left: 0;
-  position: absolute;
-}
-
-.welcome-and .group-21 {
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .group-22 {
-  position: absolute;
-}
-
-.welcome-and .mask-group-5 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .mask-group-6 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .mask-group-7 {
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .group-23 {
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .text-wrapper-15 {
-  color: #ffffff;
-  font-family: var(--subheader-font-family) !important;
-  font-weight: var(--subheader-font-weight) !important;
-  left: 0;
-  letter-spacing: var(--subheader-letter-spacing) !important;
-  line-height: var(--subheader-line-height) !important;
-  position: absolute;
-  text-align: center;
-  top: 0;
-}
-
-.welcome-and .group-24 {
-  position: absolute;
-}
-
-.welcome-and .overlap-group-7 {
-  position: absolute;
-}
-
-.welcome-and .text-wrapper-16 {
-  color: #ffffff;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .text-wrapper-17 {
-  color: #ffffff;
-  left: 1px;
-  position: absolute;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .text-wrapper-18 {
-  color: #ffffff;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .text-wrapper-19 {
-  color: #ffffff;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .group-25 {
-  position: absolute;
-  top: 0;
-}
-
-.welcome-and .control-chef {
-  color: #ffffff;
-  font-family: var(--subheader-font-family) !important ;
-  font-weight: var(--subheader-font-weight) !important;
-  left: 0;
-  letter-spacing: var(--subheader-letter-spacing) !important;
-  line-height: var(--subheader-line-height) !important;
-  position: absolute;
-  text-align: center;
-  top: 0;
-}
-
-.welcome-and .group-26 {
-  position: absolute;
-}
-
-.welcome-and .overlap-group-8 {
-  position: absolute;
-}
-
-.welcome-and .home {
-  color: #ffffff;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .about-us {
-  color: #ffffff;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.welcome-and .group-27 {
-  left: 0;
-  position: absolute;
-}
-
-.welcome-and .overlap-9 {
-  position: absolute;
-}
-
-.welcome-and .rectangle-4 {
-  background: linear-gradient(180deg, rgba(13.17, 74.83, 131.75, 0.35) 7.28%, rgba(104.88, 40.83, 168.94, 0.24) 96.28%);
-  border-radius: 20px;
-  left: 0;
-  position: absolute;
-  top: 1px;
-}
-
-.welcome-and .copyright-2 {
-  color: #ffffff;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  white-space: nowrap;
-  width: 377px;
 }
 
 .welcome-and .testimonials-instance {
@@ -333,18 +13,17 @@
 }
 
 .welcome-and .nav-bar-tab {
-  height: 34px !important;
-  left: 216px !important;
+  left: 0px !important;
   position: fixed !important;
-  top: 551px !important;
-  width: 765px !important;
+  top: 0px !important;
+  z-index: 1 !important;
 }
 
 .welcome-and .intro-instance {
   height: 323px !important;
-  left: 216px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 669px !important;
+  top: 100px !important;
   width: 765px !important;
 }
 
@@ -361,76 +40,9 @@
   width: 318px !important;
 }
 
-.welcome-and .button-intro-instance {
-  height: 48px !important;
-  left: 216px !important;
-  position: absolute !important;
-  top: 1018px !important;
-  width: 769px !important;
-}
-
-.welcome-and .button-intro-2 {
-  height: 48px !important;
-  width: 250px !important;
-}
-
-.welcome-and .drop-theory{
-  left: 35px !important;
-  top: 45px !important;
-}
-
-.welcome-and .button-intro-3 {
-  background-image: url(https://c.animaapp.com/8gKnAxyl/img/rectangle-1-4.svg) !important;
-  height: 56px !important;
-  width: 256px !important;
-}
-
-.welcome-and .button-intro-4 {
-  font-size: var(--subheader-font-size) !important;
-  height: 29px !important;
-  left: 15px !important;
-  top: 9px !important;
-}
-
-.welcome-and .button-intro-5 {
-  height: 48px !important;
-  left: 265px !important;
-  width: 250px !important;
-}
-
-.welcome-and .drop-exper{
-  left:240px !important;
-  top:45px !important;
-}
-
-.welcome-and .button-intro-6 {
-  height: 48px !important;
-  width: 248px !important;
-}
-
-.welcome-and .button-intro-7 {
-  font-size: var(--subheader-font-size) !important;
-  height: 29px !important;
-  left: 56px !important;
-  top: 6px !important;
-}
-
-.welcome-and .button-intro-8 {
-  height: 48px !important;
-  left: 521px !important;
-  width: 250px !important;
-}
-
-.welcome-and .button-intro-9 {
-  font-size: var(--subheader-font-size) !important;
-  height: 29px !important;
-  left: 61px !important;
-  top: 9px !important;
-}
-
 .welcome-and .class-13 {
   height: 100px !important;
-  left: -212px !important;
+  left: -220px !important;
   top: 16px !important;
   width: 742px !important;
   font-family: var(--title-font-family) !important;
@@ -457,7 +69,7 @@
 .welcome-and .class-15 {
   font-weight: 700 !important;
   height: 133px !important;
-  left: 50px !important;
+  left: 0px !important;
   top: 185px !important;
   width: 313px !important;
   text-align: center;
@@ -484,7 +96,7 @@
 
 .welcome-and .class-17 {
   height: 494px !important;
-  left: 50px !important;
+  left: 0px !important;
   top: 390px !important;
   width: 312px !important;
   text-align: center;
@@ -509,33 +121,25 @@
   line-height: var(--f18-line-height) !important;
 }
 
-.welcome-and .class-19 {
-  height: 1035px !important;
-  left: 279px !important;
-  position: absolute !important;
-  top: 873px !important;
-  width: 317px !important;
-}
-
 .welcome-and .class-20 {
   height: 719px !important;
-  left: 216px !important;
+  left: 30px !important;
   position: absolute !important;
-  top: 1000px !important;
+  top: 450px !important;
   width: 769px !important;
 }
 
 .welcome-and .class-201 {
   height: 719px !important;
-  left: 216px !important;
+  left: 20px !important;
   position: absolute !important;
-  top: 550px !important;
+  top: 350px !important;
   width: 769px !important;
 }
 
 .welcome-and .class-21 {
   height: 28px !important;
-  left: 50px !important;
+  left: 0px !important;
   top: 350px !important;
   font-family: var(--f22-font-family) !important;
   font-size: var(--f22-font-size) !important;
@@ -547,7 +151,7 @@
 
 .welcome-and .class-22 {
   height: 30px !important;
-  left: -5px !important;
+  left: 5px !important;
   top: 343px !important;
   font-family: var(--header-font-family) !important;
   font-size: var(--header-font-size) !important;
@@ -559,7 +163,7 @@
 
 .welcome-and .class-23 {
   height: 28px !important;
-  left: 50px !important;
+  left: 0px !important;
   top: 150px !important;
   font-family: var(--f22-font-family) !important;
   font-size: var(--f22-font-size) !important;
@@ -571,7 +175,7 @@
 
 .welcome-and .class-24 {
   height: 30px !important;
-  left: -6px !important;
+  left: 0px !important;
   top: 137px !important;
   font-family: var(--header-font-family) !important;
   font-size: var(--header-font-size) !important;
@@ -583,22 +187,22 @@
 
 .welcome-and .testimonials-3 {
   height: 452px !important;
-  left: 216px !important;
+  left: 30px !important;
   position: absolute !important;
-  top: 1750px !important;
+  top: 1200px !important;
   width: 765px !important;
 }
 
 .welcome-and .testimonials-instance {
   height: 452px !important;
-  left: 40px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 1450px !important;
+  top: 1250px !important;
   width: 765px !important;
 }
 
 .welcome-and .testimonials-91 {
-  left: 37px !important;
+  left: 40px !important;
   top: 110px !important;
   width: unset !important;
   font-family: var(--f18-font-family) !important;
@@ -611,7 +215,7 @@
 
 .welcome-and .testimonials-101 {
   height: 95px !important;
-  left: 22px !important;
+  left: 0px !important;
   top: 144px !important;
   width: 203px !important;
   font-family: var(--paragraph-font-family) !important;
@@ -625,13 +229,13 @@
 .welcome-and .testimonials-81 {
   border-radius: 10.77px/10.8px !important;
   height: 22px !important;
-  left: 140px !important;
+  left: 80px !important;
   width: 22px !important;
 }
 
 .welcome-and .testimonials-71 {
   height: 80px !important;
-  left: 84px !important;
+  left: 80px !important;
   top: 5px !important;
   width: 80px !important;
 }
@@ -639,17 +243,18 @@
 .welcome-and .testimonials-51 {
   height: 290px !important;
   width: 248px !important;
+  left: 40px !important;
 }
 
 .welcome-and .testimonials-131 {
   height: 153px !important;
-  left: 165px !important;
+  left: 0px !important;
   width: 434px !important;
 }
 
 .welcome-and .testimonials-121 {
   height: 290px !important;
-  left: 259px !important;
+  left: 0px !important;
   top: 762px !important;
   width: 252px !important;
 }
@@ -658,12 +263,12 @@
   height: 290px !important;
   top: 162px !important;
   width: 252px !important;
-  left: 259px !important;
+  left: 0px !important;
 }
 
 .welcome-and .testimonials-111 {
   height: 290px !important;
-  left: 259px !important;
+  left: 0px !important;
   top: 460px !important;
   width: 252px !important;
 }
@@ -673,7 +278,7 @@
   height: 116px !important;
   top: 37px !important;
   width: 350px !important;
-  left:40px !important;
+  left:0px !important;
 }
 
 .welcome-and .testimonials-61 {
@@ -685,8 +290,7 @@
 .welcome-and .testimonials-151 {
   font-size: var(--header-font-size) !important;
   height: 43px !important;
-  left: 95px !important;
-  width: 245px !important;
+  left: 0px !important;
 }
 
 .welcome-and .testimonials-4 {
@@ -714,7 +318,7 @@
 }
 
 .welcome-and .testimonials-8 {
-  border-radius: 10.77px/10.8px !important;
+  border-radius: 11px !important;
   height: 22px !important;
   left: 140px !important;
   width: 22px !important;
@@ -781,9 +385,9 @@
 
 .welcome-and .footer-instance {
   background-color: transparent !important;
-  left: -102px !important;
+  left: 80px !important;
   position: absolute !important;
-  top: 1900px !important;
+  top: 1850px !important;
 }
 
 .welcome-and .testimonials-16 {
@@ -796,12 +400,6 @@
   left: 80px !important;
   position: absolute !important;
   top: 550px !important;
-}
-
-.welcome-and .button-intro-10 {
-  left: 949px !important;
-  position: absolute !important;
-  top: 1000px !important;
 }
 
 .welcome-and .intro-3 {
@@ -817,19 +415,19 @@
 }
 
 .welcome-and .intro-4 {
-  left: 0px !important;
+  left: -275px !important;
   position: absolute !important;
-  top: 500px !important;
+  top: 350px !important;
 }
 
-.introwrap834{
+.welcome-and .introwrap834{
   font-size: var(--title-font-size) !important;
   left:320px !important;
   top: -300px !important;
   width:260px !important;
 }
 
-.homebanner834{
+.welcome-and .homebanner834{
   height: auto !important;
   width:15% !important;
   left: 320px !important;
@@ -837,40 +435,47 @@
 }
 
 .welcome-and .nav-bar-tab-instance {
-  height: 14px !important;
-  left: 273px !important;
+  height: 25px !important;
+  left: 0px !important;
   position: absolute !important;
-  top: 180px !important;
-  width: 326px !important;
+  top: 0px !important;
+  width: 360px !important;
 }
 
 .welcome-and .nav-bar1{
   left: 300px !important;
-  top: 0px !important;
+  top: 5px !important;
 }
 
 .welcome-and .nav-bar2{
-  width: 60% !important;
+  width: 40% !important;
   height: auto !important;
-  left: -10px !important;
+  left: 0px !important;
+
 }
 
 .welcome-and .nav-bar3{
-  width: 60% !important;
+  width: 40% !important;
   height: auto !important;
-  left: -10px !important;
+  left: 0px !important;
 }
 
 .welcome-and .nav-bar4{
-  width: 60% !important;
+  width: 40% !important;
   height: auto !important;
-  left: -10px !important;
+  left: 0px !important;
+}
+
+.welcome-and .nav-bar9{
+  top: 5px !important;
+  left: 5px !important;
 }
 
 .welcome-and .nav-bar5{
   left: 180px !important;
-  width: 50px !important;
-  top:0px !important;
+  min-width: 50px !important;
+  top:10px !important;
+  padding: 5px !important;
 }
 
 .welcome-and .nav-bar6{
@@ -879,8 +484,8 @@
 
 .welcome-and .nav-bar7{
   left: -85px !important;
-  top: 300px !important;
-  width: 120px !important;
+  top: 100px !important;
+  width: 100px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -888,14 +493,14 @@
 .welcome-and .nav-bar8{
   left: -85px !important;
   top: 250px !important;
-  width: 120px !important;
+  min-width: 100px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
 .welcome-and .footer5{
-  left:256px !important;
-  top:2510px !important;
+  left:0px !important;
+  top:2350px !important;
 }
 
 .welcome-and .groupfooter{
@@ -986,8 +591,8 @@
 }
 
 .welcome-and .footer1{
-  left:180px !important;
-  top:2250px !important;
+  left:0px !important;
+  top:1730px !important;
 }
 
 .welcome-and .groupfooter1{
@@ -1047,10 +652,6 @@
 .welcome-and .textwrapper5footer1{
   font-size: var(--paragraph-font-size) !important;
   top: 80px !important;
-}
-
-.welcome-and .buttonfooter1{
-  font-size: var(--paragraph-font-size) !important;
 }
 
 .welcome-and .group8footer1{

@@ -1,5 +1,5 @@
 .intro-wrapper {
-  height: 444px;
+  height: 254px;
   position: relative;
   width: 1250px;
 }
@@ -24,6 +24,6 @@
   left: 770px;
   object-fit: cover;
   position: absolute;
-  top: -30px;
+  top: 0px;
   width: 20%;
 }

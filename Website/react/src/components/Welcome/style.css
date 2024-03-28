@@ -76,5 +76,5 @@
   line-height: var(--f50-line-height);
   position: absolute;
   text-align: center;
-  top: -1px;
+  top: 0px;
 }
