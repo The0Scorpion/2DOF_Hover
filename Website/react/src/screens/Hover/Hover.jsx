@@ -9,12 +9,15 @@ import { Parameters } from "../../components/Parameters";
 import { SimulationStreaming } from "../../components/SimulationStreaming";
 import { VideoStream } from "../../components/VideoStream";
 import { Flex, withAuthenticator } from "@aws-amplify/ui-react";
+import { Authenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css" ;
 import "./style.css";
 
-export const Hover = () => {
+ export const Hover = () => {
   const screenWidth = useWindowWidth();
 
   return (
+    <Authenticator>
     <div className="hover">
       <div
         className="overlap-wrapper-2"
@@ -281,6 +284,7 @@ export const Hover = () => {
         )}
       </div>
     </div>
+    </Authenticator>
   );
 };
 

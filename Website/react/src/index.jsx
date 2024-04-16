@@ -1,7 +1,9 @@
 import "../global.css";
 import "../styleguide.css";
 import React, { Children } from "react";
-import { Amplify } from 'aws-amplify';
+import {Amplify} from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 import ReactDOMClient from "react-dom/client";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import { Hover } from "./screens/Hover";

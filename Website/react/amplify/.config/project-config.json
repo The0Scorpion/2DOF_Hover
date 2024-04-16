@@ -1,0 +1,17 @@
+{
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "react",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "/react/src",
+      "DistributionDir": "build",
+      "BuildCommand": "npm run dev",
+      "StartCommand": "npm  run-script start"
+    }
+  }
+}
