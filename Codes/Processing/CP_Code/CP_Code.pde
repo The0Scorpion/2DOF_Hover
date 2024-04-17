@@ -14,7 +14,7 @@ void setup() {
   int y = 20;
   int spacing = 60;
   int x=20;
-  for(int i=1;i<4;i++){
+  for(int i=0;i<4;i++){
   for(String name: textfieldNames[i]){
     cp5.addTextfield(name)
        .setPosition(x,y)
@@ -22,6 +22,7 @@ void setup() {
        .setFont(font)
        .setFocus(true)
        .setColor(color(255,0,0))
+       .setInputFilter(ControlP5.FLOAT)
        ;
      y += spacing;
   }
@@ -33,13 +34,4 @@ void setup() {
 
 void draw() {
   background(0);
-}
-
-void controlEvent(ControlEvent theEvent) {
-  if(theEvent.isAssignableFrom(Textfield.class)) {
-    println("controlEvent: accessing a string from controller '"
-            +theEvent.getName()+"': "
-            +theEvent.getStringValue()
-            );
-  }
 }
