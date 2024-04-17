@@ -74,3 +74,5 @@ void resetPID(PIDController *pid) {
   pid->lastTime = 0;
   pid->prev_error = 0;
 }
+
+PIDController xPOSPID, xVELPID, yPOSPID, yVELPID;

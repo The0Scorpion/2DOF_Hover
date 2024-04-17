@@ -28,23 +28,23 @@ void DataIn(char* topic, byte* message, unsigned int length) {
     if (deserializeJson(doc, Data) == DeserializationError::Ok) {
       // Successfully parsed JSON string
       // Access struct members as needed
-      ixposkp = doc["xposkp"];
-      ixposki = doc["xposki"];
-      ixposkd = doc["xposkd"];
+      xposkp = doc["xposkp"];
+      xposki = doc["xposki"];
+      xposkd = doc["xposkd"];
       ixposSet = doc["xposSet"];
 
-      ixvelkp = doc["xvelkp"];
-      ixvelki = doc["xvelki"];
-      ixvelkd = doc["xvelkd"];
+      xvelkp = doc["xvelkp"];
+      xvelki = doc["xvelki"];
+      xvelkd = doc["xvelkd"];
 
-      iyposkp = doc["yposkp"];
-      iyposki = doc["yposki"];
-      iyposkd = doc["yposkd"];
+      yposkp = doc["yposkp"];
+      yposki = doc["yposki"];
+      yposkd = doc["yposkd"];
       iyposSet = doc["yposSet"];
 
-      iyvelkp = doc["yvelkp"];
-      iyvelki = doc["yvelki"];
-      iyvelkd = doc["yvelkd"];
+      yvelkp = doc["yvelkp"];
+      yvelki = doc["yvelki"];
+      yvelkd = doc["yvelkd"];
 #ifdef DebugIOT
       Serial.print("ixposkp: ");
       Serial.println(ixposkp);
@@ -78,7 +78,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       Serial.print("iyvelkd: ");
       Serial.println(iyvelkd);
 #endif
-PID_Running=0;
+      PID_Running = 0;
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -148,7 +148,7 @@ void DataAQU(void * parameter) {
 #endif
     //Publish json string to AWS MQTTserver
     mqttClient.publish(PubAWSTopic, jsonString.c_str());
-    
+
     while (millis() - lastsent < Send_Period) {
       mqttClient.loop();
     }

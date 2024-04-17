@@ -33,15 +33,17 @@ float xPosIMU = 0;
 float yPosIMU = 0;
 
 //Parameters for ESCs and motors
-#define xmaxMicros 1800
-#define xminMicros 1200
+#define xmaxMicros 1700
+#define xminMicros 1100
 #define xmaxDeltaMicros 300
-int xOpratingpoint = 1500;
+#define xmaxDeltaMicrosStart 550
+int xOpratingpoint = 1400;
 
-#define ymaxMicros 1500
-#define yminMicros 1200
-#define ymaxDeltaMicros 150
-int yOpratingpoint = 1350;
+#define ymaxMicros 1700
+#define yminMicros 1100
+#define ymaxDeltaMicros 300
+#define ymaxDeltaMicrosStart 500
+int yOpratingpoint = 1400;
 
 #define StartPower 1600
 
@@ -57,10 +59,10 @@ byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
 
 //PID Parameters
-float ixposkp = 12 ; //12
+float ixposkp = 20 ; //12
 float ixposki = 1;  //1
 float ixposkd = 0;
-float ixvelkp = 30; //30
+float ixvelkp = 35; //30
 float ixvelki = 5;  //5
 float ixvelkd = 0;
 float iyposkp = 10; //10
@@ -69,6 +71,21 @@ float iyposkd = 0;
 float iyvelkp = 20; //20
 float iyvelki = 5; //5
 float iyvelkd = 0;
+
+//Normal Mode
+float xposkp = 10 ; //12
+float xposki = 1;  //1
+float xposkd = 0;
+float xvelkp = 20; //30
+float xvelki = 5;  //5
+float xvelkd = 0;
+float yposkp = 10; //10
+float yposki = 1; //1
+float yposkd = 0;
+float yvelkp = 20; //20
+float yvelki = 5; //5
+float yvelkd = 0;
+
 float ixposSet = 0;
 float iyposSet = 0;
 float ixvelSet = 0;
