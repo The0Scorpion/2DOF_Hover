@@ -60,8 +60,8 @@ double calculatePID(PIDController *pid, float current_state) {
   pid->prevdrev = derivative;
   pid->lastTime = currentTime;
   pid->prev_error = error;
-  //pid->output = proportional + pid->integral + filter_der;
-  pid->output = proportional + pid->integral;
+  pid->output = proportional + pid->integral + filter_der;
+  //pid->output = proportional + pid->integral;
   pid->output = (pid->output > pid->maxoutput)? pid->maxoutput:((pid->output < pid->minoutput)?pid->minoutput:pid->output);
   return pid->output;
 }

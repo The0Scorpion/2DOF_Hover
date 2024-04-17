@@ -18,7 +18,7 @@ void setup() {
   Serial.begin(115200);//init Serial For debugging
   //initEncoder(0, 0);
   //Over the air task to allow wireless flash runs on core 1
-  /*  xTaskCreatePinnedToCore(
+    xTaskCreatePinnedToCore(
       OTATASK,
       "OTA Routine",
       5000,
@@ -26,7 +26,7 @@ void setup() {
       0,
       NULL,
       1);
-  */
+  
   //init MQTT client
 
 
@@ -44,7 +44,7 @@ void setup() {
   //StartUP(0,0); //Not used
 
   //Data Acquisition  Task Run on core 0 for now
-  /*  xTaskCreatePinnedToCore(
+    xTaskCreatePinnedToCore(
       DataAQU,   // Function to implement the task
       "Data AQU Loop", // Name of the task
       5000,      // Stack size in words
@@ -52,9 +52,8 @@ void setup() {
       0,          // Priority of the task
       NULL,       // Task handle.
       0);  // Core where the task should run
-  */
 }
-//#define DebugCF
+#define DebugCF
 void loop() {
 
   //if debug then print the values between IMU and Encoder
@@ -70,12 +69,14 @@ void loop() {
 //  Serial.print("XPOS:");
 //  Serial.print(xPOSPID.setpoint);
 //  Serial.print(", ");
-//  Serial.print(CountsToAngle(xEncoderCount));
-//  Serial.print(", ");
+ // Serial.print(CountsToAngle(xEncoderCount));
+ // Serial.print(", ");
+ // Serial.println(CountsToAngle(yEncoderCount));
+
 //  Serial.print(xPOSPID.integral);
 //  Serial.print(", ");
 //  Serial.println(xPOSPID.output);
   counta = 0;
-  vTaskDelay(500/portTICK_PERIOD_MS);
+  vTaskDelay(50/portTICK_PERIOD_MS);
 #endif
 }

@@ -41,8 +41,8 @@ void updateIMU(void) {
 
   //convert raw data into SI units
   //Angle Rates
-  xDotIMU = (float)GyroX / 65.5 + IMU_XDOT_Error; //rad/s
-  yDotIMU = (float)GyroY / 65.5 + IMU_YDOT_Error;
+  yDotIMU = (float)GyroX / 65.5 + IMU_XDOT_Error; //rad/s
+  xDotIMU = (float)GyroY / 65.5 + IMU_YDOT_Error;
 
   //Acceleration
   AccX = (float)AccXLSB / 4096 + IMU_XACC_Error; // m/s^2  //minus the calibration values

@@ -14,7 +14,7 @@ const char* password = "123456789";
 
 #define THING_NAME "IOT_HUB2"
 #define PubAWSTopic "/Data"
-#define SubAWSTopic "Paramters"
+#define SubAWSTopic "Parameters"
 // Amazon Root CA 1
 static const char AWS_CERT_CA[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----

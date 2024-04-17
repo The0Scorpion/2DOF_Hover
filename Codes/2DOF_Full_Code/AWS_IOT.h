@@ -11,7 +11,7 @@
 #include <SPIFFS.h>
 
 //#define DebugIOT
-//#define DebugAQU
+#define DebugAQU
 
 WiFiClientSecure wifiClient;
 PubSubClient mqttClient(wifiClient);
@@ -78,6 +78,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       Serial.print("iyvelkd: ");
       Serial.println(iyvelkd);
 #endif
+PID_Running=0;
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -147,7 +148,7 @@ void DataAQU(void * parameter) {
 #endif
     //Publish json string to AWS MQTTserver
     mqttClient.publish(PubAWSTopic, jsonString.c_str());
-
+    
     while (millis() - lastsent < Send_Period) {
       mqttClient.loop();
     }

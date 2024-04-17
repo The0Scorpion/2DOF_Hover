@@ -7,7 +7,7 @@
 #include <ESP32Servo.h>
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
 
-#define DebugMotor
+// #define DebugMotor
 
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {

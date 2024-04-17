@@ -16,7 +16,7 @@
 #define LeftMotorPIN 26
 
 //IOT Parameters
-#define Send_Period 50 //unit is ms
+#define Send_Period 60000 //unit is ms
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
@@ -33,15 +33,15 @@ float xPosIMU = 0;
 float yPosIMU = 0;
 
 //Parameters for ESCs and motors
-#define xmaxMicros 1850
-#define xminMicros 1350
-#define xmaxDeltaMicros 250
-int xOpratingpoint = 1600;
+#define xmaxMicros 1800
+#define xminMicros 1200
+#define xmaxDeltaMicros 300
+int xOpratingpoint = 1500;
 
-#define ymaxMicros 1850
-#define yminMicros 1350
-#define ymaxDeltaMicros 250
-int yOpratingpoint = 1600;
+#define ymaxMicros 1500
+#define yminMicros 1200
+#define ymaxDeltaMicros 150
+int yOpratingpoint = 1350;
 
 #define StartPower 1600
 
@@ -52,28 +52,28 @@ int yOpratingpoint = 1600;
 double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
 //unsigned long PIDLastTime = 0;
 unsigned int Sampling_time = 5000;
-double IMU_FusionPrio = 0;
+double IMU_FusionPrio = 0.2;
 byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
 
 //PID Parameters
-float ixposkp = 12;
-float ixposki = 1;
+float ixposkp = 12 ; //12
+float ixposki = 1;  //1
 float ixposkd = 0;
-float ixvelkp = 30;
-float ixvelki = 5;
+float ixvelkp = 30; //30
+float ixvelki = 5;  //5
 float ixvelkd = 0;
-float iyposkp = 10;
-float iyposki = 1;
+float iyposkp = 10; //10
+float iyposki = 1; //1
 float iyposkd = 0;
-float iyvelkp = 20;
-float iyvelki = 5;
+float iyvelkp = 20; //20
+float iyvelki = 5; //5
 float iyvelkd = 0;
 float ixposSet = 0;
 float iyposSet = 0;
 float ixvelSet = 0;
 float iyvelSet = 0;
-float PositionLoopSat=1;
+float PositionLoopSat=4;
 
 
 //Encoder Parameters
