@@ -123,12 +123,10 @@ void PIDLoop(void * parameter) {
 #endif
     if (Work) {
       initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-      delay(2500);//wait for esc calib
+      delay(500);//wait for esc calib
     }
     //Startup
-#ifdef DebugCF
-    Serial.println("StaRTUp");
-#endif
+
     initIMU();
     updateIMU();
     updateIMU();
@@ -137,9 +135,13 @@ void PIDLoop(void * parameter) {
     xEncoderCount = AngleToCounts(xPosIMU);
     yEncoderCount = AngleToCounts(yPosIMU);
 
-
+#ifdef DebugCF
+    Serial.println("Start Up");
+#endif
     StartUP(0.20, 0.20);
-
+#ifdef DebugCF
+    Serial.println("Started");
+#endif
     //Reset and Create 4 PID objects with StarUp parameters
 
 

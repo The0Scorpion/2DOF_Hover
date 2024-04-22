@@ -177,10 +177,6 @@ void DataIn(char* topic, byte* message, unsigned int length) {
 #endif
 
         PID_Running = 0;
-        Fmotor.detach();
-        Rmotor.detach();
-        Bmotor.detach();
-        Lmotor.detach();
         initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
         delay(2000);
       } else {
