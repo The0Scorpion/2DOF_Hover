@@ -55,9 +55,9 @@ double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
 //unsigned long PIDLastTime = 0;
 unsigned int Sampling_time = 5000;
 double IMU_FusionPrio = 0.02;
-byte PID_Running = 1, ESC_Running = 0;
+byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
-byte Work = 0;
+byte Work = 1;
 
 //PID Parameters
 /*

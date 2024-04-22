@@ -1,13 +1,13 @@
 /*
- * Submodule That contains all the brushless motor functions
- * Credit:Scorpion 
- * Created: 14/11/2023
+   Submodule That contains all the brushless motor functions
+   Credit:Scorpion
+   Created: 14/11/2023
 */
 
 #include <ESP32Servo.h>
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
 
-//#define DebugMotor
+#define DebugMotor
 
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
@@ -19,15 +19,16 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Rmotor.write(0);
   Bmotor.write(0);
   Lmotor.write(0);
-
+  delay(500);
   //start up motors
-  for(int speeds=1000;speeds<1100;speeds+=5){
-    Fmotor.writeMicroseconds(speeds);
-    Rmotor.writeMicroseconds(speeds);
-    Bmotor.writeMicroseconds(speeds);
-    Lmotor.writeMicroseconds(speeds);
+  /*
+    for (unsigned int i = 1000; i < 1100; i += 5) {
+    Fmotor.writeMicroseconds(i);
+    Rmotor.writeMicroseconds(i);
+    Bmotor.writeMicroseconds(i);
+    Lmotor.writeMicroseconds(i);
     delay(5);
-  }
+    }*/
   ESC_Running = 1;
 }
 
@@ -53,7 +54,7 @@ void writeControlAction(int xAct, int yAct) { //delta micros
   uint32_t RM = min(max(xOpratingpoint + xAct, xminMicros), xmaxMicros);
   uint32_t BM = min(max(yOpratingpoint - yAct, yminMicros), ymaxMicros);
   uint32_t LM = min(max(xOpratingpoint - xAct, xminMicros), xmaxMicros);
-  
+
 #ifdef DebugMotor
   Serial.println((String)"POWERS: " + FM + ", " + RM + ", " + BM + ", " + LM);
 #endif
