@@ -19,6 +19,15 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Rmotor.write(0);
   Bmotor.write(0);
   Lmotor.write(0);
+
+  //start up motors
+  for(int speeds=1000;speeds<1100;speeds+=5){
+    Fmotor.writeMicroseconds(speeds);
+    Rmotor.writeMicroseconds(speeds);
+    Bmotor.writeMicroseconds(speeds);
+    Lmotor.writeMicroseconds(speeds);
+    delay(5);
+  }
   ESC_Running = 1;
 }
 

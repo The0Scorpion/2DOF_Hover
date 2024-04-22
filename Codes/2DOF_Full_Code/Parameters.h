@@ -40,11 +40,11 @@ float yPosIMU = 0;
 #define xmaxDeltaMicrosStart 300
 int xOpratingpoint = 1300;
 
-#define ymaxMicros 1500
-#define yminMicros 1100
-#define ymaxDeltaMicros 200
-#define ymaxDeltaMicrosStart 300
-int yOpratingpoint = 1300;
+#define ymaxMicros 1350
+#define yminMicros 1050
+#define ymaxDeltaMicros 150
+#define ymaxDeltaMicrosStart 200
+int yOpratingpoint = 1200;
 
 
 
@@ -54,8 +54,8 @@ int yOpratingpoint = 1300;
 double xSpeed, ySpeed; //Feedback speeds for control (after Fusion)
 //unsigned long PIDLastTime = 0;
 unsigned int Sampling_time = 5000;
-double IMU_FusionPrio = 0.2;
-byte PID_Running = 1, ESC_Running = 1;
+double IMU_FusionPrio = 0.02;
+byte PID_Running = 1, ESC_Running = 0;
 float xAction, yAction;
 byte Work = 0;
 

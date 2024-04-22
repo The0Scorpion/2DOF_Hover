@@ -29,9 +29,9 @@ void StartUP(double targetX, double targetY) {
     xAction =  (int)(calculatePID(&xVELPID, xSpeed) * 10) ; //convert from Percnt to micros (Pulse width)
     yAction =  (int)(calculatePID(&yVELPID, ySpeed) * 10) ; //convert from Percnt to micros (Pulse width)
 
-    uint32_t FM = min(max((int)(1500 + yAction), 1000), 2000);
+    uint32_t FM = min(max((int)(1300 + yAction), 1000), 2000);
     uint32_t RM = min(max((int)(1500 + xAction), 1000), 2000);
-    uint32_t BM = min(max((int)(1500 - yAction), 1000), 2000);
+    uint32_t BM = min(max((int)(1300 - yAction), 1000), 2000);
     uint32_t LM = min(max((int)(1500 - xAction), 1000), 2000);
 
 #ifdef DebugMotor
