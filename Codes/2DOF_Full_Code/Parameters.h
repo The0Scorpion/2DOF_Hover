@@ -76,6 +76,8 @@ byte Work = 0;
 */
 
 //Normal Mode
+byte load = 0; //if set then the parameters are loaded from EEPROM on first run
+byte save = 1; //if set then the parameters are saved to EEPROM on the first run
 float xposkp = 6 ; //12
 float xposki = 1;  //1
 float xposkd = 0;

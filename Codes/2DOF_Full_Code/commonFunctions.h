@@ -14,17 +14,112 @@ void PIDLoop(void * parameter) {
     Main Control Loop, Runs each sampling time
   */
   initEncoder(0, 0);
+
+
+  EEPROM.begin(300);
+
+  if (load) { // get Last saved Paramters
+    int pos = 1;
+    xposkp = EEPROM.read(pos);
+    pos += 4;
+    xposki = EEPROM.read(pos);
+    pos += 4;
+    xposkd = EEPROM.read(pos);
+    pos += 4;
+
+
+    xvelkp = EEPROM.read(pos);
+    pos += 4;
+    xvelki = EEPROM.read(pos);
+    pos += 4;
+    xvelkd = EEPROM.read(pos);
+    pos += 4;
+
+    yposkp = EEPROM.read(pos);
+    pos += 4;
+    yposki = EEPROM.read(pos);
+    pos += 4;
+    yposkd = EEPROM.read(pos);
+    pos += 4;
+
+    yvelkp = EEPROM.read(pos);
+    pos += 4;
+    yvelki = EEPROM.read(pos);
+    pos += 4;
+    yvelkd = EEPROM.read(pos);
+  } else if (save) { // save initial paramters
+    int pos = 1;
+    EEPROM.write(pos, xposkp);
+    pos += 4;
+    EEPROM.write(pos, xposki);
+    pos += 4;
+    EEPROM.write(pos, xposkd);
+    pos += 4;
+
+    EEPROM.write(pos, xvelkp);
+    pos += 4;
+    EEPROM.write(pos, xvelki);
+    pos += 4;
+    EEPROM.write(pos, xvelkd);
+    pos += 4;
+
+    EEPROM.write(pos, yposkp);
+    pos += 4;
+    EEPROM.write(pos, yposki);
+    pos += 4;
+    EEPROM.write(pos, yposkd);
+    pos += 4;
+
+    EEPROM.write(pos, yvelkp);
+    pos += 4;
+    EEPROM.write(pos, yvelki);
+    pos += 4;
+    EEPROM.write(pos, yvelkd);
+
+    EEPROM.commit();
+  }
+
 #ifdef RUN
-  EEPROM.begin(1);
-  Work = !EEPROM.read(0);
+  Work = EEPROM.read(0) > 1 ? 0 : !EEPROM.read(0);
   EEPROM.write(0, Work); //toggles running on resets
   EEPROM.commit();
-
 #endif
 
   while (1) {
 #ifdef DebugCF
     Serial.println("init PID Loops");
+    Serial.println("With Paramters:");
+    Serial.print("xposkp: ");
+    Serial.println(xposkp);
+    Serial.print("xposki: ");
+    Serial.println(xposki);
+    Serial.print("xposkd: ");
+    Serial.println(xposkd);
+    Serial.print("xposSet: ");
+    Serial.println(xposSet);
+
+    Serial.print("xvelkp: ");
+    Serial.println(xvelkp);
+    Serial.print("xvelki: ");
+    Serial.println(xvelki);
+    Serial.print("xvelkd: ");
+    Serial.println(xvelkd);
+
+    Serial.print("yposkp: ");
+    Serial.println(yposkp);
+    Serial.print("yposki: ");
+    Serial.println(yposki);
+    Serial.print("yposkd: ");
+    Serial.println(yposkd);
+    Serial.print("yposSet: ");
+    Serial.println(yposSet);
+
+    Serial.print("yvelkp: ");
+    Serial.println(yvelkp);
+    Serial.print("yvelki: ");
+    Serial.println(yvelki);
+    Serial.print("yvelkd: ");
+    Serial.println(yvelkd);
 #endif
     if (Work) {
       initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
