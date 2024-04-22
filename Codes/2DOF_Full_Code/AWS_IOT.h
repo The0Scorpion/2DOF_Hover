@@ -10,75 +10,109 @@
 #include <WiFiClientSecure.h>
 #include <SPIFFS.h>
 
-//#define DebugIOT
-#define DebugAQU
+#define DebugIOT
+//#define DebugAQU
 
 WiFiClientSecure wifiClient;
 PubSubClient mqttClient(wifiClient);
 
 void DataIn(char* topic, byte* message, unsigned int length) {
   //destroys the pid loop
-  DynamicJsonDocument doc(200);
+  DynamicJsonDocument ParamterObject(200);
   String Data(reinterpret_cast<char*>(message), length);
-  Serial.print("Recived on topic: ");
-  Serial.println(topic);
-  Serial.print("Message: ");
-  Serial.println(Data);
+
+
   if (String(topic) == SubAWSTopic) {
-    if (deserializeJson(doc, Data) == DeserializationError::Ok) {
+    if (deserializeJson(ParamterObject, Data) == DeserializationError::Ok) {
       // Successfully parsed JSON string
       // Access struct members as needed
-      xposkp = doc["xposkp"];
-      xposki = doc["xposki"];
-      xposkd = doc["xposkd"];
-      ixposSet = doc["xposSet"];
+      if (ParamterObject.containsKey("xposkp")) {
+        xposkp =    fmin(fmax(ParamterObject["xposkp"], -xposkpLimit), xposkpLimit);
+      } if (ParamterObject.containsKey("xposki")) {
+        xposki =    fmin(fmax(ParamterObject["xposki"], -xposkdLimit), xposkdLimit);
+      } if (ParamterObject.containsKey("xposkd")) {
+        xposkd =    fmin(fmax(ParamterObject["xposkd"], -xposkiLimit), xposkiLimit);
+      } if (ParamterObject.containsKey("xposSet")) {
+        xposSet =   fmin(fmax(ParamterObject["xposSet"], -xposSetLimit), xposSetLimit);
+      }
 
-      xvelkp = doc["xvelkp"];
-      xvelki = doc["xvelki"];
-      xvelkd = doc["xvelkd"];
+      if (ParamterObject.containsKey("xvelkp")) {
+        xvelkp =    fmin(fmax(ParamterObject["xvelkp"], -xvelkpLimit), xvelkpLimit);
+      } if (ParamterObject.containsKey("xvelki")) {
+        xvelki =    fmin(fmax(ParamterObject["xvelki"], -xvelkiLimit), xvelkiLimit);
+      } if (ParamterObject.containsKey("xvelkd")) {
+        xvelkd =    fmin(fmax(ParamterObject["xvelkd"], -xvelkdLimit), xvelkdLimit);
+      }
 
-      yposkp = doc["yposkp"];
-      yposki = doc["yposki"];
-      yposkd = doc["yposkd"];
-      iyposSet = doc["yposSet"];
+      if (ParamterObject.containsKey("yposkp")) {
+        yposkp =    fmin(fmax(ParamterObject["yposkp"], -yposkpLimit), xposkpLimit);
+      } if (ParamterObject.containsKey("yposki")) {
+        yposki =    fmin(fmax(ParamterObject["yposki"], -yposkiLimit), yposkiLimit);
+      } if (ParamterObject.containsKey("yposkd")) {
+        yposkd =    fmin(fmax(ParamterObject["yposkd"], -yposkdLimit), yposkdLimit);
+      } if (ParamterObject.containsKey("yposSet")) {
+        yposSet =   fmin(fmax(ParamterObject["yposSet"], -yposSetLimit), yposSetLimit);
+      }
 
-      yvelkp = doc["yvelkp"];
-      yvelki = doc["yvelki"];
-      yvelkd = doc["yvelkd"];
+      if (ParamterObject.containsKey("yvelkp")) {
+        yvelkp =    fmin(fmax(ParamterObject["yvelkp"], -yvelkpLimit), yvelkpLimit);
+      } if (ParamterObject.containsKey("yvelki")) {
+        yvelki =    fmin(fmax(ParamterObject["yvelki"], -yvelkiLimit), yvelkiLimit);
+      } if (ParamterObject.containsKey("yvelkd")) {
+        yvelkd =    fmin(fmax(ParamterObject["yvelkd"], -yvelkdLimit), yvelkdLimit);
+      }
+
+      if (ParamterObject.containsKey("work")) {
+        Work =    ParamterObject["work"];
+      }
 #ifdef DebugIOT
-      Serial.print("ixposkp: ");
-      Serial.println(ixposkp);
-      Serial.print("ixposki: ");
-      Serial.println(ixposki);
-      Serial.print("ixposkd: ");
-      Serial.println(ixposkd);
-      Serial.print("ixposSet: ");
-      Serial.println(ixposSet);
+      Serial.print("Recived ");
+      Serial.print(length);
+      Serial.print(" bytes on topic: ");
+      Serial.println(topic);
+      Serial.print("Message: ");
+      Serial.println(Data);
 
-      Serial.print("ixvelkp: ");
-      Serial.println(ixvelkp);
-      Serial.print("ixvelki: ");
-      Serial.println(ixvelki);
-      Serial.print("ixvelkd: ");
-      Serial.println(ixvelkd);
+      /*Serial.print("ixposkp: ");
+        Serial.println(ixposkp);
+        Serial.print("ixposki: ");
+        Serial.println(ixposki);
+        Serial.print("ixposkd: ");
+        Serial.println(ixposkd);
+        Serial.print("ixposSet: ");
+        Serial.println(ixposSet);
 
-      Serial.print("iyposkp: ");
-      Serial.println(iyposkp);
-      Serial.print("iyposki: ");
-      Serial.println(iyposki);
-      Serial.print("iyposkd: ");
-      Serial.println(iyposkd);
-      Serial.print("iyposSet: ");
-      Serial.println(iyposSet);
+        Serial.print("ixvelkp: ");
+        Serial.println(ixvelkp);
+        Serial.print("ixvelki: ");
+        Serial.println(ixvelki);
+        Serial.print("ixvelkd: ");
+        Serial.println(ixvelkd);
 
-      Serial.print("iyvelkp: ");
-      Serial.println(iyvelkp);
-      Serial.print("iyvelki: ");
-      Serial.println(iyvelki);
-      Serial.print("iyvelkd: ");
-      Serial.println(iyvelkd);
+        Serial.print("iyposkp: ");
+        Serial.println(iyposkp);
+        Serial.print("iyposki: ");
+        Serial.println(iyposki);
+        Serial.print("iyposkd: ");
+        Serial.println(iyposkd);
+        Serial.print("iyposSet: ");
+        Serial.println(iyposSet);
+
+        Serial.print("iyvelkp: ");
+        Serial.println(iyvelkp);
+        Serial.print("iyvelki: ");
+        Serial.println(iyvelki);
+        Serial.print("iyvelkd: ");
+        Serial.println(iyvelkd);*/
 #endif
+
       PID_Running = 0;
+      Fmotor.detach();
+      Rmotor.detach();
+      Bmotor.detach();
+      Lmotor.detach();
+      initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
+      delay(2000);
     } else {
       // Failed to parse JSON string
       Serial.println("Failed to parse JSON");
@@ -124,24 +158,24 @@ void DataAQU(void * parameter) {
   lastsent = millis();
   unsigned long PktCounter = 0;
   while (1) {
-    StaticJsonDocument<250> doc;
+    StaticJsonDocument<250> DataPacket;
 
     // Populate the JSON document with values directly
     //UpdateTimeStamp();
-    doc["ID"] = PktCounter;
-    doc["xpos"] = CountsToAngle(xEncoderCount);
-    doc["ypos"] = CountsToAngle(yEncoderCount);
-    doc["xvel"] = getxSpeed();
-    doc["yvel"] = getySpeed();
-    doc["xposPID"] = xPOSPID.output;
-    doc["yposPID"] = yPOSPID.output;
-    doc["xvelPID"] = xVELPID.output;
-    doc["yvelPID"] = yVELPID.output;
-    //doc["Time"] = timeStamp;
+    DataPacket["ID"] = PktCounter;
+    DataPacket["xpos"] = CountsToAngle(xEncoderCount);
+    DataPacket["ypos"] = CountsToAngle(yEncoderCount);
+    DataPacket["xvel"] = getxSpeed();
+    DataPacket["yvel"] = getySpeed();
+    DataPacket["xposPID"] = xPOSPID.output;
+    DataPacket["yposPID"] = yPOSPID.output;
+    DataPacket["xvelPID"] = xVELPID.output;
+    DataPacket["yvelPID"] = yVELPID.output;
+    //DataPacket["Time"] = timeStamp;
     PktCounter++;
     // Serialize the JSON document to a String
     String jsonString;
-    serializeJson(doc, jsonString);
+    serializeJson(DataPacket, jsonString);
 #ifdef DebugAQU
     // Print the JSON string
     Serial.println(jsonString);

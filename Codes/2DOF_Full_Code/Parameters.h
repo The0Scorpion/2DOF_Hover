@@ -20,6 +20,7 @@
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
+int failcount = 0, failLimit = 400;
 
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02
@@ -33,19 +34,18 @@ float xPosIMU = 0;
 float yPosIMU = 0;
 
 //Parameters for ESCs and motors
-#define xmaxMicros 1700
+#define xmaxMicros 1500
 #define xminMicros 1100
-#define xmaxDeltaMicros 300
-#define xmaxDeltaMicrosStart 550
-int xOpratingpoint = 1400;
+#define xmaxDeltaMicros 200
+#define xmaxDeltaMicrosStart 300
+int xOpratingpoint = 1300;
 
-#define ymaxMicros 1700
+#define ymaxMicros 1500
 #define yminMicros 1100
-#define ymaxDeltaMicros 300
-#define ymaxDeltaMicrosStart 500
-int yOpratingpoint = 1400;
+#define ymaxDeltaMicros 200
+#define ymaxDeltaMicrosStart 300
+int yOpratingpoint = 1300;
 
-#define StartPower 1600
 
 
 
@@ -57,41 +57,59 @@ unsigned int Sampling_time = 5000;
 double IMU_FusionPrio = 0.2;
 byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
+byte Work = 0;
 
 //PID Parameters
-float ixposkp = 20 ; //12
-float ixposki = 1;  //1
-float ixposkd = 0;
-float ixvelkp = 35; //30
-float ixvelki = 5;  //5
-float ixvelkd = 0;
-float iyposkp = 10; //10
-float iyposki = 1; //1
-float iyposkd = 0;
-float iyvelkp = 20; //20
-float iyvelki = 5; //5
-float iyvelkd = 0;
+/*
+  float ixposkp = 20 ; //12
+  float ixposki = 1;  //1
+  float ixposkd = 0;
+  float ixvelkp = 35; //30
+  float ixvelki = 5;  //5
+  float ixvelkd = 0;
+  float iyposkp = 10; //10
+  float iyposki = 1; //1
+  float iyposkd = 0;
+  float iyvelkp = 20; //20
+  float iyvelki = 5; //5
+  float iyvelkd = 0;
+*/
 
 //Normal Mode
-float xposkp = 10 ; //12
+float xposkp = 6 ; //12
 float xposki = 1;  //1
 float xposkd = 0;
-float xvelkp = 20; //30
+float xvelkp = 15; //30
 float xvelki = 5;  //5
 float xvelkd = 0;
-float yposkp = 10; //10
+float yposkp = 2; //10
 float yposki = 1; //1
 float yposkd = 0;
-float yvelkp = 20; //20
-float yvelki = 5; //5
+float yvelkp = 10; //20
+float yvelki = 2; //5
 float yvelkd = 0;
 
-float ixposSet = 0;
-float iyposSet = 0;
-float ixvelSet = 0;
-float iyvelSet = 0;
-float PositionLoopSat=4;
+float xposSet = 0;
+float yposSet = 0;
+float xvelSet = 0;
+float yvelSet = 0;
+float PositionLoopSat = 2;
 
+//Limits
+float xposkpLimit = 12 ; //12
+float xposkiLimit = 5; //1
+float xposkdLimit = 5;
+float xvelkpLimit = 30; //30
+float xvelkiLimit = 5; //5
+float xvelkdLimit = 5;
+float yposkpLimit = 10; //10
+float yposkiLimit = 5; //1
+float yposkdLimit = 5;
+float yvelkpLimit = 20; //20
+float yvelkiLimit = 5; //5
+float yvelkdLimit = 5;
+float xposSetLimit = 0.3;
+float yposSetLimit = 0.3;
 
 //Encoder Parameters
 #define PPR 8000 //Counts per rev for encoders (PPR*4)

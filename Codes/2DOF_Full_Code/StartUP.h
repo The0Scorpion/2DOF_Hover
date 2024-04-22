@@ -7,19 +7,19 @@
 
 void StartUP(double targetX, double targetY) {
   resetPID(&xPOSPID);
-  initializePID(&xPOSPID, ixposkp, ixposki, ixposkd, ixposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
+  initializePID(&xPOSPID, 3 * xposkp, 3 * xposki, 3 * xposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&xVELPID);
-  initializePID(&xVELPID, ixvelkp, ixvelki, ixvelkd, ixvelSet, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
+  initializePID(&xVELPID, 3 * xvelkp, 3 * xvelki, 3 * xvelkd, 0, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
   resetPID(&yPOSPID);
-  initializePID(&yPOSPID, iyposkp, iyposki, iyposkd, iyposSet, -PositionLoopSat, PositionLoopSat);    // to be rechecked the limits
+  initializePID(&yPOSPID, 3 * yposkp, 3 * yposki, 3 * yposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&yVELPID);
-  initializePID(&yVELPID, iyvelkp, iyvelki, iyvelkd, iyvelSet, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
+  initializePID(&yVELPID, 3 * yvelkp, 3 * yvelki, 3 * yvelkd, 0, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
   TickType_t PIDLastTime;
   const TickType_t xFrequency = 5 / portTICK_PERIOD_MS;
 
   // Initialise the xLastWakeTime variable with the current time.
   PIDLastTime = xTaskGetTickCount();
-  while (abs(targetX) < abs(CountsToAngle(xEncoderCount)) || abs(targetY) < abs(CountsToAngle(yEncoderCount))) {
+  while ((abs(targetX) < abs(CountsToAngle(xEncoderCount))) || (abs(targetY) < abs(CountsToAngle(yEncoderCount))) || (abs(xSpeed > targetX)) || (abs(ySpeed > targetY))) {
     xSpeed = getxSpeed();
     ySpeed = getySpeed();
     xVELPID.setpoint = (float)calculatePID(&xPOSPID, CountsToAngle(xEncoderCount)) ;//+ XRVG0_Y.Y2ref;
@@ -28,7 +28,7 @@ void StartUP(double targetX, double targetY) {
     //Calculate action for motors from velocityPID output
     xAction =  (int)(calculatePID(&xVELPID, xSpeed) * 10) ; //convert from Percnt to micros (Pulse width)
     yAction =  (int)(calculatePID(&yVELPID, ySpeed) * 10) ; //convert from Percnt to micros (Pulse width)
-    
+
     uint32_t FM = min(max((int)(1500 + yAction), 1000), 2000);
     uint32_t RM = min(max((int)(1500 + xAction), 1000), 2000);
     uint32_t BM = min(max((int)(1500 - yAction), 1000), 2000);

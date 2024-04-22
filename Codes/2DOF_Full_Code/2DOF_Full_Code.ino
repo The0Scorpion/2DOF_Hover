@@ -76,7 +76,6 @@ void loop() {
 //  Serial.print(xPOSPID.integral);
 //  Serial.print(", ");
 //  Serial.println(xPOSPID.output);
-  counta = 0;
   vTaskDelay(50/portTICK_PERIOD_MS);
 #endif
 }
