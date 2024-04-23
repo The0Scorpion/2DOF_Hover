@@ -7,7 +7,7 @@
 #include <ESP32Servo.h>
 Servo Fmotor, Rmotor, Bmotor, Lmotor;
 
-#define DebugMotor
+//#define DebugMotor
 
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
@@ -19,16 +19,17 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Rmotor.write(0);
   Bmotor.write(0);
   Lmotor.write(0);
-  delay(500);
+  delay(2500);
   //start up motors
-  /*
-    for (unsigned int i = 1000; i < 1100; i += 5) {
+
+  for (unsigned int i = 1000; i < 1100; i += 5) {
     Fmotor.writeMicroseconds(i);
     Rmotor.writeMicroseconds(i);
     Bmotor.writeMicroseconds(i);
     Lmotor.writeMicroseconds(i);
     delay(5);
-    }*/
+  }
+  delay(2500);
   ESC_Running = 1;
 }
 

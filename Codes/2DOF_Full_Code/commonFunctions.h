@@ -123,18 +123,11 @@ void PIDLoop(void * parameter) {
 #endif
     if (Work) {
       initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-      delay(500);//wait for esc calib
+      delay(1500);//wait for esc calib
     }
+
+
     //Startup
-
-    initIMU();
-    updateIMU();
-    updateIMU();
-    delay(500);
-    updateIMU();
-    xEncoderCount = AngleToCounts(xPosIMU);
-    yEncoderCount = AngleToCounts(yPosIMU);
-
 #ifdef DebugCF
     Serial.println("Start Up");
 #endif
@@ -142,7 +135,8 @@ void PIDLoop(void * parameter) {
 #ifdef DebugCF
     Serial.println("Started");
 #endif
-    //Reset and Create 4 PID objects with StarUp parameters
+
+
 
 
     //Reset and Create 4 PID objects with specified parameters
@@ -204,6 +198,12 @@ void PIDLoop(void * parameter) {
         } else {
           if (counta - failcount > failLimit) {
             PID_Running = 0;
+            failed_Trials++;
+            if (failed_Trials > fail_TrailLimit) {
+              PID_Running = 0;
+              Work = 0;
+              failed_Trials = 0;
+            }
           }
         }
       } else {

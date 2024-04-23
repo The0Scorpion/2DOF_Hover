@@ -20,7 +20,7 @@
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
-int failcount = 0, failLimit = 400;
+int failcount = 0, failLimit = 200, failed_Trials = 0, fail_TrailLimit = 2;
 
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02
@@ -77,18 +77,18 @@ byte Work = 1;
 
 //Normal Mode
 byte load = 0; //if set then the parameters are loaded from EEPROM on first run
-byte save = 1; //if set then the parameters are saved to EEPROM on the first run
-float xposkp = 6 ; //12
+byte save = 0; //if set then the parameters are saved to EEPROM on the first run
+float xposkp = 5;  //12
 float xposki = 1;  //1
 float xposkd = 0;
 float xvelkp = 15; //30
 float xvelki = 5;  //5
 float xvelkd = 0;
-float yposkp = 2; //10
-float yposki = 1; //1
+float yposkp = 4;  //10
+float yposki = 1;  //1
 float yposkd = 0;
 float yvelkp = 10; //20
-float yvelki = 2; //5
+float yvelki = 2;  //5
 float yvelkd = 0;
 
 float xposSet = 0;

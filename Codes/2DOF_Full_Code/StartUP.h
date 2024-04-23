@@ -6,14 +6,23 @@
 */
 
 void StartUP(double targetX, double targetY) {
+  initIMU();
+  updateIMU();
+  updateIMU();
+  delay(500);
+  updateIMU();
+  xEncoderCount = AngleToCounts(xPosIMU);
+  yEncoderCount = AngleToCounts(yPosIMU);
+
+  //Reset and Create 4 PID objects with StartUP parameters
   resetPID(&xPOSPID);
-  initializePID(&xPOSPID, 3 * xposkp, 3 * xposki, 3 * xposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
+  initializePID(&xPOSPID, 1.5 * xposkp, 1.5 * xposki, 1.5 * xposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&xVELPID);
-  initializePID(&xVELPID, 3 * xvelkp, 3 * xvelki, 3 * xvelkd, 0, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
+  initializePID(&xVELPID, 1.5 * xvelkp, 1.5 * xvelki, 1.5 * xvelkd, 0, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
   resetPID(&yPOSPID);
-  initializePID(&yPOSPID, 3 * yposkp, 3 * yposki, 3 * yposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
+  initializePID(&yPOSPID, 1.5 * yposkp, 1.5 * yposki, 1.5 * yposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&yVELPID);
-  initializePID(&yVELPID, 3 * yvelkp, 3 * yvelki, 3 * yvelkd, 0, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
+  initializePID(&yVELPID, 1.5 * yvelkp, 1.5 * yvelki, 1.5 * yvelkd, 0, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
   TickType_t PIDLastTime;
   const TickType_t xFrequency = 5 / portTICK_PERIOD_MS;
 
