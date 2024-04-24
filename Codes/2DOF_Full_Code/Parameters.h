@@ -33,19 +33,6 @@ float AccX, AccY, AccZ;
 float xPosIMU = 0;
 float yPosIMU = 0;
 
-//Parameters for ESCs and motors
-#define xmaxMicros 1500
-#define xminMicros 1100
-#define xmaxDeltaMicros 200
-#define xmaxDeltaMicrosStart 300
-int xOpratingpoint = 1300;
-
-#define ymaxMicros 1350
-#define yminMicros 1050
-#define ymaxDeltaMicros 150
-#define ymaxDeltaMicrosStart 200
-int yOpratingpoint = 1200;
-
 
 
 
@@ -75,21 +62,50 @@ byte Work = 1;
   float iyvelkd = 0;
 */
 
+//PID Parameters
+
+//Parameters for ESCs and motors
+#define xmaxMicros 1700
+#define xminMicros 1100
+#define xmaxDeltaMicros 300
+#define xmaxDeltaMicrosStart 300
+int xOpratingpoint = 1400;
+
+#define ymaxMicros 1500
+#define yminMicros 1100
+#define ymaxDeltaMicros 200
+#define ymaxDeltaMicrosStart 250
+int yOpratingpoint = 1300;
+/*
+  float ixposkp = 20 ; //12
+  float ixposki = 1;  //1
+  float ixposkd = 0;
+  float ixvelkp = 35; //30
+  float ixvelki = 5;  //5
+  float ixvelkd = 0;
+  float iyposkp = 10; //10
+  float iyposki = 1; //1
+  float iyposkd = 0;
+  float iyvelkp = 20; //20
+  float iyvelki = 5; //5
+  float iyvelkd = 0;
+*/
+
 //Normal Mode
 byte load = 0; //if set then the parameters are loaded from EEPROM on first run
 byte save = 0; //if set then the parameters are saved to EEPROM on the first run
-float xposkp = 5;  //12
-float xposki = 1;  //1
-float xposkd = 0;
-float xvelkp = 15; //30
-float xvelki = 5;  //5
-float xvelkd = 0;
-float yposkp = 4;  //10
-float yposki = 1;  //1
-float yposkd = 0;
-float yvelkp = 10; //20
-float yvelki = 2;  //5
-float yvelkd = 0;
+float xposkp = 9 ; //12
+float xposki = 2;  //1
+float xposkd = 0.01;
+float xvelkp = 16; //30
+float xvelki = 1;  //5
+float xvelkd = 0.01;
+float yposkp = 9; //10
+float yposki = 3; //1
+float yposkd = 0.01;
+float yvelkp = 14; //20
+float yvelki = 3; //5
+float yvelkd = 0.01;
 
 float xposSet = 0;
 float yposSet = 0;
