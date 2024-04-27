@@ -16,13 +16,13 @@ void StartUP(double targetX, double targetY) {
 
   //Reset and Create 4 PID objects with StartUP parameters
   resetPID(&xPOSPID);
-  initializePID(&xPOSPID, 1.5 * xposkp, 1.5 * xposki, 1.5 * xposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
+  initializePID(&xPOSPID, 1.1 * xposkp, 1.1 * xposki, 1.1 * xposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&xVELPID);
-  initializePID(&xVELPID, 1.5 * xvelkp, 1.5 * xvelki, 1.5 * xvelkd, 0, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
+  initializePID(&xVELPID, 1.1 * xvelkp, 1.1 * xvelki, 1.1 * xvelkd, 0, -xmaxDeltaMicrosStart / 10, xmaxDeltaMicrosStart / 10);
   resetPID(&yPOSPID);
-  initializePID(&yPOSPID, 1.5 * yposkp, 1.5 * yposki, 1.5 * yposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
+  initializePID(&yPOSPID, 1.1 * yposkp, 1.1 * yposki, 1.1 * yposkd, 0, -PositionLoopSat * 2, PositionLoopSat * 2); // to be rechecked the limits
   resetPID(&yVELPID);
-  initializePID(&yVELPID, 1.5 * yvelkp, 1.5 * yvelki, 1.5 * yvelkd, 0, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
+  initializePID(&yVELPID, 1.1 * yvelkp, 1.1 * yvelki, 1.1 * yvelkd, 0, -ymaxDeltaMicrosStart / 10, ymaxDeltaMicrosStart / 10);
   TickType_t PIDLastTime;
   const TickType_t xFrequency = 5 / portTICK_PERIOD_MS;
 

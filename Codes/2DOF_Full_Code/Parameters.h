@@ -71,11 +71,11 @@ byte Work = 1;
 #define xmaxDeltaMicrosStart 300
 int xOpratingpoint = 1400;
 
-#define ymaxMicros 1500
+#define ymaxMicros 1700
 #define yminMicros 1100
-#define ymaxDeltaMicros 200
-#define ymaxDeltaMicrosStart 250
-int yOpratingpoint = 1300;
+#define ymaxDeltaMicros 300
+#define ymaxDeltaMicrosStart 350
+int yOpratingpoint = 1400;
 /*
   float ixposkp = 20 ; //12
   float ixposki = 1;  //1
@@ -94,18 +94,18 @@ int yOpratingpoint = 1300;
 //Normal Mode
 byte load = 0; //if set then the parameters are loaded from EEPROM on first run
 byte save = 0; //if set then the parameters are saved to EEPROM on the first run
-float xposkp = 9 ; //12
-float xposki = 2;  //1
-float xposkd = 0.01;
-float xvelkp = 16; //30
+float xposkp = 8 ; //12
+float xposki = 0.5;  //1
+float xposkd = 0;
+float xvelkp = 15; //30
 float xvelki = 1;  //5
-float xvelkd = 0.01;
-float yposkp = 9; //10
-float yposki = 3; //1
-float yposkd = 0.01;
+float xvelkd = 0;
+float yposkp = 10; //10
+float yposki = 0.5; //1
+float yposkd = 0;
 float yvelkp = 14; //20
-float yvelki = 3; //5
-float yvelkd = 0.01;
+float yvelki = 1; //5
+float yvelkd = 0;
 
 float xposSet = 0;
 float yposSet = 0;

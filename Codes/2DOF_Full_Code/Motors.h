@@ -29,7 +29,7 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
     Lmotor.writeMicroseconds(i);
     delay(5);
   }
-  delay(2500);
+  delay(1000);
   ESC_Running = 1;
 }
 
