@@ -103,7 +103,7 @@ float xvelkd = 0;
 float yposkp = 10; //10
 float yposki = 0.5; //1
 float yposkd = 0;
-float yvelkp = 14; //20
+float yvelkp = 12; //20
 float yvelki = 1; //5
 float yvelkd = 0;
 

@@ -53,7 +53,7 @@ void setup() {
     NULL,       // Task handle.
     0);  // Core where the task should run
 }
-#define DebugCF
+//#define DebugCF
 void loop() {
 
   //if debug then print the values between IMU and Encoder

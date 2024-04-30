@@ -4,7 +4,7 @@
    Created: 20/10/2024
 */
 
-#define DebugCF
+//#define DebugCF
 #define RUN
 
 
