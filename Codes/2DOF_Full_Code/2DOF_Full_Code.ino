@@ -18,15 +18,15 @@ void setup() {
   Serial.begin(115200);//init Serial For debugging
   //initEncoder(0, 0);
   //Over the air task to allow wireless flash runs on core 1
-    xTaskCreatePinnedToCore(
-      OTATASK,
-      "OTA Routine",
-      5000,
-      NULL,
-      0,
-      NULL,
-      1);
-  
+  xTaskCreatePinnedToCore(
+    OTATASK,
+    "OTA Routine",
+    5000,
+    NULL,
+    0,
+    NULL,
+    1);
+
   //init MQTT client
 
 
@@ -44,14 +44,14 @@ void setup() {
   //StartUP(0,0); //Not used
 
   //Data Acquisition  Task Run on core 0 for now
-    xTaskCreatePinnedToCore(
-      DataAQU,   // Function to implement the task
-      "Data AQU Loop", // Name of the task
-      5000,      // Stack size in words
-      NULL,       // Task input parameter
-      0,          // Priority of the task
-      NULL,       // Task handle.
-      0);  // Core where the task should run
+  xTaskCreatePinnedToCore(
+    DataAQU,   // Function to implement the task
+    "Data AQU Loop", // Name of the task
+    5000,      // Stack size in words
+    NULL,       // Task input parameter
+    0,          // Priority of the task
+    NULL,       // Task handle.
+    0);  // Core where the task should run
 }
 #define DebugCF
 void loop() {
@@ -59,23 +59,27 @@ void loop() {
   //if debug then print the values between IMU and Encoder
 #ifdef DebugCF
   updateIMU();
-//  Serial.print(xVELPID.setpoint);
-//  Serial.print(", ");
-//  Serial.print(xSpeed);
-//  Serial.print(", ");
-//  Serial.print(xVELPID.integral);
-//  Serial.print(", ");
-//  Serial.println(xVELPID.output - xVELPID.integral);
-//  Serial.print("XPOS:");
-//  Serial.print(xPOSPID.setpoint);
-//  Serial.print(", ");
- // Serial.print(CountsToAngle(xEncoderCount));
- // Serial.print(", ");
- // Serial.println(CountsToAngle(yEncoderCount));
+  //  Serial.print(xVELPID.setpoint);
+  //  Serial.print(", ");
+  //  Serial.print(xSpeed);
+  //  Serial.print(", ");
+  //  Serial.print(xVELPID.integral);
+  //  Serial.print(", ");
+  //  Serial.println(xVELPID.output - xVELPID.integral);
+  //  Serial.print("XPOS:");
+  //  Serial.print(xPOSPID.setpoint);
+  //  Serial.print(", ");
+  Serial.print(CountsToAngle(xEncoderCount));
+  Serial.print(", ");
+  Serial.print(CountsToAngle(yEncoderCount));
+  Serial.print(", ");
+  Serial.print(xPosIMU);
+  Serial.print(", ");
+  Serial.println(yPosIMU);
 
-//  Serial.print(xPOSPID.integral);
-//  Serial.print(", ");
-//  Serial.println(xPOSPID.output);
-  vTaskDelay(50/portTICK_PERIOD_MS);
+  //  Serial.print(xPOSPID.integral);
+  //  Serial.print(", ");
+  //  Serial.println(xPOSPID.output);
+  vTaskDelay(50 / portTICK_PERIOD_MS);
 #endif
 }

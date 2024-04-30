@@ -13,8 +13,8 @@ const char* password = "123456789";
 #define AWS_PORT 8883 // AWS IoT uses port 8883 for MQTT over TLS
 
 #define THING_NAME "IOT_HUB2"
-#define PubAWSTopic "/Data"
-#define SubAWSTopic "Parameters"
+#define PubAWSTopic "2DOF/Data"
+#define SubAWSTopic "2DOF/Parameters"
 // Amazon Root CA 1
 static const char AWS_CERT_CA[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
