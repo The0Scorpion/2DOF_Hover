@@ -1,6 +1,6 @@
 #include <WiFi.h>
 #include <EEPROM.h>
-
+#include <ESP32Servo.h>
 #include "Secrets.h"
 #include "Parameters.h"
 #include "RVG0.h"
@@ -53,11 +53,11 @@ void setup() {
     NULL,       // Task handle.
     0);  // Core where the task should run
 }
-//#define DebugCF
+//#define DebugCFMain
 void loop() {
 
   //if debug then print the values between IMU and Encoder
-#ifdef DebugCF
+#ifdef DebugCFMain
   updateIMU();
   //  Serial.print(xVELPID.setpoint);
   //  Serial.print(", ");

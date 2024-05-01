@@ -4,17 +4,17 @@
    Created: 14/11/2023
 */
 
-#include <ESP32Servo.h>
-Servo Fmotor, Rmotor, Bmotor, Lmotor;
+
+
 
 //#define DebugMotor
 
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
-  Fmotor.attach(FPin);
-  Rmotor.attach(RPin);
-  Bmotor.attach(BPin);
-  Lmotor.attach(LPin);
+  Fmotor.attach(FrontMotorPIN);
+  Rmotor.attach(RightMotorPIN);
+  Bmotor.attach(BackMotorPIN);
+  Lmotor.attach(LeftMotorPIN);
   Fmotor.write(0);
   Rmotor.write(0);
   Bmotor.write(0);
@@ -27,9 +27,9 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
     Rmotor.writeMicroseconds(i);
     Bmotor.writeMicroseconds(i);
     Lmotor.writeMicroseconds(i);
-    delay(5);
+    delay(2);
   }
-  delay(1000);
+  delay(500);
   ESC_Running = 1;
 }
 

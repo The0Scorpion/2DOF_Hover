@@ -20,7 +20,7 @@
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
-int failcount = 0, failLimit = 200, failed_Trials = 0, fail_TrailLimit = 2;
+int failcount = 0, failLimit = 600, failed_Trials = 0, fail_TrailLimit = 2;
 
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02
@@ -103,7 +103,7 @@ float xvelkd = 0;
 float yposkp = 10; //10
 float yposki = 0.5; //1
 float yposkd = 0;
-float yvelkp = 12; //20
+float yvelkp = 13; //20
 float yvelki = 1; //5
 float yvelkd = 0;
 
@@ -139,3 +139,4 @@ uint64_t SpeedUpdateTime = 20000;
 hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
 volatile int64_t xNext = 0, yNext = 0;
 volatile double xDelta[NoP], yDelta[NoP]; //[0,130,150,110]
+Servo Fmotor, Rmotor, Bmotor, Lmotor;

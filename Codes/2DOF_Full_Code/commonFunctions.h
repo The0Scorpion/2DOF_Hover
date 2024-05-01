@@ -5,6 +5,7 @@
 */
 
 //#define DebugCF
+#define DebugCF1
 #define RUN
 
 
@@ -86,59 +87,54 @@ void PIDLoop(void * parameter) {
 #endif
 
   while (1) {
-#ifdef DebugCF
-    Serial.println("init PID Loops");
-    Serial.println("With Paramters:");
-    Serial.print("xposkp: ");
-    Serial.println(xposkp);
-    Serial.print("xposki: ");
-    Serial.println(xposki);
-    Serial.print("xposkd: ");
-    Serial.println(xposkd);
-    Serial.print("xposSet: ");
-    Serial.println(xposSet);
-
-    Serial.print("xvelkp: ");
-    Serial.println(xvelkp);
-    Serial.print("xvelki: ");
-    Serial.println(xvelki);
-    Serial.print("xvelkd: ");
-    Serial.println(xvelkd);
-
-    Serial.print("yposkp: ");
-    Serial.println(yposkp);
-    Serial.print("yposki: ");
-    Serial.println(yposki);
-    Serial.print("yposkd: ");
-    Serial.println(yposkd);
-    Serial.print("yposSet: ");
-    Serial.println(yposSet);
-
-    Serial.print("yvelkp: ");
-    Serial.println(yvelkp);
-    Serial.print("yvelki: ");
-    Serial.println(yvelki);
-    Serial.print("yvelkd: ");
-    Serial.println(yvelkd);
-#endif
     if (Work) {
       initESCs(FrontMotorPIN, RightMotorPIN, BackMotorPIN, LeftMotorPIN);
-      delay(1500);//wait for esc calib
+      delay(2500);//wait for esc calib
+#ifdef DebugCF
+      Serial.println("init PID Loops");
+      Serial.println("With Paramters:");
+      Serial.print("xposkp: ");
+      Serial.println(xposkp);
+      Serial.print("xposki: ");
+      Serial.println(xposki);
+      Serial.print("xposkd: ");
+      Serial.println(xposkd);
+      Serial.print("xposSet: ");
+      Serial.println(xposSet);
+
+      Serial.print("xvelkp: ");
+      Serial.println(xvelkp);
+      Serial.print("xvelki: ");
+      Serial.println(xvelki);
+      Serial.print("xvelkd: ");
+      Serial.println(xvelkd);
+
+      Serial.print("yposkp: ");
+      Serial.println(yposkp);
+      Serial.print("yposki: ");
+      Serial.println(yposki);
+      Serial.print("yposkd: ");
+      Serial.println(yposkd);
+      Serial.print("yposSet: ");
+      Serial.println(yposSet);
+
+      Serial.print("yvelkp: ");
+      Serial.println(yvelkp);
+      Serial.print("yvelki: ");
+      Serial.println(yvelki);
+      Serial.print("yvelkd: ");
+      Serial.println(yvelkd);
+#endif
+
+      //Startup
+#ifdef DebugCF
+      Serial.println("Start Up");
+#endif
+      StartUP(0.20, 0.20);
+#ifdef DebugCF
+      Serial.println("Started");
+#endif
     }
-
-
-    //Startup
-#ifdef DebugCF
-    Serial.println("Start Up");
-#endif
-    StartUP(0.20, 0.20);
-#ifdef DebugCF
-    Serial.println("Started");
-#endif
-
-
-
-
     //Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
     initializePID(&xPOSPID, xposkp, xposki, xposkd, xposSet, -PositionLoopSat, PositionLoopSat);   // to be rechecked the limits
@@ -164,7 +160,9 @@ void PIDLoop(void * parameter) {
 
     // Initialise the xLastWakeTime variable with the current time.
     PIDLastTime1 = xTaskGetTickCount();
-    PID_Running = 1;
+#ifdef DebugCF //just for debugging 
+    Serial.println("PID Started");
+#endif
     while (PID_Running) {
 
       //Update feedback values using sensor fusion
@@ -203,6 +201,15 @@ void PIDLoop(void * parameter) {
               PID_Running = 0;
               Work = 0;
               failed_Trials = 0;
+              break;
+              //Startup
+#ifdef DebugCF
+              Serial.println("Start Up");
+#endif
+              StartUP(0.20, 0.20);
+#ifdef DebugCF
+              Serial.println("Started");
+#endif
             }
           }
         }
@@ -218,5 +225,10 @@ void PIDLoop(void * parameter) {
       Serial.println(counta);
 #endif
     }
+#ifdef DebugCF //just for debugging 
+    Serial.println("PID Stopped");
+#endif
+    delay(500);
   }
+
 }
