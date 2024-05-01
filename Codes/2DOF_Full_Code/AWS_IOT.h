@@ -187,18 +187,7 @@ void DataIn(char* topic, byte* message, unsigned int length) {
     }
   }
   PID_Running = 0;
-  Fmotor.attach(FrontMotorPIN);
-  Rmotor.attach(RightMotorPIN);
-  Bmotor.attach(BackMotorPIN);
-  Lmotor.attach(LeftMotorPIN);
-  Fmotor.write(0);
-  Rmotor.write(0);
-  Bmotor.write(0);
-  Lmotor.write(0);
-  Fmotor.detach();
-  Rmotor.detach();
-  Bmotor.detach();
-  Lmotor.detach();
+  DisableMotors();
   delay(2000);
   PID_Running = 1;
 }

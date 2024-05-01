@@ -20,8 +20,9 @@
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
-int failcount = 0, failLimit = 600, failed_Trials = 0, fail_TrailLimit = 2;
-
+int failcount = 0, failLimit = 600;
+int failed_Trials = 0, fail_TrailLimit = 5;
+int maxStartupSamples = 1000, RunSamples = 2000;
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02
 #define IMU_YACC_Error   0.00
@@ -44,7 +45,7 @@ unsigned int Sampling_time = 5000;
 double IMU_FusionPrio = 0.02;
 byte PID_Running = 1, ESC_Running = 1;
 float xAction, yAction;
-byte Work = 1;
+byte Work = 0;
 
 //PID Parameters
 /*
@@ -68,7 +69,7 @@ byte Work = 1;
 #define xmaxMicros 1700
 #define xminMicros 1100
 #define xmaxDeltaMicros 300
-#define xmaxDeltaMicrosStart 300
+#define xmaxDeltaMicrosStart 400
 int xOpratingpoint = 1400;
 
 #define ymaxMicros 1700

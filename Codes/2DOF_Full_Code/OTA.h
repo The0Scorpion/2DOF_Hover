@@ -10,10 +10,8 @@
 #define OTAName "2DOFHover"
 #define Pass "admin"
 //OTA task as seen in Example (allows to upload the code wirelessly (Over the air)
-
-
-void OTATASK(void * parameter) {
-  //Connect to wifi
+byte wifi=0;
+void initWIFI(){
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   WiFi.waitForConnectResult();
@@ -24,6 +22,12 @@ void OTATASK(void * parameter) {
     delay(5000);
     //ESP.restart();
   }
+  wifi=1;
+}
+
+void OTATASK(void * parameter) {
+  //Connect to wifi
+  if(wifi){
   ArduinoOTA.setPassword(Pass);
   ArduinoOTA.setHostname(OTAName);
   ArduinoOTA
@@ -58,4 +62,4 @@ void OTATASK(void * parameter) {
   while (1) {
     ArduinoOTA.handle();
   }
-}
+}}

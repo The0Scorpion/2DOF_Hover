@@ -32,7 +32,20 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   delay(500);
   ESC_Running = 1;
 }
-
+void DisableMotors() {
+  Fmotor.attach(FrontMotorPIN);
+  Rmotor.attach(RightMotorPIN);
+  Bmotor.attach(BackMotorPIN);
+  Lmotor.attach(LeftMotorPIN);
+  Fmotor.write(0);
+  Rmotor.write(0);
+  Bmotor.write(0);
+  Lmotor.write(0);
+  Fmotor.detach();
+  Rmotor.detach();
+  Bmotor.detach();
+  Lmotor.detach();
+}
 //Write Speed to ESCs if running flag is set, takes 4 values as micros (1000us=0% power,2000us=100%)
 void writeSpeed(uint32_t Fmicros, uint32_t Rmicros, uint32_t Bmicros, uint32_t Lmicros) {
   if (ESC_Running == 1) {
@@ -41,10 +54,7 @@ void writeSpeed(uint32_t Fmicros, uint32_t Rmicros, uint32_t Bmicros, uint32_t L
     Bmotor.writeMicroseconds(Bmicros);
     Lmotor.writeMicroseconds(Lmicros);
   } else {
-    Fmotor.detach();
-    Rmotor.detach();
-    Bmotor.detach();
-    Lmotor.detach();
+    DisableMotors();
   }
 }
 

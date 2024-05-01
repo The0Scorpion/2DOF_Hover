@@ -6,7 +6,7 @@
 
 //#define DebugCF
 #define DebugCF1
-#define RUN
+
 
 
 void PIDLoop(void * parameter) {
@@ -80,7 +80,7 @@ void PIDLoop(void * parameter) {
     EEPROM.commit();
   }
 
-#ifdef RUN
+#ifdef OFFLINE
   Work = EEPROM.read(0) > 1 ? 0 : !EEPROM.read(0);
   EEPROM.write(0, Work); //toggles running on resets
   EEPROM.commit();
@@ -163,7 +163,7 @@ void PIDLoop(void * parameter) {
 #ifdef DebugCF //just for debugging 
     Serial.println("PID Started");
 #endif
-    while (PID_Running) {
+    while (PID_Running && Work) {
 
       //Update feedback values using sensor fusion
       xSpeed = getxSpeed();
@@ -188,6 +188,14 @@ void PIDLoop(void * parameter) {
       writeControlAction((int)xAction, (int)yAction);
 
       counta++;
+      if(counta>RunSamples){
+        counta=0;
+        Work=0;
+        PID_Running = 0;
+        failed_Trials = 0;
+        DisableMotors();
+        break;
+      }
       vTaskDelayUntil( &PIDLastTime1, xFrequency );
 
       if (abs(CountsToAngle(xEncoderCount)) > xposSetLimit || abs(CountsToAngle(yEncoderCount)) > yposSetLimit) {
@@ -228,7 +236,9 @@ void PIDLoop(void * parameter) {
 #ifdef DebugCF //just for debugging 
     Serial.println("PID Stopped");
 #endif
+    Work = 0;
     delay(500);
+
   }
 
 }

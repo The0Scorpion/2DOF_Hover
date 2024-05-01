@@ -12,12 +12,16 @@
 #include "commonFunctions.h"
 #include "OTA.h"
 #include "AWS_IOT.h"
+//#define OFFLINE
 TaskHandle_t TaskHandle_1;
 
 void setup() {
   Serial.begin(115200);//init Serial For debugging
   //initEncoder(0, 0);
   //Over the air task to allow wireless flash runs on core 1
+#ifndef OFFLINE
+  initWIFI();// Blocking Stop for offline
+
   xTaskCreatePinnedToCore(
     OTATASK,
     "OTA Routine",
@@ -26,22 +30,6 @@ void setup() {
     0,
     NULL,
     1);
-
-  //init MQTT client
-
-
-  //Main Loop task runs on core 0
-
-  xTaskCreatePinnedToCore(
-    PIDLoop,   //Function to implement the task
-    "Main Loop", // Name of the task
-    10000,      // Stack size in words
-    NULL,       // Task input parameter
-    9,          // Priority of the task
-    &TaskHandle_1,       // Task handle.
-    0);  // Core where the task should run
-
-  //StartUP(0,0); //Not used
 
   //Data Acquisition  Task Run on core 0 for now
   xTaskCreatePinnedToCore(
@@ -52,6 +40,18 @@ void setup() {
     0,          // Priority of the task
     NULL,       // Task handle.
     0);  // Core where the task should run
+#endif
+  //Main Loop task runs on core 0
+  xTaskCreatePinnedToCore(
+    PIDLoop,   //Function to implement the task
+    "Main Loop", // Name of the task
+    10000,      // Stack size in words
+    NULL,       // Task input parameter
+    9,          // Priority of the task
+    &TaskHandle_1,       // Task handle.
+    0);  // Core where the task should run
+
+
 }
 //#define DebugCFMain
 void loop() {
