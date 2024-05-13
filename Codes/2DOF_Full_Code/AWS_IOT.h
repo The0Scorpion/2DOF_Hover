@@ -4,11 +4,9 @@
    Credit:Scorpion
    Created:15/12/2023
 */
-#include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
 #include <WiFiClientSecure.h>
-#include <SPIFFS.h>
 
 #define DebugIOT
 //#define DebugAQU
