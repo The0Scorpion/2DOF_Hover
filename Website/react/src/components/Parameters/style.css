@@ -31,29 +31,21 @@
   width: 77px;
 }
 
-.parameters .group-11 {
+.parameters .input {
   height: 22px;
   left: 85px;
   position: absolute;
   top: 0;
   width: 173px;
-}
-
-.parameters .input {
   background-color: #ffffff;
-  border: 0;
   color: #000000b2;
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size);
   font-style: var(--paragraph-font-style);
   font-weight: var(--paragraph-font-weight);
-  height: 20px;
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
-  padding: 0;
   text-align: center;
-  top: 1px;
-  width: 171px;
 }
 
 .parameters .text-2 {

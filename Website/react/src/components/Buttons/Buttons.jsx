@@ -8,41 +8,19 @@ import "./style.css";
 
 export const Buttons = ({
   className,
-  groupClassName,
-  overlapGroupClassName,
   stopClassName,
-  groupClassNameOverride,
-  overlapClassName,
   startClassName,
-  overlapWrapperClassName,
-  overlapClassNameOverride,
   setClassName,
-  overlapWrapperClassNameOverride,
-  overlapGroupClassNameOverride,
   resetClassName,
+  sendDataToLambda,
 }) => {
+  
   return (
     <div className={`buttons ${className}`}>
-      <button className={`group-12 ${groupClassName}`}>
-        <div className={`overlap-group-2 ${overlapGroupClassName}`}>
-          <div className={`stop ${stopClassName}`}>Stop</div>
-        </div>
-      </button>
-      <button className={`group-13 ${groupClassNameOverride}`}>
-        <div className={`overlap-3 ${overlapClassName}`}>
-          <div className={`start ${startClassName}`}>Start</div>
-        </div>
-      </button>
-      <button className={`group-14 ${overlapWrapperClassName}`}>
-        <div className={`overlap-group-2 ${overlapClassNameOverride}`}>
-          <div className={`set ${setClassName}`}>Set</div>
-        </div>
-      </button>
-      <button className={`group-15 ${overlapWrapperClassNameOverride}`}>
-        <div className={`overlap-3 ${overlapGroupClassNameOverride}`}>
-          <div className={`reset ${resetClassName}`}>Reset</div>
-        </div>
-      </button>
+      <button className={`stop ${stopClassName}`}>Stop</button>
+      <button className={`start ${startClassName}`}>Start</button>
+      <button className={`set ${setClassName}`} onClick={sendDataToLambda}>Set</button>
+      <button className={`reset ${resetClassName}`}>Reset</button>
     </div>
   );
 };
