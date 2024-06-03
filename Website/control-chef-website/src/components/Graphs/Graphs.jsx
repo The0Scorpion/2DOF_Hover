@@ -28,7 +28,7 @@ export const Graphs = ({
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const axios = require('axios');
+
 
   // Define the API Gateway endpoint
   const apiGatewayUrl = 'https://vxg0tzfd94.execute-api.eu-west-3.amazonaws.com/test/Get';

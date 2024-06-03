@@ -3,3 +3,4 @@ Codes/IOT_HubCode/Secrets.h
 Codes/MotorResponseGrapher/MotorResponseGrapher.ino
 *.lck
 /Website/control-chef-website/node_modules
+/Website/control-chef-website/.parcel-cache
