@@ -26,7 +26,8 @@ void DataIn(char* topic, byte* message, unsigned int length) {
       // Access struct members as needed
       if (ParamterObject.containsKey("xposkp")) {
         xposkp =    fmin(fmax(ParamterObject["xposkp"], -xposkpLimit), xposkpLimit);
-      } if (ParamterObject.containsKey("xposki")) {
+      } 
+      if (ParamterObject.containsKey("xposki")) {
         xposki =    fmin(fmax(ParamterObject["xposki"], -xposkdLimit), xposkdLimit);
       } if (ParamterObject.containsKey("xposkd")) {
         xposkd =    fmin(fmax(ParamterObject["xposkd"], -xposkiLimit), xposkiLimit);

@@ -126,7 +126,7 @@
       </geometry>
       <material
         name="base">
-            <color rgba="0.99 0.99 0.99 0.4"/>
+            <color rgba="0.99 0.99 0.99 0.5"/>
       </material>
     </visual>
     <collision>
