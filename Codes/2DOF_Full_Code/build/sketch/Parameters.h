@@ -1,3 +1,4 @@
+#line 1 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\Parameters.h"
 /*
    header file with all the control paramters for the system
    Credit: Scorpion
