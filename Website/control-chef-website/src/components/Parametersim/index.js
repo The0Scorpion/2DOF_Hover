@@ -1,1 +1,0 @@
-export { Parametersim } from "./Parametersim";

@@ -1,1 +1,0 @@
-export { ButtonsSim } from "./ButtonsSim";

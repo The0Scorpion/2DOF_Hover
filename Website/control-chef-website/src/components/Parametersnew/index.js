@@ -1,1 +1,0 @@
-export { Parametersnew } from "./Parametersnew";

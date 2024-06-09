@@ -1,1 +1,0 @@
-export { Pendulum } from "./Pendulum";

@@ -1,1 +1,0 @@
-export { URDFViewer } from "./URDFViewer";

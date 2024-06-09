@@ -1,8 +1,0 @@
-user pool
-user pool ID: eu-north-1_yT3IefE01
-app clinents and analytics : client ID:241ilqq7brrjs18u78rmgbp7tn
-
-
-Veronia_Ibrahim:
-access key: AKIAZI2LGHL7XW6FIBXU
-secret access key: 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
