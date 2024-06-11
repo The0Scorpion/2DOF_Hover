@@ -1,4 +1,4 @@
-#line 1 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\Parameters.h"
+#line 1 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\Parameters.h"
 /*
    header file with all the control paramters for the system
    Credit: Scorpion
@@ -21,8 +21,8 @@
 unsigned long lastsent = 0;
 //Rest in Secrets.h
 int counta = 0;
-int failcount = 0, failLimit = 600;
-int failed_Trials = 0, fail_TrailLimit = 5;
+int failcount = 0, failLimit = 200;
+int failed_Trials = 0, fail_TrailLimit = 4;
 int maxStartupSamples = 1000, RunSamples = 2000;
 //IMU Parameters and Variables
 #define IMU_XACC_Error  -0.02

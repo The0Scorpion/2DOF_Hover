@@ -1,4 +1,4 @@
-#line 1 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\Motors.h"
+#line 1 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\Motors.h"
 /*
    Submodule That contains all the brushless motor functions
    Credit:Scorpion
@@ -28,9 +28,9 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
     Rmotor.writeMicroseconds(i);
     Bmotor.writeMicroseconds(i);
     Lmotor.writeMicroseconds(i);
-    delay(2);
+    delay(1);
   }
-  delay(500);
+  delay(200);
   ESC_Running = 1;
 }
 void DisableMotors() {

@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
+#line 1 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
 #include <WiFi.h>
 #include <EEPROM.h>
 #include <ESP32Servo.h>
@@ -17,11 +17,11 @@
 //#define OFFLINE
 TaskHandle_t TaskHandle_1;
 
-#line 18 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
+#line 18 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
 void setup();
-#line 58 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
+#line 58 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
 void loop();
-#line 18 "C:\\Programs\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
+#line 18 "D:\\WorkDirectory\\2DOF_Hover\\Codes\\2DOF_Full_Code\\2DOF_Full_Code.ino"
 void setup() {
   Serial.begin(115200);//init Serial For debugging
   //initEncoder(0, 0);
