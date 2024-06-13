@@ -1,7 +1,10 @@
 
-Codes/IOT_HubCode/Secrets.h
+Codes/*/Secrets.h
 Codes/MotorResponseGrapher/MotorResponseGrapher.ino
 *.lck
 /Website/control-chef-website/node_modules
 /Website/control-chef-website/.parcel-cache
 /Website/control-chef-website/dist
+*/build/
+*/.vscode/
+/Codes/2DOF_Full_Code/build
