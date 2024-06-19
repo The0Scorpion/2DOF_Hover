@@ -33,11 +33,11 @@ JointY_InitialPositionCondition = -0.33;
 
 
 %% PID Parameters
-ixposkp = 12 ;       %12
+ixposkp = 9.6 ;       %12
 ixposki = 1;         %1
 ixposkd = 0;         %0
-ixvelkp = 30;        %30
-ixvelki = 5;         %5
+ixvelkp = 12;        %12
+ixvelki = 2;         %2
 ixvelkd = 0;         %0
 iyposkp = 10;        %10
 iyposki = 1;         %1
