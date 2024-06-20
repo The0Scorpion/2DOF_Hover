@@ -27,7 +27,11 @@ ert_main.o: \
  F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/TwoDOF_ert_rtw/rtwtypes.h \
  F:/00_Programs/MATLAB/R2023b/simulink/include/rtw_solver.h \
  F:/00_Programs/MATLAB/R2023b/simulink/include/rtw_continuous.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/Encoders.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/IMU.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/Motors_Propellers.h \
  F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\TwoDOF_types.h \
+ F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\rt_nonfinite.h \
  F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\TwoDOF_private.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/limits.h \
  C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include/MW_ArduinoHWInit.h \

@@ -2,7 +2,7 @@
 ## Makefile generated for component 'TwoDOF'. 
 ## 
 ## Makefile     : TwoDOF.mk
-## Generated on : Thu Jun 20 15:45:51 2024
+## Generated on : Thu Jun 20 21:06:09 2024
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/TwoDOF.elf
 ## Product type : executable
 ## 
@@ -77,7 +77,7 @@ ELF2BIN_OPTIONS       =  elf2image --flash_mode $(ESP_FLASH_MODE) --flash_freq $
 
 TOOLCHAIN_SRCS = 
 TOOLCHAIN_INCS = 
-TOOLCHAIN_LIBS = -Wl,--start-group -lgcc -lesp_websocket_client -lwpa2 -ldetection -lesp_https_server -lwps -lhal -lconsole -lpe -lsoc -lsdmmc -lpthread -llog -lesp_http_client -ljson -lmesh -lesp32-camera -lnet80211 -lwpa_supplicant -lc -lmqtt -lcxx -lesp_https_ota -lulp -lefuse -lpp -lmdns -lbt -lwpa -lspiffs -lheap -limage_util -lunity -lrtc -lmbedtls -lface_recognition -lnghttp -ljsmn -lopenssl -lcore -lfatfs -lm -lprotocomm -lsmartconfig -lxtensa-debug-module -ldl -lesp_event -lesp-tls -lfd -lespcoredump -lesp_http_server -lfr -lsmartconfig_ack -lwear_levelling -ltcp_transport -llwip -lphy -lvfs -lcoap -lesp32 -llibsodium -lbootloader_support -ldriver -lcoexist -lasio -lod -lmicro-ecc -lesp_ringbuf -ldetection_cat_face -lapp_update -lespnow -lface_detection -lapp_trace -lnewlib -lbtdm_app -lwifi_provisioning -lfreertos -lfreemodbus -lethernet -lnvs_flash -lspi_flash -lc_nano -lexpat -lfb_gfx -lprotobuf-c -lesp_adc_cal -ltcpip_adapter  -lstdc++  $(ESP_EXTRA_LIBS) -Wl,--end-group -Wl,-EL -lcomm -lcore
+TOOLCHAIN_LIBS = -Wl,--start-group -lgcc -lesp_websocket_client -lwpa2 -ldetection -lesp_https_server -lwps -lhal -lconsole -lpe -lsoc -lsdmmc -lpthread -llog -lesp_http_client -ljson -lmesh -lesp32-camera -lnet80211 -lwpa_supplicant -lc -lmqtt -lcxx -lesp_https_ota -lulp -lefuse -lpp -lmdns -lbt -lwpa -lspiffs -lheap -limage_util -lunity -lrtc -lmbedtls -lface_recognition -lnghttp -ljsmn -lopenssl -lcore -lfatfs -lm -lprotocomm -lsmartconfig -lxtensa-debug-module -ldl -lesp_event -lesp-tls -lfd -lespcoredump -lesp_http_server -lfr -lsmartconfig_ack -lwear_levelling -ltcp_transport -llwip -lphy -lvfs -lcoap -lesp32 -llibsodium -lbootloader_support -ldriver -lcoexist -lasio -lod -lmicro-ecc -lesp_ringbuf -ldetection_cat_face -lapp_update -lespnow -lface_detection -lapp_trace -lnewlib -lbtdm_app -lwifi_provisioning -lfreertos -lfreemodbus -lethernet -lnvs_flash -lspi_flash -lc_nano -lexpat -lfb_gfx -lprotobuf-c -lesp_adc_cal -ltcpip_adapter  -lstdc++  $(ESP_EXTRA_LIBS) -Wl,--end-group -Wl,-EL -lcore
 
 #------------------------
 # BUILD TOOL COMMANDS
@@ -214,7 +214,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I$(MATLAB_ROOT)/toolbox/target/shared/svd/common/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include -I$(START_DIR)/SourceFiles/EncoderIMU -I$(START_DIR)/TwoDOF_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/variants/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freertos -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/config -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/soc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/heap -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/log -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/driver -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/spi_flash -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/app_trace -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/app_update -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/asio -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/bootloader_support -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/bt -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/coap -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/console -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/efuse -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp-tls -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_adc_cal -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_event -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_http_client -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_http_server -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_https_ota -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_https_server -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_ringbuf -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_websocket_client -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/espcoredump -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/ethernet -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/expat -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/fatfs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freemodbus -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freertos/freertos -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/idf_test -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/jsmn -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/json -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/libsodium -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/lwip -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mbedtls -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mdns -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/micro-ecc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mqtt -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/newlib -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/nghttp -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/nvs_flash -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/openssl -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/protobuf-c -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/protocomm -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/pthread -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/sdmmc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/smartconfig_ack -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/spiffs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/tcp_transport -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/tcpip_adapter -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/ulp -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/unity -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/vfs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wear_levelling -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wifi_provisioning -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wpa_supplicant -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/xtensa-debug-module -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp-face -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp32-camera -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/fb_gfx -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/shared/freertos/include -I$(START_DIR)/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/aIDE/portable/packages/esp32/hardware/esp32/10FC67~1.6/LIBRAR~1/Wire/src -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/aIDE/portable/packages/esp32/hardware/esp32/10FC67~1.6/LIBRAR~1/SPI/src -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/aIDE/portable/SKETCH~1/LIBRAR~1/SERVOE~1/src
+INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/SourceFiles/EncoderIMU -I$(START_DIR)/SourceFiles/Motors -I$(START_DIR)/TwoDOF_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/variants/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freertos -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/config -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp32 -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/soc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/heap -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/log -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/driver -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/spi_flash -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/app_trace -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/app_update -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/asio -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/bootloader_support -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/bt -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/coap -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/console -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/efuse -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp-tls -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_adc_cal -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_event -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_http_client -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_http_server -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_https_ota -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_https_server -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_ringbuf -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp_websocket_client -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/espcoredump -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/ethernet -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/expat -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/fatfs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freemodbus -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/freertos/freertos -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/idf_test -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/jsmn -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/json -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/libsodium -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/lwip -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mbedtls -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mdns -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/micro-ecc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/mqtt -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/newlib -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/nghttp -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/nvs_flash -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/openssl -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/protobuf-c -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/protocomm -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/pthread -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/sdmmc -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/smartconfig_ack -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/spiffs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/tcp_transport -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/tcpip_adapter -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/ulp -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/unity -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/vfs -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wear_levelling -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wifi_provisioning -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/wpa_supplicant -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/xtensa-debug-module -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp-face -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/esp32-camera -I$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/tools/sdk/include/fb_gfx -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/shared/freertos/include -I$(START_DIR)/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -235,7 +235,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/MW_arduinoI2C.cpp C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp $(START_DIR)/SourceFiles/EncoderIMU/IMU_Michael.cpp $(START_DIR)/IMU.cpp $(START_DIR)/TwoDOF_ert_rtw/TwoDOF.c $(START_DIR)/TwoDOF_ert_rtw/TwoDOF_data.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp "$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32/IPAddress.cpp" "$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32/Print.cpp" C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_freertos_init.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_thread.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_timer.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_semaphore.c
+SRCS = $(START_DIR)/Encoders.cpp $(START_DIR)/SourceFiles/EncoderIMU/IMU_Michael.cpp $(START_DIR)/SourceFiles/EncoderIMU/Wire.cpp $(START_DIR)/IMU.cpp $(START_DIR)/SourceFiles/Motors/ESP32Servo.cpp $(START_DIR)/SourceFiles/Motors/ESP32PWM.cpp $(START_DIR)/SourceFiles/Motors/Motors.cpp $(START_DIR)/Motors_Propellers.cpp $(START_DIR)/TwoDOF_ert_rtw/TwoDOF.c $(START_DIR)/TwoDOF_ert_rtw/TwoDOF_data.c $(START_DIR)/TwoDOF_ert_rtw/rtGetInf.c $(START_DIR)/TwoDOF_ert_rtw/rtGetNaN.c $(START_DIR)/TwoDOF_ert_rtw/rt_nonfinite.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp "$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32/IPAddress.cpp" "$(ARDUINO_ESP32_ROOT)/hardware/esp32/$(ESP32_LIB_VERSION)/cores/esp32/Print.cpp" C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_freertos_init.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_thread.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_timer.c C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/shared/freertos/src/mw_semaphore.c
 
 MAIN_SRC = $(START_DIR)/TwoDOF_ert_rtw/ert_main.c
 
@@ -245,7 +245,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = MW_arduinoI2C.o io_wrappers.o IMU_Michael.o IMU.o TwoDOF.o TwoDOF_data.o MW_ArduinoHWInit.o IPAddress.o Print.o mw_freertos_init.o mw_thread.o mw_timer.o mw_semaphore.o
+OBJS = Encoders.o IMU_Michael.o Wire.o IMU.o ESP32Servo.o ESP32PWM.o Motors.o Motors_Propellers.o TwoDOF.o TwoDOF_data.o rtGetInf.o rtGetNaN.o rt_nonfinite.o MW_ArduinoHWInit.o io_wrappers.o IPAddress.o Print.o mw_freertos_init.o mw_thread.o mw_timer.o mw_semaphore.o
 
 MAIN_OBJ = ert_main.o
 
@@ -261,7 +261,7 @@ PREBUILT_OBJS =
 ## LIBRARIES
 ###########################################################################
 
-LIBS = $(SLIB_PATH)/MW_RebuildSrc_Comm.o $(SLIB_PATH)/libcomm.a $(SLIB_PATH)/MW_RebuildSrc_Core.o $(SLIB_PATH)/libcore.a
+LIBS = $(SLIB_PATH)/MW_RebuildSrc_Core.o $(SLIB_PATH)/libcore.a
 
 ###########################################################################
 ## SYSTEM LIBRARIES
@@ -453,22 +453,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 
-%.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/%.c
-	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
-
-
-%.S.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/%.s
-	$(AS) $(ASFLAGS) -o "$@" $(subst /,\,"$<")
-
-
-%.S.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/%.S
-	$(AS) $(ASFLAGS) -o "$@" $(subst /,\,"$<")
-
-
-%.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/%.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
-
-
 %.o : $(START_DIR)/TwoDOF_ert_rtw/%.c
 	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
 
@@ -533,11 +517,7 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 
-MW_arduinoI2C.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/MW_arduinoI2C.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
-
-
-io_wrappers.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp
+Encoders.o : $(START_DIR)/Encoders.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 
@@ -545,7 +525,27 @@ IMU_Michael.o : $(START_DIR)/SourceFiles/EncoderIMU/IMU_Michael.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 
+Wire.o : $(START_DIR)/SourceFiles/EncoderIMU/Wire.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
 IMU.o : $(START_DIR)/IMU.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+ESP32Servo.o : $(START_DIR)/SourceFiles/Motors/ESP32Servo.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+ESP32PWM.o : $(START_DIR)/SourceFiles/Motors/ESP32PWM.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+Motors.o : $(START_DIR)/SourceFiles/Motors/Motors.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+Motors_Propellers.o : $(START_DIR)/Motors_Propellers.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 
@@ -561,7 +561,23 @@ TwoDOF_data.o : $(START_DIR)/TwoDOF_ert_rtw/TwoDOF_data.c
 	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
 
 
+rtGetInf.o : $(START_DIR)/TwoDOF_ert_rtw/rtGetInf.c
+	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+rtGetNaN.o : $(START_DIR)/TwoDOF_ert_rtw/rtGetNaN.c
+	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+rt_nonfinite.o : $(START_DIR)/TwoDOF_ert_rtw/rt_nonfinite.c
+	$(CC) $(CFLAGS) -o "$@" $(subst /,\,"$<")
+
+
 MW_ArduinoHWInit.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
+
+
+io_wrappers.o : C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" $(subst /,\,"$<")
 
 

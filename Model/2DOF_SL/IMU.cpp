@@ -1,6 +1,6 @@
 //#include "F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\IMU.h"
-#include <arduino.h>
-#include <Wire.h>
+#include "Arduino.h"
+#include "Wire.h"
 #include "IMU.h"
 #include "IMU_Michael.h"
 

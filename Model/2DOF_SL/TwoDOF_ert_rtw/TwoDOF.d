@@ -6,5 +6,21 @@ TwoDOF.o: \
  F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/TwoDOF_ert_rtw/rtwtypes.h \
  F:/00_Programs/MATLAB/R2023b/simulink/include/rtw_solver.h \
  F:/00_Programs/MATLAB/R2023b/simulink/include/rtw_continuous.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/Encoders.h \
  F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/IMU.h \
- F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\TwoDOF_types.h
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/Motors_Propellers.h \
+ F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\TwoDOF_types.h \
+ F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\TwoDOF_ert_rtw\rt_nonfinite.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/math.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/reent.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/_ansi.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/newlib.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/config.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/ieeefp.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/features.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/esp32/xtensa/config/core-isa.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/_types.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/_types.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/_default_types.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/lock.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/_ansi.h

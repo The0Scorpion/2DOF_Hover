@@ -3,14 +3,16 @@
    Credit:Scorpion
    Created: 14/11/2023
 */
+
+#ifndef MOTORS_H
+#define MOTORS_H
+
 #include <ESP32Servo.h>
 
 #define FrontMotorPIN 17
 #define RightMotorPIN 16
 #define BackMotorPIN 27
 #define LeftMotorPIN 26	
-Servo Fmotor, Rmotor, Bmotor, Lmotor;
-byte ESC_Running = 1;
 
 
 //initialize ESCs and set running flag
@@ -22,3 +24,5 @@ void writeSpeed(uint32_t Fmicros, uint32_t Rmicros, uint32_t Bmicros, uint32_t L
 
 //Write Xact as a delta between Right motor speed and left, yAct as delta between front and back (unit is us)
 void writeControlAction(int xAct, int yAct);
+
+#endif

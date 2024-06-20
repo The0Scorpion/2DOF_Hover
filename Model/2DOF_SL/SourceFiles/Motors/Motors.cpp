@@ -5,6 +5,23 @@
 */
 #include "Motors.h"
 
+
+//Parameters for ESCs and motors
+#define xmaxMicros 1700
+#define xminMicros 1100
+#define xmaxDeltaMicros 300
+#define xmaxDeltaMicrosStart 400
+int xOpratingpoint = 1400;
+
+#define ymaxMicros 1700
+#define yminMicros 1100
+#define ymaxDeltaMicros 300
+#define ymaxDeltaMicrosStart 350
+int yOpratingpoint = 1400;
+
+Servo Fmotor, Rmotor, Bmotor, Lmotor;
+byte ESC_Running = 1;
+
 //initialize ESCs and set running flag
 void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Fmotor.attach(FPin);

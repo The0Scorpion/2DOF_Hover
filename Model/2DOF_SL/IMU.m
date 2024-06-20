@@ -166,38 +166,20 @@ classdef IMU < matlab.System ...
 
         function updateBuildInfo(buildInfo, context)
             coder.extrinsic('matlabshared.sensors.simulink.internal.getTargetHardwareName');
-            targetname = coder.const(matlabshared.sensors.simulink.internal.getTargetHardwareName);
             % Get the filelocation of the SPKG specific files
             coder.extrinsic('matlabshared.sensors.simulink.internal.getTargetSpecificFileLocationForSensors');
-            fileLocation = coder.const(@matlabshared.sensors.simulink.internal.getTargetSpecificFileLocationForSensors,targetname);
             coder.extrinsic('which');
             coder.extrinsic('error');
             coder.extrinsic('message');
-            funcName = [fileLocation,'.getTargetSensorUtilities'];
-            functionPath = coder.const(@which,funcName);
-            % Only if the the path exist
-            if ~isempty(fileLocation)
-                % internal error to see if the target author has provided
-                % the expected function in the specified file location
-                assert(~isempty(functionPath),message('matlab_sensors:general:FunctionNotAvailableSimulinkSensors','getTargetSensorUtilities'));
-                funcHandle = str2func(funcName);
-                hwUtilityObject = funcHandle('I2C');
-                assert(isa(hwUtilityObject,'matlabshared.sensors.simulink.internal.SensorSimulinkBase'),message('matlab_sensors:general:invalidHwObjSensorSimulink'));
-            else
-                hwUtilityObject = '';
-            end
 
-            if ~isempty(hwUtilityObject)
-                hwUtilityObject.updateBuildInfo(buildInfo, context);
-            end
             % buildInfo.addIncludePaths('F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\EncoderIMU');
             buildInfo.addIncludePaths(pwd+"\SourceFiles\EncoderIMU");
-
             % buildInfo.addIncludePaths('F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL');
             buildInfo.addIncludePaths(pwd);
 
             %addSourceFiles(buildInfo,'IMU_Michael.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\EncoderIMU');
             addSourceFiles(buildInfo,'IMU_Michael.cpp',pwd+"\SourceFiles\EncoderIMU");
+            addSourceFiles(buildInfo,'Wire.cpp',pwd+"\SourceFiles\EncoderIMU");
 
             % addSourceFiles(buildInfo,'IMU.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL');
             addSourceFiles(buildInfo,'IMU.cpp',pwd);

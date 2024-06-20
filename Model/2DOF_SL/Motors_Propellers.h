@@ -6,8 +6,8 @@
 #include "rtwtypes.h"
 extern "C" {
     #endif
-    void stepFunctionMotors_and_Propellers(double Xaction,int size_vector_a,int8_T Yaction,int size_vector_b);
-    void setupFunctionMotors_and_Propellers();
+    void stepFunctionMotors_Propellers(int32_T Xaction,int size_vector_a,int32_T Yaction,int size_vector_b);
+    void setupFunctionMotors_Propellers();
     #ifdef __cplusplus
 }
 #endif

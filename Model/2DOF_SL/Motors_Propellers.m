@@ -1,8 +1,8 @@
-classdef Motors_and_Propellers < matlab.System ...
+classdef Motors_Propellers < matlab.System ...
         & coder.ExternalDependency ...
         & matlabshared.sensors.simulink.internal.BlockSampleTime
 
-    % Gives operating point to motors connected to ESCs
+    % Control motors in 2DOF hover
     %#codegen
     %#ok<*EMCA>
 
@@ -25,7 +25,7 @@ classdef Motors_and_Propellers < matlab.System ...
 
     methods
         % Constructor
-        function obj = Motors_and_Propellers(varargin)
+        function obj = Motors_Propellers(varargin)
             setProperties(obj,nargin,varargin{:});
         end
     end
@@ -33,8 +33,8 @@ classdef Motors_and_Propellers < matlab.System ...
     methods (Access=protected)
         function setupImpl(obj)
             if ~coder.target('MATLAB')
-                coder.cinclude('Motors_and_Propellers.h');
-                coder.ceval('setupFunctionMotors_and_Propellers');
+                coder.cinclude('Motors_Propellers.h');
+                coder.ceval('setupFunctionMotors_Propellers');
             end
         end
 
@@ -42,8 +42,8 @@ classdef Motors_and_Propellers < matlab.System ...
             %  Check the input size
             if nargin ~=0
 
-                validateattributes(varargin{1},{'double'},{'2d','size',[1,1]},'','Xaction');
-                validateattributes(varargin{2},{'double'},{'2d','size',[1,1]},'','Yaction');
+                validateattributes(varargin{1},{'int32'},{'2d','size',[1,1]},'','Xaction');
+                validateattributes(varargin{2},{'int32'},{'2d','size',[1,1]},'','Yaction');
 
             end
         end
@@ -52,7 +52,7 @@ classdef Motors_and_Propellers < matlab.System ...
 
             if isempty(coder.target)
             else
-                coder.ceval('stepFunctionMotors_and_Propellers', Xaction,1, Yaction,1);
+                coder.ceval('stepFunctionMotors_Propellers', Xaction,1, Yaction,1);
             end
         end
 
@@ -123,7 +123,7 @@ classdef Motors_and_Propellers < matlab.System ...
                     inport_label = [inport_label 'port_label(''input'',' num2str(i) ',''' inputs{i} ''');' ]; %#ok<AGROW>
                 end
             end
-            icon = 'Motors_and_Propellers';
+            icon = 'Motors_Propellers';
             maskDisplayCmds = [ ...
                 ['color(''white'');',...
                 'plot([100,100,100,100]*1,[100,100,100,100]*1);',...
@@ -154,7 +154,7 @@ classdef Motors_and_Propellers < matlab.System ...
 
     methods (Static)
         function name = getDescriptiveName()
-            name = 'Motors_and_Propellers';
+            name = 'Motors_Propellers';
         end
 
         function b = isSupportedContext(context)
@@ -163,42 +163,26 @@ classdef Motors_and_Propellers < matlab.System ...
 
         function updateBuildInfo(buildInfo, context)
             coder.extrinsic('matlabshared.sensors.simulink.internal.getTargetHardwareName');
-            targetname = coder.const(matlabshared.sensors.simulink.internal.getTargetHardwareName);
             % Get the filelocation of the SPKG specific files
             coder.extrinsic('matlabshared.sensors.simulink.internal.getTargetSpecificFileLocationForSensors');
-            fileLocation = coder.const(@matlabshared.sensors.simulink.internal.getTargetSpecificFileLocationForSensors,targetname);
             coder.extrinsic('which');
             coder.extrinsic('error');
             coder.extrinsic('message');
-            funcName = [fileLocation,'.getTargetSensorUtilities'];
-            functionPath = coder.const(@which,funcName);
-            % Only if the the path exist
-            if ~isempty(fileLocation)
-                % internal error to see if the target author has provided
-                % the expected function in the specified file location
-                assert(~isempty(functionPath),message('matlab_sensors:general:FunctionNotAvailableSimulinkSensors','getTargetSensorUtilities'));
-                funcHandle = str2func(funcName);
-                hwUtilityObject = funcHandle('I2C');
-                assert(isa(hwUtilityObject,'matlabshared.sensors.simulink.internal.SensorSimulinkBase'),message('matlab_sensors:general:invalidHwObjSensorSimulink'));
-            else
-                hwUtilityObject = '';
-            end
-
-            if ~isempty(hwUtilityObject)
-                hwUtilityObject.updateBuildInfo(buildInfo, context);
-            end
 
             % buildInfo.addIncludePaths('F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\Motors');
-            buildInfo.addIncludePaths(pwd+'\SourceFiles\Motors');
-
             % buildInfo.addIncludePaths('F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL');
+            buildInfo.addIncludePaths(pwd+"\SourceFiles\Motors");
             buildInfo.addIncludePaths(pwd);
-            
+
+
+            % addSourceFiles(buildInfo,'ESP32Servo.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\Motors');
+            % addSourceFiles(buildInfo,'ESP32PWM.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\Motors');
             % addSourceFiles(buildInfo,'Motors.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\SourceFiles\Motors');
-            % addSourceFiles(buildInfo,'Motors_and_Propellers.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL');
-            addSourceFiles(buildInfo,'Motors.cpp',pwd+'\SourceFiles\Motors');
-            addSourceFiles(buildInfo,'ESP32Servo.cpp',pwd+'\SourceFiles\Motors');
-            addSourceFiles(buildInfo,'Motors_and_Propellers.cpp',pwd);
+            % addSourceFiles(buildInfo,'Motors_Propellers.cpp','F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL');
+            addSourceFiles(buildInfo,'ESP32Servo.cpp',pwd+"\SourceFiles\Motors");
+            addSourceFiles(buildInfo,'ESP32PWM.cpp',pwd+"\SourceFiles\Motors");
+            addSourceFiles(buildInfo,'Motors.cpp',pwd+"\SourceFiles\Motors");
+            addSourceFiles(buildInfo,'Motors_Propellers.cpp',pwd);
         end
     end
 end

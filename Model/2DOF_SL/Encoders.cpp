@@ -1,12 +1,18 @@
 //#include "F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\Encoders.h"
+#include "Arduino.h"
 #include "Encoders.h"
-#include <arduino.h>
+
 
 
 // EncXA uint8 [1,1] Non tunable
 // EncXB int8 [1,1] Non tunable
 // EncYA int8 [1,1] Non tunable
 // EncYB int8 [1,1] Non tunable
+
+#define X_ENCODER_PIN_A 32
+#define X_ENCODER_PIN_B 33
+#define Y_ENCODER_PIN_A 34
+#define Y_ENCODER_PIN_B 35
 
 #define PPR 8000 //Counts per rev for encoders (PPR*4)
 #define pre 20 //Prescaler for hardware timers
@@ -17,7 +23,6 @@ uint64_t SpeedUpdateTime = 20000;
 hw_timer_t *SpeedUpdateTimer = NULL, *IntTimer = NULL;
 volatile int64_t xNext = 0, yNext = 0;
 volatile double xDelta[NoP], yDelta[NoP]; //[0,130,150,110]
-uint8_t X_ENCODER_PIN_A, X_ENCODER_PIN_B, Y_ENCODER_PIN_A, Y_ENCODER_PIN_B;
 bool enabled;
 
 
@@ -141,12 +146,7 @@ void IRAM_ATTR  y_chb_isr() {
 
 
 
-void setupFunctionEncoders(uint8_T  EncXA,int size_vector__1,int8_T  EncXB,int size_vector__2,int8_T  EncYA,int size_vector__3,int8_T  EncYB,int size_vector__4){
-  X_ENCODER_PIN_A = EncXA;
-  X_ENCODER_PIN_B = EncXB;
-  Y_ENCODER_PIN_A = EncYA;
-  Y_ENCODER_PIN_B = EncYB;
- 
+void setupFunctionEncoders(){
   pinMode(X_ENCODER_PIN_A, INPUT);
   pinMode(X_ENCODER_PIN_B, INPUT);
   pinMode(Y_ENCODER_PIN_A, INPUT);

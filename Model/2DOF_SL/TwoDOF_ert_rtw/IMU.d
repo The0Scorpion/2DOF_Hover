@@ -1,5 +1,5 @@
 IMU.o: F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\IMU.cpp \
- C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/arduino.h \
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/stdint.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/_default_types.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/features.h \
@@ -127,13 +127,13 @@ IMU.o: F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\IMU.cpp \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/IPAddress.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/HardwareSerial.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/Esp.h \
- C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/spi_flash/esp_partition.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/spi_flash/esp_spi_flash.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/variants/esp32/pins_arduino.h \
- C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/aIDE/portable/packages/esp32/hardware/esp32/10FC67~1.6/LIBRAR~1/Wire/src/Wire.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/SourceFiles/EncoderIMU/Wire.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/cores/esp32/esp32-hal.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/portable/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/freertos/freertos/queue.h \
  F:\College\Semester_10\GP2\2DOF\2DOF_Hover\Model\2DOF_SL\IMU.h \
  F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/TwoDOF_ert_rtw/rtwtypes.h \
- F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/SourceFiles/EncoderIMU/IMU_Michael.h
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/SourceFiles/EncoderIMU/IMU_Michael.h \
+ F:/College/Semester_10/GP2/2DOF/2DOF_Hover/Model/2DOF_SL/SourceFiles/EncoderIMU/Wire.h
