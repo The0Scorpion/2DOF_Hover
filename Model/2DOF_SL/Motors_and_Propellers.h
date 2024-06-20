@@ -1,0 +1,18 @@
+/* Copyright 2023 The MathWorks, Inc. */
+#ifndef EXAMPLE_H
+#define EXAMPLE_H
+#if !( defined(MATLAB_MEX_FILE) || defined(RSIM_PARAMETER_LOADING) ||  defined(RSIM_WITH_SL_SOLVER))
+#ifdef __cplusplus
+#include "rtwtypes.h"
+extern "C" {
+    #endif
+    void stepFunctionMotors_and_Propellers(double Xaction,int size_vector_a,int8_T Yaction,int size_vector_b);
+    void setupFunctionMotors_and_Propellers();
+    #ifdef __cplusplus
+}
+#endif
+#else
+#define loop(void) (0)
+#define setup(void) (0)
+#endif
+#endif
