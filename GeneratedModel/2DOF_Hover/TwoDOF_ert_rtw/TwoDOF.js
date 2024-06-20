@@ -1,132 +1,125 @@
-#include <stdbool.h>
-#include <stdint.h>
-#include <math.h>
-#include <stdio.h>
-#define B_l                            0.5
-#define B_u                            0.5
-#define FilterCoeffN                   10.0
-#define J_l                            0.071440709
-#define J_u                            0.049103
-#define JointX_InitialPositionCondition 0.27
-#define JointY_InitialPositionCondition -0.33
-#define L_cg_l                         0.102366
-#define L_cg_u                         0.066301
-#define L_l                            0.223793
-#define L_u                            0.227293
-#define PitchLowerLimit                -0.37
-#define PitchUpperLimit                0.27
-#define PitchXMotorSaturation          50.0
-#define PitchXStartThrust              50.0
-#define RollLowerLimit                 -0.33
-#define RollUpperLimit                 0.4
-#define RollYMotorSaturation           30.0
-#define RollYStartThrust               40.0
-#define g                              9.81
-#define ixposkd                        0.0
-#define ixposki                        1.0
-#define ixposkp                        9.6
-#define ixvelkd                        0.0
-#define ixvelki                        2.0
-#define ixvelkp                        12.0
-#define iyposkd                        0.0
-#define iyposki                        1.0
-#define iyposkp                        10.0
-#define iyvelkd                        0.0
-#define iyvelki                        5.0
-#define iyvelkp                        20.0
-#define mass_l                         2.495
-#define mass_u                         2.024
+const B_l = 0.5;
+const B_u = 0.5;
+const FilterCoeffN = 10.0;
+const J_l = 0.071440709;
+const J_u = 0.049103;
+const JointX_InitialPositionCondition = 0.27;
+const JointY_InitialPositionCondition = -0.33;
+const L_cg_l = 0.102366;
+const L_cg_u = 0.066301;
+const L_l = 0.223793;
+const L_u = 0.227293;
+const PitchLowerLimit = -0.37;
+const PitchUpperLimit = 0.27;
+const PitchXMotorSaturation = 50.0;
+const PitchXStartThrust = 50.0;
+const RollLowerLimit = -0.33;
+const RollUpperLimit = 0.4;
+const RollYMotorSaturation = 30.0;
+const RollYStartThrust = 40.0;
+const g = 9.81;
+var ixposkd = 0.0;
+var ixposki = 1.0;
+var ixposkp = 9.6;
+var ixvelkd = 0.0;
+var ixvelki = 2.0;
+var ixvelkp = 12.0;
+var iyposkd = 0.0;
+var iyposki = 1.0;
+var iyposkp = 10.0;
+var iyvelkd = 0.0;
+var iyvelki = 5.0;
+var iyvelkp = 20.0;
+const mass_l = 2.495;
+const mass_u = 2.024;
 
-typedef struct tag_RTM_TwoDOF_T RT_MODEL_TwoDOF_T;
-typedef struct {
-  double Delay1_DSTATE[4];
-  double DiscreteTimeIntegrator1_DSTATE;
-  double Integrator_DSTATE;
-  double Filter_DSTATE;
-  double Delay_DSTATE[4];
-  double DiscreteTransferFcn_states;
-  double Integrator_DSTATE_h;
-  double Filter_DSTATE_p;
-  double Delay3_DSTATE[4];
-  double DiscreteTimeIntegrator_DSTATE;
-  double Integrator_DSTATE_o;
-  double Filter_DSTATE_m;
-  double Delay2_DSTATE[4];
-  double DiscreteTransferFcn1_states;
-  double Integrator_DSTATE_b;
-  double Filter_DSTATE_h;
-  double DiscreteTimeIntegrator4_DSTATE;
-  double DiscreteTimeIntegrator3_DSTATE;
-  double FrontMotor_states;
-  double BackMotor_states;
-  double LeftMotor_states;
-  double RightMotor_states;
-  double DiscreteTimeIntegrator5_DSTATE;
-  double DiscreteTimeIntegrator2_DSTATE;
-} DW_TwoDOF_T;
+class DW_TwoDOF {
+    constructor() {
+        this.Delay1_DSTATE = new Array(4).fill(0);
+        this.DiscreteTimeIntegrator1_DSTATE = 0;
+        this.Integrator_DSTATE = 0;
+        this.Filter_DSTATE = 0;
+        this.Delay_DSTATE = new Array(4).fill(0);
+        this.DiscreteTransferFcn_states = 0;
+        this.Integrator_DSTATE_h = 0;
+        this.Filter_DSTATE_p = 0;
+        this.Delay3_DSTATE = new Array(4).fill(0);
+        this.DiscreteTimeIntegrator_DSTATE = 0;
+        this.Integrator_DSTATE_o = 0;
+        this.Filter_DSTATE_m = 0;
+        this.Delay2_DSTATE = new Array(4).fill(0);
+        this.DiscreteTransferFcn1_states = 0;
+        this.Integrator_DSTATE_b = 0;
+        this.Filter_DSTATE_h = 0;
+        this.DiscreteTimeIntegrator4_DSTATE = 0;
+        this.DiscreteTimeIntegrator3_DSTATE = 0;
+        this.FrontMotor_states = 0;
+        this.BackMotor_states = 0;
+        this.LeftMotor_states = 0;
+        this.RightMotor_states = 0;
+        this.DiscreteTimeIntegrator5_DSTATE = 0;
+        this.DiscreteTimeIntegrator2_DSTATE = 0;
+    }
+}
 
-typedef struct {
-  double Y_setpoint;
-  double X_setpoint;
-} ExtU_TwoDOF_T;
+class ExtU_TwoDOF {
+    constructor() {
+        this.Y_setpoint = 0;
+        this.X_setpoint = 0;
+    }
+}
 
-typedef struct {
-  double thetaYDot;
-  double Y_posPID_ControlAction;
-  double Y_velPID_ControlAction;
-  double thetaY;
-  double thetaX;
-  double X_posPID_ControlAction;
-  double X_velPID_ControlAction;
-  double thetaXDot;
-} ExtY_TwoDOF_T;
+class ExtY_TwoDOF {
+    constructor() {
+        this.thetaYDot = 0;
+        this.Y_posPID_ControlAction = 0;
+        this.Y_velPID_ControlAction = 0;
+        this.thetaY = 0;
+        this.thetaX = 0;
+        this.X_posPID_ControlAction = 0;
+        this.X_velPID_ControlAction = 0;
+        this.thetaXDot = 0;
+    }
+}
 
-struct tag_RTM_TwoDOF_T {
-  const char * volatile errorStatus;
-};
+let TwoDOF_DW = new DW_TwoDOF();
+let TwoDOF_U = new ExtU_TwoDOF();
+let TwoDOF_Y = new ExtY_TwoDOF();
 
-extern DW_TwoDOF_T TwoDOF_DW;
-extern ExtU_TwoDOF_T TwoDOF_U;
-extern ExtY_TwoDOF_T TwoDOF_Y;
-extern void TwoDOF_initialize(void);
-extern void TwoDOF_step(void);
-extern void TwoDOF_terminate(void);
-extern RT_MODEL_TwoDOF_T *const TwoDOF_M;
+function TwoDOF_initialize() {
+    TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE = JointY_InitialPositionCondition;
+    TwoDOF_DW.DiscreteTimeIntegrator2_DSTATE = JointX_InitialPositionCondition;
+}
 
-DW_TwoDOF_T TwoDOF_DW;
-ExtU_TwoDOF_T TwoDOF_U;
-ExtY_TwoDOF_T TwoDOF_Y;
-static RT_MODEL_TwoDOF_T TwoDOF_M_;
-RT_MODEL_TwoDOF_T *const TwoDOF_M = &TwoDOF_M_;
-void TwoDOF_step(void)
-{
-  double Add17;
-  double Add18;
-  double Add21;
-  double Add22;
-  double Sum;
-  double Sum1;
-  double numAccum;
-  double numAccum_0;
-  double numAccum_1;
-  double numAccum_2;
-  double rtb_Cos;
-  double rtb_Filter;
-  double rtb_FilterCoefficient;
-  double rtb_FilterCoefficient_b;
-  double rtb_FilterCoefficient_d;
-  double rtb_FilterCoefficient_h;
-  double rtb_Filter_b;
-  double rtb_Filter_m;
-  double rtb_Switch_b;
-  int8_t tmp;
-  int8_t tmp_0;
-  int8_t tmp_1;
-  int8_t tmp_2;
-  bool rtb_AND3_p;
-  bool rtb_RelationalOperator;
-  bool rtb_RelationalOperator_m;
-  Add17 = RollYStartThrust - TwoDOF_Y.Y_velPID_ControlAction;
+function TwoDOF_step() {
+    let Add17;
+    let Add18;
+    let Add21;
+    let Add22;
+    let Sum;
+    let Sum1;
+    let numAccum;
+    let numAccum_0;
+    let numAccum_1;
+    let numAccum_2;
+    let rtb_Cos;
+    let rtb_Filter;
+    let rtb_FilterCoefficient;
+    let rtb_FilterCoefficient_b;
+    let rtb_FilterCoefficient_d;
+    let rtb_FilterCoefficient_h;
+    let rtb_Filter_b;
+    let rtb_Filter_m;
+    let rtb_Switch_b;
+    let tmp;
+    let tmp_0;
+    let tmp_1;
+    let tmp_2;
+    let rtb_AND3_p;
+    let rtb_RelationalOperator;
+    let rtb_RelationalOperator_m;
+
+    Add17 = RollYStartThrust - TwoDOF_Y.Y_velPID_ControlAction;
   Add18 = RollYStartThrust + TwoDOF_Y.Y_velPID_ControlAction;
   rtb_Filter_m = TwoDOF_DW.DiscreteTimeIntegrator1_DSTATE -
     TwoDOF_DW.Delay1_DSTATE[0];
@@ -263,7 +256,7 @@ void TwoDOF_step(void)
   Sum1 = TwoDOF_U.X_setpoint - TwoDOF_DW.DiscreteTimeIntegrator_DSTATE;
   TwoDOF_Y.thetaYDot = TwoDOF_DW.DiscreteTimeIntegrator4_DSTATE;
   TwoDOF_Y.thetaY = TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE;
-  rtb_Cos = cos(TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE);
+  rtb_Cos = Math.cos(TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE);
   numAccum_1 = 0.00634 * TwoDOF_DW.LeftMotor_states;
   numAccum_2 = 0.00634 * TwoDOF_DW.RightMotor_states;
   TwoDOF_Y.thetaXDot = TwoDOF_DW.DiscreteTimeIntegrator5_DSTATE;
@@ -322,7 +315,7 @@ void TwoDOF_step(void)
 
   TwoDOF_DW.Integrator_DSTATE_b += 0.005 * rtb_Filter_b;
   TwoDOF_DW.Filter_DSTATE_h += 0.005 * rtb_FilterCoefficient_b;
-  TwoDOF_DW.DiscreteTimeIntegrator4_DSTATE += ((mass_u * g * L_cg_u * sin
+  TwoDOF_DW.DiscreteTimeIntegrator4_DSTATE += ((mass_u * g * L_cg_u * Math.sin
     (TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE) - B_u *
     TwoDOF_DW.DiscreteTimeIntegrator4_DSTATE) + (0.00634 *
     TwoDOF_DW.BackMotor_states - 0.00634 * TwoDOF_DW.FrontMotor_states) * L_u) *
@@ -338,7 +331,7 @@ void TwoDOF_step(void)
   TwoDOF_DW.BackMotor_states = Add18 - -0.9512 * TwoDOF_DW.BackMotor_states;
   TwoDOF_DW.LeftMotor_states = Add21 - -0.9512 * TwoDOF_DW.LeftMotor_states;
   TwoDOF_DW.RightMotor_states = Add22 - -0.9512 * TwoDOF_DW.RightMotor_states;
-  TwoDOF_DW.DiscreteTimeIntegrator5_DSTATE += ((mass_l * g * L_cg_l * sin
+  TwoDOF_DW.DiscreteTimeIntegrator5_DSTATE += ((mass_l * g * L_cg_l * Math.sin
     (TwoDOF_DW.DiscreteTimeIntegrator2_DSTATE) - B_l *
     TwoDOF_DW.DiscreteTimeIntegrator5_DSTATE) + (numAccum_2 * rtb_Cos -
     numAccum_1 * rtb_Cos) * L_l) * (1.0 / J_l) * 0.005;
@@ -349,25 +342,57 @@ void TwoDOF_step(void)
     TwoDOF_DW.DiscreteTimeIntegrator2_DSTATE = PitchLowerLimit;
   }
 }
+function simulate(){
+    TwoDOF_initialize();
+    TwoDOF_U.X_setpoint=0;
+    TwoDOF_U.Y_setpoint=0;
 
-void TwoDOF_initialize(void)
-{
-  TwoDOF_DW.DiscreteTimeIntegrator3_DSTATE = JointY_InitialPositionCondition;
-  TwoDOF_DW.DiscreteTimeIntegrator2_DSTATE = JointX_InitialPositionCondition;
+    for (let i = 0; i < 1000; i++) {
+        TwoDOF_step();
+        console.log(`${TwoDOF_Y.thetaX},${TwoDOF_Y.thetaXDot},${TwoDOF_Y.thetaY},${TwoDOF_Y.thetaYDot}`);
+    }
+    
+}
+function simulate(data) {
+    // Assign the new parameter values
+    ixposkp = data.xposkp;
+    iyposkp = data.yposkp;
+    ixposki = data.xposki;
+    iyposki = data.yposki;
+    ixposkd = data.xposkd;
+    iyposkd = data.yposkd;
+    ixvelkp = data.xvelkp;
+    iyvelkp = data.yvelkp;
+    ixvelki = data.xvelki;
+    iyvelki = data.yvelki;
+    ixvelkd = data.xvelkd;
+    iyvelkd = data.yvelkd;
+    iyvelkd = data.yvelkd;
+    iyvelkd = data.yvelkd;
+    TwoDOF_U.X_setpoint = data.xposSet;
+    TwoDOF_U.Y_setpoint = data.yposkd;
+    Subsystem_initialize();
+    let i = 0;
+    const iterations = 2000;
+    var SIO = {
+        XPos: [],
+        XVel: [],
+        YPos: [],
+        YVel: []
+      };
+    while (i < iterations) {
+        rt_OneStep();
+        //console.log(Subsystem_Y.thetaX, Subsystem_Y.thetaY);
+        SIO.XPos.push(TwoDOF_Y.thetaX);
+        SIO.YPos.push(TwoDOF_Y.thetaY);
+        SIO.XVel.push(TwoDOF_Y.thetaXDot);
+        SIO.YVel.push(TwoDOF_Y.thetaY);
+        i++;
+    }
+    
+    Subsystem_terminate();
+
+    return SIO;
 }
 
-void TwoDOF_terminate(void)
-{
-}
-
-int main(){
-  
-  TwoDOF_U.X_setpoint=0;
-  TwoDOF_U.Y_setpoint=0;
-TwoDOF_initialize();
-for(int i=0;i<1000;i++){
-  TwoDOF_step();
-  printf("%f,%f,%f,%f\n",TwoDOF_Y.thetaX,TwoDOF_Y.thetaXDot,TwoDOF_Y.thetaY,TwoDOF_Y.thetaYDot);
-}
-return 0;
-}
+export { simulate };
