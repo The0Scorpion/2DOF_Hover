@@ -11,7 +11,7 @@ classdef Motors_Propellers < matlab.System ...
     end
 
     properties(Access = protected)
-        Logo = 'IO Device Builder';
+        Logo = 'Co-Tune ESP32 API';
     end
 
     properties (Nontunable)

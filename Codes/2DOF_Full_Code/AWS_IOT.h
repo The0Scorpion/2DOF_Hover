@@ -89,7 +89,21 @@ void DataIn(char *topic, byte *message, unsigned int length)
       if (ParamterObject.containsKey("work"))
       {
         Work = ParamterObject["work"];
-        
+        if(Work){
+          JsonDocument DataPacket;
+
+    // Populate the JSON document with values directly
+    // UpdateTimeStamp();
+    DataPacket["ID"] = -1;
+    DataPacket["xpos"] = CountsToAngle(xEncoderCount);
+    DataPacket["ypos"] = CountsToAngle(yEncoderCount);
+    DataPacket["xvel"] = getxSpeed();
+    DataPacket["yvel"] = getySpeed();
+    String jsonString;
+    serializeJson(DataPacket, jsonString);
+    mqttClient.publish(PubAWSTopic, jsonString.c_str());
+        }
+      
       }
 
       if (ParamterObject.containsKey("save"))
@@ -270,7 +284,7 @@ void DataAQU(void *parameter)
 
     // Populate the JSON document with values directly
     // UpdateTimeStamp();
-    DataPacket["ID"] = counta*5/Send_Period;
+    DataPacket["ID"] = Work?counta*5/Send_Period:-1;
     DataPacket["xpos"] = CountsToAngle(xEncoderCount);
     DataPacket["ypos"] = CountsToAngle(yEncoderCount);
     DataPacket["xvel"] = getxSpeed();
@@ -283,13 +297,19 @@ void DataAQU(void *parameter)
     // Serialize the JSON document to a String
     String jsonString;
     serializeJson(DataPacket, jsonString);
-#ifdef DebugAQU
+
+    // Publish json string to AWS MQTTserver
+    if(Work){
+      #ifdef DebugAQU
     // Print the JSON string
     Serial.println(jsonString);
 #endif
-    // Publish json string to AWS MQTTserver
-    if(1){
     mqttClient.publish(PubAWSTopic, jsonString.c_str());
+    }else{
+#ifdef DebugAQU
+    // Print the JSON string
+    Serial.println("Holding The MQTT");
+#endif
     }
     while (millis() - lastsent < Send_Period)
     {

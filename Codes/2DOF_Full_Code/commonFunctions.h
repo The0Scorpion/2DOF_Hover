@@ -134,8 +134,7 @@ void PIDLoop(void *parameter)
 #ifdef DebugCF
       Serial.println("Started");
 #endif
-    }
-    // Reset and Create 4 PID objects with specified parameters
+// Reset and Create 4 PID objects with specified parameters
     resetPID(&xPOSPID);
     initializePID(&xPOSPID, xposkp, xposki, xposkd, xposSet, -PositionLoopSat, PositionLoopSat); // to be rechecked the limits
     resetPID(&xVELPID);
@@ -242,11 +241,12 @@ void PIDLoop(void *parameter)
       Serial.println(counta);
 #endif
     }
-#ifdef DebugCF // just for debugging
-    Serial.println("PID Stopped");
-#endif
-    Work = 0;
-    SendToMQTT = 0;
-    delay(200);
+    }
+    
+    #ifdef DebugCF // just for debugging
+        Serial.println("PID Stopped");
+    #endif
+        //Work = 0;
+        delay(20);
   }
 }
