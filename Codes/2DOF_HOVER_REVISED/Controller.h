@@ -12,7 +12,15 @@
 #include <EEPROM.h>
 #include "Motors.h"
 #include "StartUP.h"
-#include "CascadedPID.h"
+#include "AWS_IOT.h"
+
+
+
+#ifdef CascadedPIDControl 
+  #include "CascadedPID.h"
+#elif defined(OnlineControl)
+  #include "CascadedPID.h"
+#endif
 
 void Control(void *parameter)
 {
@@ -53,8 +61,7 @@ void Control(void *parameter)
 
       while (ControllerRunning && Work)
       {
-        SendToMQTT = 1;
-
+        
         xSpeed = getxSpeed();
         ySpeed = getySpeed();
 

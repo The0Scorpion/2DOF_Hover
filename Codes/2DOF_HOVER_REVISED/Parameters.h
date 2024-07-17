@@ -6,6 +6,8 @@
  */
 #pragma once
 
+//#define OnlineControl
+#define CascadedPIDControl
 // Defines the wiring for each major component
 #define X_ENCODER_PIN_A 32
 #define X_ENCODER_PIN_B 33
@@ -23,6 +25,10 @@ unsigned long lastsent = 0;
 #define ReceiveQoS 0
 // Rest in Secrets.h
 
+int counta = 0;
+int failcount = 0, failLimit = 200;
+int failed_Trials = 0, fail_TrailLimit = 4;
+int maxStartupSamples = 1000, RunSamples = 2000;
 // Error corrections for IMU
 #define IMU_XACC_Error  -0.02
 #define IMU_YACC_Error   0.00

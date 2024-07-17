@@ -1,15 +1,17 @@
 #include <WiFi.h>
 #include <EEPROM.h>
+#include "Parameters.h"
+#include "AWS_IOT.h"
 #include "Controller.h"
 
-#include "Parameters.h"
+
 
 #define EnableDebug
 // #define OFFLINE
 
 #ifndef OFFLINE
 #include "OTA.h"
-#include "AWS_IOT.h"
+
 #endif
 // #define DebugCFMain
 TaskHandle_t TaskHandle_1;
@@ -24,10 +26,10 @@ void setup()
   // Over the air task to allow wireless flash runs on core 1
   EEPROM.begin(300);
 #ifndef OFFLINE
-  initWIFI(); // Blocking Stop for offline
+  initWiFi(); // Blocking Stop for offline
 
   xTaskCreatePinnedToCore(
-      OTATASK,
+      OTATask,
       "OTA Routine",
       3000,
       NULL,
