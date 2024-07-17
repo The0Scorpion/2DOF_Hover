@@ -2,14 +2,17 @@
  * PID Controller Class for ESP32
  * Created: 14/11/2023
  * Updated by Scorpion
- * Last update 20/12/2023
-*/
+ * Last update: 20/12/2023
+ */
 #pragma once
+
 class PIDController {
 public:
     float setpoint;
+
     PIDController() {}
 
+    // Initialize PID controller with parameters
     void init(float kp, float ki, float kd, float setpoint, float minoutput, float maxoutput) {
         this->kp = kp;
         this->ki = ki;
@@ -20,6 +23,7 @@ public:
         reset();
     }
 
+    // Reset PID controller
     void reset() {
         prev_error = 0.0;
         integral = 0.0;
@@ -29,20 +33,21 @@ public:
         output = 0.0;
     }
 
+    // Calculate PID output based on current state
     double calculate(float current_state) {
         uint64_t currentTime = micros();
-        double dt = (double)(currentTime - lastTime) / 1000000.0; // calculate dt
-        double error = setpoint - current_state; //calculate error
+        double dt = (double)(currentTime - lastTime) / 1000000.0; // Calculate dt
+        double error = setpoint - current_state; // Calculate error
 
-        // proportional action
+        // Proportional action
         float proportional = kp * error;
 
-        // integral action clamping method
+        // Integral action with clamping method
         if (!((output == maxoutput && error > 0) || (output == minoutput && error < 0))) {
             integral += ki * error * dt;
         }
 
-        // derivative action
+        // Derivative action
         float derivative = kd * (error - prev_error) / dt;
         float filter_der = (1 / (2 * RC + dt)) * (dt * derivative + dt * prevdrev - (dt - 2 * RC) * prev_filter_out);
 
@@ -52,7 +57,7 @@ public:
         prev_error = error;
         output = proportional + integral + filter_der;
 
-        // clamp output to min and max
+        // Clamp output to min and max
         if (output > maxoutput) output = maxoutput;
         if (output < minoutput) output = minoutput;
 
@@ -60,19 +65,19 @@ public:
     }
 
 private:
-    float kp;
-    float ki;
-    float kd;
-    
-    uint64_t lastTime;
-    float prev_error;
-    float integral;
-    float prev_filter_out;
-    float RC = 0.1;
-    float prevdrev;
-    float output;
-    float minoutput;
-    float maxoutput;
+    float kp; // Proportional gain
+    float ki; // Integral gain
+    float kd; // Derivative gain
+    float minoutput; // Minimum output limit
+    float maxoutput; // Maximum output limit
+
+    uint64_t lastTime; // Last time for calculating dt
+    float prev_error; // Previous error
+    float integral; // Integral term
+    float prev_filter_out; // Previous filtered derivative output
+    float prevdrev; // Previous derivative
+    float output; // PID output
+    float RC = 0.1; // Filter parameter
 };
 
 // Usage example

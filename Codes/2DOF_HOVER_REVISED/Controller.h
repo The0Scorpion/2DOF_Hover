@@ -5,28 +5,25 @@
 */
 #pragma once
 // #define DebugCF
-#define DebugCF1
+// #define DebugCF1
 
 #include "Parameters.h"
 #include "encoder.h"
 #include <EEPROM.h>
 #include "Motors.h"
-
 #include "StartUP.h"
-
 #include "CascadedPID.h"
 
 void Control(void *parameter)
 {
-
   /*
-    Main Control Loop, Runs each sampling time
+    Main Control Loop, Runs the sensing and actuation
   */
   initEncoder(0, 0);
 
 #ifdef OFFLINE
   Work = EEPROM.read(0) > 1 ? 0 : !EEPROM.read(0);
-  EEPROM.write(0, Work); // toggles running on resets
+  EEPROM.write(0, Work);
   EEPROM.commit();
 #endif
 
@@ -35,32 +32,29 @@ void Control(void *parameter)
     if (Work)
     {
       initESCs();
-      delay(1000); // wait for esc calib
+      delay(1000); // Wait for ESC calibration
 
-      // Startup
 #ifdef DebugCF
       Serial.println("Start Up");
 #endif
-      StartUP(0.20, 0.20);
+      StartUP(0.20, 0.20); // Startup sequence
 #ifdef DebugCF
       Serial.println("Started");
 #endif
-      initController();
+      initController(); // Initialize PID controllers
 
-      // LastStepTime = micros();
       TickType_t LastStepTime;
       const TickType_t xFrequency = 5 / portTICK_PERIOD_MS;
-
-      // Initialise the xLastWakeTime variable with the current time.
       LastStepTime = xTaskGetTickCount();
-#ifdef DebugCF // just for debugging
+
+#ifdef DebugCF // Debugging messages
       Serial.println("PID Started");
 #endif
 
       while (ControllerRunning && Work)
       {
         SendToMQTT = 1;
-        // Update feedback values using sensor fusion
+
         xSpeed = getxSpeed();
         ySpeed = getySpeed();
 
@@ -68,10 +62,9 @@ void Control(void *parameter)
         // xSpeed = (1 - IMU_FusionPrio) * xSpeed + IMU_FusionPrio * AngleToCounts(xDotIMU);
         // ySpeed = (1 - IMU_FusionPrio) * ySpeed + IMU_FusionPrio * AngleToCounts(yDotIMU);
 
-        
-        stepController();
+        stepController(); // Execute PID control
 
-        writeControlAction((int)xAction, (int)yAction);
+        writeControlAction((int)xAction, (int)yAction); // Send control signals to motors
 
         counta++;
         if (counta > RunSamples)
@@ -83,8 +76,10 @@ void Control(void *parameter)
           DisableMotors();
           break;
         }
-        vTaskDelayUntil(&LastStepTime, xFrequency);
 
+        vTaskDelayUntil(&LastStepTime, xFrequency); // Maintain fixed control frequency
+
+        // Check for position limits or failure conditions
         if (abs(CountsToAngle(xEncoderCount)) > xposSetLimit || abs(CountsToAngle(yEncoderCount)) > yposSetLimit)
         {
           if (failcount == 0)
@@ -103,14 +98,6 @@ void Control(void *parameter)
                 Work = 0;
                 failed_Trials = 0;
                 break;
-                // Startup
-#ifdef DebugCF
-                Serial.println("Start Up");
-#endif
-                StartUP(0.20, 0.20);
-#ifdef DebugCF
-                Serial.println("Started");
-#endif
               }
             }
           }
@@ -119,21 +106,18 @@ void Control(void *parameter)
         {
           failcount = 0;
         }
-#ifdef debugTime
-        Serial.print(micros() - LastStepTime);
-#endif
 
-#ifdef DebugCF1 // just for debugging
+#ifdef DebugCF1
         Serial.print("Counter For PID: ");
         Serial.println(counta);
 #endif
       }
     }
 
-#ifdef DebugCF // just for debugging
+#ifdef DebugCF
     Serial.println("PID Stopped");
 #endif
-    // Work = 0;
-    delay(20);
+
+    delay(20); // Allow some delay before restarting
   }
 }
