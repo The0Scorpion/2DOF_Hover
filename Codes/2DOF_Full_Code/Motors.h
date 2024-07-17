@@ -19,7 +19,7 @@ void initESCs(byte FPin, byte RPin, byte BPin, byte LPin) {
   Rmotor.write(0);
   Bmotor.write(0);
   Lmotor.write(0);
-  delay(2500);
+  delay(1000);
   //start up motors
 
   for (unsigned int i = 1000; i < 1100; i += 5) {
