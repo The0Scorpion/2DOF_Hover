@@ -18,7 +18,7 @@ private:
   int oMin = 1000;                  // Minimum pulse width for ESC
   int oMax = 2000;                  // Maximum pulse width for ESC
   int oESC = 1000;                  // Current ESC pulse width
-  int oArm = 500;                   // Arm pulse width
+  int oArm = 1000;                   // Arm pulse width
   uint32_t calibrationDelay = 5000; // Calibration delay in milliseconds
   uint32_t stopPulse = 1000;        // Stop pulse duration in microseconds
   Servo myESC;                      // Servo object to control an ESC
@@ -60,7 +60,6 @@ public:
   void arm()
   {
     myESC.attach(oPin);            // Attach ESC to the specified pin
-    myESC.writeMicroseconds(oArm); // Send arming signal
   }
 
   // Detach the ESC to stop signal transmission
@@ -186,4 +185,22 @@ void writeControlAction(int xAct, int yAct)
   // Debugging: Print motor power levels
   Serial.println((String) "POWERS: " + FM + ", " + RM + ", " + BM + ", " + LM);
 #endif
+}
+float readCurrent(int analogPin) {
+    const int NUM_SAMPLES = 100; // Number of samples to average
+    long sum = 0;
+
+    for (int i = 0; i < NUM_SAMPLES; i++) {
+        sum += analogRead(analogPin);
+    }
+
+    float average = sum / NUM_SAMPLES;
+
+    // Convert the analog reading to voltage
+    float voltage = (average * 3.3) / 4096.0;
+
+    // Calculate the current
+    float current = (voltage - ZERO_CURRENT_VOLTAGE) / (ACS712_SENSITIVITY / 1000.0);
+
+    return current;
 }

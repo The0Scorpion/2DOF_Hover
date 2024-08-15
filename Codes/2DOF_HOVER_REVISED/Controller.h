@@ -4,8 +4,8 @@
    Created: 20/10/2023
 */
 #pragma once
-// #define DebugCF
-// #define DebugCF1
+#define DebugCF
+#define DebugCF1
 
 #include "Parameters.h"
 #include "encoder.h"
@@ -19,7 +19,7 @@
 #ifdef CascadedPIDControl 
   #include "CascadedPID.h"
 #elif defined(OnlineControl)
-  #include "CascadedPID.h"
+  #include "OnlineControl.h"
 #endif
 
 void Control(void *parameter)

@@ -12,42 +12,48 @@
 #include "encoder.h"
 #include "EEPROM.h"
 #include "Motors.h"
-//#define DebugIOT
+// #define DebugIOT
 //#define DebugAQU
-//Select  Control Type
-
+//  Select  Control Type
 
 // TODO Other Controllers
 char Data[256];
 espMqttClientSecure mqttClient;
 
-
-char jsonString[256];
-#ifdef CascadedPIDControl 
-  #include "CascadedPID.h"
+#ifdef CascadedPIDControl
+#include "CascadedPID.h"
 #elif defined(OnlineControl)
-  #include "CascadedPID.h"
+#include "CascadedPID.h"
 #endif
 void DataIn(const espMqttClientTypes::MessageProperties &properties, const char *topic, const uint8_t *payload, size_t len, size_t index, size_t total);
+// Function to publish a warning message
+void publishWarning(const char *message)
+{
+    DataPacket["Warn"] = message;
+    serializeJson(DataPacket, WarnString, sizeof(WarnString));
+    mqttClient.publish(PUB_LOG_TOPIC, SendingQoS, false, WarnString);
+}
+
+// Function to publish an error message
+void publishError(const char *message)
+{
+    DataPacket["Error"] = message;
+    serializeJson(DataPacket, WarnString, sizeof(WarnString));
+    mqttClient.publish(PUB_LOG_TOPIC, SendingQoS, false, WarnString);
+}
 
 void onMqttSubscribe(uint16_t packetId, const espMqttClientTypes::SubscribeReturncode *codes, size_t len)
 {
   Serial.println("Subscribe acknowledged.");
-  Serial.print("  packetId: ");
-  Serial.println(packetId);
-  for (size_t i = 0; i < len; ++i)
+ /* for (size_t i = 0; i < len; ++i)
   {
     Serial.print("  qos: ");
     Serial.println(static_cast<uint8_t>(codes[i]));
-  }
+  }*/
 }
 
 void onMqttConnect(bool sessionPresent)
 {
-  Serial.println("Connected to MQTT.");
-  Serial.print("Session present: ");
-  Serial.println(sessionPresent);
-
   uint16_t packetIdSub0 = mqttClient.subscribe(SubAWSTopic, ReceiveQoS);
   Serial.print("Subscribing at QoS 0, packetId: ");
   Serial.println(packetIdSub0);
@@ -77,27 +83,26 @@ void onMqttDisconnect(espMqttClientTypes::DisconnectReason reason)
 
 void onMqttPublish(uint16_t packetId)
 {
-  Serial.println("Publish acknowledged.");
-  Serial.print("  packetId: ");
-  Serial.println(packetId);
+  lastMqttMessageTime = millis();
 }
 
 void initMQTT()
 {
   // Connect to AWS
   Serial.println("Connecting to AWS");
+
   while (WiFi.waitForConnectResult() != WL_CONNECTED)
   {
     Serial.println("Waiting for Wifi");
     delay(500);
     // ESP.restart();
   }
-
+  mqttClient.onPublish(onMqttPublish);
   mqttClient.onSubscribe(onMqttSubscribe);
   mqttClient.onConnect(onMqttConnect);
   mqttClient.onMessage(DataIn);
   mqttClient.onDisconnect(onMqttDisconnect);
-  mqttClient.onPublish(onMqttPublish);
+
   // Set AWS IoT endpoint and port
   mqttClient.setServer(AWS_ENDPOINT, AWS_PORT);
 
@@ -125,55 +130,96 @@ void initMQTT()
 
   Serial.println("MQTT Ready");
 }
+int npkts=0;
 void DataAQU(void *parameter)
 {
   /*Takes The xpos,ypos,xvel,yvel and displays them over Serial and ESPnow
     constructs an OutMessage Struct to be sent over ESPNOW*/
+  Serial.println("IOT Task Started");
   initMQTT();
 
   lastsent = millis();
+  lastAquired = millis();
 
   while (1)
   {
 
-    // Populate the JSON document with values directly
-    // UpdateTimeStamp();
-    DataPacket["ID"] = Work ? counta * 5 / Send_Period : -1;
-    DataPacket["xpos"] = CountsToAngle(xEncoderCount);
-    DataPacket["ypos"] = CountsToAngle(yEncoderCount);
-    DataPacket["xvel"] = getxSpeed();
-    DataPacket["yvel"] = getySpeed();
-
-#ifdef SendPIDActions
-    DataPacket["xposPID"] = xPOSPID.output;
-    DataPacket["yposPID"] = yPOSPID.output;
-    DataPacket["xvelPID"] = xVELPID.output;
-    DataPacket["yvelPID"] = yVELPID.output;
-#endif
-
     if (Work)
     {
-      // Serialize the JSON document to a String
-      serializeJson(DataPacket, jsonString, sizeof(jsonString));
-#ifdef DebugAQU
-      // Print the JSON string
-      Serial.println(jsonString);
+      
+      DataPacket.clear();
+      DataPacket["xpos"] = CountsToAngle(xEncoderCount);
+      DataPacket["ypos"] = CountsToAngle(yEncoderCount);
+      DataPacket["xvel"] = getxSpeed();
+      DataPacket["yvel"] = getySpeed();
+
+#ifdef SendPIDActions
+      DataPacket["xposPID"] = xPOSPID.output;
+      DataPacket["yposPID"] = yPOSPID.output;
+      DataPacket["xvelPID"] = xVELPID.output;
+      DataPacket["yvelPID"] = yVELPID.output;
 #endif
-      // Publish json string to AWS MQTTserver
-      mqttClient.publish(PubAWSTopic, SendingQoS, false, jsonString);
-    }
-    else
+      // Generate a unique key for this data packet
+      String key = String(counta);  //0-2000
+
+      // Add the current data packet to the parent JSON object
+      SendingDoc[key] = DataPacket;
+      npkts++;
+    }else
     {
-#ifdef DebugAQU
+      mqttClient.loop();
+    }
+#ifdef DebugAQU12
+    // Print the HeartBeat string
+    // Serial.println("Holding The MQTT");
+    Serial.print("free Heap: ");
+    Serial.println(ESP.getFreeHeap());
+#endif
+    // For now just send every Send Period
+    if (millis() - lastsent > (Work ? Send_Period : 5000)) // send empty messgae every 5 seconds to keep alive
+    {
+      Readytosend = 1;
+    }
+
+    // Check if Readytosend is set
+    if (Readytosend)
+    {
+// Add metadata to the parent JSON object
+#ifdef DebugAQU12
       // Print the HeartBeat string
-      Serial.println("Holding The MQTT");
+      // Serial.println("Holding The MQTT");
+      Serial.print("free Heap: ");
+      Serial.println(ESP.getFreeHeap());
 #endif
-      mqttClient.loop();
+      int packetCount = SendingDoc.size();
+      SendingDoc["numPackets"] = packetCount;           // Number of packets
+      SendingDoc["startPacket"] = npkts; // Assuming packets are sequential
+      npkts=0;
+      // Create a buffer to hold the serialized parent JSON object
+      serializeJson(SendingDoc, SendingString);
+
+      // Publish the buffer to AWS MQTT server
+      mqttClient.publish(PubAWSTopic, SendingQoS, false, SendingString);
+
+#ifdef DebugAQU
+      // Print the entire JSON string
+      // Serial.println(SendingString);
+#endif
+
+      // Clear the parent JSON object after publishing
+      SendingDoc.clear();
+
+      // Reset Readtosend flag
+      Readytosend = false;
+      
+      lastsent = millis();
     }
-    while (millis() - lastsent < Send_Period)
+    while (millis() - lastAquired < Sampling_time / 1000)
     {
       mqttClient.loop();
+      vTaskDelay(1);
     }
-    lastsent = millis();
+
+    lastAquired = millis();
   }
 }

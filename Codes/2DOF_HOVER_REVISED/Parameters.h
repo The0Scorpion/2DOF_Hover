@@ -8,6 +8,7 @@
 
 //#define OnlineControl
 #define CascadedPIDControl
+#include <ArduinoJson.h>
 // Defines the wiring for each major component
 #define X_ENCODER_PIN_A 32
 #define X_ENCODER_PIN_B 33
@@ -17,18 +18,33 @@
 #define RightMotorPIN 16
 #define BackMotorPIN 27
 #define LeftMotorPIN 26
-
+#define PitchCurrentSense 36 
+#define RollCurrentSense 39
+#define ZERO_CURRENT_VOLTAGE 1.65 // Voltage at zero current
+#define ACS712_SENSITIVITY 66 // mV per Amp for ACS712-30A
+#define CutoffCurrent 20 //Amps
+#define CutoffCurrentTime 5000
 // IoT Parameters
-#define Send_Period 6000 // Unit is ms
-unsigned long lastsent = 0;
+#define ResetTime 60 //seconds without iot activity to reset after
+#define Send_Period 300 // Unit is ms
+unsigned long lastsent = 0,lastAquired;
 #define SendingQoS 0
 #define ReceiveQoS 0
+#define SendingBufferSize 4096 // Adjust the size according to your needs
+StaticJsonDocument<SendingBufferSize> SendingDoc; 
+StaticJsonDocument<256> DataPacket;
+StaticJsonDocument<512> ParamterObject;
+char SendingString[SendingBufferSize];  // Adjust the size according to your needs
+char WarnString[500];  // Adjust the size according to your needs
+bool Readytosend = false;  // Send flag, set this to true when ready to send the buffer
 // Rest in Secrets.h
 
 int counta = 0;
 int failcount = 0, failLimit = 200;
 int failed_Trials = 0, fail_TrailLimit = 4;
 int maxStartupSamples = 1000, RunSamples = 2000;
+
+
 // Error corrections for IMU
 #define IMU_XACC_Error  -0.02
 #define IMU_YACC_Error   0.00
@@ -104,6 +120,7 @@ int yOpratingpoint = 1400;
 #define PPR 8000   // Counts per revolution for encoders (PPR*4)
 #define pre 20     // Prescaler for hardware timers
 #define NoP  8     // Number of counts for rolling average for encoder velocity calculation
+unsigned long lastMqttMessageTime;
 volatile long xEncoderCount = 0, yEncoderCount = 0;
 unsigned long xLastSpeedTime, yLastSpeedTime;
 uint64_t SpeedUpdateTime = 20000;

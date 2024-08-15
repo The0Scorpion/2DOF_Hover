@@ -5,7 +5,7 @@
    Not used for now
 */
 #pragma once
-
+#define DebugMotor
 #include "Parameters.h"
 #include "PID.h"
 #include "encoder.h"

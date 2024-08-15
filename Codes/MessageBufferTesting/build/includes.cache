@@ -1,0 +1,242 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\cores\\esp32"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\variants\\esp32"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "WiFi.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "EEPROM.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\EEPROM\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "ArduinoJson.h",
+    "Includepath": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\ArduinoJson\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "espMqttClient.h",
+    "Includepath": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "WiFiClientSecure.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFiClientSecure\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\Wire\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "ESP32Servo.h",
+    "Includepath": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\ESP32Servo\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "ESPmDNS.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\ESPmDNS\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "ArduinoOTA.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\ArduinoOTA\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "Update.h",
+    "Includepath": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\Update\\src"
+  },
+  {
+    "Sourcefile": "F:\\Programs\\2DOF_Hover\\Codes\\MessageBufferTesting\\build\\sketch\\MessageBufferTesting.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFi.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiAP.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiClient.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiGeneric.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiMulti.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiSTA.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiScan.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiServer.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFi\\src\\WiFiUdp.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\EEPROM\\src\\EEPROM.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\MqttClient.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Packets\\Packet.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Packets\\Parser.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Packets\\RemainingLength.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Packets\\StringUtil.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientAsync.cpp",
+    "Include": "AsyncTCP.h",
+    "Includepath": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\AsyncTCP-master\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientAsync.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientPosix.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientPosixIPAddress.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientSecureSync.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\Transport\\ClientSync.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\TypeDefs.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\espMqttClient.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\espMqttClient\\src\\espMqttClientAsync.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFiClientSecure\\src\\WiFiClientSecure.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFiClientSecure\\src\\esp_crt_bundle.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\WiFiClientSecure\\src\\ssl_client.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\Wire\\src\\Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\ESP32Servo\\src\\ESP32PWM.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\ESP32Servo\\src\\ESP32Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\ESPmDNS\\src\\ESPmDNS.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\ArduinoOTA\\src\\ArduinoOTA.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\Update\\src\\HttpsOTAUpdate.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.14\\libraries\\Update\\src\\Updater.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\abdob\\OneDrive\\Documents\\Arduino\\libraries\\AsyncTCP-master\\src\\AsyncTCP.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

@@ -24,9 +24,7 @@ JsonArray receivedActions;
 int currentControlAction = 0;
 
 // Function declarations
-void handleActionMessage(const char *payload, size_t len);
-void publishWarning(const char *message);
-void publishError(const char *message);
+
 
 // Callback for receiving MQTT messages
 void dataIn(const espMqttClientTypes::MessageProperties &properties, const char *topic, const uint8_t *payload, size_t len, size_t index, size_t total)
@@ -127,18 +125,3 @@ void stepController()
     currentControlAction++;
 }
 
-// Function to publish a warning message
-void publishWarning(const char *message)
-{
-    DataPacket["Warn"] = message;
-    serializeJson(DataPacket, jsonString, sizeof(jsonString));
-    mqttClient.publish(PUB_LOG_TOPIC, SendingQoS, false, jsonString);
-}
-
-// Function to publish an error message
-void publishError(const char *message)
-{
-    DataPacket["Error"] = message;
-    serializeJson(DataPacket, jsonString, sizeof(jsonString));
-    mqttClient.publish(PUB_LOG_TOPIC, SendingQoS, false, jsonString);
-}
