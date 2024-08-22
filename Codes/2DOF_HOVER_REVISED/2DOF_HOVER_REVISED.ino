@@ -11,7 +11,6 @@
 
 #ifndef OFFLINE
 #include "OTA.h"
-
 #endif
 // #define DebugCFMain
 TaskHandle_t TaskHandle_1;
@@ -92,8 +91,5 @@ void loop() {
     lastHighCurrent = 0;
   }
   vTaskDelay(1000);
-  // make sure motors are disabled if not intended to run
-  if (!Work || failed_Trials > fail_TrailLimit) {
-    DisableMotors();
-  }
+
 }
