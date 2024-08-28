@@ -5,7 +5,7 @@
    Not used for now
 */
 #pragma once
-#define DebugMotor
+///#define DebugMotor
 #include "Parameters.h"
 #include "PID.h"
 #include "encoder.h"
@@ -47,6 +47,7 @@ void StartUP(double targetX, double targetY) {
       uint32_t LM = min(max((int)(1500 - xAction), 1000), 2000);
 
 #ifdef DebugMotor
+      Serial.println((String)"Angles: " + CountsToAngle(xEncoderCount) + ", " + CountsToAngle(yEncoderCount) );
       Serial.println((String)"POWERS: " + FM + ", " + RM + ", " + BM + ", " + LM);
 #endif
 

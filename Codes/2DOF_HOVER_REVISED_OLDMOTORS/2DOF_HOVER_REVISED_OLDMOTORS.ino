@@ -6,7 +6,7 @@
 
 
 
-#define EnableDebug
+#define DebugAngles
 // #define OFFLINE
 
 #ifndef OFFLINE
@@ -17,7 +17,7 @@
 TaskHandle_t TaskHandle_1;
 
 void setup() {
-// calibESCs();
+ calibESCs();
 #ifdef EnableDebug
   Serial.begin(115200);  // init Serial For debugging
 #endif
@@ -78,6 +78,9 @@ void loop() {
 #ifdef DebugCurrent
   Serial.printf("Currents: %f, %f \r\n", PitchCurrent, RollCurrent);
 #endif
+#ifdef DebugAngles
+  Serial.println((String)"Angles: " + CountsToAngle(xEncoderCount) + ", " + CountsToAngle(yEncoderCount) );
+#endif
   if (PitchCurrent > CutoffCurrent || RollCurrent > CutoffCurrent) {
     if (lastHighCurrent > 0) {
       if (millis() - lastHighCurrent > CutoffCurrentTime) {
@@ -91,9 +94,9 @@ void loop() {
   } else {
     lastHighCurrent = 0;
   }
-  vTaskDelay(1000);
-  // make sure motors are disabled if not intended to run
+  vTaskDelay(100);
+/*  // make sure motors are disabled if not intended to run
   if (!Work || failed_Trials > fail_TrailLimit) {
     DisableMotors();
-  }
+  }*/
 }

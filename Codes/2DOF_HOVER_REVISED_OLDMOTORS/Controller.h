@@ -4,8 +4,8 @@
    Created: 20/10/2023
 */
 #pragma once
-#define DebugCF
-#define DebugCF1
+//#define DebugCF
+//#define DebugCF1
 
 #include "Parameters.h"
 #include "encoder.h"
@@ -40,7 +40,7 @@ void Control(void *parameter)
     if (Work)
     {
       initESCs();
-      delay(1000); // Wait for ESC calibration
+
 
 #ifdef DebugCF
       Serial.println("Start Up");
