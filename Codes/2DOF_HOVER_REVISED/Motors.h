@@ -60,7 +60,6 @@ public:
   void arm()
   {
     myESC.attach(oPin);            // Attach ESC to the specified pin
-    myESC.writeMicroseconds(stopPulse); // Send stop pulse
   }
 
   // Detach the ESC to stop signal transmission
@@ -157,10 +156,17 @@ void DisableMotors()
 // Write speed values to all ESCs if running flag is set
 void writeSpeed(uint32_t Fmicros, uint32_t Rmicros, uint32_t Bmicros, uint32_t Lmicros)
 {
+  if (ESC_Running == 1)
+  {
     Fmotor.speed(Fmicros); // Set Front motor speed
     Rmotor.speed(Rmicros); // Set Right motor speed
     Bmotor.speed(Bmicros); // Set Back motor speed
     Lmotor.speed(Lmicros); // Set Left motor speed
+  }
+  else
+  {
+    DisableMotors(); // Disable motors if running flag is not set
+  }
 }
 
 // Write control actions (delta values) to adjust motor speeds
