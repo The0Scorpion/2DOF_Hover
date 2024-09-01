@@ -5,7 +5,7 @@
 #include "Controller.h"
 
 
-
+#define EnableDebug
 #define DebugAngles
 // #define OFFLINE
 
