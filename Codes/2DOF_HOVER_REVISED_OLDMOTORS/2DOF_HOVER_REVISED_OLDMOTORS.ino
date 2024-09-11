@@ -17,7 +17,7 @@
 TaskHandle_t TaskHandle_1;
 
 void setup() {
- calibESCs();
+ //calibESCs();
 #ifdef EnableDebug
   Serial.begin(115200);  // init Serial For debugging
 #endif
@@ -57,7 +57,7 @@ void setup() {
     0);             // Core where the task should run
 
 #ifdef DebugCFMain
-  initEncoder(0, 0);
+  initEncoder();
 #endif
   // Initialize the watchdog timer
 

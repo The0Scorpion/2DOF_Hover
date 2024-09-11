@@ -27,7 +27,7 @@ void Control(void *parameter)
   /*
     Main Control Loop, Runs the sensing and actuation
   */
-  initEncoder(0, 0);
+  initEncoder();
 
 #ifdef OFFLINE
   Work = EEPROM.read(0) > 1 ? 0 : !EEPROM.read(0);

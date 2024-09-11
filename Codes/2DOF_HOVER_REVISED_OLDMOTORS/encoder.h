@@ -132,7 +132,7 @@ void IRAM_ATTR y_chb_isr() {
 }
 
 // Initialize encoders and related timers
-void initEncoder(double xStartAngle, double yStartAngle) {
+void initEncoder() {
   pinMode(X_ENCODER_PIN_A, INPUT);
   pinMode(X_ENCODER_PIN_B, INPUT);
   pinMode(Y_ENCODER_PIN_A, INPUT);
